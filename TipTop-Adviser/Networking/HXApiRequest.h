@@ -10,15 +10,18 @@
 
 
 typedef NS_ENUM(NSInteger, HXApiRequestStatusCode) {
-    HXApiRequestStatusCodeGETSuccess     = 200,
-    HXApiRequestStatusCodePOSTSuccess    = 201,
+    HXApiRequestStatusCodeOK                    = 200,
+    HXApiRequestStatusCodeCreated               = 201,
+    HXApiRequestStatusCodeAccepted              = 202,
+    HXApiRequestStatusCodeNoContent             = 204,
     
-    HXApiRequestStatusCodeBadRequest     = 400,
-    HXApiRequestStatusCodeTokenError     = 403,
-    HXApiRequestStatusCodeNotFound       = 404,
-    HXApiRequestStatusCodeDataError      = 408,
+    HXApiRequestStatusCodeBadRequest            = 400,
+    HXApiRequestStatusCodeUnauthorized          = 401,
+    HXApiRequestStatusCodeForbidden             = 403,
+    HXApiRequestStatusCodeNotFound              = 404,
+    HXApiRequestStatusCodeRequestTimeOut        = 408,
     
-    HXApiRequestStatusCodeServerError    = 500
+    HXApiRequestStatusCodeInternalServerError   = 500
 };
 
 

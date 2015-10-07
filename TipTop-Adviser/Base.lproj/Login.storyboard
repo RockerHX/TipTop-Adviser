@@ -440,16 +440,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="忘记密码" id="ezR-ml-AuF">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="MVr-Rh-gAV">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wOp-BK-wXX">
-                                <rect key="frame" x="16" y="11" width="20" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" image="BackIcon"/>
-                                <connections>
-                                    <action selector="backButtonPressed" destination="l4S-2w-hat" eventType="touchUpInside" id="NvB-ab-3qu"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" image="BackIcon" style="plain" id="MVr-Rh-gAV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backButtonPressed" destination="l4S-2w-hat" id="ou2-u3-3dS"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>

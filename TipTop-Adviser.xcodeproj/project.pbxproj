@@ -28,6 +28,8 @@
 		48334DF81BC4D09D00FD43A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48334DF21BC4D09D00FD43A6 /* Home.storyboard */; settings = {ASSET_TAGS = (); }; };
 		48334DF91BC4D09D00FD43A6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48334DF41BC4D09D00FD43A6 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		48334DFA1BC4D09D00FD43A6 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48334DF61BC4D09D00FD43A6 /* User.storyboard */; settings = {ASSET_TAGS = (); }; };
+		489E9CCC1BC4F96900C6618E /* HXForgotPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CCB1BC4F96900C6618E /* HXForgotPWViewController.m */; settings = {ASSET_TAGS = (); }; };
+		489E9CCF1BC4FAB800C6618E /* HXThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CCE1BC4FAB800C6618E /* HXThemeManager.m */; settings = {ASSET_TAGS = (); }; };
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
@@ -83,6 +85,10 @@
 		48334DF31BC4D09D00FD43A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		48334DF51BC4D09D00FD43A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		48334DF71BC4D09D00FD43A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/User.storyboard; sourceTree = "<group>"; };
+		489E9CCA1BC4F96900C6618E /* HXForgotPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXForgotPWViewController.h; sourceTree = "<group>"; };
+		489E9CCB1BC4F96900C6618E /* HXForgotPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXForgotPWViewController.m; sourceTree = "<group>"; };
+		489E9CCD1BC4FAB800C6618E /* HXThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXThemeManager.h; sourceTree = "<group>"; };
+		489E9CCE1BC4FAB800C6618E /* HXThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXThemeManager.m; sourceTree = "<group>"; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F761BC4CA100000863D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,9 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				48334DA81BC4D00D00FD43A6 /* HXIBKit */,
+				48334DBC1BC4D00D00FD43A6 /* Macros */,
+				489E9CCD1BC4FAB800C6618E /* HXThemeManager.h */,
+				489E9CCE1BC4FAB800C6618E /* HXThemeManager.m */,
 				48334DBA1BC4D00D00FD43A6 /* HXStoryBoardManager.h */,
 				48334DBB1BC4D00D00FD43A6 /* HXStoryBoardManager.m */,
-				48334DBC1BC4D00D00FD43A6 /* Macros */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -243,6 +251,8 @@
 			children = (
 				48334DD71BC4D00D00FD43A6 /* HXLoginViewController.h */,
 				48334DD81BC4D00D00FD43A6 /* HXLoginViewController.m */,
+				489E9CCA1BC4F96900C6618E /* HXForgotPWViewController.h */,
+				489E9CCB1BC4F96900C6618E /* HXForgotPWViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -480,6 +490,7 @@
 				48334DE81BC4D00D00FD43A6 /* HXAdviser.m in Sources */,
 				48334DE61BC4D00D00FD43A6 /* HXAppConstants.m in Sources */,
 				48334DDF1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m in Sources */,
+				489E9CCC1BC4F96900C6618E /* HXForgotPWViewController.m in Sources */,
 				48334DE21BC4D00D00FD43A6 /* HXIBLabel.m in Sources */,
 				48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */,
 				48334DE01BC4D00D00FD43A6 /* UIView+HXIBnspectable.m in Sources */,
@@ -494,6 +505,7 @@
 				48334DED1BC4D00D00FD43A6 /* HXHomeViewController.m in Sources */,
 				48D74F771BC4CA100000863D /* main.m in Sources */,
 				48334DE71BC4D00D00FD43A6 /* HXVersion.m in Sources */,
+				489E9CCF1BC4FAB800C6618E /* HXThemeManager.m in Sources */,
 				48334DE11BC4D00D00FD43A6 /* HXIBButton.m in Sources */,
 				48334DEB1BC4D00D00FD43A6 /* HXAppApiRequest.m in Sources */,
 				48334DEF1BC4D00D00FD43A6 /* HXUserViewController.m in Sources */,

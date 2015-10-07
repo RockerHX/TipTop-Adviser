@@ -48,13 +48,7 @@
     } else if (!_passwordTextField.text.length) {
         
     } else {
-        NSDictionary *parameters = @{@"staff_id": _phoneNumberTextField.text,
-                                     @"password": _passwordTextField.text};
-        [HXAdviser loginWithParameters:parameters success:^(HXApiResponse *response, HXAdviser *adviser) {
-            adviser.avatar;
-        } failure:^(HXApiResponse *response) {
-            
-        }];
+//        [self startLoginRequest];
     }
 }
 
@@ -64,6 +58,16 @@
 
 - (void)userNeedRegister {
     
+}
+
+#pragma mark - Request Methods
+- (void)startLoginRequest {
+    NSDictionary *parameters = @{@"staff_id": _phoneNumberTextField.text,
+                                 @"password": _passwordTextField.text};
+    [HXAdviser loginWithParameters:parameters success:^(HXApiResponse *response, HXAdviser *adviser) {
+    } failure:^(HXApiResponse *response) {
+        
+    }];
 }
 
 @end

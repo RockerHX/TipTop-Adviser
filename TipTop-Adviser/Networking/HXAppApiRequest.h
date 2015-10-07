@@ -28,7 +28,4 @@ typedef NS_ENUM(NSInteger, HXAppApiRequestErrorCode) {
 
 @interface HXAppApiRequest : HXApiRequest
 
-- (void)customSecurityPolicy;
-- (void)addHeader;
-
 @end

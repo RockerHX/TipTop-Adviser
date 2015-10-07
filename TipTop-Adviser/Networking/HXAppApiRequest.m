@@ -24,6 +24,27 @@ static NSString *const UIDRequestHeaderKey      = @"uid";                      /
 @implementation HXAppApiRequest
 
 #pragma mark - Public Methods
++ (AFHTTPRequestOperation *)requestGETMethodsWithAPI:(NSString *)api
+                                          parameters:(NSDictionary *)parameters
+                                             success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                             failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    HXAppApiRequest *appApiRequest = [HXAppApiRequest manager];
+    [appApiRequest customResponseSerializer];
+    return [appApiRequest GET:api parameters:parameters success:success failure:failure];
+}
+
++ (AFHTTPRequestOperation *)requestPOSTMethodsWithAPI:(NSString *)api
+                                           parameters:(NSDictionary *)parameters
+                                              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                                              failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    HXAppApiRequest *appApiRequest = [HXAppApiRequest manager];
+    [appApiRequest customResponseSerializer];
+    return [appApiRequest POST:api parameters:parameters success:success failure:failure];
+}
+
+#pragma mark - Private Methods
 /**
  *  通过导入工程的cer秘钥文件设置安全策略
  *
@@ -46,6 +67,10 @@ static NSString *const UIDRequestHeaderKey      = @"uid";                      /
     }
     @finally {
     }
+}
+
+- (void)customResponseSerializer {
+    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript", nil];
 }
 
 /**

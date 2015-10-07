@@ -35,5 +35,6 @@ FOUNDATION_EXPORT NSString *const ImagePath;                    // 图片资源�
 @property (nonatomic, strong)  NSString *message;
 
 + (instancetype)responseWithStatusCode:(NSInteger)statusCode errorCode:(NSInteger)errorCode;
++ (instancetype)responseWithStatusCode:(NSInteger)statusCode errorCode:(NSInteger)errorCode message:(NSString *)message;
 
 @end

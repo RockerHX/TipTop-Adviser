@@ -44,9 +44,14 @@ NSString *const ImagePath   = @"";
 @implementation HXApiResponse
 
 + (instancetype)responseWithStatusCode:(NSInteger)statusCode errorCode:(NSInteger)errorCode {
+    return [self responseWithStatusCode:statusCode errorCode:errorCode message:nil];
+}
+
++ (instancetype)responseWithStatusCode:(NSInteger)statusCode errorCode:(NSInteger)errorCode message:(NSString *)message {
     HXApiResponse *response = [[HXApiResponse alloc] init];
     response.statusCode = statusCode;
     response.errorCode = errorCode;
+    response.message = message;
     return response;
 }
 

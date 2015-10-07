@@ -17,19 +17,19 @@ static NSString *LoginAPI = @"/session/login";
                                         failure:(void(^)(HXApiResponse *response))failure
 {
     return [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:LoginAPI] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSInteger statusCode = operation.response.statusCode;
-        NSInteger errorCode = [responseObject[@"code"] integerValue];
-        HXApiResponse *response = [HXApiResponse responseWithStatusCode:statusCode errorCode:errorCode];
-        HXAdviser *adviser = [HXAdviser objectWithKeyValues:responseObject];
+        HXApiResponse *response = [HXApiResponse responseWithStatusCode:operation.response.statusCode
+                                                              errorCode:[responseObject[@"error_code"] integerValue]
+                                                                message:responseObject[@"tip"]];
+        HXAdviser *adviser = [HXAdviser objectWithKeyValues:responseObject[@"data"]];
         if (success) {
             success(response, adviser);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSInteger statusCode = operation.response.statusCode;
-        NSInteger errorCode = [operation.responseObject[@"code"] integerValue];
-        HXApiResponse *response = [HXApiResponse responseWithStatusCode:statusCode errorCode:errorCode];
-        if (success) {
-            success(response, nil);
+        HXApiResponse *response = [HXApiResponse responseWithStatusCode:operation.response.statusCode
+                                                              errorCode:[operation.responseObject[@"error_code"] integerValue]
+                                                                message:error.localizedFailureReason];
+        if (failure) {
+            failure(response);
         }
     }];
 }

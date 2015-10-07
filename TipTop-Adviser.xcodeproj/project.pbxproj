@@ -9,25 +9,26 @@
 /* Begin PBXBuildFile section */
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.m */; };
-		48D74F7D1BC4CA100000863D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F7C1BC4CA100000863D /* ViewController.m */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
 		48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F811BC4CA100000863D /* TipTop_Adviser.xcdatamodeld */; };
 		48D74F851BC4CA100000863D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F841BC4CA100000863D /* Assets.xcassets */; };
 		48D74F881BC4CA100000863D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F861BC4CA100000863D /* LaunchScreen.storyboard */; };
+		76FA6FC886A711027758143B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B5E3197A35822D8DB4F522 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3803C0C663CA56A618B7F012 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		44B5E3197A35822D8DB4F522 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F761BC4CA100000863D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48D74F791BC4CA100000863D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		48D74F7B1BC4CA100000863D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		48D74F7C1BC4CA100000863D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		48D74F7F1BC4CA100000863D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48D74F821BC4CA100000863D /* TipTop_Adviser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TipTop_Adviser.xcdatamodel; sourceTree = "<group>"; };
 		48D74F841BC4CA100000863D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48D74F871BC4CA100000863D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48D74F891BC4CA100000863D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4953AC1E6027C51F893E2DE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +36,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76FA6FC886A711027758143B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40626A7E17698E80228A9C30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4953AC1E6027C51F893E2DE /* Pods.debug.xcconfig */,
+				3803C0C663CA56A618B7F012 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		48D74F691BC4CA100000863D = {
 			isa = PBXGroup;
 			children = (
 				48D74F741BC4CA100000863D /* TipTop-Adviser */,
 				48D74F731BC4CA100000863D /* Products */,
+				40626A7E17698E80228A9C30 /* Pods */,
+				97AC91F3FFF6719845EA5237 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,8 +75,6 @@
 			children = (
 				48D74F781BC4CA100000863D /* AppDelegate.h */,
 				48D74F791BC4CA100000863D /* AppDelegate.m */,
-				48D74F7B1BC4CA100000863D /* ViewController.h */,
-				48D74F7C1BC4CA100000863D /* ViewController.m */,
 				48D74F7E1BC4CA100000863D /* Main.storyboard */,
 				48D74F841BC4CA100000863D /* Assets.xcassets */,
 				48D74F861BC4CA100000863D /* LaunchScreen.storyboard */,
@@ -82,6 +93,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		97AC91F3FFF6719845EA5237 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44B5E3197A35822D8DB4F522 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48D74F8C1BC4CA100000863D /* Build configuration list for PBXNativeTarget "TipTop-Adviser" */;
 			buildPhases = (
+				33C8821316C08DB23F400FFA /* Check Pods Manifest.lock */,
 				48D74F6E1BC4CA100000863D /* Sources */,
 				48D74F6F1BC4CA100000863D /* Frameworks */,
 				48D74F701BC4CA100000863D /* Resources */,
+				41545D1861796491FEF3557C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -147,13 +168,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		33C8821316C08DB23F400FFA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		41545D1861796491FEF3557C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		48D74F6E1BC4CA100000863D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */,
-				48D74F7D1BC4CA100000863D /* ViewController.m in Sources */,
 				48D74F7A1BC4CA100000863D /* AppDelegate.m in Sources */,
 				48D74F771BC4CA100000863D /* main.m in Sources */,
 			);
@@ -263,9 +316,12 @@
 		};
 		48D74F8D1BC4CA100000863D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4953AC1E6027C51F893E2DE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "TipTop-Adviser/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YJCL.TipTop-Adviser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,9 +330,12 @@
 		};
 		48D74F8E1BC4CA100000863D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3803C0C663CA56A618B7F012 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "TipTop-Adviser/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YJCL.TipTop-Adviser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +361,7 @@
 				48D74F8E1BC4CA100000863D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -10,11 +10,10 @@
 
 @interface HXLoginViewController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField *staffIDTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 - (IBAction)loginButtonPressed;
 - (IBAction)forgotPasswordButtonPressed;
-- (IBAction)registerButtonPressed;
 
 @end

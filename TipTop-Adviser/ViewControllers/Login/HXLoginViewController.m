@@ -22,7 +22,7 @@
 
 #pragma mark - Config Methods
 - (void)initConfig {
-    _phoneNumberTextField.delegate = self;
+    _staffIDTextField.delegate = self;
     _passwordTextField.delegate = self;
 }
 
@@ -38,13 +38,9 @@
     [self userForgotPassword];
 }
 
-- (IBAction)registerButtonPressed {
-    [self userNeedRegister];
-}
-
 #pragma mark - Private Methods
 - (void)startLogin {
-    if (!_phoneNumberTextField.text.length) {
+    if (!_staffIDTextField.text.length) {
         
     } else if (!_passwordTextField.text.length) {
         
@@ -57,14 +53,10 @@
     
 }
 
-- (void)userNeedRegister {
-    
-}
-
 #pragma mark - Request Methods
 - (void)startLoginRequest {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSDictionary *parameters = @{@"staff_id": _phoneNumberTextField.text,
+    NSDictionary *parameters = @{@"staff_id": _staffIDTextField.text,
                                  @"password": _passwordTextField.text};
     [HXAdviser loginWithParameters:parameters success:^(HXApiResponse *response, HXAdviser *adviser) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];

@@ -7,8 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48334DDE1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DAB1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m */; settings = {ASSET_TAGS = (); }; };
+		48334DDF1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DAD1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE01BC4D00D00FD43A6 /* UIView+HXIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DAF1BC4D00D00FD43A6 /* UIView+HXIBnspectable.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE11BC4D00D00FD43A6 /* HXIBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DB21BC4D00D00FD43A6 /* HXIBButton.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE21BC4D00D00FD43A6 /* HXIBLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DB41BC4D00D00FD43A6 /* HXIBLabel.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE31BC4D00D00FD43A6 /* HXIBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DB61BC4D00D00FD43A6 /* HXIBView.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE41BC4D00D00FD43A6 /* HXIBnsepectableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DB91BC4D00D00FD43A6 /* HXIBnsepectableManager.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE51BC4D00D00FD43A6 /* HXStoryBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DBB1BC4D00D00FD43A6 /* HXStoryBoardManager.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE61BC4D00D00FD43A6 /* HXAppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DBF1BC4D00D00FD43A6 /* HXAppConstants.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE71BC4D00D00FD43A6 /* HXVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DC11BC4D00D00FD43A6 /* HXVersion.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE81BC4D00D00FD43A6 /* HXAdviser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DC71BC4D00D00FD43A6 /* HXAdviser.m */; settings = {ASSET_TAGS = (); }; };
+		48334DE91BC4D00D00FD43A6 /* HXApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DCA1BC4D00D00FD43A6 /* HXApi.m */; settings = {ASSET_TAGS = (); }; };
+		48334DEA1BC4D00D00FD43A6 /* HXApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DCC1BC4D00D00FD43A6 /* HXApiRequest.m */; settings = {ASSET_TAGS = (); }; };
+		48334DEB1BC4D00D00FD43A6 /* HXAppApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DCE1BC4D00D00FD43A6 /* HXAppApiRequest.m */; settings = {ASSET_TAGS = (); }; };
+		48334DEC1BC4D00D00FD43A6 /* HXLoginRequset.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DD11BC4D00D00FD43A6 /* HXLoginRequset.m */; settings = {ASSET_TAGS = (); }; };
+		48334DED1BC4D00D00FD43A6 /* HXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DD51BC4D00D00FD43A6 /* HXHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		48334DEE1BC4D00D00FD43A6 /* HXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DD81BC4D00D00FD43A6 /* HXLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		48334DEF1BC4D00D00FD43A6 /* HXUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DDB1BC4D00D00FD43A6 /* HXUserViewController.m */; settings = {ASSET_TAGS = (); }; };
+		48334DF81BC4D09D00FD43A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48334DF21BC4D09D00FD43A6 /* Home.storyboard */; settings = {ASSET_TAGS = (); }; };
+		48334DF91BC4D09D00FD43A6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48334DF41BC4D09D00FD43A6 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
+		48334DFA1BC4D09D00FD43A6 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48334DF61BC4D09D00FD43A6 /* User.storyboard */; settings = {ASSET_TAGS = (); }; };
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
-		48D74F7A1BC4CA100000863D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.m */; };
+		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
 		48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F811BC4CA100000863D /* TipTop_Adviser.xcdatamodeld */; };
 		48D74F851BC4CA100000863D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F841BC4CA100000863D /* Assets.xcassets */; };
@@ -19,10 +40,53 @@
 /* Begin PBXFileReference section */
 		3803C0C663CA56A618B7F012 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		44B5E3197A35822D8DB4F522 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		48334DAA1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HXIBnspectable.h"; sourceTree = "<group>"; };
+		48334DAB1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HXIBnspectable.m"; sourceTree = "<group>"; };
+		48334DAC1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HXIBnsepectable.h"; sourceTree = "<group>"; };
+		48334DAD1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HXIBnsepectable.m"; sourceTree = "<group>"; };
+		48334DAE1BC4D00D00FD43A6 /* UIView+HXIBnspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HXIBnspectable.h"; sourceTree = "<group>"; };
+		48334DAF1BC4D00D00FD43A6 /* UIView+HXIBnspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HXIBnspectable.m"; sourceTree = "<group>"; };
+		48334DB11BC4D00D00FD43A6 /* HXIBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXIBButton.h; sourceTree = "<group>"; };
+		48334DB21BC4D00D00FD43A6 /* HXIBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXIBButton.m; sourceTree = "<group>"; };
+		48334DB31BC4D00D00FD43A6 /* HXIBLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXIBLabel.h; sourceTree = "<group>"; };
+		48334DB41BC4D00D00FD43A6 /* HXIBLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXIBLabel.m; sourceTree = "<group>"; };
+		48334DB51BC4D00D00FD43A6 /* HXIBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXIBView.h; sourceTree = "<group>"; };
+		48334DB61BC4D00D00FD43A6 /* HXIBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXIBView.m; sourceTree = "<group>"; };
+		48334DB81BC4D00D00FD43A6 /* HXIBnsepectableManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXIBnsepectableManager.h; sourceTree = "<group>"; };
+		48334DB91BC4D00D00FD43A6 /* HXIBnsepectableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXIBnsepectableManager.m; sourceTree = "<group>"; };
+		48334DBA1BC4D00D00FD43A6 /* HXStoryBoardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXStoryBoardManager.h; sourceTree = "<group>"; };
+		48334DBB1BC4D00D00FD43A6 /* HXStoryBoardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXStoryBoardManager.m; sourceTree = "<group>"; };
+		48334DBD1BC4D00D00FD43A6 /* AllMicroConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllMicroConstants.h; sourceTree = "<group>"; };
+		48334DBE1BC4D00D00FD43A6 /* HXAppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXAppConstants.h; sourceTree = "<group>"; };
+		48334DBF1BC4D00D00FD43A6 /* HXAppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXAppConstants.m; sourceTree = "<group>"; };
+		48334DC01BC4D00D00FD43A6 /* HXVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXVersion.h; sourceTree = "<group>"; };
+		48334DC11BC4D00D00FD43A6 /* HXVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXVersion.m; sourceTree = "<group>"; };
+		48334DC21BC4D00D00FD43A6 /* MicroConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroConstants.h; sourceTree = "<group>"; };
+		48334DC31BC4D00D00FD43A6 /* NumberConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberConstants.h; sourceTree = "<group>"; };
+		48334DC41BC4D00D00FD43A6 /* UIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConstants.h; sourceTree = "<group>"; };
+		48334DC61BC4D00D00FD43A6 /* HXAdviser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXAdviser.h; sourceTree = "<group>"; };
+		48334DC71BC4D00D00FD43A6 /* HXAdviser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXAdviser.m; sourceTree = "<group>"; };
+		48334DC91BC4D00D00FD43A6 /* HXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXApi.h; sourceTree = "<group>"; };
+		48334DCA1BC4D00D00FD43A6 /* HXApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXApi.m; sourceTree = "<group>"; };
+		48334DCB1BC4D00D00FD43A6 /* HXApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXApiRequest.h; sourceTree = "<group>"; };
+		48334DCC1BC4D00D00FD43A6 /* HXApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXApiRequest.m; sourceTree = "<group>"; };
+		48334DCD1BC4D00D00FD43A6 /* HXAppApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXAppApiRequest.h; sourceTree = "<group>"; };
+		48334DCE1BC4D00D00FD43A6 /* HXAppApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXAppApiRequest.m; sourceTree = "<group>"; };
+		48334DD01BC4D00D00FD43A6 /* HXLoginRequset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXLoginRequset.h; sourceTree = "<group>"; };
+		48334DD11BC4D00D00FD43A6 /* HXLoginRequset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXLoginRequset.m; sourceTree = "<group>"; };
+		48334DD41BC4D00D00FD43A6 /* HXHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXHomeViewController.h; sourceTree = "<group>"; };
+		48334DD51BC4D00D00FD43A6 /* HXHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXHomeViewController.m; sourceTree = "<group>"; };
+		48334DD71BC4D00D00FD43A6 /* HXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXLoginViewController.h; sourceTree = "<group>"; };
+		48334DD81BC4D00D00FD43A6 /* HXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXLoginViewController.m; sourceTree = "<group>"; };
+		48334DDA1BC4D00D00FD43A6 /* HXUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXUserViewController.h; sourceTree = "<group>"; };
+		48334DDB1BC4D00D00FD43A6 /* HXUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXUserViewController.m; sourceTree = "<group>"; };
+		48334DF31BC4D09D00FD43A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		48334DF51BC4D09D00FD43A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		48334DF71BC4D09D00FD43A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/User.storyboard; sourceTree = "<group>"; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F761BC4CA100000863D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		48D74F791BC4CA100000863D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		48D74F791BC4CA100000863D /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		48D74F7F1BC4CA100000863D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48D74F821BC4CA100000863D /* TipTop_Adviser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TipTop_Adviser.xcdatamodel; sourceTree = "<group>"; };
 		48D74F841BC4CA100000863D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +116,206 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		48334DA71BC4D00D00FD43A6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				48334DA81BC4D00D00FD43A6 /* HXIBKit */,
+				48334DBA1BC4D00D00FD43A6 /* HXStoryBoardManager.h */,
+				48334DBB1BC4D00D00FD43A6 /* HXStoryBoardManager.m */,
+				48334DBC1BC4D00D00FD43A6 /* Macros */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		48334DA81BC4D00D00FD43A6 /* HXIBKit */ = {
+			isa = PBXGroup;
+			children = (
+				48334DA91BC4D00D00FD43A6 /* Category */,
+				48334DB01BC4D00D00FD43A6 /* UIKit */,
+				48334DB71BC4D00D00FD43A6 /* Utility */,
+			);
+			path = HXIBKit;
+			sourceTree = "<group>";
+		};
+		48334DA91BC4D00D00FD43A6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				48334DAA1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.h */,
+				48334DAB1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m */,
+				48334DAC1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.h */,
+				48334DAD1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m */,
+				48334DAE1BC4D00D00FD43A6 /* UIView+HXIBnspectable.h */,
+				48334DAF1BC4D00D00FD43A6 /* UIView+HXIBnspectable.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		48334DB01BC4D00D00FD43A6 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				48334DB11BC4D00D00FD43A6 /* HXIBButton.h */,
+				48334DB21BC4D00D00FD43A6 /* HXIBButton.m */,
+				48334DB31BC4D00D00FD43A6 /* HXIBLabel.h */,
+				48334DB41BC4D00D00FD43A6 /* HXIBLabel.m */,
+				48334DB51BC4D00D00FD43A6 /* HXIBView.h */,
+				48334DB61BC4D00D00FD43A6 /* HXIBView.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		48334DB71BC4D00D00FD43A6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				48334DB81BC4D00D00FD43A6 /* HXIBnsepectableManager.h */,
+				48334DB91BC4D00D00FD43A6 /* HXIBnsepectableManager.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		48334DBC1BC4D00D00FD43A6 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				48334DBD1BC4D00D00FD43A6 /* AllMicroConstants.h */,
+				48334DBE1BC4D00D00FD43A6 /* HXAppConstants.h */,
+				48334DBF1BC4D00D00FD43A6 /* HXAppConstants.m */,
+				48334DC01BC4D00D00FD43A6 /* HXVersion.h */,
+				48334DC11BC4D00D00FD43A6 /* HXVersion.m */,
+				48334DC21BC4D00D00FD43A6 /* MicroConstants.h */,
+				48334DC31BC4D00D00FD43A6 /* NumberConstants.h */,
+				48334DC41BC4D00D00FD43A6 /* UIConstants.h */,
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		48334DC51BC4D00D00FD43A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48334DC61BC4D00D00FD43A6 /* HXAdviser.h */,
+				48334DC71BC4D00D00FD43A6 /* HXAdviser.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		48334DC81BC4D00D00FD43A6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				48334DCF1BC4D00D00FD43A6 /* Login */,
+				48334DC91BC4D00D00FD43A6 /* HXApi.h */,
+				48334DCA1BC4D00D00FD43A6 /* HXApi.m */,
+				48334DCB1BC4D00D00FD43A6 /* HXApiRequest.h */,
+				48334DCC1BC4D00D00FD43A6 /* HXApiRequest.m */,
+				48334DCD1BC4D00D00FD43A6 /* HXAppApiRequest.h */,
+				48334DCE1BC4D00D00FD43A6 /* HXAppApiRequest.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		48334DCF1BC4D00D00FD43A6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				48334DD01BC4D00D00FD43A6 /* HXLoginRequset.h */,
+				48334DD11BC4D00D00FD43A6 /* HXLoginRequset.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		48334DD21BC4D00D00FD43A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48334DD61BC4D00D00FD43A6 /* Login */,
+				48334DD31BC4D00D00FD43A6 /* Home */,
+				48334DD91BC4D00D00FD43A6 /* User */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		48334DD31BC4D00D00FD43A6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				48334DD41BC4D00D00FD43A6 /* HXHomeViewController.h */,
+				48334DD51BC4D00D00FD43A6 /* HXHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		48334DD61BC4D00D00FD43A6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				48334DD71BC4D00D00FD43A6 /* HXLoginViewController.h */,
+				48334DD81BC4D00D00FD43A6 /* HXLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		48334DD91BC4D00D00FD43A6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				48334DDA1BC4D00D00FD43A6 /* HXUserViewController.h */,
+				48334DDB1BC4D00D00FD43A6 /* HXUserViewController.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		48334DDC1BC4D00D00FD43A6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		48334DDD1BC4D00D00FD43A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48334DF01BC4D02500FD43A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				48334DF11BC4D04C00FD43A6 /* UI */,
+				48D74F7E1BC4CA100000863D /* Main.storyboard */,
+				48D74F841BC4CA100000863D /* Assets.xcassets */,
+				48D74F861BC4CA100000863D /* LaunchScreen.storyboard */,
+				48D74F811BC4CA100000863D /* TipTop_Adviser.xcdatamodeld */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		48334DF11BC4D04C00FD43A6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				48334DFC1BC4D0C900FD43A6 /* Login */,
+				48334DFB1BC4D0C300FD43A6 /* Home */,
+				48334DFD1BC4D0CE00FD43A6 /* User */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		48334DFB1BC4D0C300FD43A6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				48334DF21BC4D09D00FD43A6 /* Home.storyboard */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		48334DFC1BC4D0C900FD43A6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				48334DF41BC4D09D00FD43A6 /* Login.storyboard */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		48334DFD1BC4D0CE00FD43A6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				48334DF61BC4D09D00FD43A6 /* User.storyboard */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		48D74F691BC4CA100000863D = {
 			isa = PBXGroup;
 			children = (
@@ -73,13 +337,15 @@
 		48D74F741BC4CA100000863D /* TipTop-Adviser */ = {
 			isa = PBXGroup;
 			children = (
+				48334DF01BC4D02500FD43A6 /* Resources */,
+				48334DA71BC4D00D00FD43A6 /* Common */,
+				48334DC81BC4D00D00FD43A6 /* Networking */,
+				48334DC51BC4D00D00FD43A6 /* Models */,
+				48334DDC1BC4D00D00FD43A6 /* ViewModels */,
+				48334DDD1BC4D00D00FD43A6 /* Views */,
+				48334DD21BC4D00D00FD43A6 /* ViewControllers */,
 				48D74F781BC4CA100000863D /* AppDelegate.h */,
-				48D74F791BC4CA100000863D /* AppDelegate.m */,
-				48D74F7E1BC4CA100000863D /* Main.storyboard */,
-				48D74F841BC4CA100000863D /* Assets.xcassets */,
-				48D74F861BC4CA100000863D /* LaunchScreen.storyboard */,
-				48D74F891BC4CA100000863D /* Info.plist */,
-				48D74F811BC4CA100000863D /* TipTop_Adviser.xcdatamodeld */,
+				48D74F791BC4CA100000863D /* AppDelegate.mm */,
 				48D74F751BC4CA100000863D /* Supporting Files */,
 			);
 			path = "TipTop-Adviser";
@@ -88,6 +354,7 @@
 		48D74F751BC4CA100000863D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				48D74F891BC4CA100000863D /* Info.plist */,
 				48D74F761BC4CA100000863D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -163,6 +430,9 @@
 				48D74F881BC4CA100000863D /* LaunchScreen.storyboard in Resources */,
 				48D74F851BC4CA100000863D /* Assets.xcassets in Resources */,
 				48D74F801BC4CA100000863D /* Main.storyboard in Resources */,
+				48334DF91BC4D09D00FD43A6 /* Login.storyboard in Resources */,
+				48334DF81BC4D09D00FD43A6 /* Home.storyboard in Resources */,
+				48334DFA1BC4D09D00FD43A6 /* User.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,15 +476,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48334DE31BC4D00D00FD43A6 /* HXIBView.m in Sources */,
+				48334DE81BC4D00D00FD43A6 /* HXAdviser.m in Sources */,
+				48334DE61BC4D00D00FD43A6 /* HXAppConstants.m in Sources */,
+				48334DDF1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m in Sources */,
+				48334DE21BC4D00D00FD43A6 /* HXIBLabel.m in Sources */,
 				48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */,
-				48D74F7A1BC4CA100000863D /* AppDelegate.m in Sources */,
+				48334DE01BC4D00D00FD43A6 /* UIView+HXIBnspectable.m in Sources */,
+				48334DEC1BC4D00D00FD43A6 /* HXLoginRequset.m in Sources */,
+				48334DE51BC4D00D00FD43A6 /* HXStoryBoardManager.m in Sources */,
+				48334DDE1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m in Sources */,
+				48334DE91BC4D00D00FD43A6 /* HXApi.m in Sources */,
+				48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */,
+				48334DE41BC4D00D00FD43A6 /* HXIBnsepectableManager.m in Sources */,
+				48334DEA1BC4D00D00FD43A6 /* HXApiRequest.m in Sources */,
+				48334DEE1BC4D00D00FD43A6 /* HXLoginViewController.m in Sources */,
+				48334DED1BC4D00D00FD43A6 /* HXHomeViewController.m in Sources */,
 				48D74F771BC4CA100000863D /* main.m in Sources */,
+				48334DE71BC4D00D00FD43A6 /* HXVersion.m in Sources */,
+				48334DE11BC4D00D00FD43A6 /* HXIBButton.m in Sources */,
+				48334DEB1BC4D00D00FD43A6 /* HXAppApiRequest.m in Sources */,
+				48334DEF1BC4D00D00FD43A6 /* HXUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		48334DF21BC4D09D00FD43A6 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48334DF31BC4D09D00FD43A6 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		48334DF41BC4D09D00FD43A6 /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48334DF51BC4D09D00FD43A6 /* Base */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
+		48334DF61BC4D09D00FD43A6 /* User.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48334DF71BC4D09D00FD43A6 /* Base */,
+			);
+			name = User.storyboard;
+			sourceTree = "<group>";
+		};
 		48D74F7E1BC4CA100000863D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

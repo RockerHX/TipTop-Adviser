@@ -14,6 +14,8 @@ pod 'MBProgressHUD'
 pod 'MJRefresh'
 pod 'UITableView+FDTemplateLayoutCell'
 
+pod 'REFrostedViewController'
+
 pod 'HexColors'
 pod 'DateTools'
 pod 'IQKeyboardManager'

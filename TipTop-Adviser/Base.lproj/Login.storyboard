@@ -194,13 +194,13 @@
             <objects>
                 <tableViewController storyboardIdentifier="HXForgotPWViewController" id="l4S-2w-hat" customClass="HXForgotPWViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="uiV-Ks-FyW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="n79-iE-Smw">
-                            <rect key="frame" x="0.0" y="364" width="320" height="90"/>
+                            <rect key="frame" x="0.0" y="300" width="320" height="90"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvj-mK-Etv">
@@ -243,7 +243,7 @@
                             <tableViewSection id="iLB-gF-bML">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HbP-jG-NjC">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HbP-jG-NjC" id="xlK-cE-U08">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
@@ -277,7 +277,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ciD-8z-aJ6">
-                                        <rect key="frame" x="0.0" y="124" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="60" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ciD-8z-aJ6" id="lQX-dl-gzQ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
@@ -311,7 +311,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uem-we-HgJ">
-                                        <rect key="frame" x="0.0" y="184" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="120" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uem-we-HgJ" id="WyD-AP-F4T">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
@@ -364,7 +364,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="STo-aN-37h">
-                                        <rect key="frame" x="0.0" y="244" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="180" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="STo-aN-37h" id="BeQ-4z-s5w">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
@@ -398,7 +398,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zta-KA-0Wm">
-                                        <rect key="frame" x="0.0" y="304" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="240" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zta-KA-0Wm" id="vOD-e4-AIC">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
@@ -440,7 +440,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="忘记密码" id="ezR-ml-AuF">
-                        <barButtonItem key="leftBarButtonItem" image="BackIcon" style="plain" id="MVr-Rh-gAV">
+                        <barButtonItem key="leftBarButtonItem" image="BackIcon" id="MVr-Rh-gAV">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backButtonPressed" destination="l4S-2w-hat" id="ou2-u3-3dS"/>
@@ -456,7 +456,7 @@
         <scene sceneID="ChH-UW-FqN">
             <objects>
                 <navigationController id="lvb-AT-Jln" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OAZ-8f-O5v">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OAZ-8f-O5v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>

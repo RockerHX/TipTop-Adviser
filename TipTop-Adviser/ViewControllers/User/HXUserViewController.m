@@ -19,4 +19,9 @@
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - Table View Delegate Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
 @end

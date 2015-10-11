@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HXUserViewController : UIViewController
+@interface HXUserViewController : UITableViewController
 
 @end

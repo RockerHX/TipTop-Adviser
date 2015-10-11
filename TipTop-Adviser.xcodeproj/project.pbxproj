@@ -32,6 +32,8 @@
 		489E9CD21BC5116A00C6618E /* HXThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CD11BC5116A00C6618E /* HXThemeManager.m */; settings = {ASSET_TAGS = (); }; };
 		489E9CD61BC511E900C6618E /* UINavigationController+StatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CD51BC511E900C6618E /* UINavigationController+StatusBarStyle.m */; settings = {ASSET_TAGS = (); }; };
 		48A48CB21BC96D6E00AF6C36 /* HXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CB11BC96D6E00AF6C36 /* HXMainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		48A48CB71BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CB61BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m */; settings = {ASSET_TAGS = (); }; };
+		48A48CBA1BCA7A2700AF6C36 /* HXPanGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CB91BCA7A2700AF6C36 /* HXPanGestureViewController.m */; settings = {ASSET_TAGS = (); }; };
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
@@ -95,6 +97,10 @@
 		489E9CD51BC511E900C6618E /* UINavigationController+StatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBarStyle.m"; sourceTree = "<group>"; };
 		48A48CB01BC96D6E00AF6C36 /* HXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMainViewController.h; sourceTree = "<group>"; };
 		48A48CB11BC96D6E00AF6C36 /* HXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMainViewController.m; sourceTree = "<group>"; };
+		48A48CB51BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPanGestureNavgaitionController.h; sourceTree = "<group>"; };
+		48A48CB61BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPanGestureNavgaitionController.m; sourceTree = "<group>"; };
+		48A48CB81BCA7A2700AF6C36 /* HXPanGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPanGestureViewController.h; sourceTree = "<group>"; };
+		48A48CB91BCA7A2700AF6C36 /* HXPanGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPanGestureViewController.m; sourceTree = "<group>"; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F761BC4CA100000863D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -242,6 +248,10 @@
 				48334DD91BC4D00D00FD43A6 /* User */,
 				48A48CB01BC96D6E00AF6C36 /* HXMainViewController.h */,
 				48A48CB11BC96D6E00AF6C36 /* HXMainViewController.m */,
+				48A48CB51BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.h */,
+				48A48CB61BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m */,
+				48A48CB81BCA7A2700AF6C36 /* HXPanGestureViewController.h */,
+				48A48CB91BCA7A2700AF6C36 /* HXPanGestureViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -533,6 +543,7 @@
 				48334DE51BC4D00D00FD43A6 /* HXStoryBoardManager.m in Sources */,
 				48334DDE1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m in Sources */,
 				48334DE91BC4D00D00FD43A6 /* HXApi.m in Sources */,
+				48A48CBA1BCA7A2700AF6C36 /* HXPanGestureViewController.m in Sources */,
 				48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */,
 				48334DE41BC4D00D00FD43A6 /* HXIBnsepectableManager.m in Sources */,
 				48334DEA1BC4D00D00FD43A6 /* HXApiRequest.m in Sources */,
@@ -543,6 +554,7 @@
 				489E9CD21BC5116A00C6618E /* HXThemeManager.m in Sources */,
 				48A48CB21BC96D6E00AF6C36 /* HXMainViewController.m in Sources */,
 				48334DE11BC4D00D00FD43A6 /* HXIBButton.m in Sources */,
+				48A48CB71BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m in Sources */,
 				48334DEB1BC4D00D00FD43A6 /* HXAppApiRequest.m in Sources */,
 				48334DEF1BC4D00D00FD43A6 /* HXUserViewController.m in Sources */,
 			);

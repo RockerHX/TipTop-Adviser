@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, SCStoryBoardName) {
-    SCStoryBoardNameLogin,
-    SCStoryBoardNameHome,
-    SCStoryBoardNameUser
+typedef NS_ENUM(NSUInteger, HXStoryBoardName) {
+    HXStoryBoardNameLogin,
+    HXStoryBoardNameHome,
+    HXStoryBoardNameUser
 };
 
 @interface HXStoryBoardManager : NSObject
 
-+ (id)navigaitonControllerWithIdentifier:(NSString *)identifier storyBoardName:(SCStoryBoardName)name;
-+ (id)viewControllerWithClass:(Class)class storyBoardName:(SCStoryBoardName)name;
++ (id)navigaitonControllerWithIdentifier:(NSString *)identifier storyBoardName:(HXStoryBoardName)name;
++ (id)viewControllerWithClass:(Class)class storyBoardName:(HXStoryBoardName)name;
 
 @end

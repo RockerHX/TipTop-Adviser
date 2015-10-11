@@ -10,13 +10,13 @@
 
 @implementation HXStoryBoardManager
 
-+ (id)navigaitonControllerWithIdentifier:(NSString *)identifier storyBoardName:(SCStoryBoardName)name
++ (id)navigaitonControllerWithIdentifier:(NSString *)identifier storyBoardName:(HXStoryBoardName)name
 {
     id controller = [self viewControllerWithIdentifier:identifier storyBoardName:name];
     return [controller isKindOfClass:[UINavigationController class]] ? controller : nil;
 }
 
-+ (id)viewControllerWithClass:(Class)class storyBoardName:(SCStoryBoardName)name
++ (id)viewControllerWithClass:(Class)class storyBoardName:(HXStoryBoardName)name
 {
     NSString *identifier = NSStringFromClass([class class]);
     id controller = [self viewControllerWithIdentifier:identifier storyBoardName:name];
@@ -24,25 +24,25 @@
 }
 
 #pragma mark - Private Methods
-+ (NSString *)storyBoardName:(SCStoryBoardName)name
++ (NSString *)storyBoardName:(HXStoryBoardName)name
 {
     NSString *storyBoardName = nil;
     switch (name)
     {
-        case SCStoryBoardNameLogin:
+        case HXStoryBoardNameLogin:
             storyBoardName = @"Login";
             break;
-        case SCStoryBoardNameHome:
-            storyBoardName = @"Login";
+        case HXStoryBoardNameHome:
+            storyBoardName = @"Home";
             break;
-        case SCStoryBoardNameUser:
-            storyBoardName = @"Login";
+        case HXStoryBoardNameUser:
+            storyBoardName = @"User";
             break;
     }
     return storyBoardName;
 }
 
-+ (id)viewControllerWithIdentifier:(NSString *)identifier storyBoardName:(SCStoryBoardName)name
++ (id)viewControllerWithIdentifier:(NSString *)identifier storyBoardName:(HXStoryBoardName)name
 {
     @try {
         NSString *storyBoardName = [self storyBoardName:name];

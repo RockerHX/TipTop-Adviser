@@ -10,40 +10,42 @@
 
 @implementation HXStoryBoardManager
 
-+ (id)navigaitonControllerWithIdentifier:(NSString *)identifier storyBoardName:(HXStoryBoardName)name
-{
++ (id)navigaitonControllerWithIdentifier:(NSString *)identifier storyBoardName:(HXStoryBoardName)name {
     id controller = [self viewControllerWithIdentifier:identifier storyBoardName:name];
     return [controller isKindOfClass:[UINavigationController class]] ? controller : nil;
 }
 
-+ (id)viewControllerWithClass:(Class)class storyBoardName:(HXStoryBoardName)name
-{
++ (id)viewControllerWithClass:(Class)class storyBoardName:(HXStoryBoardName)name {
     NSString *identifier = NSStringFromClass([class class]);
     id controller = [self viewControllerWithIdentifier:identifier storyBoardName:name];
     return [controller isKindOfClass:[UIViewController class]] ? controller : nil;
 }
 
 #pragma mark - Private Methods
-+ (NSString *)storyBoardName:(HXStoryBoardName)name
-{
++ (NSString *)storyBoardName:(HXStoryBoardName)name {
     NSString *storyBoardName = nil;
-    switch (name)
-    {
-        case HXStoryBoardNameLogin:
+    switch (name) {
+        case HXStoryBoardNameLogin: {
             storyBoardName = @"Login";
             break;
-        case HXStoryBoardNameHome:
+        }
+        case HXStoryBoardNameHome: {
             storyBoardName = @"Home";
             break;
-        case HXStoryBoardNameUser:
+        }
+        case HXStoryBoardNameUser: {
             storyBoardName = @"User";
             break;
+        }
+        case HXStoryBoardNameSetting: {
+            storyBoardName = @"Setting";
+            break;
+        }
     }
     return storyBoardName;
 }
 
-+ (id)viewControllerWithIdentifier:(NSString *)identifier storyBoardName:(HXStoryBoardName)name
-{
++ (id)viewControllerWithIdentifier:(NSString *)identifier storyBoardName:(HXStoryBoardName)name {
     @try {
         NSString *storyBoardName = [self storyBoardName:name];
         return [[UIStoryboard storyboardWithName:storyBoardName bundle:nil] instantiateViewControllerWithIdentifier:identifier];

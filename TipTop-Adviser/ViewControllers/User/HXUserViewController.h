@@ -10,4 +10,7 @@
 
 @interface HXUserViewController : UITableViewController
 
+- (IBAction)seetingButtonPressed;
+- (IBAction)editButtonPressed;
+
 @end

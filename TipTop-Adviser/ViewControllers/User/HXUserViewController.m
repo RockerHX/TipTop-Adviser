@@ -14,9 +14,19 @@
 
 @implementation HXUserViewController
 
+#pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+#pragma mark - Event Response
+- (IBAction)seetingButtonPressed {
+    
+}
+
+- (IBAction)editButtonPressed {
+    
 }
 
 #pragma mark - Table View Delegate Methods

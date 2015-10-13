@@ -35,6 +35,8 @@
 		48A48CB71BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CB61BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m */; settings = {ASSET_TAGS = (); }; };
 		48A48CBA1BCA7A2700AF6C36 /* HXPanGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CB91BCA7A2700AF6C36 /* HXPanGestureViewController.m */; settings = {ASSET_TAGS = (); }; };
 		48A48CC51BCD4C4A00AF6C36 /* HXIBImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CC41BCD4C4A00AF6C36 /* HXIBImageView.m */; settings = {ASSET_TAGS = (); }; };
+		48A48CCB1BCD5C6C00AF6C36 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A48CC91BCD5C6C00AF6C36 /* Setting.storyboard */; settings = {ASSET_TAGS = (); }; };
+		48A48CCF1BCD5DEC00AF6C36 /* HXSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CCE1BCD5DEC00AF6C36 /* HXSettingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
@@ -104,6 +106,9 @@
 		48A48CB91BCA7A2700AF6C36 /* HXPanGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPanGestureViewController.m; sourceTree = "<group>"; };
 		48A48CC31BCD4C4A00AF6C36 /* HXIBImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXIBImageView.h; sourceTree = "<group>"; };
 		48A48CC41BCD4C4A00AF6C36 /* HXIBImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXIBImageView.m; sourceTree = "<group>"; };
+		48A48CCA1BCD5C6C00AF6C36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
+		48A48CCD1BCD5DEC00AF6C36 /* HXSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSettingViewController.h; sourceTree = "<group>"; };
+		48A48CCE1BCD5DEC00AF6C36 /* HXSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSettingViewController.m; sourceTree = "<group>"; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F761BC4CA100000863D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -284,6 +289,7 @@
 		48334DD91BC4D00D00FD43A6 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				48A48CCC1BCD5DD300AF6C36 /* Setting */,
 				48A48CBB1BCAD08200AF6C36 /* UserInformation */,
 				48334DDA1BC4D00D00FD43A6 /* HXUserViewController.h */,
 				48334DDB1BC4D00D00FD43A6 /* HXUserViewController.m */,
@@ -346,6 +352,7 @@
 		48334DFD1BC4D0CE00FD43A6 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				48A48CC61BCD5C4A00AF6C36 /* Setting */,
 				48334DF61BC4D09D00FD43A6 /* User.storyboard */,
 			);
 			name = User;
@@ -365,6 +372,23 @@
 			children = (
 			);
 			path = UserInformation;
+			sourceTree = "<group>";
+		};
+		48A48CC61BCD5C4A00AF6C36 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				48A48CC91BCD5C6C00AF6C36 /* Setting.storyboard */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		48A48CCC1BCD5DD300AF6C36 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				48A48CCD1BCD5DEC00AF6C36 /* HXSettingViewController.h */,
+				48A48CCE1BCD5DEC00AF6C36 /* HXSettingViewController.m */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		48D74F691BC4CA100000863D = {
@@ -481,6 +505,7 @@
 			files = (
 				48D74F881BC4CA100000863D /* LaunchScreen.storyboard in Resources */,
 				48D74F851BC4CA100000863D /* Assets.xcassets in Resources */,
+				48A48CCB1BCD5C6C00AF6C36 /* Setting.storyboard in Resources */,
 				48D74F801BC4CA100000863D /* Main.storyboard in Resources */,
 				48334DF91BC4D09D00FD43A6 /* Login.storyboard in Resources */,
 				48334DF81BC4D09D00FD43A6 /* Home.storyboard in Resources */,
@@ -563,6 +588,7 @@
 				48334DEA1BC4D00D00FD43A6 /* HXApiRequest.m in Sources */,
 				48334DEE1BC4D00D00FD43A6 /* HXLoginViewController.m in Sources */,
 				48334DED1BC4D00D00FD43A6 /* HXHomeViewController.m in Sources */,
+				48A48CCF1BCD5DEC00AF6C36 /* HXSettingViewController.m in Sources */,
 				48D74F771BC4CA100000863D /* main.m in Sources */,
 				48334DE71BC4D00D00FD43A6 /* HXVersion.m in Sources */,
 				489E9CD21BC5116A00C6618E /* HXThemeManager.m in Sources */,
@@ -599,6 +625,14 @@
 				48334DF71BC4D09D00FD43A6 /* Base */,
 			);
 			name = User.storyboard;
+			sourceTree = "<group>";
+		};
+		48A48CC91BCD5C6C00AF6C36 /* Setting.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48A48CCA1BCD5C6C00AF6C36 /* Base */,
+			);
+			name = Setting.storyboard;
 			sourceTree = "<group>";
 		};
 		48D74F7E1BC4CA100000863D /* Main.storyboard */ = {

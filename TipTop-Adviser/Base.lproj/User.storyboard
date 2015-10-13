@@ -28,7 +28,7 @@
                                     </constraints>
                                     <state key="normal" image="UC-SettingIcon"/>
                                     <connections>
-                                        <action selector="seetingButtonPressed" destination="a1o-34-Fah" eventType="touchUpInside" id="fEg-xT-sRE"/>
+                                        <action selector="settingButtonPressed" destination="a1o-34-Fah" eventType="touchUpInside" id="M8t-el-gg0"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOY-iS-1Ju">

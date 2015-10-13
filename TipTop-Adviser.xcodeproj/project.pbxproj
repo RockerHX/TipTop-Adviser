@@ -37,6 +37,7 @@
 		48A48CC51BCD4C4A00AF6C36 /* HXIBImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CC41BCD4C4A00AF6C36 /* HXIBImageView.m */; settings = {ASSET_TAGS = (); }; };
 		48A48CCB1BCD5C6C00AF6C36 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A48CC91BCD5C6C00AF6C36 /* Setting.storyboard */; settings = {ASSET_TAGS = (); }; };
 		48A48CCF1BCD5DEC00AF6C36 /* HXSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CCE1BCD5DEC00AF6C36 /* HXSettingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		48A48CD21BCD647B00AF6C36 /* HXPanGestureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CD11BCD647B00AF6C36 /* HXPanGestureTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
@@ -109,6 +110,8 @@
 		48A48CCA1BCD5C6C00AF6C36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
 		48A48CCD1BCD5DEC00AF6C36 /* HXSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSettingViewController.h; sourceTree = "<group>"; };
 		48A48CCE1BCD5DEC00AF6C36 /* HXSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSettingViewController.m; sourceTree = "<group>"; };
+		48A48CD01BCD647B00AF6C36 /* HXPanGestureTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPanGestureTableViewController.h; sourceTree = "<group>"; };
+		48A48CD11BCD647B00AF6C36 /* HXPanGestureTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPanGestureTableViewController.m; sourceTree = "<group>"; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F761BC4CA100000863D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 				48A48CB61BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m */,
 				48A48CB81BCA7A2700AF6C36 /* HXPanGestureViewController.h */,
 				48A48CB91BCA7A2700AF6C36 /* HXPanGestureViewController.m */,
+				48A48CD01BCD647B00AF6C36 /* HXPanGestureTableViewController.h */,
+				48A48CD11BCD647B00AF6C36 /* HXPanGestureTableViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -573,6 +578,7 @@
 				48334DE61BC4D00D00FD43A6 /* HXAppConstants.m in Sources */,
 				48A48CC51BCD4C4A00AF6C36 /* HXIBImageView.m in Sources */,
 				48334DDF1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m in Sources */,
+				48A48CD21BCD647B00AF6C36 /* HXPanGestureTableViewController.m in Sources */,
 				489E9CCC1BC4F96900C6618E /* HXForgotPWViewController.m in Sources */,
 				48334DE21BC4D00D00FD43A6 /* HXIBLabel.m in Sources */,
 				48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */,

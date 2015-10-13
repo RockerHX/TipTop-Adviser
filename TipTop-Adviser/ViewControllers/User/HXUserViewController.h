@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol HXUserViewControllerDelegate <NSObject>
+
+@optional
+- (void)userCenterShouldHiddenAndShowViewController:(UIViewController *)viewController;
+
+@end
+
 @interface HXUserViewController : UITableViewController
 
-- (IBAction)seetingButtonPressed;
+@property (nonatomic, weak) id <HXUserViewControllerDelegate>delegate;
+
+- (IBAction)settingButtonPressed;
 - (IBAction)editButtonPressed;
 
 @end

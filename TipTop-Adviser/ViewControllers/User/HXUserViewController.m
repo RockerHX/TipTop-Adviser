@@ -7,6 +7,7 @@
 //
 
 #import "HXUserViewController.h"
+#import "HXSettingViewController.h"
 
 @interface HXUserViewController ()
 
@@ -17,12 +18,15 @@
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 #pragma mark - Event Response
-- (IBAction)seetingButtonPressed {
-    
+- (IBAction)settingButtonPressed {
+    if (_delegate && [_delegate respondsToSelector:@selector(userCenterShouldHiddenAndShowViewController:)]) {
+        UINavigationController *settingNavigationController = [HXSettingViewController navigationControllerInstance];
+        [_delegate userCenterShouldHiddenAndShowViewController:settingNavigationController];
+    }
 }
 
 - (IBAction)editButtonPressed {

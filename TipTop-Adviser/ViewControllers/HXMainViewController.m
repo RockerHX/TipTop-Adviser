@@ -11,7 +11,7 @@
 #import "HXHomeViewController.h"
 #import "HXUserViewController.h"
 
-@interface HXMainViewController ()
+@interface HXMainViewController () <HXUserViewControllerDelegate>
 
 @end
 
@@ -22,7 +22,16 @@
     
     self.contentViewController = [HXStoryBoardManager viewControllerWithClass:[HXHomeViewController class]
                                                                storyBoardName:HXStoryBoardNameHome];
-    self.menuViewController = [HXStoryBoardManager viewControllerWithClass:[HXUserViewController class] storyBoardName:HXStoryBoardNameUser];
+    HXUserViewController *userViewController = [HXStoryBoardManager viewControllerWithClass:[HXUserViewController class]
+                                                                             storyBoardName:HXStoryBoardNameUser];
+    userViewController.delegate = self;
+    self.menuViewController = userViewController;
+}
+
+#pragma mark - HXUserViewControllerDelegate Methods
+- (void)userCenterShouldHiddenAndShowViewController:(UIViewController *)viewController {
+    self.contentViewController = viewController;
+    [self hideMenuViewController];
 }
 
 @end

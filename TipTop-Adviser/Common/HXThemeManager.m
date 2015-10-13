@@ -30,9 +30,10 @@ static NSString *SelectedThemeKey = @"SelectedTheme";
     [[NSUserDefaults standardUserDefaults] setValue:@(_theme) forKey:SelectedThemeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:self.themeColor];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                                      NSFontAttributeName: [UIFont systemFontOfSize:21.0f]}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont systemFontOfSize:21.0f]}];
 }
 
 #pragma mark - Setter And Getter

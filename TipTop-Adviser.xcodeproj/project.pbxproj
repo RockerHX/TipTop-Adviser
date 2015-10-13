@@ -38,6 +38,7 @@
 		48A48CCB1BCD5C6C00AF6C36 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A48CC91BCD5C6C00AF6C36 /* Setting.storyboard */; settings = {ASSET_TAGS = (); }; };
 		48A48CCF1BCD5DEC00AF6C36 /* HXSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CCE1BCD5DEC00AF6C36 /* HXSettingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		48A48CD21BCD647B00AF6C36 /* HXPanGestureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CD11BCD647B00AF6C36 /* HXPanGestureTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		48A48CD51BCD666600AF6C36 /* HXChangePassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CD41BCD666600AF6C36 /* HXChangePassWordViewController.m */; settings = {ASSET_TAGS = (); }; };
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
@@ -112,6 +113,8 @@
 		48A48CCE1BCD5DEC00AF6C36 /* HXSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSettingViewController.m; sourceTree = "<group>"; };
 		48A48CD01BCD647B00AF6C36 /* HXPanGestureTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPanGestureTableViewController.h; sourceTree = "<group>"; };
 		48A48CD11BCD647B00AF6C36 /* HXPanGestureTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPanGestureTableViewController.m; sourceTree = "<group>"; };
+		48A48CD31BCD666600AF6C36 /* HXChangePassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXChangePassWordViewController.h; sourceTree = "<group>"; };
+		48A48CD41BCD666600AF6C36 /* HXChangePassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXChangePassWordViewController.m; sourceTree = "<group>"; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F761BC4CA100000863D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 			children = (
 				48A48CCD1BCD5DEC00AF6C36 /* HXSettingViewController.h */,
 				48A48CCE1BCD5DEC00AF6C36 /* HXSettingViewController.m */,
+				48A48CD31BCD666600AF6C36 /* HXChangePassWordViewController.h */,
+				48A48CD41BCD666600AF6C36 /* HXChangePassWordViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -584,6 +589,7 @@
 				48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */,
 				48334DE01BC4D00D00FD43A6 /* UIView+HXIBnspectable.m in Sources */,
 				48334DEC1BC4D00D00FD43A6 /* HXLoginRequset.m in Sources */,
+				48A48CD51BCD666600AF6C36 /* HXChangePassWordViewController.m in Sources */,
 				489E9CD61BC511E900C6618E /* UINavigationController+StatusBarStyle.m in Sources */,
 				48334DE51BC4D00D00FD43A6 /* HXStoryBoardManager.m in Sources */,
 				48334DDE1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m in Sources */,

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="297-yv-ChU">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-LoginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="297-yv-ChU">
                                 <rect key="frame" x="30" y="50" width="260" height="104"/>
                                 <animations/>
                                 <constraints>
@@ -28,7 +28,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eal-Fi-c0U" customClass="HXIBView">
                                 <rect key="frame" x="30" y="194" width="260" height="40"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StaffIDIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kIg-qR-baL">
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-StaffIDIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kIg-qR-baL">
                                         <rect key="frame" x="4" y="0.0" width="40" height="40"/>
                                         <animations/>
                                         <constraints>
@@ -69,7 +69,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G15-7q-LgV" customClass="HXIBView">
                                 <rect key="frame" x="30" y="244" width="260" height="40"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RLG-aC-ECJ">
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RLG-aC-ECJ">
                                         <rect key="frame" x="4" y="0.0" width="40" height="40"/>
                                         <animations/>
                                         <constraints>
@@ -137,7 +137,7 @@
                                             <segue destination="lvb-AT-Jln" kind="modal" id="sM0-5h-lu6"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ForgotPasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hfC-CI-lYF">
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-ForgotPasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hfC-CI-lYF">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -249,7 +249,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StaffIDIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-B1-lEo">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-StaffIDIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-B1-lEo">
                                                     <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
                                                     <animations/>
                                                     <constraints>
@@ -283,7 +283,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhoneNumberIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-jJ-BH5">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PhoneNumberIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-jJ-BH5">
                                                     <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
                                                     <animations/>
                                                     <constraints>
@@ -317,7 +317,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VerificationCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HyH-hs-rl0">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-VerificationCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HyH-hs-rl0">
                                                     <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
                                                     <animations/>
                                                     <constraints>
@@ -370,7 +370,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2Fz-aM-WdC">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2Fz-aM-WdC">
                                                     <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
                                                     <animations/>
                                                     <constraints>
@@ -404,7 +404,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="w64-mI-wG3">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="w64-mI-wG3">
                                                     <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
                                                     <animations/>
                                                     <constraints>
@@ -472,11 +472,11 @@
     </scenes>
     <resources>
         <image name="BackIcon" width="20" height="20"/>
-        <image name="ForgotPasswordIcon" width="13" height="14"/>
-        <image name="LoginLogo" width="155" height="84"/>
-        <image name="PasswordIcon" width="24" height="23"/>
-        <image name="PhoneNumberIcon" width="24" height="26"/>
-        <image name="StaffIDIcon" width="24" height="23"/>
-        <image name="VerificationCodeIcon" width="24" height="23"/>
+        <image name="L-ForgotPasswordIcon" width="13" height="14"/>
+        <image name="L-LoginLogo" width="155" height="84"/>
+        <image name="L-PasswordIcon" width="24" height="23"/>
+        <image name="L-PhoneNumberIcon" width="24" height="26"/>
+        <image name="L-StaffIDIcon" width="24" height="23"/>
+        <image name="L-VerificationCodeIcon" width="24" height="23"/>
     </resources>
 </document>

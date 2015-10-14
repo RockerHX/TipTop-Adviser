@@ -360,7 +360,7 @@
 		48334DFD1BC4D0CE00FD43A6 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				48A48CC61BCD5C4A00AF6C36 /* Setting */,
+				48A48CC91BCD5C6C00AF6C36 /* Setting.storyboard */,
 				48334DF61BC4D09D00FD43A6 /* User.storyboard */,
 			);
 			name = User;
@@ -380,14 +380,6 @@
 			children = (
 			);
 			path = UserInformation;
-			sourceTree = "<group>";
-		};
-		48A48CC61BCD5C4A00AF6C36 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				48A48CC91BCD5C6C00AF6C36 /* Setting.storyboard */,
-			);
-			name = Setting;
 			sourceTree = "<group>";
 		};
 		48A48CCC1BCD5DD300AF6C36 /* Setting */ = {

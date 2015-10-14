@@ -41,19 +41,25 @@
             storyBoardName = @"Setting";
             break;
         }
+        case HXStoryBoardNameMyReservation:{
+            storyBoardName = @"MyReservation";
+            break;
+        }
     }
     return storyBoardName;
 }
 
-+ (id)viewControllerWithIdentifier:(NSString *)identifier storyBoardName:(HXStoryBoardName)name {
++ (UIViewController *)viewControllerWithIdentifier:(NSString *)identifier storyBoardName:(HXStoryBoardName)name {
+    UIViewController *viewController = nil;
     @try {
         NSString *storyBoardName = [self storyBoardName:name];
-        return [[UIStoryboard storyboardWithName:storyBoardName bundle:nil] instantiateViewControllerWithIdentifier:identifier];
+        viewController = [[UIStoryboard storyboardWithName:storyBoardName bundle:nil] instantiateViewControllerWithIdentifier:identifier];
     }
     @catch (NSException *exception) {
         NSLog(@"Load View Controller From StoryBoard Error:%@", exception.reason);
     }
     @finally {
+        return viewController;
     }
 }
 

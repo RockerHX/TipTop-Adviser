@@ -15,7 +15,7 @@
 
 @implementation HXSettingViewController
 
-#pragma mark - Init Methods
+#pragma mark - Instance Methods
 + (UINavigationController *)navigationControllerInstance {
     return [HXStoryBoardManager navigaitonControllerWithIdentifier:@"HXSettingNavigationController" storyBoardName:HXStoryBoardNameSetting];
 }

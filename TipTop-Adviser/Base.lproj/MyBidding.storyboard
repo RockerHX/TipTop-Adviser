@@ -11,7 +11,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="HXMyBiddingViewController" id="EFk-0l-Nnh" customClass="HXMyBiddingViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="9w7-PF-ddo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -19,7 +19,7 @@
                             <tableViewSection id="0bw-X8-xck">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="170" id="6LP-1N-VsP">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="170"/>
+                                        <rect key="frame" x="0.0" y="35" width="320" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6LP-1N-VsP" id="7eq-Lp-ElX">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
@@ -131,7 +131,7 @@
                             <tableViewSection id="r1n-Tt-TWO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="170" id="Ftt-Ei-neF">
-                                        <rect key="frame" x="0.0" y="305" width="320" height="170"/>
+                                        <rect key="frame" x="0.0" y="241" width="320" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ftt-Ei-neF" id="qFw-qg-hnS">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
@@ -243,7 +243,7 @@
                             <tableViewSection id="MhT-XV-OyL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="170" id="IbD-Qb-gXx">
-                                        <rect key="frame" x="0.0" y="511" width="320" height="170"/>
+                                        <rect key="frame" x="0.0" y="447" width="320" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IbD-Qb-gXx" id="cvB-pz-tdD">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
@@ -368,7 +368,7 @@
         <scene sceneID="yK0-n6-yAj">
             <objects>
                 <navigationController storyboardIdentifier="HXMyBiddingNavigationController" id="gUi-Qn-v4c" customClass="HXPanGestureNavgaitionController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hdo-57-e9a">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hdo-57-e9a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>

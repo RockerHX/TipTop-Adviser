@@ -14,6 +14,7 @@
 #import "HXMyBiddingViewController.h"
 #import "HXMyServiceViewController.h"
 #import "HXMessageCenterViewController.h"
+#import "HXMyCommentViewController.h"
 
 typedef NS_ENUM(NSUInteger, HXMenuRow) {
     HXMenuRowMyReservation = 0,
@@ -80,7 +81,7 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
                 break;
             }
             case HXMenuRowMessageCenter: {
-                
+                navigationController = [HXMyCommentViewController navigationControllerInstance];
                 break;
             }
             case HXMenuRowMyAddress: {

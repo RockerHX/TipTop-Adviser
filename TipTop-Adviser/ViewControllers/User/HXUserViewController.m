@@ -10,6 +10,7 @@
 #import "HXSettingViewController.h"
 #import "HXMyReservationViewController.h"
 #import "HXOnlinePayViewController.h"
+#import "HXWorkCircuitViewController.h"
 
 typedef NS_ENUM(NSUInteger, HXMenuRow) {
     HXMenuRowMyReservation = 0,
@@ -60,7 +61,7 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
                 break;
             }
             case HXMenuRowWorkCircuit: {
-                
+                navigationController = [HXWorkCircuitViewController navigationControllerInstance];
                 break;
             }
             case HXMenuRowMyBidding: {

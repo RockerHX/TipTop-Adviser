@@ -7,7 +7,6 @@
 //
 
 #import "HXMyReservationViewController.h"
-#import "HXStoryBoardManager.h"
 
 @interface HXMyReservationViewController ()
 
@@ -15,17 +14,19 @@
 
 @implementation HXMyReservationViewController
 
-#pragma mark - Instance Methods
-+ (UINavigationController *)navigationControllerInstance {
-    return [HXStoryBoardManager navigaitonControllerWithIdentifier:@"HXMyReservationNavigationController" storyBoardName:HXStoryBoardNameMyReservation];
-}
-
-+ (instancetype)instance {
-    return [HXStoryBoardManager viewControllerWithClass:[HXMyReservationViewController class] storyBoardName:HXStoryBoardNameMyReservation];
-}
-
+#pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+}
+
+#pragma mark - Setter And Getter
+- (NSString *)navigationControllerIdentifier {
+    return @"HXMyReservationNavigationController";
+}
+
+- (HXStoryBoardName)storyBoardName {
+    return HXStoryBoardNameMyReservation;
 }
 
 @end

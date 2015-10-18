@@ -1,5 +1,5 @@
 //
-//  HXOnlinePayViewController.h
+//  HXWorkCircuitViewController.h
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/18.
@@ -8,6 +8,6 @@
 
 #import "UIViewController+HXClass.h"
 
-@interface HXOnlinePayViewController : UITableViewController
+@interface HXWorkCircuitViewController : UITableViewController
 
 @end

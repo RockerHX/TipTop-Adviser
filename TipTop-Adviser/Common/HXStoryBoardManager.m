@@ -49,6 +49,10 @@
             storyBoardName = @"OnlinePay";
             break;
         }
+        case HXStoryBoardNameWorkCircuit: {
+            storyBoardName = @"WorkCircuit";
+            break;
+        }
     }
     return storyBoardName;
 }

@@ -7,7 +7,6 @@
 //
 
 #import "HXSettingViewController.h"
-#import "HXStoryBoardManager.h"
 
 @interface HXSettingViewController ()
 
@@ -15,19 +14,19 @@
 
 @implementation HXSettingViewController
 
-#pragma mark - Instance Methods
-+ (UINavigationController *)navigationControllerInstance {
-    return [HXStoryBoardManager navigaitonControllerWithIdentifier:@"HXSettingNavigationController" storyBoardName:HXStoryBoardNameSetting];
-}
-
-+ (instancetype)instance {
-    return [HXStoryBoardManager viewControllerWithClass:[HXSettingViewController class] storyBoardName:HXStoryBoardNameSetting];
-}
-
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+}
+
+#pragma mark - Setter And Getter
+- (NSString *)navigationControllerIdentifier {
+    return @"HXSettingNavigationController";
+}
+
+- (HXStoryBoardName)storyBoardName {
+    return HXStoryBoardNameSetting;
 }
 
 #pragma mark - Table View Data Source Methods

@@ -6,7 +6,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--我的招标-->
+        <!--我的评论-->
         <scene sceneID="EIk-n6-bRT">
             <objects>
                 <tableViewController storyboardIdentifier="HXMyCommentViewController" id="EFk-0l-Nnh" customClass="HXMyCommentViewController" sceneMemberID="viewController">
@@ -336,7 +336,7 @@
                             <outlet property="delegate" destination="EFk-0l-Nnh" id="6yd-fU-jYp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我的招标" id="LHp-6z-Bad"/>
+                    <navigationItem key="navigationItem" title="我的评论" id="LHp-6z-Bad"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W62-Jg-OFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

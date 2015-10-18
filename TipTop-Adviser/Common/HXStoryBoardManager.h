@@ -17,7 +17,8 @@ typedef NS_ENUM(NSUInteger, HXStoryBoardName) {
     HXStoryBoardNameMyReservation,
     HXStoryBoardNameOnlinePay,
     HXStoryBoardNameWorkCircuit,
-    HXStoryBoardNameMyBidding
+    HXStoryBoardNameMyBidding,
+    HXStoryBoardNameMyService
 };
 
 @interface HXStoryBoardManager : NSObject

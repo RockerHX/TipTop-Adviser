@@ -57,6 +57,10 @@
             storyBoardName = @"MyBidding";
             break;
         }
+        case HXStoryBoardNameMyService: {
+            storyBoardName = @"MyService";
+            break;
+        }
     }
     return storyBoardName;
 }

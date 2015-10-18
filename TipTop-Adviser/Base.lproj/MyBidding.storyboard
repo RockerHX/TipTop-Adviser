@@ -6,10 +6,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--工作流程-->
+        <!--我的招标-->
         <scene sceneID="EIk-n6-bRT">
             <objects>
-                <tableViewController storyboardIdentifier="HXWorkCircuitViewController" id="EFk-0l-Nnh" customClass="HXWorkCircuitViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HXMyBiddingViewController" id="EFk-0l-Nnh" customClass="HXMyBiddingViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="9w7-PF-ddo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -358,7 +358,7 @@
                             <outlet property="delegate" destination="EFk-0l-Nnh" id="6yd-fU-jYp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="工作流程" id="LHp-6z-Bad"/>
+                    <navigationItem key="navigationItem" title="我的招标" id="LHp-6z-Bad"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W62-Jg-OFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,7 +367,7 @@
         <!--Pan Gesture Navgaition Controller-->
         <scene sceneID="yK0-n6-yAj">
             <objects>
-                <navigationController storyboardIdentifier="HXWorkCircuitNavigationController" id="gUi-Qn-v4c" customClass="HXPanGestureNavgaitionController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HXMyBiddingNavigationController" id="gUi-Qn-v4c" customClass="HXPanGestureNavgaitionController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hdo-57-e9a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

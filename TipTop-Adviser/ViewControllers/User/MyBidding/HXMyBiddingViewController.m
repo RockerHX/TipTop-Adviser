@@ -1,18 +1,14 @@
 //
-//  HXWorkCircuitViewController.m
+//  HXMyBiddingViewController.m
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/18.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXWorkCircuitViewController.h"
+#import "HXMyBiddingViewController.h"
 
-@interface HXWorkCircuitViewController ()
-
-@end
-
-@implementation HXWorkCircuitViewController
+@implementation HXMyBiddingViewController
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
@@ -22,11 +18,11 @@
 
 #pragma mark - Setter And Getter
 - (NSString *)navigationControllerIdentifier {
-    return @"HXWorkCircuitNavigationController";
+    return @"HXMyBiddingNavigationController";
 }
 
 - (HXStoryBoardName)storyBoardName {
-    return HXStoryBoardNameWorkCircuit;
+    return HXStoryBoardNameMyBidding;
 }
 
 @end

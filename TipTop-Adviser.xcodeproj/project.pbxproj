@@ -32,6 +32,8 @@
 		483AE3671BD3ECF5004C0B22 /* WorkCircuit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483AE3651BD3ECF5004C0B22 /* WorkCircuit.storyboard */; settings = {ASSET_TAGS = (); }; };
 		483AE36B1BD3EDD9004C0B22 /* HXWorkCircuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE36A1BD3EDD9004C0B22 /* HXWorkCircuitViewController.m */; settings = {ASSET_TAGS = (); }; };
 		483AE36E1BD3EEE3004C0B22 /* UIViewController+HXClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE36D1BD3EEE3004C0B22 /* UIViewController+HXClass.m */; settings = {ASSET_TAGS = (); }; };
+		483AE3711BD3F2FC004C0B22 /* MyBidding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483AE36F1BD3F2FC004C0B22 /* MyBidding.storyboard */; settings = {ASSET_TAGS = (); }; };
+		483AE3751BD3F399004C0B22 /* HXMyBiddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE3741BD3F399004C0B22 /* HXMyBiddingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		487A44811BCEC39500DD94E4 /* MyReservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487A447F1BCEC39500DD94E4 /* MyReservation.storyboard */; settings = {ASSET_TAGS = (); }; };
 		487A44851BCEC4B000DD94E4 /* HXMyReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487A44841BCEC4B000DD94E4 /* HXMyReservationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		487A448A1BCEC8D900DD94E4 /* HXMyReservationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 487A44891BCEC8D900DD94E4 /* HXMyReservationCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -108,6 +110,9 @@
 		483AE36A1BD3EDD9004C0B22 /* HXWorkCircuitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWorkCircuitViewController.m; sourceTree = "<group>"; };
 		483AE36C1BD3EEE3004C0B22 /* UIViewController+HXClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HXClass.h"; sourceTree = "<group>"; };
 		483AE36D1BD3EEE3004C0B22 /* UIViewController+HXClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HXClass.m"; sourceTree = "<group>"; };
+		483AE3701BD3F2FC004C0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyBidding.storyboard; sourceTree = "<group>"; };
+		483AE3731BD3F399004C0B22 /* HXMyBiddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMyBiddingViewController.h; sourceTree = "<group>"; };
+		483AE3741BD3F399004C0B22 /* HXMyBiddingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMyBiddingViewController.m; sourceTree = "<group>"; };
 		487A44801BCEC39500DD94E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyReservation.storyboard; sourceTree = "<group>"; };
 		487A44831BCEC4B000DD94E4 /* HXMyReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMyReservationViewController.h; sourceTree = "<group>"; };
 		487A44841BCEC4B000DD94E4 /* HXMyReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMyReservationViewController.m; sourceTree = "<group>"; };
@@ -320,6 +325,7 @@
 				487A44821BCEC4A000DD94E4 /* MyReservation */,
 				483AE3611BD3E62F004C0B22 /* OnlinePay */,
 				483AE3681BD3EDC8004C0B22 /* WorkCircuit */,
+				483AE3721BD3F35C004C0B22 /* MyBidding */,
 				48334DDA1BC4D00D00FD43A6 /* HXUserViewController.h */,
 				48334DDB1BC4D00D00FD43A6 /* HXUserViewController.m */,
 			);
@@ -387,6 +393,7 @@
 				487A447F1BCEC39500DD94E4 /* MyReservation.storyboard */,
 				487A448D1BD158AC00DD94E4 /* OnlinePay.storyboard */,
 				483AE3651BD3ECF5004C0B22 /* WorkCircuit.storyboard */,
+				483AE36F1BD3F2FC004C0B22 /* MyBidding.storyboard */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -407,6 +414,15 @@
 				483AE36A1BD3EDD9004C0B22 /* HXWorkCircuitViewController.m */,
 			);
 			path = WorkCircuit;
+			sourceTree = "<group>";
+		};
+		483AE3721BD3F35C004C0B22 /* MyBidding */ = {
+			isa = PBXGroup;
+			children = (
+				483AE3731BD3F399004C0B22 /* HXMyBiddingViewController.h */,
+				483AE3741BD3F399004C0B22 /* HXMyBiddingViewController.m */,
+			);
+			path = MyBidding;
 			sourceTree = "<group>";
 		};
 		487A44821BCEC4A000DD94E4 /* MyReservation */ = {
@@ -576,6 +592,7 @@
 			files = (
 				48D74F881BC4CA100000863D /* LaunchScreen.storyboard in Resources */,
 				48D74F851BC4CA100000863D /* Assets.xcassets in Resources */,
+				483AE3711BD3F2FC004C0B22 /* MyBidding.storyboard in Resources */,
 				48A48CCB1BCD5C6C00AF6C36 /* Setting.storyboard in Resources */,
 				48D74F801BC4CA100000863D /* Main.storyboard in Resources */,
 				48334DF91BC4D09D00FD43A6 /* Login.storyboard in Resources */,
@@ -670,6 +687,7 @@
 				48A48CCF1BCD5DEC00AF6C36 /* HXSettingViewController.m in Sources */,
 				487A448A1BCEC8D900DD94E4 /* HXMyReservationCell.m in Sources */,
 				48D74F771BC4CA100000863D /* main.m in Sources */,
+				483AE3751BD3F399004C0B22 /* HXMyBiddingViewController.m in Sources */,
 				48334DE71BC4D00D00FD43A6 /* HXVersion.m in Sources */,
 				489E9CD21BC5116A00C6618E /* HXThemeManager.m in Sources */,
 				48A48CB21BC96D6E00AF6C36 /* HXMainViewController.m in Sources */,
@@ -713,6 +731,14 @@
 				483AE3661BD3ECF5004C0B22 /* Base */,
 			);
 			name = WorkCircuit.storyboard;
+			sourceTree = "<group>";
+		};
+		483AE36F1BD3F2FC004C0B22 /* MyBidding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				483AE3701BD3F2FC004C0B22 /* Base */,
+			);
+			name = MyBidding.storyboard;
 			sourceTree = "<group>";
 		};
 		487A447F1BCEC39500DD94E4 /* MyReservation.storyboard */ = {

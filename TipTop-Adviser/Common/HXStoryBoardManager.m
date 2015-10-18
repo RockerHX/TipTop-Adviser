@@ -69,6 +69,10 @@
             storyBoardName = @"MyComment";
             break;
         }
+        case HXStoryBoardNameMyAddress: {
+            storyBoardName = @"MyAddress";
+            break;
+        }
     }
     return storyBoardName;
 }

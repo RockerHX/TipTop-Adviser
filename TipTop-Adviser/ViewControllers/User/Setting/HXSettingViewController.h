@@ -6,9 +6,9 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXPanGestureTableViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface HXSettingViewController : HXPanGestureTableViewController
+@interface HXSettingViewController : UITableViewController
 
 + (UINavigationController *)navigationControllerInstance;
 + (instancetype)instance;

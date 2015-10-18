@@ -9,6 +9,7 @@
 #import "HXUserViewController.h"
 #import "HXSettingViewController.h"
 #import "HXMyReservationViewController.h"
+#import "HXOnlinePayViewController.h"
 
 typedef NS_ENUM(NSUInteger, HXMenuRow) {
     HXMenuRowMyReservation = 0,
@@ -47,42 +48,43 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
 
 #pragma mark - Table View Delegate Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case HXMenuRowMyReservation: {
-            if (_delegate && [_delegate respondsToSelector:@selector(userCenterShouldHiddenAndShowViewController:)]) {
-                UINavigationController *myReservationNavigation = [HXMyReservationViewController navigationControllerInstance];
-                [_delegate userCenterShouldHiddenAndShowViewController:myReservationNavigation];
+    UINavigationController *navigationController = nil;
+    if (_delegate && [_delegate respondsToSelector:@selector(userCenterShouldHiddenAndShowViewController:)]) {
+        switch (indexPath.row) {
+            case HXMenuRowMyReservation: {
+                navigationController = [HXMyReservationViewController navigationControllerInstance];
+                break;
             }
-            break;
+            case HXMenuRowOnlinePay: {
+                navigationController = [HXOnlinePayViewController navigationControllerInstance];
+                break;
+            }
+            case HXMenuRowWorkCircuit: {
+                
+                break;
+            }
+            case HXMenuRowMyBidding: {
+                
+                break;
+            }
+            case HXMenuRowMyService: {
+                
+                break;
+            }
+            case HXMenuRowMyComment: {
+                
+                break;
+            }
+            case HXMenuRowMessageCenter: {
+                
+                break;
+            }
+            case HXMenuRowMyAddress: {
+                
+                break;
+            }
         }
-        case HXMenuRowOnlinePay: {
-            
-            break;
-        }
-        case HXMenuRowWorkCircuit: {
-            
-            break;
-        }
-        case HXMenuRowMyBidding: {
-            
-            break;
-        }
-        case HXMenuRowMyService: {
-            
-            break;
-        }
-        case HXMenuRowMyComment: {
-            
-            break;
-        }
-        case HXMenuRowMessageCenter: {
-            
-            break;
-        }
-        case HXMenuRowMyAddress: {
-            
-            break;
-        }
+        [_delegate userCenterShouldHiddenAndShowViewController:navigationController];
     }
 }
 

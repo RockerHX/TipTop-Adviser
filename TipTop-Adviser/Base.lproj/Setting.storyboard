@@ -468,10 +468,10 @@
             </objects>
             <point key="canvasLocation" x="425" y="378"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Pan Gesture Navgaition Controller-->
         <scene sceneID="JYL-rn-nAe">
             <objects>
-                <navigationController storyboardIdentifier="HXSettingNavigationController" id="Sjr-6D-mCj" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HXSettingNavigationController" id="Sjr-6D-mCj" customClass="HXPanGestureNavgaitionController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8hh-3b-tFP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -45,6 +45,10 @@
             storyBoardName = @"MyReservation";
             break;
         }
+        case HXStoryBoardNameOnlinePay: {
+            storyBoardName = @"OnlinePay";
+            break;
+        }
     }
     return storyBoardName;
 }

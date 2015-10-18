@@ -1,14 +1,14 @@
 //
-//  HXMyReservationViewController.h
+//  HXOnlinePayViewController.h
 //  TipTop-Adviser
 //
-//  Created by ShiCang on 15/10/15.
+//  Created by ShiCang on 15/10/18.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface HXMyReservationViewController : UITableViewController
+@interface HXOnlinePayViewController : UITableViewController
 
 + (UINavigationController *)navigationControllerInstance;
 + (instancetype)instance;

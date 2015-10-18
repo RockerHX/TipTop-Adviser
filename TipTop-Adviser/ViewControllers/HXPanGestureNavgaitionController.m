@@ -9,24 +9,40 @@
 #import "HXPanGestureNavgaitionController.h"
 #import <REFrostedViewController/REFrostedViewController.h>
 
-@implementation HXPanGestureNavgaitionController
+@implementation HXPanGestureNavgaitionController {
+    BOOL _canPan;
+}
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initConfig];
+}
+
+#pragma mark - Config Methods
+- (void)initConfig {
+    _canPan = YES;
     [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
 }
 
 #pragma mark - Gesture recognizer
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)sender {
-    // Dismiss keyboard (optional)
-    //
     [self.view endEditing:YES];
     [self.frostedViewController.view endEditing:YES];
     
-    // Present the view controller
-    //
-    [self.frostedViewController panGestureRecognized:sender];
+    if (self.canPan) {
+        [self.frostedViewController panGestureRecognized:sender];
+    }
+}
+
+#pragma mark - Setter And Getter
+- (BOOL)canPan {
+    return _canPan;
+}
+
+- (void)setCanPan:(BOOL)canPan {
+    _canPan = canPan;
 }
 
 @end

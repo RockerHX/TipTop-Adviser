@@ -12,6 +12,7 @@
 
 @dynamic navigationControllerIdentifier;
 @dynamic storyBoardName;
+@dynamic canPan;
 
 #pragma  mark - Class Methods
 + (UINavigationController *)navigationControllerInstance {

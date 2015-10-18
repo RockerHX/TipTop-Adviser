@@ -61,6 +61,10 @@
             storyBoardName = @"MyService";
             break;
         }
+        case HXStoryBoardNameMessageCenter: {
+            storyBoardName = @"MessageCenter";
+            break;
+        }
     }
     return storyBoardName;
 }

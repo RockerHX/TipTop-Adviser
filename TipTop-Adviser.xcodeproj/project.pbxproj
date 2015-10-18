@@ -36,6 +36,8 @@
 		483AE3751BD3F399004C0B22 /* HXMyBiddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE3741BD3F399004C0B22 /* HXMyBiddingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		483AE3781BD3F57F004C0B22 /* MyService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483AE3761BD3F57F004C0B22 /* MyService.storyboard */; settings = {ASSET_TAGS = (); }; };
 		483AE37C1BD3F5C2004C0B22 /* HXMyServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE37B1BD3F5C2004C0B22 /* HXMyServiceViewController.m */; settings = {ASSET_TAGS = (); }; };
+		483AE37F1BD3FC73004C0B22 /* MessageCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483AE37D1BD3FC73004C0B22 /* MessageCenter.storyboard */; settings = {ASSET_TAGS = (); }; };
+		483AE3831BD3FCD9004C0B22 /* HXMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE3821BD3FCD9004C0B22 /* HXMessageCenterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		487A44811BCEC39500DD94E4 /* MyReservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487A447F1BCEC39500DD94E4 /* MyReservation.storyboard */; settings = {ASSET_TAGS = (); }; };
 		487A44851BCEC4B000DD94E4 /* HXMyReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487A44841BCEC4B000DD94E4 /* HXMyReservationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		487A448A1BCEC8D900DD94E4 /* HXMyReservationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 487A44891BCEC8D900DD94E4 /* HXMyReservationCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -118,6 +120,9 @@
 		483AE3771BD3F57F004C0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyService.storyboard; sourceTree = "<group>"; };
 		483AE37A1BD3F5C2004C0B22 /* HXMyServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMyServiceViewController.h; sourceTree = "<group>"; };
 		483AE37B1BD3F5C2004C0B22 /* HXMyServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMyServiceViewController.m; sourceTree = "<group>"; };
+		483AE37E1BD3FC73004C0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MessageCenter.storyboard; sourceTree = "<group>"; };
+		483AE3811BD3FCD9004C0B22 /* HXMessageCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMessageCenterViewController.h; sourceTree = "<group>"; };
+		483AE3821BD3FCD9004C0B22 /* HXMessageCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMessageCenterViewController.m; sourceTree = "<group>"; };
 		487A44801BCEC39500DD94E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyReservation.storyboard; sourceTree = "<group>"; };
 		487A44831BCEC4B000DD94E4 /* HXMyReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMyReservationViewController.h; sourceTree = "<group>"; };
 		487A44841BCEC4B000DD94E4 /* HXMyReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMyReservationViewController.m; sourceTree = "<group>"; };
@@ -332,6 +337,7 @@
 				483AE3681BD3EDC8004C0B22 /* WorkCircuit */,
 				483AE3721BD3F35C004C0B22 /* MyBidding */,
 				483AE3791BD3F594004C0B22 /* MyService */,
+				483AE3801BD3FC89004C0B22 /* MessageCenter */,
 				48334DDA1BC4D00D00FD43A6 /* HXUserViewController.h */,
 				48334DDB1BC4D00D00FD43A6 /* HXUserViewController.m */,
 			);
@@ -401,6 +407,7 @@
 				483AE3651BD3ECF5004C0B22 /* WorkCircuit.storyboard */,
 				483AE36F1BD3F2FC004C0B22 /* MyBidding.storyboard */,
 				483AE3761BD3F57F004C0B22 /* MyService.storyboard */,
+				483AE37D1BD3FC73004C0B22 /* MessageCenter.storyboard */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -439,6 +446,15 @@
 				483AE37B1BD3F5C2004C0B22 /* HXMyServiceViewController.m */,
 			);
 			path = MyService;
+			sourceTree = "<group>";
+		};
+		483AE3801BD3FC89004C0B22 /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				483AE3811BD3FCD9004C0B22 /* HXMessageCenterViewController.h */,
+				483AE3821BD3FCD9004C0B22 /* HXMessageCenterViewController.m */,
+			);
+			path = MessageCenter;
 			sourceTree = "<group>";
 		};
 		487A44821BCEC4A000DD94E4 /* MyReservation */ = {
@@ -614,6 +630,7 @@
 				48334DF91BC4D09D00FD43A6 /* Login.storyboard in Resources */,
 				483AE3671BD3ECF5004C0B22 /* WorkCircuit.storyboard in Resources */,
 				487A448F1BD158AC00DD94E4 /* OnlinePay.storyboard in Resources */,
+				483AE37F1BD3FC73004C0B22 /* MessageCenter.storyboard in Resources */,
 				48334DF81BC4D09D00FD43A6 /* Home.storyboard in Resources */,
 				48334DFA1BC4D09D00FD43A6 /* User.storyboard in Resources */,
 				483AE3781BD3F57F004C0B22 /* MyService.storyboard in Resources */,
@@ -689,6 +706,7 @@
 				483AE3641BD3E64A004C0B22 /* HXOnlinePayViewController.m in Sources */,
 				48334DE01BC4D00D00FD43A6 /* UIView+HXIBnspectable.m in Sources */,
 				48334DEC1BC4D00D00FD43A6 /* HXLoginRequset.m in Sources */,
+				483AE3831BD3FCD9004C0B22 /* HXMessageCenterViewController.m in Sources */,
 				48A48CD51BCD666600AF6C36 /* HXChangePassWordViewController.m in Sources */,
 				489E9CD61BC511E900C6618E /* UINavigationController+StatusBarStyle.m in Sources */,
 				48334DE51BC4D00D00FD43A6 /* HXStoryBoardManager.m in Sources */,
@@ -765,6 +783,14 @@
 				483AE3771BD3F57F004C0B22 /* Base */,
 			);
 			name = MyService.storyboard;
+			sourceTree = "<group>";
+		};
+		483AE37D1BD3FC73004C0B22 /* MessageCenter.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				483AE37E1BD3FC73004C0B22 /* Base */,
+			);
+			name = MessageCenter.storyboard;
 			sourceTree = "<group>";
 		};
 		487A447F1BCEC39500DD94E4 /* MyReservation.storyboard */ = {

@@ -15,13 +15,12 @@ pod 'MJRefresh'
 pod 'UITableView+FDTemplateLayoutCell'
 
 pod 'REFrostedViewController'
+pod 'DZNWebViewController'
 
 pod 'HexColors'
 pod 'DateTools'
 pod 'IQKeyboardManager'
 pod 'Masonry'
-
-pod 'JZNavigationExtension'
 
 # ********************** 第三方SDK **********************
 # 百度地图SDK

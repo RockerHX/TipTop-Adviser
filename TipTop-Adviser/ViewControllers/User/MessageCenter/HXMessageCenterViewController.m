@@ -8,6 +8,7 @@
 
 #import "HXMessageCenterViewController.h"
 #import "HXMessageDetailViewController.h"
+#import "MJRefresh.h"
 
 @implementation HXMessageCenterViewController
 

@@ -13,6 +13,7 @@ pod 'MJExtension'
 pod 'MBProgressHUD'
 pod 'MJRefresh'
 pod 'UITableView+FDTemplateLayoutCell'
+pod 'UIAlertView-Blocks'
 
 pod 'REFrostedViewController'
 

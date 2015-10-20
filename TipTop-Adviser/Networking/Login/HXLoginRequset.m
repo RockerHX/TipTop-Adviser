@@ -8,7 +8,7 @@
 
 #import "HXLoginRequset.h"
 
-static NSString *LoginAPI = @"/session/login";
+static NSString *LoginApi = @"/session/login";
 
 @implementation HXAdviser (HXLoginRequset)
 
@@ -16,7 +16,7 @@ static NSString *LoginAPI = @"/session/login";
                                         success:(void(^)(HXApiResponse *response, HXAdviser *adviser))success
                                         failure:(void(^)(HXApiResponse *response))failure
 {
-    return [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:LoginAPI] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    return [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:LoginApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         HXApiResponse *response = [HXApiResponse responseWithStatusCode:operation.response.statusCode
                                                               errorCode:[responseObject[@"error_code"] integerValue]
                                                                 message:responseObject[@"tip"]];

@@ -6,8 +6,8 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "UIViewController+HXClass.h"
+#import "HXListViewController.h"
 
-@interface HXWorkCircuitViewController : UITableViewController
+@interface HXWorkCircuitViewController : HXListViewController
 
 @end

@@ -15,7 +15,9 @@
 
 #pragma mark - Event Response
 - (void)phoneButonPressed {
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(orderCell:shouldCallPhone:)]) {
+        [_delegate orderCell:self shouldCallPhone:_order.clientMobile];
+    }
 }
 
 #pragma mark - Public Methods

@@ -62,7 +62,6 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - UIAlertView-Blocks (1.0)
   - UITableView+FDTemplateLayoutCell (1.3)
 
 DEPENDENCIES:
@@ -81,7 +80,6 @@ DEPENDENCIES:
   - ReactiveCocoa
   - REFrostedViewController
   - SDWebImage
-  - UIAlertView-Blocks
   - UITableView+FDTemplateLayoutCell
 
 SPEC CHECKSUMS:
@@ -100,7 +98,6 @@ SPEC CHECKSUMS:
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  UIAlertView-Blocks: 7904744fca618afbd2ec646608924f5e69d5acd1
   UITableView+FDTemplateLayoutCell: d5be6056b5060313f5955a2590ecd33142ad713d
 
 COCOAPODS: 0.39.0

@@ -9,6 +9,7 @@
 #import "HXWorkCircuitViewController.h"
 #import "HXAppApiRequest.h"
 #import "HXWorkCircuitOrderCell.h"
+#import "UIAlertView+BlocksKit.h"
 
 static NSString *OrderListApi = @"/Order";
 
@@ -87,7 +88,14 @@ static NSString *OrderListApi = @"/Order";
 
 #pragma mark - HXWorkCircuitOrderCellDelegate Methods
 - (void)orderCell:(HXWorkCircuitOrderCell *)cell shouldCallPhone:(NSString *)phoneNumber {
-    
+    [UIAlertView bk_showAlertViewWithTitle:@"是否拨打电话？"
+                                   message:phoneNumber
+                         cancelButtonTitle:@"拨打"
+                         otherButtonTitles:@[@"取消"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                             if (buttonIndex == alertView.cancelButtonIndex) {
+                                 ;
+                             }
+                         }];
 }
 
 @end

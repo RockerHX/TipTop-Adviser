@@ -8,7 +8,6 @@
 
 #import "HXMessageCenterViewController.h"
 #import "HXMessageDetailViewController.h"
-#import "MJRefresh.h"
 
 @implementation HXMessageCenterViewController
 
@@ -41,6 +40,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     HXMessageDetailViewController *detailViewController = [HXMessageDetailViewController instance];
+    detailViewController.loadURL = @"http://www.rockerhx.com";
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

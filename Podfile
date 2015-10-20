@@ -15,7 +15,6 @@ pod 'MJRefresh'
 pod 'UITableView+FDTemplateLayoutCell'
 
 pod 'REFrostedViewController'
-pod 'DZNWebViewController'
 
 pod 'HexColors'
 pod 'DateTools'

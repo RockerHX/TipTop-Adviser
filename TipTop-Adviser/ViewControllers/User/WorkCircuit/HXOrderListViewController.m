@@ -1,23 +1,23 @@
 //
-//  HXWorkCircuitViewController.m
+//  HXOrderListViewController.m
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/18.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXWorkCircuitViewController.h"
+#import "HXOrderListViewController.h"
 #import "HXAppApiRequest.h"
 #import "HXWorkCircuitOrderCell.h"
 #import "UIAlertView+BlocksKit.h"
 
 static NSString *OrderListApi = @"/Order";
 
-@interface HXWorkCircuitViewController () <HXWorkCircuitOrderCellDelegate>
+@interface HXOrderListViewController () <HXWorkCircuitOrderCellDelegate>
 
 @end
 
-@implementation HXWorkCircuitViewController
+@implementation HXOrderListViewController
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {

@@ -1,5 +1,5 @@
 //
-//  HXWorkCircuitViewController.h
+//  HXOrderListViewController.h
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/18.
@@ -8,6 +8,6 @@
 
 #import "HXListViewController.h"
 
-@interface HXWorkCircuitViewController : HXListViewController
+@interface HXOrderListViewController : HXListViewController
 
 @end

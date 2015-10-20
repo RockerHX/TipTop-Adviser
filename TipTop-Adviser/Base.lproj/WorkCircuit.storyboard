@@ -9,7 +9,7 @@
         <!--Delegate-->
         <scene sceneID="EIk-n6-bRT">
             <objects>
-                <tableViewController storyboardIdentifier="HXWorkCircuitViewController" id="EFk-0l-Nnh" customClass="HXWorkCircuitViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HXOrderListViewController" id="EFk-0l-Nnh" customClass="HXOrderListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" id="9w7-PF-ddo">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,6 +211,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W62-Jg-OFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="292" y="415"/>
+        </scene>
+        <!--Order Detail View Controller-->
+        <scene sceneID="Q0g-Ig-cVB">
+            <objects>
+                <tableViewController storyboardIdentifier="HXOrderDetailViewController" id="jKb-N8-rJu" customClass="HXOrderDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q0h-pT-OFT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jxA-FU-6ht">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jxA-FU-6ht" id="lCf-nv-2K2">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jKb-N8-rJu" id="c6t-VB-0j4"/>
+                            <outlet property="delegate" destination="jKb-N8-rJu" id="NdS-wb-QTl"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OK7-ub-ABe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="415"/>
         </scene>
         <!--Pan Gesture Navgaition Controller-->
         <scene sceneID="yK0-n6-yAj">

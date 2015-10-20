@@ -63,13 +63,17 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UC-HeaderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-N4-cZx">
+                                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UC-HeaderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-N4-cZx">
                                     <rect key="frame" x="120" y="40" width="80" height="80"/>
                                     <animations/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="BjR-nW-r9k"/>
                                         <constraint firstAttribute="height" constant="80" id="kLw-Id-DKs"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="ypV-dZ-OC7" appends="YES" id="ZbX-q7-YsW"/>
+                                    </connections>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成都云联互动科技有限公司" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xq-dM-80U">
                                     <rect key="frame" x="30" y="140" width="260" height="19.5"/>
@@ -492,6 +496,11 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h1-Gc-pa7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ypV-dZ-OC7">
+                    <connections>
+                        <action selector="userHeaderPressed" destination="a1o-34-Fah" id="pAj-zL-tv8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="145" y="394"/>
         </scene>

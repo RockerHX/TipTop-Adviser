@@ -7,6 +7,7 @@
 //
 
 #import "HXUserViewController.h"
+#import "HXUserInformationViewController.h"
 #import "HXSettingViewController.h"
 #import "HXMyReservationViewController.h"
 #import "HXOnlinePayViewController.h"
@@ -41,6 +42,13 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
 }
 
 #pragma mark - Event Response
+- (IBAction)userHeaderPressed {
+    if (_delegate && [_delegate respondsToSelector:@selector(userCenterShouldHiddenAndShowViewController:)]) {
+        UINavigationController *userInformationViewController = [HXUserInformationViewController navigationControllerInstance];
+        [_delegate userCenterShouldHiddenAndShowViewController:userInformationViewController];
+    }
+}
+
 - (IBAction)settingButtonPressed {
     if (_delegate && [_delegate respondsToSelector:@selector(userCenterShouldHiddenAndShowViewController:)]) {
         UINavigationController *settingNavigationController = [HXSettingViewController navigationControllerInstance];

@@ -19,6 +19,7 @@
 
 @property (nonatomic, weak) id <HXUserViewControllerDelegate>delegate;
 
+- (IBAction)userHeaderPressed;
 - (IBAction)settingButtonPressed;
 - (IBAction)editButtonPressed;
 

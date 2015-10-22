@@ -4,11 +4,13 @@ inhibit_all_warnings!
 pod 'ReactiveCocoa'
 pod 'BlocksKit'
 pod 'Aspects'
+pod 'MJExtension'
+pod 'Masonry'
 
 pod 'AFNetworking'
 pod 'AFNetworkActivityLogger'
 pod 'SDWebImage'
-pod 'MJExtension'
+pod 'SocketRocket'
 
 pod 'MBProgressHUD'
 pod 'MJRefresh'
@@ -19,7 +21,6 @@ pod 'REFrostedViewController'
 pod 'HexColors'
 pod 'DateTools'
 pod 'IQKeyboardManager'
-pod 'Masonry'
 
 # ********************** 第三方SDK **********************
 # 百度地图SDK

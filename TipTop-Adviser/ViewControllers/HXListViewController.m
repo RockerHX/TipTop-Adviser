@@ -35,7 +35,6 @@
 
 #pragma mark - Public Methods
 - (void)loadNewData {
-    
 }
 
 - (void)endLoad {

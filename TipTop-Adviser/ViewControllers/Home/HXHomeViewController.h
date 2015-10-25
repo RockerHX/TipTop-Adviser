@@ -21,6 +21,5 @@
 @property (weak, nonatomic) IBOutlet    UIButton *grabButton;
 
 - (IBAction)grabButtonPressed;
-- (IBAction)cylindricalTaped;
 
 @end

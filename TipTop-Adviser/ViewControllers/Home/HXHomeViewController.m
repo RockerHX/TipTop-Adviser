@@ -10,16 +10,23 @@
 #import "HXSocketManager.h"
 #import "MBProgressHUD.h"
 #import "UIConstants.h"
+#import "HXOrderAlertView.h"
+#import "UIAlertView+BlocksKit.h"
+#import "HXThemeManager.h"
 
 typedef NS_ENUM(NSUInteger, HXHomePageConnectState) {
     HXHomePageConnectStateOnline,
     HXHomePageConnectStateOffline,
 };
 
+static NSString *NewOrderEvent = @"new_order";
+
 @interface HXHomeViewController ()
 @end
 
-@implementation HXHomeViewController
+@implementation HXHomeViewController {
+    HXNewOrder *_newOrder;
+}
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
@@ -37,6 +44,9 @@ typedef NS_ENUM(NSUInteger, HXHomePageConnectState) {
 
 - (void)viewConfig {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    _orderTitleLabel.text = @"暂无需求";
+    _subTitleLabel.text = @"等待发单";
 }
 
 - (void)socketConfig {
@@ -60,20 +70,43 @@ typedef NS_ENUM(NSUInteger, HXHomePageConnectState) {
 
 #pragma mark - Event Response
 - (void)grabButtonPressed {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-}
-
-- (IBAction)cylindricalTaped {
-    if ([HXSocketManager manager].socket.readyState == SR_CLOSED) {
-        
-    }
+    [HXOrderAlertView showWithNewOrder:_newOrder hanlde:^(HXNewOrder *newOrder) {
+        NSLog(@"handle");
+    }];
 }
 
 #pragma mark - Private Methods
 - (void)handleData:(NSString *)data {
     NSData *jsonData = [data dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *receiveData = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
-    NSLog(@"%@", receiveData);
+    [self hanleEventWithReceiveData:receiveData];
+}
+
+- (void)hanleEventWithReceiveData:(NSDictionary *)receiveData {
+    NSInteger errorCode = [receiveData[@"error"] integerValue];
+    if (!errorCode) {
+        NSString *event = receiveData[@"event"];
+        NSString *extra = receiveData[@"extra"];
+        if ([event isEqualToString:NewOrderEvent]) {
+            _newOrder = [HXNewOrder objectWithKeyValues:extra];
+            [self displayWithNewOrder:_newOrder];
+        } else if ([event isEqualToString:@""]) {
+            
+        }
+    } else {
+        NSString *message = receiveData[@"msg"];
+        [UIAlertView bk_showAlertViewWithTitle:@"温馨提示"
+                                       message:message
+                             cancelButtonTitle:@"确定"
+                             otherButtonTitles:nil
+                                       handler:nil];
+    }
+}
+
+- (void)displayWithNewOrder:(HXNewOrder *)newOrder {
+    _orderTitleLabel.text = newOrder.cate;
+    _subTitleLabel.text = newOrder.subCate;
+    _promptLabel.text = @"收到 1 个需求";
 }
 
 - (void)displayWithConnectSatae:(HXHomePageConnectState)state {
@@ -90,7 +123,7 @@ typedef NS_ENUM(NSUInteger, HXHomePageConnectState) {
 }
 
 - (void)adviseOnline {
-    self.view.backgroundColor = UIColorWithRGBA(252.0f, 139.0f, 69.0f, 1.0f);
+    self.view.backgroundColor = [HXThemeManager share].themeColor;
     
     _locationIcon.image = [UIImage imageNamed:@"HP-LocationOnlineIcon"];
     

@@ -96,9 +96,6 @@
                                     <constraint firstAttribute="width" constant="220" id="qyU-z1-eb6"/>
                                     <constraint firstAttribute="trailing" secondItem="VDM-k4-brg" secondAttribute="trailing" id="vcB-qq-L1c"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="e4H-lK-M8k" appends="YES" id="PMb-FB-nC9"/>
-                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收到 0 个需求" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEV-y8-1Xo">
                                 <rect key="frame" x="98" y="398" width="123" height="24"/>
@@ -167,11 +164,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1T-Xp-pIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="e4H-lK-M8k">
-                    <connections>
-                        <action selector="cylindricalTaped" destination="yfA-hU-glS" id="5V3-Ee-uDP"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="147" y="405"/>
         </scene>

@@ -35,12 +35,12 @@ static NSString *OrderDetailApi = @"/order/view";
 #pragma mark - Public Methods
 - (void)request:(void (^)(void))completed {
     _completedBlock = completed;
-    [self startOrderListReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
-                                                          @"id": _orderID}];
+    [self startOrderDetailReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+                                                            @"id": _orderID}];
 }
 
 #pragma mark - Private Methods
-- (void)startOrderListReuqestWithParameters:(NSDictionary *)parameters {
+- (void)startOrderDetailReuqestWithParameters:(NSDictionary *)parameters {
     __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:OrderDetailApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;

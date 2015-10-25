@@ -13,7 +13,13 @@
 #import "HXReservationDetailPromptCell.h"
 #import "HXReservationDetailRemarkCell.h"
 #import "MJRefresh.h"
+#import "UIAlertView+BlocksKit.h"
+#import "HXAppApiRequest.h"
+#import "MBProgressHUD.h"
 
+
+static NSString *OrderRemarkCreateApi = @"/order/remarkCreate";
+static NSString *SendOrderApi         = @"/order/confirm";
 
 @interface HXReservationDetailViewController ()
 @end
@@ -43,15 +49,22 @@
 
 #pragma mark - Event Response
 - (IBAction)remarkButtonPressed {
-    ;
+    [self createRemark];
 }
 
 - (IBAction)phoneButonPressed {
-    ;
+    [UIAlertView bk_showAlertViewWithTitle:@"是否拨打电话？"
+                                   message:_viewModel.detail.clientMobile
+                         cancelButtonTitle:@"拨打"
+                         otherButtonTitles:@[@"取消"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                             if (buttonIndex == alertView.cancelButtonIndex) {
+                                 ;
+                             }
+                         }];
 }
 
 - (IBAction)sendButonPressed {
-    ;
+    [self sendOrder];
 }
 
 #pragma mark - Setter And Getter
@@ -76,6 +89,52 @@
 
 - (void)updateRemarkTapedVew {
     _remarkTapedView.hidden = !_viewModel.detail.remarks.count;
+}
+
+- (void)createRemark {
+    [self startCreateRemarkReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+                                                             @"id": _orderID,
+                                                    @"remark_time": [[NSDate date] description],
+                                                   @"content": @""}];
+}
+
+- (void)startCreateRemarkReuqestWithParameters:(NSDictionary *)parameters {
+//    __weak __typeof__(self)weakSelf = self;
+//    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:OrderListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        __strong __typeof__(self)strongSelf = weakSelf;
+//        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+//        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+//            [strongSelf handleOrdersData:responseObject[@"data"][@"list"]];
+//            [strongSelf.tableView reloadData];
+//            [strongSelf endLoad];
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//    }];
+}
+
+- (void)sendOrder {
+    [self startSendOrderReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+                                                             @"id": _orderID}];
+}
+
+- (void)startSendOrderReuqestWithParameters:(NSDictionary *)parameters {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak __typeof__(self)weakSelf = self;
+    [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:SendOrderApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            [UIAlertView bk_showAlertViewWithTitle:@"发送成功！"
+                                           message:nil
+                                 cancelButtonTitle:@"确定"
+                                 otherButtonTitles:nil
+                                           handler:nil];
+        }
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    }];
 }
 
 #pragma mark - Table View Data Source Methods

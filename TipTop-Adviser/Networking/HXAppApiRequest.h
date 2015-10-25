@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger, HXAppApiRequestErrorCode) {
     HXAppApiRequestErrorCodeVerificationCodeError     = 4003,
     HXAppApiRequestErrorCodeThirdAuthorizeError       = 4004,
     HXAppApiRequestErrorCodeRefreshTokenError         = 4005,
+    
+    HXAppApiRequestErrorCodeOrderNotExist             = 5001
 };
 
 

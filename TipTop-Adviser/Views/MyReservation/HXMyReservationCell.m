@@ -13,6 +13,22 @@
     HXReservationOrder *_order;
 }
 
+#pragma mark - Init Methods
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self initConfig];
+    [self viewConfig];
+}
+
+#pragma mark - Config Methods
+- (void)initConfig {
+}
+
+- (void)viewConfig {
+    _header.layer.cornerRadius = _header.frame.size.height/2;
+}
+
 #pragma mark - Event Response
 - (void)phoneButonPressed {
     if (_delegate && [_delegate respondsToSelector:@selector(orderCell:shouldCallPhone:)]) {

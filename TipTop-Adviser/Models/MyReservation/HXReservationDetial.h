@@ -1,14 +1,14 @@
 //
-//  HXReservationOrder.h
+//  HXReservationDetial.h
 //  TipTop-Adviser
 //
-//  Created by ShiCang on 15/10/21.
+//  Created by ShiCang on 15/10/26.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
 #import "MJExtension.h"
 
-@interface HXReservationOrder : NSObject
+@interface HXReservationDetial : NSObject
 
 @property (nonatomic, assign)      BOOL  isComplete;
 @property (nonatomic, assign) NSInteger  completeTime;
@@ -21,5 +21,8 @@
 @property (nonatomic, strong)  NSString *clientName;
 @property (nonatomic, strong)  NSString *clientMobile;
 @property (nonatomic, strong)  NSString *clientAvatar;
+@property (nonatomic, strong)  NSString *address;
+
+@property (nonatomic, strong) NSArray *remarks;
 
 @end

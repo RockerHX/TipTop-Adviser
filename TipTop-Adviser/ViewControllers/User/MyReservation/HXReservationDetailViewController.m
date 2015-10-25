@@ -7,92 +7,140 @@
 //
 
 #import "HXReservationDetailViewController.h"
+#import "HXReservationDetailViewModel.h"
+#import "HXReservationDetailInfoCell.h"
+#import "HXReservationDetailClientCell.h"
+#import "HXReservationDetailPromptCell.h"
+#import "HXReservationDetailRemarkCell.h"
+#import "MJRefresh.h"
+
 
 @interface HXReservationDetailViewController ()
-
 @end
 
-@implementation HXReservationDetailViewController
+@implementation HXReservationDetailViewController {
+    HXReservationDetailViewModel *_viewModel;
+}
 
+#pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self initConfig];
+    [self viewConfig];
+}
+
+#pragma mark - Config Methods
+- (void)initConfig {
+    _viewModel = [HXReservationDetailViewModel instanceWithOrderID:_orderID];
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    [self.tableView.header beginRefreshing];
+}
+
+- (void)viewConfig {
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Event Response
+- (IBAction)remarkButtonPressed {
+    ;
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (IBAction)phoneButonPressed {
+    ;
 }
 
+- (IBAction)sendButonPressed {
+    ;
+}
+
+#pragma mark - Setter And Getter
+- (HXStoryBoardName)storyBoardName {
+    return HXStoryBoardNameMyReservation;
+}
+
+#pragma mark - Private Methods
+- (void)loadData {
+    __weak __typeof__(self)weakSelf = self;
+    [_viewModel request:^{
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [strongSelf endLoad];
+    }];
+}
+
+- (void)endLoad {
+    [self.tableView reloadData];
+    [self.tableView.header endRefreshing];
+    [self updateRemarkTapedVew];
+}
+
+- (void)updateRemarkTapedVew {
+    _remarkTapedView.hidden = !_viewModel.detail.remarks.count;
+}
+
+#pragma mark - Table View Data Source Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return _viewModel.rows;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = nil;
+    HXDetailCellType type = [_viewModel.types[indexPath.row] integerValue];
+    switch (type) {
+        case HXDetailCellTypeInfo: {
+            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXReservationDetailInfoCell class]) forIndexPath:indexPath];
+            [(HXReservationDetailInfoCell *)cell displayWithDetailViewModel:_viewModel];
+            break;
+        }
+        case HXDetailCellTypeClient: {
+            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXReservationDetailClientCell class]) forIndexPath:indexPath];
+            [(HXReservationDetailClientCell *)cell displayWithDetailViewModel:_viewModel];
+            break;
+        }
+        case HXDetailCellTypePrompt: {
+            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXReservationDetailPromptCell class]) forIndexPath:indexPath];
+            break;
+        }
+        case HXDetailCellTypeRemark: {
+            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXReservationDetailRemarkCell class]) forIndexPath:indexPath];
+            [(HXReservationDetailRemarkCell *)cell displayWithDetailViewModel:_viewModel];
+            break;
+        }
+    }
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+#pragma mark - Table View Delegete Methods
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 0.0f;
+    HXDetailCellType type = [_viewModel.types[indexPath.row] integerValue];
+    switch (type) {
+        case HXDetailCellTypeInfo: {
+            height = _viewModel.infoHeight;
+            break;
+        }
+        case HXDetailCellTypeClient: {
+            height = [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXReservationDetailClientCell class])
+                                              cacheByIndexPath:indexPath
+                                                 configuration:
+                      ^(HXReservationDetailClientCell *cell) {
+                          [(HXReservationDetailClientCell *)cell displayWithDetailViewModel:_viewModel];
+                      }];
+            break;
+        }
+        case HXDetailCellTypePrompt: {
+            height = _viewModel.promptHeight;
+            break;
+        }
+        case HXDetailCellTypeRemark: {
+            height = 100;
+            break;
+        }
+    }
+    return height;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

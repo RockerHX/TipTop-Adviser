@@ -71,6 +71,12 @@
 		48CC51871BDCFB7E00985753 /* HXNewOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51861BDCFB7E00985753 /* HXNewOrder.m */; };
 		48CC518C1BDD128D00985753 /* HXReservationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC518B1BDD128D00985753 /* HXReservationDetailViewController.m */; };
 		48CC51911BDD13F700985753 /* HXReservationOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51901BDD13F700985753 /* HXReservationOrder.m */; };
+		48CC51941BDD1EC500985753 /* HXReservationDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51931BDD1EC500985753 /* HXReservationDetailViewModel.m */; };
+		48CC51981BDD2A0B00985753 /* HXReservationDetailInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51971BDD2A0B00985753 /* HXReservationDetailInfoCell.m */; };
+		48CC519B1BDD2A2900985753 /* HXReservationDetailClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC519A1BDD2A2900985753 /* HXReservationDetailClientCell.m */; };
+		48CC519E1BDD2A3800985753 /* HXReservationDetailPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC519D1BDD2A3800985753 /* HXReservationDetailPromptCell.m */; };
+		48CC51A11BDD2A4800985753 /* HXReservationDetailRemarkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51A01BDD2A4800985753 /* HXReservationDetailRemarkCell.m */; };
+		48CC51A41BDD370400985753 /* HXReservationDetial.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51A31BDD370400985753 /* HXReservationDetial.m */; };
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
@@ -201,6 +207,18 @@
 		48CC518B1BDD128D00985753 /* HXReservationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetailViewController.m; sourceTree = "<group>"; };
 		48CC518F1BDD13F700985753 /* HXReservationOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationOrder.h; sourceTree = "<group>"; };
 		48CC51901BDD13F700985753 /* HXReservationOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationOrder.m; sourceTree = "<group>"; };
+		48CC51921BDD1EC500985753 /* HXReservationDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetailViewModel.h; sourceTree = "<group>"; };
+		48CC51931BDD1EC500985753 /* HXReservationDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetailViewModel.m; sourceTree = "<group>"; };
+		48CC51961BDD2A0B00985753 /* HXReservationDetailInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetailInfoCell.h; sourceTree = "<group>"; };
+		48CC51971BDD2A0B00985753 /* HXReservationDetailInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetailInfoCell.m; sourceTree = "<group>"; };
+		48CC51991BDD2A2900985753 /* HXReservationDetailClientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetailClientCell.h; sourceTree = "<group>"; };
+		48CC519A1BDD2A2900985753 /* HXReservationDetailClientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetailClientCell.m; sourceTree = "<group>"; };
+		48CC519C1BDD2A3800985753 /* HXReservationDetailPromptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetailPromptCell.h; sourceTree = "<group>"; };
+		48CC519D1BDD2A3800985753 /* HXReservationDetailPromptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetailPromptCell.m; sourceTree = "<group>"; };
+		48CC519F1BDD2A4800985753 /* HXReservationDetailRemarkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetailRemarkCell.h; sourceTree = "<group>"; };
+		48CC51A01BDD2A4800985753 /* HXReservationDetailRemarkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetailRemarkCell.m; sourceTree = "<group>"; };
+		48CC51A21BDD370400985753 /* HXReservationDetial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetial.h; sourceTree = "<group>"; };
+		48CC51A31BDD370400985753 /* HXReservationDetial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetial.m; sourceTree = "<group>"; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F761BC4CA100000863D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -578,6 +596,7 @@
 		484339991BD6AC82007B3F84 /* MyReservation */ = {
 			isa = PBXGroup;
 			children = (
+				48CC51951BDD29EC00985753 /* Detail */,
 				4843399A1BD6AC82007B3F84 /* HXMyReservationCell.h */,
 				4843399B1BD6AC82007B3F84 /* HXMyReservationCell.m */,
 			);
@@ -680,6 +699,8 @@
 		48CC518D1BDD13B900985753 /* MyReservation */ = {
 			isa = PBXGroup;
 			children = (
+				48CC51921BDD1EC500985753 /* HXReservationDetailViewModel.h */,
+				48CC51931BDD1EC500985753 /* HXReservationDetailViewModel.m */,
 			);
 			path = MyReservation;
 			sourceTree = "<group>";
@@ -689,8 +710,25 @@
 			children = (
 				48CC518F1BDD13F700985753 /* HXReservationOrder.h */,
 				48CC51901BDD13F700985753 /* HXReservationOrder.m */,
+				48CC51A21BDD370400985753 /* HXReservationDetial.h */,
+				48CC51A31BDD370400985753 /* HXReservationDetial.m */,
 			);
 			path = MyReservation;
+			sourceTree = "<group>";
+		};
+		48CC51951BDD29EC00985753 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				48CC51961BDD2A0B00985753 /* HXReservationDetailInfoCell.h */,
+				48CC51971BDD2A0B00985753 /* HXReservationDetailInfoCell.m */,
+				48CC51991BDD2A2900985753 /* HXReservationDetailClientCell.h */,
+				48CC519A1BDD2A2900985753 /* HXReservationDetailClientCell.m */,
+				48CC519C1BDD2A3800985753 /* HXReservationDetailPromptCell.h */,
+				48CC519D1BDD2A3800985753 /* HXReservationDetailPromptCell.m */,
+				48CC519F1BDD2A4800985753 /* HXReservationDetailRemarkCell.h */,
+				48CC51A01BDD2A4800985753 /* HXReservationDetailRemarkCell.m */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		48D74F691BC4CA100000863D = {
@@ -883,9 +921,11 @@
 				48A5FEF91BD94B7300891727 /* HXSocketManager.m in Sources */,
 				48334DE31BC4D00D00FD43A6 /* HXIBView.m in Sources */,
 				48CC518C1BDD128D00985753 /* HXReservationDetailViewController.m in Sources */,
+				48CC51A41BDD370400985753 /* HXReservationDetial.m in Sources */,
 				483AE3911BD4090A004C0B22 /* HXMyAddressViewController.m in Sources */,
 				483AE36B1BD3EDD9004C0B22 /* HXOrderListViewController.m in Sources */,
 				48CC51911BDD13F700985753 /* HXReservationOrder.m in Sources */,
+				48CC51941BDD1EC500985753 /* HXReservationDetailViewModel.m in Sources */,
 				48334DE81BC4D00D00FD43A6 /* HXAdviser.m in Sources */,
 				48CC51831BDCEBCE00985753 /* HXOrderAlertCell.m in Sources */,
 				48CC517C1BDCE92300985753 /* HXOrderAlertView.m in Sources */,
@@ -907,6 +947,7 @@
 				48334DEC1BC4D00D00FD43A6 /* HXLoginRequset.m in Sources */,
 				483AE3971BD40DFF004C0B22 /* HXWebViewController.m in Sources */,
 				483AE3831BD3FCD9004C0B22 /* HXMessageCenterViewController.m in Sources */,
+				48CC519E1BDD2A3800985753 /* HXReservationDetailPromptCell.m in Sources */,
 				48A48CD51BCD666600AF6C36 /* HXChangePassWordViewController.m in Sources */,
 				489E9CD61BC511E900C6618E /* UINavigationController+StatusBarStyle.m in Sources */,
 				48334DE51BC4D00D00FD43A6 /* HXStoryBoardManager.m in Sources */,
@@ -917,15 +958,18 @@
 				487A44851BCEC4B000DD94E4 /* HXMyReservationViewController.m in Sources */,
 				48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */,
 				48334DE41BC4D00D00FD43A6 /* HXIBnsepectableManager.m in Sources */,
+				48CC519B1BDD2A2900985753 /* HXReservationDetailClientCell.m in Sources */,
 				48334DEA1BC4D00D00FD43A6 /* HXApiRequest.m in Sources */,
 				48334DEE1BC4D00D00FD43A6 /* HXLoginViewController.m in Sources */,
 				48334DED1BC4D00D00FD43A6 /* HXHomeViewController.m in Sources */,
+				48CC51A11BDD2A4800985753 /* HXReservationDetailRemarkCell.m in Sources */,
 				48A48CCF1BCD5DEC00AF6C36 /* HXSettingViewController.m in Sources */,
 				48D74F771BC4CA100000863D /* main.m in Sources */,
 				484339A01BD6AC82007B3F84 /* HXWorkCircuitOrderCell.m in Sources */,
 				483AE3751BD3F399004C0B22 /* HXMyBiddingViewController.m in Sources */,
 				483AE38A1BD40257004C0B22 /* HXMyCommentViewController.m in Sources */,
 				48334DE71BC4D00D00FD43A6 /* HXVersion.m in Sources */,
+				48CC51981BDD2A0B00985753 /* HXReservationDetailInfoCell.m in Sources */,
 				484339851BD697CC007B3F84 /* HXUserInformationViewController.m in Sources */,
 				489E9CD21BC5116A00C6618E /* HXThemeManager.m in Sources */,
 				48A48CB21BC96D6E00AF6C36 /* HXMainViewController.m in Sources */,

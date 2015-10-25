@@ -9,6 +9,7 @@
 #import "HXMyReservationViewController.h"
 #import "HXMyReservationCell.h"
 #import "UIAlertView+BlocksKit.h"
+#import "HXReservationDetailViewController.h"
 
 
 static NSString *OrderListApi = @"/Order";
@@ -21,7 +22,6 @@ static NSString *OrderListApi = @"/Order";
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 #pragma mark - Setter And Getter
@@ -83,6 +83,14 @@ static NSString *OrderListApi = @"/Order";
     HXMyReservationCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXMyReservationCell class]) forIndexPath:indexPath];
     [cell displayWithOrder:self.dataList[indexPath.row]];
     return cell;
+}
+
+#pragma mark - Table View Delegete Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HXReservationOrder *order = self.dataList[indexPath.row];
+    HXReservationDetailViewController *detailViewController = [HXReservationDetailViewController instance];
+    detailViewController.orderID = order.ID;
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark - HXWorkCircuitOrderCellDelegate Methods

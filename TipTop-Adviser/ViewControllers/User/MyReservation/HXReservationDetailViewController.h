@@ -6,8 +6,16 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIViewController+HXClass.h"
 
 @interface HXReservationDetailViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet UIView *remarkTapedView;
+
+@property (nonatomic, copy) NSString *orderID;
+
+- (IBAction)remarkButtonPressed;
+- (IBAction)phoneButonPressed;
+- (IBAction)sendButonPressed;
 
 @end

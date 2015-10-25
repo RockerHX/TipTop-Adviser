@@ -69,6 +69,8 @@
 		48CC51801BDCEBBE00985753 /* HXOrderAlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CC517F1BDCEBBE00985753 /* HXOrderAlertCell.xib */; };
 		48CC51831BDCEBCE00985753 /* HXOrderAlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51821BDCEBCE00985753 /* HXOrderAlertCell.m */; };
 		48CC51871BDCFB7E00985753 /* HXNewOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51861BDCFB7E00985753 /* HXNewOrder.m */; };
+		48CC518C1BDD128D00985753 /* HXReservationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC518B1BDD128D00985753 /* HXReservationDetailViewController.m */; };
+		48CC51911BDD13F700985753 /* HXReservationOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51901BDD13F700985753 /* HXReservationOrder.m */; };
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
@@ -195,6 +197,10 @@
 		48CC51821BDCEBCE00985753 /* HXOrderAlertCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXOrderAlertCell.m; sourceTree = "<group>"; };
 		48CC51851BDCFB7E00985753 /* HXNewOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXNewOrder.h; sourceTree = "<group>"; };
 		48CC51861BDCFB7E00985753 /* HXNewOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXNewOrder.m; sourceTree = "<group>"; };
+		48CC518A1BDD128D00985753 /* HXReservationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetailViewController.h; sourceTree = "<group>"; };
+		48CC518B1BDD128D00985753 /* HXReservationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetailViewController.m; sourceTree = "<group>"; };
+		48CC518F1BDD13F700985753 /* HXReservationOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationOrder.h; sourceTree = "<group>"; };
+		48CC51901BDD13F700985753 /* HXReservationOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationOrder.m; sourceTree = "<group>"; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D74F761BC4CA100000863D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -307,6 +313,7 @@
 		48334DC51BC4D00D00FD43A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				48CC518E1BDD13F700985753 /* MyReservation */,
 				48CC51841BDCFB7000985753 /* HomePage */,
 				484339861BD69FD4007B3F84 /* WorkCircuit */,
 				48334DC61BC4D00D00FD43A6 /* HXAdviser.h */,
@@ -405,6 +412,7 @@
 		48334DDC1BC4D00D00FD43A6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				48CC518D1BDD13B900985753 /* MyReservation */,
 				48CC51881BDCFF1F00985753 /* HomePage */,
 				48CC51891BDCFF1F00985753 /* WorkCircuit */,
 			);
@@ -590,6 +598,8 @@
 			children = (
 				487A44831BCEC4B000DD94E4 /* HXMyReservationViewController.h */,
 				487A44841BCEC4B000DD94E4 /* HXMyReservationViewController.m */,
+				48CC518A1BDD128D00985753 /* HXReservationDetailViewController.h */,
+				48CC518B1BDD128D00985753 /* HXReservationDetailViewController.m */,
 			);
 			path = MyReservation;
 			sourceTree = "<group>";
@@ -665,6 +675,22 @@
 			children = (
 			);
 			path = WorkCircuit;
+			sourceTree = "<group>";
+		};
+		48CC518D1BDD13B900985753 /* MyReservation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyReservation;
+			sourceTree = "<group>";
+		};
+		48CC518E1BDD13F700985753 /* MyReservation */ = {
+			isa = PBXGroup;
+			children = (
+				48CC518F1BDD13F700985753 /* HXReservationOrder.h */,
+				48CC51901BDD13F700985753 /* HXReservationOrder.m */,
+			);
+			path = MyReservation;
 			sourceTree = "<group>";
 		};
 		48D74F691BC4CA100000863D = {
@@ -856,8 +882,10 @@
 			files = (
 				48A5FEF91BD94B7300891727 /* HXSocketManager.m in Sources */,
 				48334DE31BC4D00D00FD43A6 /* HXIBView.m in Sources */,
+				48CC518C1BDD128D00985753 /* HXReservationDetailViewController.m in Sources */,
 				483AE3911BD4090A004C0B22 /* HXMyAddressViewController.m in Sources */,
 				483AE36B1BD3EDD9004C0B22 /* HXOrderListViewController.m in Sources */,
+				48CC51911BDD13F700985753 /* HXReservationOrder.m in Sources */,
 				48334DE81BC4D00D00FD43A6 /* HXAdviser.m in Sources */,
 				48CC51831BDCEBCE00985753 /* HXOrderAlertCell.m in Sources */,
 				48CC517C1BDCE92300985753 /* HXOrderAlertView.m in Sources */,

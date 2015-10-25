@@ -7,17 +7,31 @@
 //
 
 #import "HXMyReservationCell.h"
+#import "UIImageView+WebCache.h"
 
-@implementation HXMyReservationCell
-
-- (void)awakeFromNib {
-    // Initialization code
+@implementation HXMyReservationCell {
+    HXReservationOrder *_order;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+#pragma mark - Event Response
+- (void)phoneButonPressed {
+    if (_delegate && [_delegate respondsToSelector:@selector(orderCell:shouldCallPhone:)]) {
+        [_delegate orderCell:self shouldCallPhone:_order.clientMobile];
+    }
+}
 
-    // Configure the view for the selected state
+- (IBAction)sendButonPressed {
+    
+}
+
+#pragma mark - Public Methods
+- (void)displayWithOrder:(HXReservationOrder *)order {
+    _order = order;
+    
+    _dateLabel.text = [NSDate dateWithTimeIntervalSince1970:order.createTime].description;
+    _orderNameLabel.text = order.cate;
+    _nameLabel.text = order.clientName;
+    [_header sd_setImageWithURL:[NSURL URLWithString:order.clientAvatar]];
 }
 
 @end

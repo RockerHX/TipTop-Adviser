@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+HXClass.h"
+#import "HXAppApiRequest.h"
 
 @interface HXListViewController : UITableViewController
 

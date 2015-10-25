@@ -7,14 +7,12 @@
 //
 
 #import "HXOrderListViewController.h"
-#import "HXAppApiRequest.h"
 #import "HXWorkCircuitOrderCell.h"
 #import "UIAlertView+BlocksKit.h"
 
 static NSString *OrderListApi = @"/Order";
 
 @interface HXOrderListViewController () <HXWorkCircuitOrderCellDelegate>
-
 @end
 
 @implementation HXOrderListViewController
@@ -81,7 +79,6 @@ static NSString *OrderListApi = @"/Order";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HXWorkCircuitOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXWorkCircuitOrderCell class]) forIndexPath:indexPath];
-    cell.delegate = self;
     [cell displayWithOrder:self.dataList[indexPath.row]];
     return cell;
 }

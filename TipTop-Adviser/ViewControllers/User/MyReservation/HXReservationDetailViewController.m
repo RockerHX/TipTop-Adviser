@@ -16,9 +16,9 @@
 #import "UIAlertView+BlocksKit.h"
 #import "HXAppApiRequest.h"
 #import "MBProgressHUD.h"
+#import "HXReservationAddRemarkViewController.h"
 
 
-static NSString *OrderRemarkCreateApi = @"/order/remarkCreate";
 static NSString *SendOrderApi         = @"/order/confirm";
 
 @interface HXReservationDetailViewController ()
@@ -49,7 +49,9 @@ static NSString *SendOrderApi         = @"/order/confirm";
 
 #pragma mark - Event Response
 - (IBAction)remarkButtonPressed {
-    [self createRemark];
+    HXReservationAddRemarkViewController *addRemarkViewController = [HXReservationAddRemarkViewController instance];
+    addRemarkViewController.orderID = _orderID;
+    [self.navigationController pushViewController:addRemarkViewController animated:YES];
 }
 
 - (IBAction)phoneButonPressed {
@@ -89,27 +91,6 @@ static NSString *SendOrderApi         = @"/order/confirm";
 
 - (void)updateRemarkTapedVew {
     _remarkTapedView.hidden = !_viewModel.detail.remarks.count;
-}
-
-- (void)createRemark {
-    [self startCreateRemarkReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
-                                                             @"id": _orderID,
-                                                    @"remark_time": [[NSDate date] description],
-                                                   @"content": @""}];
-}
-
-- (void)startCreateRemarkReuqestWithParameters:(NSDictionary *)parameters {
-//    __weak __typeof__(self)weakSelf = self;
-//    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:OrderListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        __strong __typeof__(self)strongSelf = weakSelf;
-//        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
-//        if (HXAppApiRequestErrorCodeNoError == errorCode) {
-//            [strongSelf handleOrdersData:responseObject[@"data"][@"list"]];
-//            [strongSelf.tableView reloadData];
-//            [strongSelf endLoad];
-//        }
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//    }];
 }
 
 - (void)sendOrder {

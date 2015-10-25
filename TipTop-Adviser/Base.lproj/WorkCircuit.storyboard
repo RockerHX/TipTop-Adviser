@@ -216,36 +216,44 @@
             </objects>
             <point key="canvasLocation" x="292" y="415"/>
         </scene>
-        <!--Order Detail View Controller-->
-        <scene sceneID="Q0g-Ig-cVB">
+        <!--工作流程详情-->
+        <scene sceneID="6PL-bL-0Pb">
             <objects>
-                <tableViewController storyboardIdentifier="HXOrderDetailViewController" id="jKb-N8-rJu" customClass="HXOrderDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q0h-pT-OFT">
+                <viewController storyboardIdentifier="HXOrderDetailViewController" id="bwF-Hh-Oxa" customClass="HXOrderDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y55-Iv-4d9"/>
+                        <viewControllerLayoutGuide type="bottom" id="dMV-vd-DSE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Qh-2D-ReY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aam-D5-G9W">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bwF-Hh-Oxa" id="FNr-WY-7oT"/>
+                                </connections>
+                            </webView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="jxA-FU-6ht">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jxA-FU-6ht" id="lCf-nv-2K2">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="jKb-N8-rJu" id="c6t-VB-0j4"/>
-                            <outlet property="delegate" destination="jKb-N8-rJu" id="NdS-wb-QTl"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OK7-ub-ABe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="dMV-vd-DSE" firstAttribute="top" secondItem="Aam-D5-G9W" secondAttribute="bottom" id="7SX-bk-cwo"/>
+                            <constraint firstItem="Aam-D5-G9W" firstAttribute="top" secondItem="y55-Iv-4d9" secondAttribute="bottom" id="KhY-5r-em6"/>
+                            <constraint firstAttribute="trailing" secondItem="Aam-D5-G9W" secondAttribute="trailing" id="VrU-zO-bBV"/>
+                            <constraint firstItem="Aam-D5-G9W" firstAttribute="leading" secondItem="7Qh-2D-ReY" secondAttribute="leading" id="jTA-gc-YNX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="工作流程详情" id="7t9-wY-XTG"/>
+                    <connections>
+                        <outlet property="webView" destination="Aam-D5-G9W" id="4OZ-7W-M0g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sn5-JO-0MZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734" y="415"/>
+            <point key="canvasLocation" x="725" y="415"/>
         </scene>
         <!--Pan Gesture Navgaition Controller-->
         <scene sceneID="yK0-n6-yAj">

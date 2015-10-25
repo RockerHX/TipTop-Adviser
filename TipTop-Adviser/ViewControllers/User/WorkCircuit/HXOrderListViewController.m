@@ -9,6 +9,7 @@
 #import "HXOrderListViewController.h"
 #import "HXWorkCircuitOrderCell.h"
 #import "UIAlertView+BlocksKit.h"
+#import "HXOrderDetailViewController.h"
 
 static NSString *OrderListApi = @"/Order";
 
@@ -18,6 +19,16 @@ static NSString *OrderListApi = @"/Order";
 @implementation HXOrderListViewController
 
 #pragma mark - View Controller Life Cycle
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.navigationController.canPan = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    self.navigationController.canPan = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
@@ -81,6 +92,14 @@ static NSString *OrderListApi = @"/Order";
     HXWorkCircuitOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXWorkCircuitOrderCell class]) forIndexPath:indexPath];
     [cell displayWithOrder:self.dataList[indexPath.row]];
     return cell;
+}
+
+#pragma mark - Table View Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HXWorkCircuitOrder *order = self.dataList[indexPath.row];
+    HXOrderDetailViewController *detailViewController = [HXOrderDetailViewController instance];
+    detailViewController.loadURL = [NSString stringWithFormat:@"http://www.tbagame.com:8080/yl_dgg/h5/agent/order/view?id=%@&access_token=b487a6db8f621069fc6785b7b303f7de", order.ID];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark - HXWorkCircuitOrderCellDelegate Methods

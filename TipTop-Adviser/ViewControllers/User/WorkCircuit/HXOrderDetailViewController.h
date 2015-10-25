@@ -6,8 +6,8 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HXWebViewController.h"
 
-@interface HXOrderDetailViewController : UITableViewController
+@interface HXOrderDetailViewController : HXWebViewController
 
 @end

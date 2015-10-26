@@ -56,7 +56,7 @@ static NSString *SendOrderApi         = @"/order/confirm";
 
 - (IBAction)phoneButonPressed {
     [UIAlertView bk_showAlertViewWithTitle:@"是否拨打电话？"
-                                   message:_viewModel.detail.clientMobile
+                                   message:_viewModel.detail.order.clientMobile
                          cancelButtonTitle:@"拨打"
                          otherButtonTitles:@[@"取消"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
                              if (buttonIndex == alertView.cancelButtonIndex) {
@@ -125,25 +125,25 @@ static NSString *SendOrderApi         = @"/order/confirm";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
-    HXDetailCellType type = [_viewModel.types[indexPath.row] integerValue];
-    switch (type) {
-        case HXDetailCellTypeInfo: {
+    HXDetailCellRow rowType = [_viewModel.rowTypes[indexPath.row] integerValue];
+    switch (rowType) {
+        case HXDetailCellRowInfo: {
             cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXReservationDetailInfoCell class]) forIndexPath:indexPath];
             [(HXReservationDetailInfoCell *)cell displayWithDetailViewModel:_viewModel];
             break;
         }
-        case HXDetailCellTypeClient: {
+        case HXDetailCellRowClient: {
             cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXReservationDetailClientCell class]) forIndexPath:indexPath];
-            [(HXReservationDetailClientCell *)cell displayWithDetailViewModel:_viewModel];
+            [(HXReservationDetailClientCell *)cell displayWithDetailOrder:_viewModel.detail.order];
             break;
         }
-        case HXDetailCellTypePrompt: {
+        case HXDetailCellRowPrompt: {
             cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXReservationDetailPromptCell class]) forIndexPath:indexPath];
             break;
         }
-        case HXDetailCellTypeRemark: {
+        case HXDetailCellRowRemark: {
             cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXReservationDetailRemarkCell class]) forIndexPath:indexPath];
-            [(HXReservationDetailRemarkCell *)cell displayWithDetailViewModel:_viewModel];
+            [(HXReservationDetailRemarkCell *)cell displayWithDetailRemark:_viewModel.detail.remarks[indexPath.row - _viewModel.regularRow]];
             break;
         }
     }
@@ -153,27 +153,35 @@ static NSString *SendOrderApi         = @"/order/confirm";
 #pragma mark - Table View Delegete Methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0.0f;
-    HXDetailCellType type = [_viewModel.types[indexPath.row] integerValue];
-    switch (type) {
-        case HXDetailCellTypeInfo: {
+    HXDetailCellRow row = [_viewModel.rowTypes[indexPath.row] integerValue];
+    __weak __typeof__(self)weakSelf = self;
+    switch (row) {
+        case HXDetailCellRowInfo: {
             height = _viewModel.infoHeight;
             break;
         }
-        case HXDetailCellTypeClient: {
+        case HXDetailCellRowClient: {
             height = [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXReservationDetailClientCell class])
                                               cacheByIndexPath:indexPath
                                                  configuration:
                       ^(HXReservationDetailClientCell *cell) {
-                          [(HXReservationDetailClientCell *)cell displayWithDetailViewModel:_viewModel];
+                          __strong __typeof__(self)strongSelf = weakSelf;
+                          [cell displayWithDetailOrder:strongSelf->_viewModel.detail.order];
                       }];
             break;
         }
-        case HXDetailCellTypePrompt: {
+        case HXDetailCellRowPrompt: {
             height = _viewModel.promptHeight;
             break;
         }
-        case HXDetailCellTypeRemark: {
-            height = 100;
+        case HXDetailCellRowRemark: {
+            height = [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXReservationDetailRemarkCell class])
+                                              cacheByIndexPath:indexPath
+                                                 configuration:
+                      ^(HXReservationDetailRemarkCell *cell) {
+                          __strong __typeof__(self)strongSelf = weakSelf;
+                          [cell displayWithDetailRemark:strongSelf->_viewModel.detail.remarks[indexPath.row - strongSelf->_viewModel.regularRow]];
+                      }];
             break;
         }
     }

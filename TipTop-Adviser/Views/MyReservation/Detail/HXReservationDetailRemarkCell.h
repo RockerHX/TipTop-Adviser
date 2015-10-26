@@ -8,13 +8,13 @@
 
 #import "UITableView+FDTemplateLayoutCell.h"
 
-@class HXReservationDetailViewModel;
+@class HXReservationDetailRemark;
 
 @interface HXReservationDetailRemarkCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *eventLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
-- (void)displayWithDetailViewModel:(HXReservationDetailViewModel *)viewModel;
+- (void)displayWithDetailRemark:(HXReservationDetailRemark *)remark;
 
 @end

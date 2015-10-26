@@ -7,7 +7,7 @@
 //
 
 #import "HXReservationDetailClientCell.h"
-#import "HXReservationDetailViewModel.h"
+#import "HXReservationDetail.h"
 #import "UIImageView+WebCache.h"
 #import "UIConstants.h"
 
@@ -31,12 +31,10 @@
 }
 
 #pragma mark - Public Methods
-- (void)displayWithDetailViewModel:(HXReservationDetailViewModel *)viewModel {
-    HXReservationDetial *detail = viewModel.detail;
-    _clientNameLabel.text = detail.clientName;
-    _addressLabel.text = detail.address;
-    _addressLabel.text = @"水电费大沙发撒打发士大夫撒旦发送到发送到发送到发的发生的法师打发士大夫是打发撒旦法师的法撒旦法撒打发士大夫撒旦";
-    [_clientHeader sd_setImageWithURL:[NSURL URLWithString:detail.clientAvatar]];
+- (void)displayWithDetailOrder:(HXReservationDetailOrder *)order {
+    _clientNameLabel.text = order.clientName;
+    _addressLabel.text = order.address;
+    [_clientHeader sd_setImageWithURL:[NSURL URLWithString:order.clientAvatar]];
 }
 
 @end

@@ -77,7 +77,7 @@
 		48CC519B1BDD2A2900985753 /* HXReservationDetailClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC519A1BDD2A2900985753 /* HXReservationDetailClientCell.m */; };
 		48CC519E1BDD2A3800985753 /* HXReservationDetailPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC519D1BDD2A3800985753 /* HXReservationDetailPromptCell.m */; };
 		48CC51A11BDD2A4800985753 /* HXReservationDetailRemarkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51A01BDD2A4800985753 /* HXReservationDetailRemarkCell.m */; };
-		48CC51A41BDD370400985753 /* HXReservationDetial.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51A31BDD370400985753 /* HXReservationDetial.m */; };
+		48CC51A41BDD370400985753 /* HXReservationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51A31BDD370400985753 /* HXReservationDetail.m */; };
 		48CC51A71BDD4CFA00985753 /* HXReservationAddRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC51A61BDD4CFA00985753 /* HXReservationAddRemarkViewController.m */; };
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
@@ -221,8 +221,8 @@
 		48CC519D1BDD2A3800985753 /* HXReservationDetailPromptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetailPromptCell.m; sourceTree = "<group>"; };
 		48CC519F1BDD2A4800985753 /* HXReservationDetailRemarkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetailRemarkCell.h; sourceTree = "<group>"; };
 		48CC51A01BDD2A4800985753 /* HXReservationDetailRemarkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetailRemarkCell.m; sourceTree = "<group>"; };
-		48CC51A21BDD370400985753 /* HXReservationDetial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetial.h; sourceTree = "<group>"; };
-		48CC51A31BDD370400985753 /* HXReservationDetial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetial.m; sourceTree = "<group>"; };
+		48CC51A21BDD370400985753 /* HXReservationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationDetail.h; sourceTree = "<group>"; };
+		48CC51A31BDD370400985753 /* HXReservationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationDetail.m; sourceTree = "<group>"; };
 		48CC51A51BDD4CFA00985753 /* HXReservationAddRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationAddRemarkViewController.h; sourceTree = "<group>"; };
 		48CC51A61BDD4CFA00985753 /* HXReservationAddRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationAddRemarkViewController.m; sourceTree = "<group>"; };
 		48D74F721BC4CA100000863D /* TipTop-Adviser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TipTop-Adviser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -736,8 +736,8 @@
 			children = (
 				48CC518F1BDD13F700985753 /* HXReservationOrder.h */,
 				48CC51901BDD13F700985753 /* HXReservationOrder.m */,
-				48CC51A21BDD370400985753 /* HXReservationDetial.h */,
-				48CC51A31BDD370400985753 /* HXReservationDetial.m */,
+				48CC51A21BDD370400985753 /* HXReservationDetail.h */,
+				48CC51A31BDD370400985753 /* HXReservationDetail.m */,
 			);
 			path = MyReservation;
 			sourceTree = "<group>";
@@ -947,7 +947,7 @@
 				48A5FEF91BD94B7300891727 /* HXSocketManager.m in Sources */,
 				48334DE31BC4D00D00FD43A6 /* HXIBView.m in Sources */,
 				48CC518C1BDD128D00985753 /* HXReservationDetailViewController.m in Sources */,
-				48CC51A41BDD370400985753 /* HXReservationDetial.m in Sources */,
+				48CC51A41BDD370400985753 /* HXReservationDetail.m in Sources */,
 				483AE3911BD4090A004C0B22 /* HXMyAddressViewController.m in Sources */,
 				483AE36B1BD3EDD9004C0B22 /* HXOrderListViewController.m in Sources */,
 				48CC51911BDD13F700985753 /* HXReservationOrder.m in Sources */,

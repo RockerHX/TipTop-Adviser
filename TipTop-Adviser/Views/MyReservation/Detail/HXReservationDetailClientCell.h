@@ -8,7 +8,7 @@
 
 #import "UITableView+FDTemplateLayoutCell.h"
 
-@class HXReservationDetailViewModel;
+@class HXReservationDetailOrder;
 
 @interface HXReservationDetailClientCell : UITableViewCell
 
@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet     UILabel *clientNameLabel;
 @property (weak, nonatomic) IBOutlet     UILabel *addressLabel;
 
-- (void)displayWithDetailViewModel:(HXReservationDetailViewModel *)viewModel;
+- (void)displayWithDetailOrder:(HXReservationDetailOrder *)order;
 
 @end

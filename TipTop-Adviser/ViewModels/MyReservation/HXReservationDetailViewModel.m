@@ -15,6 +15,7 @@ typedef void(^BLOCK)(void);
 static NSString *OrderDetailApi = @"/order/view";
 
 @implementation HXReservationDetailViewModel {
+    NSArray *_rowTypes;
     BLOCK _completedBlock;
 }
 
@@ -28,6 +29,7 @@ static NSString *OrderDetailApi = @"/order/view";
     self = [super init];
     if (self) {
         _orderID = [orderID copy];
+        [self setupRowTypes];
     }
     return self;
 }
@@ -40,13 +42,20 @@ static NSString *OrderDetailApi = @"/order/view";
 }
 
 #pragma mark - Private Methods
+
+- (void)setupRowTypes {
+    _rowTypes = @[@(HXDetailCellRowInfo),
+                  @(HXDetailCellRowClient)];
+}
+
 - (void)startOrderDetailReuqestWithParameters:(NSDictionary *)parameters {
+    [self setupRowTypes];
     __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:OrderDetailApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
-            [strongSelf handleDetailData:responseObject[@"data"][@"order"]];
+            [strongSelf handleDetailData:responseObject[@"data"]];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     }];
@@ -54,8 +63,8 @@ static NSString *OrderDetailApi = @"/order/view";
 
 - (void)handleDetailData:(NSDictionary *)data {
     if (data) {
-        _detail = [HXReservationDetial objectWithKeyValues:data];
-        _orderDate = [[NSDate dateWithTimeIntervalSince1970:_detail.createTime] formattedDateWithFormat:@"yyyy-MM-dd hh:mm:ss"];
+        _detail = [HXReservationDetail objectWithKeyValues:data];
+        _orderDate = [[NSDate dateWithTimeIntervalSince1970:_detail.order.createTime] formattedDateWithFormat:@"yyyy-MM-dd hh:mm:ss"];
     }
     if (_completedBlock) {
         _completedBlock();
@@ -71,24 +80,26 @@ static NSString *OrderDetailApi = @"/order/view";
     return _detail ? 36.0f : 0.0f;
 }
 
-static NSInteger Row = 2;
+static NSInteger RegularRow = 2;
 - (NSInteger)rows {
-    return (_detail ? (Row + (_detail.remarks.count ? (_detail.remarks.count + 1) : 0)) : 0);
+    return (_detail ? (RegularRow + (_detail.remarks.count ? (_detail.remarks.count + 1) : 0)) : 0);
 }
 
-- (NSArray *)types {
-    NSArray *types = @[@(HXDetailCellTypeInfo),
-                       @(HXDetailCellTypeClient),
-                       @(HXDetailCellTypePrompt)];
+- (NSInteger)regularRow {
+    return RegularRow + 1;
+}
+
+- (NSArray *)rowTypes {
     NSArray *remarks = _detail.remarks;
-    if (remarks) {
-        NSMutableArray *array = [NSMutableArray arrayWithArray:types];
+    if (remarks.count) {
+        NSMutableArray *array = [NSMutableArray arrayWithArray:_rowTypes];
+        [array addObject:@(HXDetailCellRowPrompt)];
         for (NSInteger index = 0; index < remarks.count; index ++) {
-            [array addObject:@(HXDetailCellTypeRemark)];
+            [array addObject:@(HXDetailCellRowRemark)];
         }
-        types = [array copy];
+        _rowTypes = [array copy];
     }
-    return types;
+    return _rowTypes;
 }
 
 @end

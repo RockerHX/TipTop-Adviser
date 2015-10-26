@@ -1,5 +1,5 @@
 //
-//  HXReservationDetial.h
+//  HXReservationDetail.h
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/26.
@@ -8,7 +8,7 @@
 
 #import "MJExtension.h"
 
-@interface HXReservationDetial : NSObject
+@interface HXReservationDetailOrder : NSObject
 
 @property (nonatomic, assign)      BOOL  isComplete;
 @property (nonatomic, assign) NSInteger  completeTime;
@@ -23,6 +23,20 @@
 @property (nonatomic, strong)  NSString *clientAvatar;
 @property (nonatomic, strong)  NSString *address;
 
-@property (nonatomic, strong) NSArray *remarks;
+@end
+
+@interface HXReservationDetailRemark : NSObject
+
+@property (nonatomic, strong)  NSString *ID;
+@property (nonatomic, strong)  NSString *content;
+@property (nonatomic, strong)  NSString *markTime;
+@property (nonatomic, strong)  NSString *createTime;
+
+@end
+
+@interface HXReservationDetail : NSObject
+
+@property (nonatomic, strong) HXReservationDetailOrder *order;
+@property (nonatomic, strong)                  NSArray *remarks;
 
 @end

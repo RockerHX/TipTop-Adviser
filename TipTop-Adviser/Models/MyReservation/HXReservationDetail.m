@@ -1,14 +1,14 @@
 //
-//  HXReservationDetial.m
+//  HXReservationDetail.m
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/26.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXReservationDetial.h"
+#import "HXReservationDetail.h"
 
-@implementation HXReservationDetial
+@implementation HXReservationDetailOrder
 
 + (NSDictionary *)replacedKeyFromPropertyName {
     return @{@"ID": @"id",
@@ -20,6 +20,24 @@
      @"isComplete": @"is_complete",
    @"completeTime": @"complete_time",
      @"createTime": @"create_time"};
+}
+
+@end
+
+@implementation HXReservationDetailRemark
+
++ (NSDictionary *)replacedKeyFromPropertyName {
+    return @{@"ID": @"id",
+       @"markTime": @"mark_time",
+     @"createTime": @"create_time"};
+}
+
+@end
+
+@implementation HXReservationDetail
+
++ (NSDictionary *)objectClassInArray {
+    return @{@"remarks": @"HXReservationDetailRemark"};
 }
 
 @end

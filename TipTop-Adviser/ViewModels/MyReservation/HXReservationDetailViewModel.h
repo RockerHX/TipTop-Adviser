@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HXReservationDetial.h"
+#import "HXReservationDetail.h"
 
-typedef NS_ENUM(NSUInteger, HXDetailCellType) {
-    HXDetailCellTypeInfo,
-    HXDetailCellTypeClient,
-    HXDetailCellTypePrompt,
-    HXDetailCellTypeRemark
+typedef NS_ENUM(NSUInteger, HXDetailCellRow) {
+    HXDetailCellRowInfo,
+    HXDetailCellRowClient,
+    HXDetailCellRowPrompt,
+    HXDetailCellRowRemark
 };
 
 
@@ -22,11 +22,12 @@ typedef NS_ENUM(NSUInteger, HXDetailCellType) {
 @property (nonatomic, assign, readonly)   CGFloat  infoHeight;
 @property (nonatomic, assign, readonly)   CGFloat  promptHeight;
 @property (nonatomic, assign, readonly) NSInteger  rows;
+@property (nonatomic, assign, readonly) NSInteger  regularRow;
 @property (nonatomic, copy, readonly)    NSString *orderID;
 
-@property (nonatomic, strong, readonly)   NSArray *types;
+@property (nonatomic, strong, readonly)   NSArray *rowTypes;
 
-@property (nonatomic, strong, readonly) HXReservationDetial *detail;
+@property (nonatomic, strong, readonly) HXReservationDetail *detail;
 @property (nonatomic, copy, readonly)              NSString *orderDate;
 
 + (instancetype)instanceWithOrderID:(NSString *)orderID;

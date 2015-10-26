@@ -44,7 +44,6 @@ static NSString *SendOrderApi         = @"/order/confirm";
 }
 
 - (void)viewConfig {
-    
 }
 
 #pragma mark - Event Response
@@ -150,6 +149,10 @@ static NSString *SendOrderApi         = @"/order/confirm";
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.row >= _viewModel.regularRow) ? YES : NO;
+}
+
 #pragma mark - Table View Delegete Methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0.0f;
@@ -188,7 +191,20 @@ static NSString *SendOrderApi         = @"/order/confirm";
     return height;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.row >= _viewModel.regularRow) ? UITableViewCellEditingStyleDelete : UITableViewCellEditingStyleNone;
 }
+
+static NSString *DeletePrompt = @"删除";
+- (nullable NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return DeletePrompt;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (UITableViewCellEditingStyleDelete == editingStyle) {
+        ;
+    }
+}
+
 
 @end

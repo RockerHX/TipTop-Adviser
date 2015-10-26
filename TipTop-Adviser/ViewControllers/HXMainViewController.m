@@ -12,7 +12,6 @@
 #import "HXUserViewController.h"
 
 @interface HXMainViewController () <HXUserViewControllerDelegate>
-
 @end
 
 @implementation HXMainViewController

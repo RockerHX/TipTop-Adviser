@@ -9,6 +9,9 @@
 #import "HXPanGestureNavgaitionController.h"
 #import <REFrostedViewController/REFrostedViewController.h>
 
+@interface HXPanGestureNavgaitionController () <UIGestureRecognizerDelegate>
+@end
+
 @implementation HXPanGestureNavgaitionController {
     BOOL _canPan;
 }
@@ -23,7 +26,9 @@
 #pragma mark - Config Methods
 - (void)initConfig {
     _canPan = YES;
-    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)];
+    panGesture.delegate = self;
+    [self.view addGestureRecognizer:panGesture];
 }
 
 #pragma mark - Gesture recognizer
@@ -43,6 +48,21 @@
 
 - (void)setCanPan:(BOOL)canPan {
     _canPan = canPan;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    if ([[otherGestureRecognizer.view class] isSubclassOfClass:[UITableView class]]) {
+        return NO;
+    }
+
+    if( [[otherGestureRecognizer.view class] isSubclassOfClass:[UITableViewCell class]] ||
+       [NSStringFromClass([otherGestureRecognizer.view class]) isEqualToString:@"UITableViewCellScrollView"] ||
+       [NSStringFromClass([otherGestureRecognizer.view class]) isEqualToString:@"UITableViewWrapperView"]) {
+        
+        return YES;
+    }
+    return YES;
 }
 
 @end

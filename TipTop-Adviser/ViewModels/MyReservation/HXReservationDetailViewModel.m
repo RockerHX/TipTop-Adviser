@@ -15,8 +15,10 @@ typedef void(^BLOCK)(void);
 static NSString *OrderDetailApi = @"/order/view";
 
 @implementation HXReservationDetailViewModel {
-    NSArray *_rowTypes;
     BLOCK _completedBlock;
+    
+    NSArray *_rowTypes;
+    NSArray *_remarks;
 }
 
 #pragma mark - Class Methods
@@ -34,11 +36,57 @@ static NSString *OrderDetailApi = @"/order/view";
     return self;
 }
 
+#pragma mark - Setter And Getter
+- (CGFloat)infoHeight {
+    return _detail ? 80.0f : 0.0f;
+}
+
+- (CGFloat)promptHeight {
+    return _detail ? 36.0f : 0.0f;
+}
+
+static NSInteger RegularRow = 2;
+- (NSInteger)rows {
+    return (_detail ? (RegularRow + (_remarks.count ? (_remarks.count + 1) : 0)) : 0);
+}
+
+- (NSInteger)regularRow {
+    return RegularRow + 1;
+}
+
+- (NSArray *)rowTypes {
+    NSArray *remarks = _remarks;
+    if (remarks.count) {
+        NSMutableArray *array = [NSMutableArray arrayWithArray:_rowTypes];
+        [array addObject:@(HXDetailCellRowPrompt)];
+        for (NSInteger index = 0; index < remarks.count; index ++) {
+            [array addObject:@(HXDetailCellRowRemark)];
+        }
+        _rowTypes = [array copy];
+    }
+    return _rowTypes;
+}
+
+- (NSArray *)remarks {
+    return _remarks;
+}
+
 #pragma mark - Public Methods
 - (void)request:(void (^)(void))completed {
     _completedBlock = completed;
     [self startOrderDetailReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
                                                             @"id": _orderID}];
+}
+
+- (void)removeRemark:(HXReservationDetailRemark *)remark {
+    NSMutableArray *remarks = [NSMutableArray arrayWithArray:_remarks];
+    for (HXReservationDetailRemark *item in remarks) {
+        if ([item isEqual:remark]) {
+            [remarks removeObject:item];
+            break;
+        }
+    }
+    _remarks = [remarks copy];
 }
 
 #pragma mark - Private Methods
@@ -64,42 +112,13 @@ static NSString *OrderDetailApi = @"/order/view";
 - (void)handleDetailData:(NSDictionary *)data {
     if (data) {
         _detail = [HXReservationDetail objectWithKeyValues:data];
+        
+        _remarks = _detail.remarks;
         _orderDate = [[NSDate dateWithTimeIntervalSince1970:_detail.order.createTime] formattedDateWithFormat:@"yyyy-MM-dd hh:mm:ss"];
     }
     if (_completedBlock) {
         _completedBlock();
     }
-}
-
-#pragma mark - Setter And Getter
-- (CGFloat)infoHeight {
-    return _detail ? 80.0f : 0.0f;
-}
-
-- (CGFloat)promptHeight {
-    return _detail ? 36.0f : 0.0f;
-}
-
-static NSInteger RegularRow = 2;
-- (NSInteger)rows {
-    return (_detail ? (RegularRow + (_detail.remarks.count ? (_detail.remarks.count + 1) : 0)) : 0);
-}
-
-- (NSInteger)regularRow {
-    return RegularRow + 1;
-}
-
-- (NSArray *)rowTypes {
-    NSArray *remarks = _detail.remarks;
-    if (remarks.count) {
-        NSMutableArray *array = [NSMutableArray arrayWithArray:_rowTypes];
-        [array addObject:@(HXDetailCellRowPrompt)];
-        for (NSInteger index = 0; index < remarks.count; index ++) {
-            [array addObject:@(HXDetailCellRowRemark)];
-        }
-        _rowTypes = [array copy];
-    }
-    return _rowTypes;
 }
 
 @end

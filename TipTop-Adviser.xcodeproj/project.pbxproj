@@ -588,16 +588,9 @@
 		484339911BD6A517007B3F84 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				484339921BD6A517007B3F84 /* WorkCircuit */,
+				48891A891BDFCAC5008C5D13 /* Order */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		484339921BD6A517007B3F84 /* WorkCircuit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WorkCircuit;
 			sourceTree = "<group>";
 		};
 		484339991BD6AC82007B3F84 /* MyReservation */ = {
@@ -630,6 +623,13 @@
 				48CC51A61BDD4CFA00985753 /* HXReservationAddRemarkViewController.m */,
 			);
 			path = MyReservation;
+			sourceTree = "<group>";
+		};
+		48891A891BDFCAC5008C5D13 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 		489E9CD31BC511C700C6618E /* Category */ = {

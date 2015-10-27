@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, HXDetailCellRow) {
 @property (nonatomic, copy, readonly)    NSString *orderID;
 
 @property (nonatomic, strong, readonly)   NSArray *rowTypes;
+@property (nonatomic, strong, readonly)   NSArray *remarks;
 
 @property (nonatomic, strong, readonly) HXReservationDetail *detail;
 @property (nonatomic, copy, readonly)              NSString *orderDate;
@@ -34,5 +35,7 @@ typedef NS_ENUM(NSUInteger, HXDetailCellRow) {
 - (instancetype)initWithOrderID:(NSString *)orderID;
 
 - (void)request:(void(^)(void))completed;
+
+- (void)removeRemark:(HXReservationDetailRemark *)remark;
 
 @end

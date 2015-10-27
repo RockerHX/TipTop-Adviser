@@ -19,7 +19,8 @@
 #import "HXReservationAddRemarkViewController.h"
 
 
-static NSString *SendOrderApi         = @"/order/confirm";
+static NSString *SendOrderApi       = @"/order/confirm";
+static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 
 @interface HXReservationDetailViewController ()
 @end
@@ -117,6 +118,26 @@ static NSString *SendOrderApi         = @"/order/confirm";
     }];
 }
 
+- (void)startDeleteRemarkRequestWithRemark:(HXReservationDetailRemark *)remark {
+    NSDictionary *parameters = @{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+                                           @"id": remark.ID};
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak __typeof__(self)weakSelf = self;
+    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:DeleteRemarkApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            [strongSelf->_viewModel removeRemark:remark];
+            [strongSelf.tableView reloadData];
+        }
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    }];
+}
+
 #pragma mark - Table View Data Source Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _viewModel.rows;
@@ -142,7 +163,7 @@ static NSString *SendOrderApi         = @"/order/confirm";
         }
         case HXDetailCellRowRemark: {
             cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXReservationDetailRemarkCell class]) forIndexPath:indexPath];
-            [(HXReservationDetailRemarkCell *)cell displayWithDetailRemark:_viewModel.detail.remarks[indexPath.row - _viewModel.regularRow]];
+            [(HXReservationDetailRemarkCell *)cell displayWithDetailRemark:_viewModel.remarks[indexPath.row - _viewModel.regularRow]];
             break;
         }
     }
@@ -183,7 +204,7 @@ static NSString *SendOrderApi         = @"/order/confirm";
                                                  configuration:
                       ^(HXReservationDetailRemarkCell *cell) {
                           __strong __typeof__(self)strongSelf = weakSelf;
-                          [cell displayWithDetailRemark:strongSelf->_viewModel.detail.remarks[indexPath.row - strongSelf->_viewModel.regularRow]];
+                          [cell displayWithDetailRemark:strongSelf->_viewModel.remarks[indexPath.row - strongSelf->_viewModel.regularRow]];
                       }];
             break;
         }
@@ -202,7 +223,7 @@ static NSString *DeletePrompt = @"删除";
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (UITableViewCellEditingStyleDelete == editingStyle) {
-        ;
+        [self startDeleteRemarkRequestWithRemark:_viewModel.remarks[indexPath.row - _viewModel.regularRow]];
     }
 }
 

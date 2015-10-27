@@ -107,11 +107,13 @@ static NSString *OrderListApi = @"/Order";
     [UIAlertView bk_showAlertViewWithTitle:@"是否拨打电话？"
                                    message:phoneNumber
                          cancelButtonTitle:@"拨打"
-                         otherButtonTitles:@[@"取消"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-                             if (buttonIndex == alertView.cancelButtonIndex) {
-                                 ;
-                             }
-                         }];
+                         otherButtonTitles:@[@"取消"] handler:
+     ^(UIAlertView *alertView, NSInteger buttonIndex) {
+         if (buttonIndex == alertView.cancelButtonIndex) {
+             NSString *mobile = [[NSString alloc] initWithFormat:@"tel:%@", phoneNumber];
+             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mobile]];
+         }
+     }];
 }
 
 @end

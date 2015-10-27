@@ -47,6 +47,11 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 - (void)viewConfig {
 }
 
+#pragma mark - Setter And Getter
+- (HXStoryBoardName)storyBoardName {
+    return HXStoryBoardNameMyReservation;
+}
+
 #pragma mark - Event Response
 - (IBAction)remarkButtonPressed {
     HXReservationAddRemarkViewController *addRemarkViewController = [HXReservationAddRemarkViewController instance];
@@ -55,13 +60,14 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 }
 
 - (IBAction)phoneButonPressed {
+    NSString *moblie = _viewModel.detail.order.clientMobile;
     [UIAlertView bk_showAlertViewWithTitle:@"是否拨打电话？"
-                                   message:_viewModel.detail.order.clientMobile
+                                   message:moblie
                          cancelButtonTitle:@"拨打"
                          otherButtonTitles:@[@"取消"] handler:
      ^(UIAlertView *alertView, NSInteger buttonIndex) {
          if (buttonIndex == alertView.cancelButtonIndex) {
-             NSString *mobile = [[NSString alloc] initWithFormat:@"tel:%@", _viewModel.detail.order.clientMobile];
+             NSString *mobile = [[NSString alloc] initWithFormat:@"tel:%@", moblie];
              [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mobile]];
          }
      }];
@@ -69,11 +75,6 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 
 - (IBAction)sendButonPressed {
     [self sendOrder];
-}
-
-#pragma mark - Setter And Getter
-- (HXStoryBoardName)storyBoardName {
-    return HXStoryBoardNameMyReservation;
 }
 
 #pragma mark - Private Methods

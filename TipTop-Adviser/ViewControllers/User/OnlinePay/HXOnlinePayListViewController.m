@@ -9,6 +9,7 @@
 #import "HXOnlinePayListViewController.h"
 #import "HXOnlinePayOrderCell.h"
 #import "UIAlertView+BlocksKit.h"
+#import "HXOnlinePayDetailViewController.h"
 
 
 static NSString *OrderListApi = @"/Order";
@@ -98,9 +99,9 @@ static NSString *OrderListApi = @"/Order";
 #pragma mark - Table View Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HXOnlinePayOrder *order = self.dataList[indexPath.row];
-//    HXWorkCircuitDetailViewController *detailViewController = [HXWorkCircuitDetailViewController instance];
-//    detailViewController.loadURL = [NSString stringWithFormat:@"http://www.tbagame.com:8080/yl_dgg/h5/agent/order/view?id=%@&access_token=b487a6db8f621069fc6785b7b303f7de", order.ID];
-//    [self.navigationController pushViewController:detailViewController animated:YES];
+    HXOnlinePayDetailViewController *detailViewController = [HXOnlinePayDetailViewController instance];
+    detailViewController.orderID = order.ID;
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark - HXOnlinePayOrderCellDelegate Methods

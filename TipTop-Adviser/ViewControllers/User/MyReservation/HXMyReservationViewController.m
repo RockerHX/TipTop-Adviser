@@ -10,9 +10,11 @@
 #import "HXMyReservationCell.h"
 #import "UIAlertView+BlocksKit.h"
 #import "HXReservationDetailViewController.h"
+#import "MBProgressHUD.h"
 
 
-static NSString *OrderListApi = @"/Order";
+static NSString *OrderListApi   = @"/Order";
+static NSString *SendOrderApi   = @"/order/confirm";
 
 @interface HXMyReservationViewController () <HXMyReservationCellDelegate>
 @end
@@ -84,6 +86,31 @@ static NSString *OrderListApi = @"/Order";
     self.dataList = orders;
 }
 
+- (void)sendOrderWithOrderID:(NSString *)orderID {
+    [self startSendOrderReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+                                                @"id": orderID}];
+}
+
+- (void)startSendOrderReuqestWithParameters:(NSDictionary *)parameters {
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    __weak __typeof__(self)weakSelf = self;
+    [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:SendOrderApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            [UIAlertView bk_showAlertViewWithTitle:@"发送成功！"
+                                           message:nil
+                                 cancelButtonTitle:@"确定"
+                                 otherButtonTitles:nil
+                                           handler:nil];
+        }
+        [MBProgressHUD hideHUDForView:strongSelf.navigationController.view animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.navigationController.view animated:YES];
+    }];
+}
+
 #pragma mark - Table View Data Source Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataList.count;
@@ -108,11 +135,17 @@ static NSString *OrderListApi = @"/Order";
     [UIAlertView bk_showAlertViewWithTitle:@"是否拨打电话？"
                                    message:phoneNumber
                          cancelButtonTitle:@"拨打"
-                         otherButtonTitles:@[@"取消"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-                             if (buttonIndex == alertView.cancelButtonIndex) {
-                                 ;
-                             }
-                         }];
+                         otherButtonTitles:@[@"取消"] handler:
+     ^(UIAlertView *alertView, NSInteger buttonIndex) {
+         if (buttonIndex == alertView.cancelButtonIndex) {
+             NSString *mobile = [[NSString alloc] initWithFormat:@"tel:%@", phoneNumber];
+             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mobile]];
+         }
+     }];
+}
+
+- (void)orderCell:(HXMyReservationCell *)cell shouldSendOrder:(NSString *)orderID {
+    [self sendOrderWithOrderID:orderID];
 }
 
 @end

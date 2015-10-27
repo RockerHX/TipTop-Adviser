@@ -37,7 +37,9 @@
 }
 
 - (IBAction)sendButonPressed {
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(orderCell:shouldSendOrder:)]) {
+        [_delegate orderCell:self shouldSendOrder:_order.ID];
+    }
 }
 
 #pragma mark - Public Methods

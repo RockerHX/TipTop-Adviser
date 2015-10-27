@@ -16,6 +16,7 @@
 
 @optional
 - (void)orderCell:(HXMyReservationCell *)cell shouldCallPhone:(NSString *)phoneNumber;
+- (void)orderCell:(HXMyReservationCell *)cell shouldSendOrder:(NSString *)orderID;
 
 @end
 

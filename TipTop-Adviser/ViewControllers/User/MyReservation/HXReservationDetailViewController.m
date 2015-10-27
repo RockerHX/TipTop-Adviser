@@ -58,11 +58,13 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
     [UIAlertView bk_showAlertViewWithTitle:@"是否拨打电话？"
                                    message:_viewModel.detail.order.clientMobile
                          cancelButtonTitle:@"拨打"
-                         otherButtonTitles:@[@"取消"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-                             if (buttonIndex == alertView.cancelButtonIndex) {
-                                 ;
-                             }
-                         }];
+                         otherButtonTitles:@[@"取消"] handler:
+     ^(UIAlertView *alertView, NSInteger buttonIndex) {
+         if (buttonIndex == alertView.cancelButtonIndex) {
+             NSString *mobile = [[NSString alloc] initWithFormat:@"tel:%@", _viewModel.detail.order.clientMobile];
+             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mobile]];
+         }
+     }];
 }
 
 - (IBAction)sendButonPressed {

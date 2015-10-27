@@ -9,7 +9,7 @@
         <!--Delegate-->
         <scene sceneID="EIk-n6-bRT">
             <objects>
-                <tableViewController storyboardIdentifier="HXOrderListViewController" id="EFk-0l-Nnh" customClass="HXOrderListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HXWorkCircuitListViewController" id="EFk-0l-Nnh" customClass="HXWorkCircuitListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" id="9w7-PF-ddo">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +219,7 @@
         <!--工作流程详情-->
         <scene sceneID="6PL-bL-0Pb">
             <objects>
-                <viewController storyboardIdentifier="HXOrderDetailViewController" id="bwF-Hh-Oxa" customClass="HXOrderDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HXWorkCircuitDetailViewController" id="bwF-Hh-Oxa" customClass="HXWorkCircuitDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y55-Iv-4d9"/>
                         <viewControllerLayoutGuide type="bottom" id="dMV-vd-DSE"/>

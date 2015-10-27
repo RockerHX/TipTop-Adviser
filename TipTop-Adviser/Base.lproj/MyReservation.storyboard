@@ -9,7 +9,7 @@
         <!--Delegate-->
         <scene sceneID="66b-gP-PtT">
             <objects>
-                <tableViewController storyboardIdentifier="HXMyReservationViewController" id="S0v-yu-w5y" customClass="HXMyReservationViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HXMyReservationListViewController" id="S0v-yu-w5y" customClass="HXMyReservationListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="190" sectionHeaderHeight="28" sectionFooterHeight="28" id="bGt-Zz-dS7">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

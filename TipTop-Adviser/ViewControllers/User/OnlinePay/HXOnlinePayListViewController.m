@@ -1,22 +1,22 @@
 //
-//  HXOrderListViewController.m
+//  HXOnlinePayListViewController.m
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/18.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXOrderListViewController.h"
-#import "HXWorkCircuitOrderCell.h"
+#import "HXOnlinePayListViewController.h"
+#import "HXOnlinePayOrderCell.h"
 #import "UIAlertView+BlocksKit.h"
-#import "HXOrderDetailViewController.h"
+
 
 static NSString *OrderListApi = @"/Order";
 
-@interface HXOrderListViewController () <HXWorkCircuitOrderCellDelegate>
+@interface HXOnlinePayListViewController ()
 @end
 
-@implementation HXOrderListViewController
+@implementation HXOnlinePayListViewController
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidAppear:(BOOL)animated {
@@ -35,12 +35,13 @@ static NSString *OrderListApi = @"/Order";
 
 #pragma mark - Setter And Getter
 - (NSString *)navigationControllerIdentifier {
-    return @"HXWorkCircuitNavigationController";
+    return @"HXMyOnlinePayNavigationController";
 }
 
 - (HXStoryBoardName)storyBoardName {
-    return HXStoryBoardNameWorkCircuit;
+    return HXStoryBoardNameOnlinePay;
 }
+
 
 #pragma mark - Config Methods
 - (void)initConfig {
@@ -54,7 +55,7 @@ static NSString *OrderListApi = @"/Order";
 #pragma mark - Public Methods
 - (void)loadNewData {
     [self startOrderListReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
-                                                        @"type": @"appointment"}];
+                                                @"type": @"appointment"}];
 }
 
 #pragma mark - Private Methods
@@ -75,7 +76,7 @@ static NSString *OrderListApi = @"/Order";
 - (void)handleOrdersData:(NSArray *)ordersData {
     NSMutableArray *orders = [NSMutableArray arrayWithCapacity:ordersData.count];
     for (NSDictionary *data in ordersData) {
-        HXWorkCircuitOrder *order = [HXWorkCircuitOrder objectWithKeyValues:data];
+        HXOnlinePayOrder *order = [HXOnlinePayOrder objectWithKeyValues:data];
         if (data) {
             [orders addObject:order];
         }
@@ -89,21 +90,21 @@ static NSString *OrderListApi = @"/Order";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HXWorkCircuitOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXWorkCircuitOrderCell class]) forIndexPath:indexPath];
+    HXOnlinePayOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXOnlinePayOrderCell class]) forIndexPath:indexPath];
     [cell displayWithOrder:self.dataList[indexPath.row]];
     return cell;
 }
 
 #pragma mark - Table View Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    HXWorkCircuitOrder *order = self.dataList[indexPath.row];
-    HXOrderDetailViewController *detailViewController = [HXOrderDetailViewController instance];
-    detailViewController.loadURL = [NSString stringWithFormat:@"http://www.tbagame.com:8080/yl_dgg/h5/agent/order/view?id=%@&access_token=b487a6db8f621069fc6785b7b303f7de", order.ID];
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    HXOnlinePayOrder *order = self.dataList[indexPath.row];
+//    HXWorkCircuitDetailViewController *detailViewController = [HXWorkCircuitDetailViewController instance];
+//    detailViewController.loadURL = [NSString stringWithFormat:@"http://www.tbagame.com:8080/yl_dgg/h5/agent/order/view?id=%@&access_token=b487a6db8f621069fc6785b7b303f7de", order.ID];
+//    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
-#pragma mark - HXWorkCircuitOrderCellDelegate Methods
-- (void)orderCell:(HXWorkCircuitOrderCell *)cell shouldCallPhone:(NSString *)phoneNumber {
+#pragma mark - HXOnlinePayOrderCellDelegate Methods
+- (void)orderCell:(HXOnlinePayOrderCell *)cell shouldCallPhone:(NSString *)phoneNumber {
     [UIAlertView bk_showAlertViewWithTitle:@"是否拨打电话？"
                                    message:phoneNumber
                          cancelButtonTitle:@"拨打"
@@ -115,5 +116,6 @@ static NSString *OrderListApi = @"/Order";
          }
      }];
 }
+
 
 @end

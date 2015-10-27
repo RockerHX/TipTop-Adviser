@@ -1,17 +1,17 @@
 //
-//  HXWorkCircuitOrderCell.m
+//  HXOnlinePayOrderCell.m
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/21.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXWorkCircuitOrderCell.h"
+#import "HXOnlinePayOrderCell.h"
 #import "UIImageView+WebCache.h"
 #import "DateTools.h"
 
-@implementation HXWorkCircuitOrderCell {
-    HXWorkCircuitOrder *_order;
+@implementation HXOnlinePayOrderCell {
+    HXOnlinePayOrder *_order;
 }
 
 #pragma mark - Init Methods
@@ -39,14 +39,13 @@
 }
 
 #pragma mark - Public Methods
-- (void)displayWithOrder:(HXWorkCircuitOrder *)order {
+- (void)displayWithOrder:(HXOnlinePayOrder *)order {
     _order = order;
     
     _dateLabel.text = [[NSDate dateWithTimeIntervalSince1970:order.createTime] formattedDateWithFormat:@"yyyy-MM-dd hh:mm"];
     _orderNumberLabel.text = order.displayID;
     _orderNameLabel.text = order.cate;
     _nameLabel.text = order.clientName;
-    _finishedIcon.hidden = !order.isComplete;
     [_header sd_setImageWithURL:[NSURL URLWithString:order.clientAvatar]];
 }
 

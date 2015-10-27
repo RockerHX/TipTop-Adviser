@@ -1,5 +1,5 @@
 //
-//  HXMyReservationViewController.h
+//  HXMyReservationListViewController.h
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/15.
@@ -8,6 +8,6 @@
 
 #import "HXListViewController.h"
 
-@interface HXMyReservationViewController : HXListViewController
+@interface HXMyReservationListViewController : HXListViewController
 
 @end

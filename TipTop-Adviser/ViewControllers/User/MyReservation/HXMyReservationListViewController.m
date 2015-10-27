@@ -1,12 +1,12 @@
 //
-//  HXMyReservationViewController.m
+//  HXMyReservationListViewController.m
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/15.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXMyReservationViewController.h"
+#import "HXMyReservationListViewController.h"
 #import "HXMyReservationCell.h"
 #import "UIAlertView+BlocksKit.h"
 #import "HXReservationDetailViewController.h"
@@ -16,10 +16,10 @@
 static NSString *OrderListApi   = @"/Order";
 static NSString *SendOrderApi   = @"/order/confirm";
 
-@interface HXMyReservationViewController () <HXMyReservationCellDelegate>
+@interface HXMyReservationListViewController () <HXMyReservationCellDelegate>
 @end
 
-@implementation HXMyReservationViewController
+@implementation HXMyReservationListViewController
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidAppear:(BOOL)animated {

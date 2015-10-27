@@ -1,5 +1,5 @@
 //
-//  HXOrderListViewController.h
+//  HXOnlinePayListViewController.h
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/18.
@@ -8,6 +8,6 @@
 
 #import "HXListViewController.h"
 
-@interface HXOrderListViewController : HXListViewController
+@interface HXOnlinePayListViewController : HXListViewController
 
 @end

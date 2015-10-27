@@ -9,9 +9,9 @@
 #import "HXUserViewController.h"
 #import "HXUserInformationViewController.h"
 #import "HXSettingViewController.h"
-#import "HXMyReservationViewController.h"
-#import "HXOnlinePayViewController.h"
-#import "HXOrderListViewController.h"
+#import "HXMyReservationListViewController.h"
+#import "HXOnlinePayListViewController.h"
+#import "HXWorkCircuitListViewController.h"
 #import "HXMyBiddingViewController.h"
 #import "HXMyServiceViewController.h"
 #import "HXMessageCenterViewController.h"
@@ -66,15 +66,15 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
     if (_delegate && [_delegate respondsToSelector:@selector(userCenterShouldHiddenAndShowViewController:)]) {
         switch (indexPath.row) {
             case HXMenuRowMyReservation: {
-                navigationController = [HXMyReservationViewController navigationControllerInstance];
+                navigationController = [HXMyReservationListViewController navigationControllerInstance];
                 break;
             }
             case HXMenuRowOnlinePay: {
-                navigationController = [HXOnlinePayViewController navigationControllerInstance];
+                navigationController = [HXOnlinePayListViewController navigationControllerInstance];
                 break;
             }
             case HXMenuRowWorkCircuit: {
-                navigationController = [HXOrderListViewController navigationControllerInstance];
+                navigationController = [HXWorkCircuitListViewController navigationControllerInstance];
                 break;
             }
             case HXMenuRowMyBidding: {

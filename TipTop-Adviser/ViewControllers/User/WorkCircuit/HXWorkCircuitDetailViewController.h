@@ -1,5 +1,5 @@
 //
-//  HXOrderDetailViewController.h
+//  HXWorkCircuitDetailViewController.h
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/21.
@@ -8,6 +8,6 @@
 
 #import "HXWebViewController.h"
 
-@interface HXOrderDetailViewController : HXWebViewController
+@interface HXWorkCircuitDetailViewController : HXWebViewController
 
 @end

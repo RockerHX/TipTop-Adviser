@@ -10,4 +10,10 @@
 
 @interface HXChangePassWordViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *oldPassWordTextFiled;
+@property (weak, nonatomic) IBOutlet UITextField *passWordTextFiled;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPassWordTextFiled;
+
+- (IBAction)enterButtonPressed;
+
 @end

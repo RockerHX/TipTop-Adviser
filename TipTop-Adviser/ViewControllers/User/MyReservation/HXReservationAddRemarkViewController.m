@@ -37,7 +37,7 @@ static NSString *TextViewPrompt = @"请输入备注事件";
 }
 
 - (void)viewConfig {
-    _dateLabel.text = [[NSDate date] formattedDateWithFormat:@"yyyy-MM-dd"];
+    _dateLabel.text = [[NSDate date] formattedDateWithFormat:@"yyyy-MM-dd hh:mm"];
     _textView.placeholder = TextViewPrompt;
 }
 
@@ -56,9 +56,9 @@ static NSString *TextViewPrompt = @"请输入备注事件";
     if (_textView.text.length) {
         [_textView resignFirstResponder];
         [self startCreateRemarkReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
-                                                       @"id": _orderID,
-                                                       @"remark_time": _dateLabel.text,
-                                                       @"content": (_textView.text ?: @"")}];
+                                                                 @"id": _orderID,
+                                                        @"remark_time": _dateLabel.text,
+                                                            @"content": (_textView.text ?: @"")}];
     } else {
         [UIAlertView bk_showAlertViewWithTitle:@"温馨提示"
                                        message:@"请输入备注内容"

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class HXSecurityCodeButton;
+
 @interface HXForgotPWViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet HXSecurityCodeButton *codeButton;
 
 - (IBAction)backButtonPressed;
 

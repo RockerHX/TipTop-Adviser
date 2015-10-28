@@ -7,9 +7,9 @@
 //
 
 #import "HXForgotPWViewController.h"
+#import "HXSecurityCodeButton.h"
 
 @interface HXForgotPWViewController ()
-
 @end
 
 @implementation HXForgotPWViewController
@@ -17,6 +17,22 @@
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initConfig];
+    [self viewConfig];
+}
+
+#pragma mark - Config Methods
+- (void)initConfig {
+    _codeButton.duration = 5;
+    [_codeButton start:^{
+        ;
+    } complete:^{
+        ;
+    }];
+}
+
+- (void)viewConfig {
     
 }
 

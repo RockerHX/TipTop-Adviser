@@ -47,7 +47,8 @@ static NSString *OrderDetailApi = @"/order/view";
 
 static NSInteger RegularRow = 2;
 - (NSInteger)rows {
-    return (_detail ? (RegularRow + (_remarks.count ? (_remarks.count + 1) : 0)) : 0);
+//    return (_detail ? (RegularRow + (_remarks.count ? (_remarks.count + 1) : 0)) : 0);
+    return _detail ? 2 : 0;
 }
 
 - (NSInteger)regularRow {
@@ -105,8 +106,7 @@ static NSInteger RegularRow = 2;
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
             [strongSelf handleDetailData:responseObject[@"data"]];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    }];
+    } failure:nil];
 }
 
 - (void)handleDetailData:(NSDictionary *)data {

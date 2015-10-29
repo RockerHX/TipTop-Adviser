@@ -226,6 +226,9 @@
                                             <real key="value" value="4"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="enterButtonPressed" destination="l4S-2w-hat" eventType="touchUpInside" id="num-By-5bq"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <animations/>
@@ -246,7 +249,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HbP-jG-NjC" id="xlK-cE-U08">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-StaffIDIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-B1-lEo">
@@ -280,7 +283,7 @@
                                         <rect key="frame" x="0.0" y="60" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ciD-8z-aJ6" id="lQX-dl-gzQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PhoneNumberIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-jJ-BH5">
@@ -314,7 +317,7 @@
                                         <rect key="frame" x="0.0" y="120" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uem-we-HgJ" id="WyD-AP-F4T">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-VerificationCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HyH-hs-rl0">
@@ -367,7 +370,7 @@
                                         <rect key="frame" x="0.0" y="180" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="STo-aN-37h" id="BeQ-4z-s5w">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2Fz-aM-WdC">
@@ -401,7 +404,7 @@
                                         <rect key="frame" x="0.0" y="240" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zta-KA-0Wm" id="vOD-e4-AIC">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="w64-mI-wG3">
@@ -448,7 +451,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="codeButton" destination="N45-99-qGG" id="dC3-jU-Qdb"/>
+                        <outlet property="captchaButton" destination="N45-99-qGG" id="ewj-2o-hat"/>
+                        <outlet property="captchaTextField" destination="2x5-25-V90" id="FOe-jz-7T6"/>
+                        <outlet property="confirmTextField" destination="qBh-F1-kDg" id="CqZ-LX-TyR"/>
+                        <outlet property="mobileTextField" destination="tSP-Qv-jIc" id="TfJ-tb-eSU"/>
+                        <outlet property="passWordTextField" destination="X1Z-ck-v6N" id="9TF-X2-hL4"/>
+                        <outlet property="staffIDTextField" destination="3ke-p7-3kS" id="Hac-Ib-siv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZp-fY-Ybc" userLabel="First Responder" sceneMemberID="firstResponder"/>

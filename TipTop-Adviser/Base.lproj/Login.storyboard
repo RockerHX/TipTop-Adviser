@@ -204,7 +204,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvj-mK-Etv">
-                                    <rect key="frame" x="30" y="0.0" width="260" height="0.5"/>
+                                    <rect key="frame" x="30" y="0.0" width="260" height="1"/>
                                     <animations/>
                                     <color key="backgroundColor" red="0.78431372549019607" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -246,18 +246,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HbP-jG-NjC" id="xlK-cE-U08">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-StaffIDIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-B1-lEo">
-                                                    <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
+                                                    <rect key="frame" x="30" y="0.0" width="59" height="59"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="UNw-B1-lEo" secondAttribute="height" multiplier="1:1" id="RRr-n2-TOk"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DN89-265" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="3ke-p7-3kS">
-                                                    <rect key="frame" x="89.5" y="0.0" width="200.5" height="59.5"/>
+                                                    <rect key="frame" x="89" y="0.0" width="201" height="59"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -280,18 +280,18 @@
                                         <rect key="frame" x="0.0" y="60" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ciD-8z-aJ6" id="lQX-dl-gzQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PhoneNumberIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-jJ-BH5">
-                                                    <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
+                                                    <rect key="frame" x="30" y="0.0" width="59" height="59"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="CNF-jJ-BH5" secondAttribute="height" multiplier="1:1" id="Qrn-ot-N8a"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="18683858856" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tSP-Qv-jIc">
-                                                    <rect key="frame" x="89.5" y="0.0" width="200.5" height="59.5"/>
+                                                    <rect key="frame" x="89" y="0.0" width="201" height="59"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -314,18 +314,18 @@
                                         <rect key="frame" x="0.0" y="120" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uem-we-HgJ" id="WyD-AP-F4T">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-VerificationCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HyH-hs-rl0">
-                                                    <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
+                                                    <rect key="frame" x="30" y="0.0" width="59" height="59"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="HyH-hs-rl0" secondAttribute="height" multiplier="1:1" id="zUg-Mk-CH5"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2x5-25-V90">
-                                                    <rect key="frame" x="89" y="0.0" width="111" height="59.5"/>
+                                                    <rect key="frame" x="89" y="0.0" width="111" height="59"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -367,18 +367,18 @@
                                         <rect key="frame" x="0.0" y="180" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="STo-aN-37h" id="BeQ-4z-s5w">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2Fz-aM-WdC">
-                                                    <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
+                                                    <rect key="frame" x="30" y="0.0" width="59" height="59"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="2Fz-aM-WdC" secondAttribute="height" multiplier="1:1" id="Vmc-SI-4Hs"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="X1Z-ck-v6N">
-                                                    <rect key="frame" x="89.5" y="0.0" width="200.5" height="59.5"/>
+                                                    <rect key="frame" x="89" y="0.0" width="201" height="59"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -401,18 +401,18 @@
                                         <rect key="frame" x="0.0" y="240" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zta-KA-0Wm" id="vOD-e4-AIC">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L-PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="w64-mI-wG3">
-                                                    <rect key="frame" x="30" y="0.0" width="59.5" height="59.5"/>
+                                                    <rect key="frame" x="30" y="0.0" width="59" height="59"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="w64-mI-wG3" secondAttribute="height" multiplier="1:1" id="SiZ-LB-Qxd"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请确认密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qBh-F1-kDg">
-                                                    <rect key="frame" x="89.5" y="0.0" width="200.5" height="59.5"/>
+                                                    <rect key="frame" x="89" y="0.0" width="201" height="59"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>

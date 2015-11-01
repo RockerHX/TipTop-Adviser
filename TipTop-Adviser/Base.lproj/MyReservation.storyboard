@@ -26,20 +26,20 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1N-rp-Qiv">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2l-gM-t5i">
+                                                    <rect key="frame" x="0.0" y="0.5" width="320" height="0.5"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="gwg-CZ-Ght"/>
+                                                    </constraints>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFU-vu-LYq">
                                                     <rect key="frame" x="0.0" y="179" width="320" height="0.5"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="Dqh-fk-wt1"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2l-gM-t5i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="0.5" id="gwg-CZ-Ght"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

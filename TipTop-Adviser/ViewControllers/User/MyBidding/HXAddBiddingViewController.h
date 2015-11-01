@@ -10,4 +10,11 @@
 
 @interface HXAddBiddingViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet     UILabel *serviceNameLabel;
+@property (weak, nonatomic) IBOutlet     UILabel *salesManLabel;
+@property (weak, nonatomic) IBOutlet UITextField *deliverDateTextField;
+@property (weak, nonatomic) IBOutlet  UITextView *briefIntroductionTextView;
+@property (weak, nonatomic) IBOutlet UITextField *costsTextField;
+@property (weak, nonatomic) IBOutlet UITextField *contractAmountTextField;
+
 @end

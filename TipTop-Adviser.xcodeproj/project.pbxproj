@@ -65,6 +65,9 @@
 		4893C2D61BE6536500479EC3 /* HXBiddingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2D51BE6536500479EC3 /* HXBiddingCell.m */; };
 		4893C2DA1BE65CB800479EC3 /* HXBidding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2D91BE65CB800479EC3 /* HXBidding.m */; };
 		4893C2DD1BE663F800479EC3 /* HXBiddingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2DC1BE663F800479EC3 /* HXBiddingDetailViewController.m */; };
+		4893C2E01BE66E9900479EC3 /* HXBiddingServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2DF1BE66E9900479EC3 /* HXBiddingServiceCell.m */; };
+		4893C2E31BE66EA500479EC3 /* HXBiddingSubServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2E21BE66EA500479EC3 /* HXBiddingSubServiceCell.m */; };
+		4893C2E61BE66F2200479EC3 /* HXBiddingServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2E51BE66F2200479EC3 /* HXBiddingServiceViewController.m */; };
 		489E9CCC1BC4F96900C6618E /* HXForgotPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CCB1BC4F96900C6618E /* HXForgotPWViewController.m */; };
 		489E9CD21BC5116A00C6618E /* HXThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CD11BC5116A00C6618E /* HXThemeManager.m */; };
 		489E9CD61BC511E900C6618E /* UINavigationController+StatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CD51BC511E900C6618E /* UINavigationController+StatusBarStyle.m */; };
@@ -214,6 +217,12 @@
 		4893C2D91BE65CB800479EC3 /* HXBidding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBidding.m; sourceTree = "<group>"; };
 		4893C2DB1BE663F800479EC3 /* HXBiddingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBiddingDetailViewController.h; sourceTree = "<group>"; };
 		4893C2DC1BE663F800479EC3 /* HXBiddingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBiddingDetailViewController.m; sourceTree = "<group>"; };
+		4893C2DE1BE66E9900479EC3 /* HXBiddingServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBiddingServiceCell.h; sourceTree = "<group>"; };
+		4893C2DF1BE66E9900479EC3 /* HXBiddingServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBiddingServiceCell.m; sourceTree = "<group>"; };
+		4893C2E11BE66EA500479EC3 /* HXBiddingSubServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBiddingSubServiceCell.h; sourceTree = "<group>"; };
+		4893C2E21BE66EA500479EC3 /* HXBiddingSubServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBiddingSubServiceCell.m; sourceTree = "<group>"; };
+		4893C2E41BE66F2200479EC3 /* HXBiddingServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBiddingServiceViewController.h; sourceTree = "<group>"; };
+		4893C2E51BE66F2200479EC3 /* HXBiddingServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBiddingServiceViewController.m; sourceTree = "<group>"; };
 		489E9CCA1BC4F96900C6618E /* HXForgotPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXForgotPWViewController.h; sourceTree = "<group>"; };
 		489E9CCB1BC4F96900C6618E /* HXForgotPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXForgotPWViewController.m; sourceTree = "<group>"; };
 		489E9CD01BC5116A00C6618E /* HXThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXThemeManager.h; sourceTree = "<group>"; };
@@ -584,10 +593,12 @@
 			children = (
 				483AE3731BD3F399004C0B22 /* HXMyBiddingViewController.h */,
 				483AE3741BD3F399004C0B22 /* HXMyBiddingViewController.m */,
-				4893C2D01BE6530400479EC3 /* HXAddBiddingViewController.h */,
-				4893C2D11BE6530400479EC3 /* HXAddBiddingViewController.m */,
 				4893C2DB1BE663F800479EC3 /* HXBiddingDetailViewController.h */,
 				4893C2DC1BE663F800479EC3 /* HXBiddingDetailViewController.m */,
+				4893C2D01BE6530400479EC3 /* HXAddBiddingViewController.h */,
+				4893C2D11BE6530400479EC3 /* HXAddBiddingViewController.m */,
+				4893C2E41BE66F2200479EC3 /* HXBiddingServiceViewController.h */,
+				4893C2E51BE66F2200479EC3 /* HXBiddingServiceViewController.m */,
 			);
 			path = MyBidding;
 			sourceTree = "<group>";
@@ -720,6 +731,10 @@
 			children = (
 				4893C2D41BE6536500479EC3 /* HXBiddingCell.h */,
 				4893C2D51BE6536500479EC3 /* HXBiddingCell.m */,
+				4893C2DE1BE66E9900479EC3 /* HXBiddingServiceCell.h */,
+				4893C2DF1BE66E9900479EC3 /* HXBiddingServiceCell.m */,
+				4893C2E11BE66EA500479EC3 /* HXBiddingSubServiceCell.h */,
+				4893C2E21BE66EA500479EC3 /* HXBiddingSubServiceCell.m */,
 			);
 			path = MyBidding;
 			sourceTree = "<group>";
@@ -1077,11 +1092,13 @@
 				488712091BDFDD6A00A82D0E /* HXOnlinePayDetailInfoCell.m in Sources */,
 				48CC518C1BDD128D00985753 /* HXReservationDetailViewController.m in Sources */,
 				48CC51A41BDD370400985753 /* HXReservationDetail.m in Sources */,
+				4893C2E01BE66E9900479EC3 /* HXBiddingServiceCell.m in Sources */,
 				483AE3911BD4090A004C0B22 /* HXMyAddressViewController.m in Sources */,
 				483AE36B1BD3EDD9004C0B22 /* HXWorkCircuitListViewController.m in Sources */,
 				4893C2D21BE6530400479EC3 /* HXAddBiddingViewController.m in Sources */,
 				4887120F1BDFDF0500A82D0E /* HXOnlinePayDetailViewModel.m in Sources */,
 				48CC51911BDD13F700985753 /* HXReservationOrder.m in Sources */,
+				4893C2E31BE66EA500479EC3 /* HXBiddingSubServiceCell.m in Sources */,
 				48CC51941BDD1EC500985753 /* HXReservationDetailViewModel.m in Sources */,
 				48334DE81BC4D00D00FD43A6 /* HXAdviser.m in Sources */,
 				48CC51831BDCEBCE00985753 /* HXOrderAlertCell.m in Sources */,
@@ -1102,6 +1119,7 @@
 				483AE3641BD3E64A004C0B22 /* HXOnlinePayListViewController.m in Sources */,
 				483AE3941BD40D62004C0B22 /* HXMessageDetailViewController.m in Sources */,
 				48CC51A71BDD4CFA00985753 /* HXReservationAddRemarkViewController.m in Sources */,
+				4893C2E61BE66F2200479EC3 /* HXBiddingServiceViewController.m in Sources */,
 				4893C2D61BE6536500479EC3 /* HXBiddingCell.m in Sources */,
 				48334DE01BC4D00D00FD43A6 /* UIView+HXIBnspectable.m in Sources */,
 				48C57ACF1BDD5317002C8398 /* BRPlaceholderTextView.m in Sources */,

@@ -15,9 +15,10 @@ NSString *const DoMain      = @"http://115.29.45.120:8080";
 NSString *const ImageDoMain = @"http://";
 
 #pragma mark - Api Path
-NSString *const V1ApiPath   = @"/yl_dgg/agentApi";
-NSString *const V2ApiPath   = @"";
-NSString *const ImagePath   = @"";
+NSString *const CommonApiPath   = @"/yl_dgg/commonApi";
+NSString *const V1ApiPath       = @"/yl_dgg/agentApi";
+NSString *const V2ApiPath       = @"";
+NSString *const ImagePath       = @"";
 
 
 @implementation HXApi
@@ -26,13 +27,22 @@ NSString *const ImagePath   = @"";
     return [self V1ApiURLWithApi:api];
 }
 
-+ (NSString *)V1ApiURLWithApi:(NSString *)Api {
-    return [[DoMain stringByAppendingString:V1ApiPath] stringByAppendingString:Api];
++ (NSString *)V1ApiURLWithApi:(NSString *)api {
+    return [self apiURLWithPath:V1ApiPath api:api];
 }
 
-+ (NSString *)V2ApiURLWithApi:(NSString *)Api {
-    return [[DoMain stringByAppendingString:V2ApiPath] stringByAppendingString:Api];
++ (NSString *)V2ApiURLWithApi:(NSString *)api {
+    return [self apiURLWithPath:V2ApiPath api:api];
 }
+
++ (NSString *)commonApiURLWithApi:(NSString *)api {
+    return [self apiURLWithPath:CommonApiPath api:api];
+}
+
++ (NSString *)apiURLWithPath:(NSString *)path api:(NSString *)api {
+    return [[DoMain stringByAppendingString:path] stringByAppendingString:api];
+}
+
 
 + (NSString *)imageURLWithImageName:(NSString *)imageName {
     return [[ImageDoMain stringByAppendingString:ImagePath] stringByAppendingString:imageName];

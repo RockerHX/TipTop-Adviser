@@ -23,6 +23,8 @@ FOUNDATION_EXPORT NSString *const ImagePath;                    // 图片资源�
 + (NSString *)apiURLWithApi:(NSString *)api;
 + (NSString *)V1ApiURLWithApi:(NSString *)api;
 + (NSString *)V2ApiURLWithApi:(NSString *)api;
++ (NSString *)commonApiURLWithApi:(NSString *)api;
++ (NSString *)apiURLWithPath:(NSString *)path api:(NSString *)api;
 + (NSString *)imageURLWithImageName:(NSString *)imageName;
 
 @end

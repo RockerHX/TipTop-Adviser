@@ -7,9 +7,12 @@
 //
 
 #import "HXSettingViewController.h"
+#import "HXWebViewController.h"
+#import "HXApi.h"
+#import "HXUseExplanationViewController.h"
+#import "HXAboutViewController.h"
 
 @interface HXSettingViewController ()
-
 @end
 
 @implementation HXSettingViewController
@@ -42,6 +45,15 @@
 #pragma mark - Table View Data Source Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ((1 == indexPath.section) && (1 == indexPath.row)) {
+        HXUseExplanationViewController *useExplanationViewController = [HXUseExplanationViewController instance];
+        useExplanationViewController.loadURL = [DoMain stringByAppendingString:@"/h5/page?key=agent_help"];
+        [self.navigationController pushViewController:useExplanationViewController animated:YES];
+    } else if ((2 == indexPath.section) && (1 == indexPath.row)) {
+        HXAboutViewController *useExplanationViewController = [HXAboutViewController instance];
+        useExplanationViewController.loadURL = [DoMain stringByAppendingString:@"/h5/page?key=agent_about"];
+        [self.navigationController pushViewController:useExplanationViewController animated:YES];
+    }
 }
 
 @end

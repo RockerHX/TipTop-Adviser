@@ -476,6 +476,76 @@
             </objects>
             <point key="canvasLocation" x="425" y="378"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="TLw-H7-P4m">
+            <objects>
+                <viewController storyboardIdentifier="HXAboutViewController" id="Db7-gw-nSQ" customClass="HXAboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VN4-Fl-q1v"/>
+                        <viewControllerLayoutGuide type="bottom" id="HR9-e6-Pdd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PUn-qy-NBW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XsP-n0-Hmh">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HR9-e6-Pdd" firstAttribute="top" secondItem="XsP-n0-Hmh" secondAttribute="bottom" id="9F4-m3-p4B"/>
+                            <constraint firstAttribute="trailing" secondItem="XsP-n0-Hmh" secondAttribute="trailing" id="X4V-cf-7Ve"/>
+                            <constraint firstItem="XsP-n0-Hmh" firstAttribute="leading" secondItem="PUn-qy-NBW" secondAttribute="leading" id="cXD-Tb-6tf"/>
+                            <constraint firstItem="XsP-n0-Hmh" firstAttribute="top" secondItem="VN4-Fl-q1v" secondAttribute="bottom" id="dgJ-ua-bb8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="XsP-n0-Hmh" id="rFY-Jf-HFG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1V-nD-MeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872" y="378"/>
+        </scene>
+        <!--Use Explanation View Controller-->
+        <scene sceneID="Dpx-Ml-wfe">
+            <objects>
+                <viewController storyboardIdentifier="HXUseExplanationViewController" id="Ztc-c5-hTc" customClass="HXUseExplanationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1WY-db-Wcl"/>
+                        <viewControllerLayoutGuide type="bottom" id="grf-hP-5tj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AXz-Tl-zaa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVU-5S-hE6">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yVU-5S-hE6" firstAttribute="leading" secondItem="AXz-Tl-zaa" secondAttribute="leading" id="JSp-nc-5iM"/>
+                            <constraint firstItem="grf-hP-5tj" firstAttribute="top" secondItem="yVU-5S-hE6" secondAttribute="bottom" id="UbE-bS-qqX"/>
+                            <constraint firstAttribute="trailing" secondItem="yVU-5S-hE6" secondAttribute="trailing" id="W2s-6n-IQM"/>
+                            <constraint firstItem="yVU-5S-hE6" firstAttribute="top" secondItem="1WY-db-Wcl" secondAttribute="bottom" id="sbN-nt-tUw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="yVU-5S-hE6" id="e9j-az-1Ei"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOR-L3-KKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="378"/>
+        </scene>
         <!--Pan Gesture Navgaition Controller-->
         <scene sceneID="JYL-rn-nAe">
             <objects>

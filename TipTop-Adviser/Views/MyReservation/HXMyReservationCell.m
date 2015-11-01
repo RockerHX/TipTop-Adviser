@@ -8,6 +8,7 @@
 
 #import "HXMyReservationCell.h"
 #import "UIImageView+WebCache.h"
+#import "DateTools.h"
 
 @implementation HXMyReservationCell {
     HXReservationOrder *_order;

@@ -8,6 +8,11 @@
 
 #import "UIViewController+HXClass.h"
 
-@interface HXMyBiddingViewController : UITableViewController
+@interface HXMyBiddingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet      UIView *bottomLine;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)biddingButtonPressed:(UIButton *)sender;
 
 @end

@@ -117,7 +117,7 @@ static NSString *BiddingListApi   = @"/biding";
         __strong __typeof__(self)strongSelf = weakSelf;
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
-            [strongSelf handleOrdersData:responseObject[@"data"][@"list"]];
+            [strongSelf handleBiddingsData:responseObject[@"data"][@"list"]];
             [strongSelf.tableView reloadData];
             [strongSelf endLoading];
         }
@@ -125,9 +125,9 @@ static NSString *BiddingListApi   = @"/biding";
     }];
 }
 
-- (void)handleOrdersData:(NSArray *)ordersData {
+- (void)handleBiddingsData:(NSArray *)biddingsData {
     [_dataList removeAllObjects];
-    for (NSDictionary *data in ordersData) {
+    for (NSDictionary *data in biddingsData) {
         HXBidding *bidding = [HXBidding objectWithKeyValues:data];
         if (data) {
             [_dataList addObject:bidding];

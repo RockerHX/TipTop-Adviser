@@ -7,17 +7,18 @@
 //
 
 #import "HXBiddingSubServiceCell.h"
+#import "HXBiddingService.h"
+#import "UIConstants.h"
 
 @implementation HXBiddingSubServiceCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    self.backgroundColor = selected ? UIColorWithRGBA(246.0f, 246.0f, 246.0f, 1.0f) : [UIColor whiteColor];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+#pragma mark - Public Methods
+- (void)displayWithSubService:(HXBiddingSubService *)subService {
+    _nameLabel.text = subService.name;
 }
 
 @end

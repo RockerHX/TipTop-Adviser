@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class HXBiddingSubService;
+
 @interface HXBiddingSubServiceCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+- (void)displayWithSubService:(HXBiddingSubService *)subService;
 
 @end

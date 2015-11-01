@@ -7,17 +7,22 @@
 //
 
 #import "HXBiddingServiceCell.h"
+#import "UIButton+WebCache.h"
+#import "UIConstants.h"
 
 @implementation HXBiddingServiceCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    _icon.selected = selected;
+    _nameLabel.textColor = selected ? [UIColor orangeColor] : [UIColor darkGrayColor];
+    self.backgroundColor = selected ? [UIColor whiteColor] : UIColorWithRGBA(246.0f, 246.0f, 246.0f, 1.0f);
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+#pragma mark - Public Methods
+- (void)displayWithService:(HXBiddingService *)service {
+    [_icon sd_setImageWithURL:[NSURL URLWithString:service.icon] forState:UIControlStateNormal];
+    [_icon sd_setImageWithURL:[NSURL URLWithString:service.iconActive] forState:UIControlStateSelected];
+    _nameLabel.text = service.name;
 }
 
 @end

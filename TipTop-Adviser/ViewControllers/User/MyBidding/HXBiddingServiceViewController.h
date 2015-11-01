@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HXBiddingServiceViewController : UIViewController
+@class HXBiddingSubService;
+
+@protocol HXBiddingServiceViewControllerDelegate <NSObject>
+
+@required
+- (void)serviceDidSelected:(HXBiddingSubService *)subService;
+
+@end
+
+@interface HXBiddingServiceViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet          id  <HXBiddingServiceViewControllerDelegate>delegate;
 
 @property (weak, nonatomic) IBOutlet UITableView *serviceTableView;
 @property (weak, nonatomic) IBOutlet UITableView *subServiceTableView;

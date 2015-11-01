@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HXBiddingService.h"
 
 @interface HXBiddingServiceCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
-@property (weak, nonatomic) IBOutlet     UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *icon;
+@property (weak, nonatomic) IBOutlet  UILabel *nameLabel;
+
+- (void)displayWithService:(HXBiddingService *)service;
 
 @end

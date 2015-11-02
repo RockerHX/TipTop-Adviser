@@ -47,7 +47,7 @@ static NSString *CreateBiddingApi   = @"/biding/create";
 - (void)startCreateBiddingReuqestWithParameters:(NSDictionary *)parameters {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak __typeof__(self)weakSelf = self;
-    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:CreateBiddingApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:CreateBiddingApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {

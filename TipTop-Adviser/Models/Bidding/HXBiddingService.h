@@ -11,6 +11,7 @@
 @interface HXBiddingSubService : NSObject
 
 @property (nonatomic, strong) NSString *ID;
+@property (nonatomic, strong) NSString *parentID;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *shortName;
 

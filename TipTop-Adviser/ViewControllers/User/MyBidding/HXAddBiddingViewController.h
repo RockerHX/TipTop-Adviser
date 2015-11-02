@@ -17,4 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *costsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contractAmountTextField;
 
+- (IBAction)enterButtonPressed;
+
 @end

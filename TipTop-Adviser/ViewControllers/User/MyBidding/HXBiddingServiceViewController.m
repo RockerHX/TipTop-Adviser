@@ -103,8 +103,9 @@ static NSString *CategoryApi    = @"/category";
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         _subServiceSelectedIndex = indexPath.row;
         
-        if (_delegate && [_delegate respondsToSelector:@selector(serviceDidSelected:)]) {
-            [_delegate serviceDidSelected:((HXBiddingService *)_dataList[_serviceSelectedIndex]).subServices[indexPath.row]];
+        if (_delegate && [_delegate respondsToSelector:@selector(serviceDidSelectedServiceID:subService:)]) {
+            HXBiddingService *service = _dataList[_serviceSelectedIndex];
+            [_delegate serviceDidSelectedServiceID:service.ID subService:service.subServices[indexPath.row]];
         }
         [self.navigationController popViewControllerAnimated:YES];
     }

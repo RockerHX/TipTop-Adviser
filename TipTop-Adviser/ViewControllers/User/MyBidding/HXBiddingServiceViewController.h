@@ -13,7 +13,7 @@
 @protocol HXBiddingServiceViewControllerDelegate <NSObject>
 
 @required
-- (void)serviceDidSelected:(HXBiddingSubService *)subService;
+- (void)serviceDidSelectedServiceID:(NSString *)serviceID subService:(HXBiddingSubService *)subService;
 
 @end
 

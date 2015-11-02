@@ -69,6 +69,7 @@
 		4893C2E31BE66EA500479EC3 /* HXBiddingSubServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2E21BE66EA500479EC3 /* HXBiddingSubServiceCell.m */; };
 		4893C2E61BE66F2200479EC3 /* HXBiddingServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2E51BE66F2200479EC3 /* HXBiddingServiceViewController.m */; };
 		4893C2E91BE6709300479EC3 /* HXBiddingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2E81BE6709300479EC3 /* HXBiddingService.m */; };
+		489918DC1BE7AB25007FB300 /* HXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 489918DB1BE7AB25007FB300 /* HXTextView.m */; };
 		489E9CCC1BC4F96900C6618E /* HXForgotPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CCB1BC4F96900C6618E /* HXForgotPWViewController.m */; };
 		489E9CD21BC5116A00C6618E /* HXThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CD11BC5116A00C6618E /* HXThemeManager.m */; };
 		489E9CD61BC511E900C6618E /* UINavigationController+StatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E9CD51BC511E900C6618E /* UINavigationController+StatusBarStyle.m */; };
@@ -226,6 +227,8 @@
 		4893C2E51BE66F2200479EC3 /* HXBiddingServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBiddingServiceViewController.m; sourceTree = "<group>"; };
 		4893C2E71BE6709300479EC3 /* HXBiddingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBiddingService.h; sourceTree = "<group>"; };
 		4893C2E81BE6709300479EC3 /* HXBiddingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBiddingService.m; sourceTree = "<group>"; };
+		489918DA1BE7AB25007FB300 /* HXTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTextView.h; sourceTree = "<group>"; };
+		489918DB1BE7AB25007FB300 /* HXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTextView.m; sourceTree = "<group>"; };
 		489E9CCA1BC4F96900C6618E /* HXForgotPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXForgotPWViewController.h; sourceTree = "<group>"; };
 		489E9CCB1BC4F96900C6618E /* HXForgotPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXForgotPWViewController.m; sourceTree = "<group>"; };
 		489E9CD01BC5116A00C6618E /* HXThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXThemeManager.h; sourceTree = "<group>"; };
@@ -315,6 +318,7 @@
 		48334DA71BC4D00D00FD43A6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				489918D91BE7AB25007FB300 /* Component */,
 				489E9CD31BC511C700C6618E /* Category */,
 				48334DA81BC4D00D00FD43A6 /* HXIBKit */,
 				48334DBC1BC4D00D00FD43A6 /* Macros */,
@@ -753,6 +757,15 @@
 			path = Bidding;
 			sourceTree = "<group>";
 		};
+		489918D91BE7AB25007FB300 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				489918DA1BE7AB25007FB300 /* HXTextView.h */,
+				489918DB1BE7AB25007FB300 /* HXTextView.m */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		489E9CD31BC511C700C6618E /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -1129,6 +1142,7 @@
 				4893C2D61BE6536500479EC3 /* HXBiddingCell.m in Sources */,
 				48334DE01BC4D00D00FD43A6 /* UIView+HXIBnspectable.m in Sources */,
 				48C57ACF1BDD5317002C8398 /* BRPlaceholderTextView.m in Sources */,
+				489918DC1BE7AB25007FB300 /* HXTextView.m in Sources */,
 				48334DEC1BC4D00D00FD43A6 /* HXLoginRequset.m in Sources */,
 				483AE3971BD40DFF004C0B22 /* HXWebViewController.m in Sources */,
 				483AE3831BD3FCD9004C0B22 /* HXMessageCenterViewController.m in Sources */,

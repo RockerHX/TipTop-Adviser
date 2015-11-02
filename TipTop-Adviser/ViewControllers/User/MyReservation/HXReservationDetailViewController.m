@@ -97,7 +97,7 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 }
 
 - (void)sendOrder {
-    [self startSendOrderReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+    [self startSendOrderReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
                                                              @"id": _orderID}];
 }
 
@@ -122,7 +122,7 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 }
 
 - (void)startDeleteRemarkRequestWithRemark:(HXReservationDetailRemark *)remark {
-    NSDictionary *parameters = @{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+    NSDictionary *parameters = @{@"access_token": [HXUserSession share].adviser.accessToken,
                                            @"id": remark.ID};
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

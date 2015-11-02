@@ -9,6 +9,7 @@
 #import "HXOnlinePayDetailViewModel.h"
 #import "HXAppApiRequest.h"
 #import "DateTools.h"
+#import "HXUserSession.h"
 
 typedef void(^BLOCK)(void);
 
@@ -75,7 +76,7 @@ static NSInteger RegularRow = 2;
 #pragma mark - Public Methods
 - (void)request:(void (^)(void))completed {
     _completedBlock = completed;
-    [self startOrderDetailReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+    [self startOrderDetailReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
                                                             @"id": _orderID}];
 }
 

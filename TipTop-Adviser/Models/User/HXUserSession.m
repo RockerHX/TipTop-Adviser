@@ -63,7 +63,7 @@ static HXUserSession *session = nil;
 
 - (void)unArchive {
     NSString *file = [NSHomeDirectory() stringByAppendingPathComponent:FilePath];
-//    _adviser = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+    _adviser = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
 }
 
 @end

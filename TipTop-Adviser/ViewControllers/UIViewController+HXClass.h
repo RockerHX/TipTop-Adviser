@@ -7,6 +7,7 @@
 //
 
 #import "HXStoryBoardManager.h"
+#import "HXUserSession.h"
 
 @interface UIViewController (HXClass)
 

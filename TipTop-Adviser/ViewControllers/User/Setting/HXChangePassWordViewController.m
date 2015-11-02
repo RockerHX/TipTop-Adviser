@@ -10,6 +10,7 @@
 #import "MBProgressHUD.h"
 #import "HXAppApiRequest.h"
 #import "UIAlertView+BlocksKit.h"
+#import "HXUserSession.h"
 
 
 static NSString *OrderListApi = @"/profile/password";
@@ -33,7 +34,7 @@ static NSString *OrderListApi = @"/profile/password";
     
     if (oldPassWord.length && passWord.length && confirmPassWord.length) {
         if ([passWord isEqualToString:confirmPassWord]) {
-            [self startChangePassWordRequest:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+            [self startChangePassWordRequest:@{@"access_token": [HXUserSession share].adviser.accessToken,
                                                @"old_password": oldPassWord,
                                                    @"password": confirmPassWord}];
         }

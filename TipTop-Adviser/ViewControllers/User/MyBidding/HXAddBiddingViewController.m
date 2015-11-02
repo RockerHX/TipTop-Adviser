@@ -11,6 +11,7 @@
 #import "HXBiddingService.h"
 #import "HXAppApiRequest.h"
 #import "MBProgressHUD.h"
+#import "HXUserSession.h"
 
 
 static NSString *CreateBiddingApi   = @"/biding/create";
@@ -33,7 +34,7 @@ static NSString *CreateBiddingApi   = @"/biding/create";
         _briefIntroductionTextView.text.length &&
         _costsTextField.text.length &&
         _contractAmountTextField.text.length) {
-        [self startCreateBiddingReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+        [self startCreateBiddingReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
                                                                @"f_cid": _subService.parentID,
                                                                  @"cid": _subService.ID,
                                                                  @"eta": _deliverDateTextField.text,

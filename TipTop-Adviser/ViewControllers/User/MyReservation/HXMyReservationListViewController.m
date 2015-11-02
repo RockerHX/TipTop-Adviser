@@ -56,7 +56,7 @@ static NSString *SendOrderApi   = @"/order/confirm";
 
 #pragma mark - Public Methods
 - (void)loadNewData {
-    [self startOrderListReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+    [self startOrderListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
                                                         @"type": @"appointment"}];
 }
 
@@ -87,7 +87,7 @@ static NSString *SendOrderApi   = @"/order/confirm";
 }
 
 - (void)sendOrderWithOrderID:(NSString *)orderID {
-    [self startSendOrderReuqestWithParameters:@{@"access_token": @"b487a6db8f621069fc6785b7b303f7de",
+    [self startSendOrderReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
                                                 @"id": orderID}];
 }
 

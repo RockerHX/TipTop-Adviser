@@ -22,4 +22,6 @@
 
 - (IBAction)grabButtonPressed;
 
+- (void)openSocket;
+
 @end

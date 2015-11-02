@@ -6,9 +6,9 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import <MBProgressHUD/MBProgressHUD.h>
 #import "HXLoginViewController.h"
 #import "HXLoginRequset.h"
+#import "MBProgressHUD.h"
 
 @implementation HXLoginViewController
 
@@ -27,6 +27,11 @@
 }
 
 - (void)viewConfig {
+}
+
+#pragma mark - Setter And Getter
+- (HXStoryBoardName)storyBoardName {
+    return HXStoryBoardNameLogin;
 }
 
 #pragma mark - Event Response
@@ -56,12 +61,21 @@
 #pragma mark - Request Methods
 - (void)startLoginRequest {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak __typeof__(self)weakSelf = self;
     NSDictionary *parameters = @{@"staff_id": _staffIDTextField.text,
                                  @"password": _passwordTextField.text};
     [HXAdviser loginWithParameters:parameters success:^(HXApiResponse *response, HXAdviser *adviser) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        __strong __typeof__(self)strongSelf = weakSelf;
+        if (response.errorCode == HXAppApiRequestErrorCodeNoError) {
+            [[HXUserSession share] updateAdviser:adviser];
+            if (strongSelf.delegate && [strongSelf.delegate respondsToSelector:@selector(loginViewControllerLoginSuccess:)]) {
+                [strongSelf.delegate loginViewControllerLoginSuccess:strongSelf];
+            }
+        }
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
     } failure:^(HXApiResponse *response) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
     }];
 }
 

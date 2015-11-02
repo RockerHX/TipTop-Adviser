@@ -8,10 +8,18 @@
 
 #import "HXAdviser.h"
 
+typedef NS_ENUM(BOOL, HXUserSessionState) {
+    HXUserSessionStateLogout = NO,
+    HXUserSessionStateLogin = YES
+};
+
 @interface HXUserSession : NSObject
 
-@property (nonnull, nonatomic, strong) HXAdviser *adviser;
+@property (nonnull, nonatomic, strong, readonly) HXAdviser *adviser;
+@property (nonatomic, assign, readonly) HXUserSessionState  state;
 
 + (nullable instancetype)share;
+
+- (void)updateAdviser:(nullable HXAdviser *)adviser;
 
 @end

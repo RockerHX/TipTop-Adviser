@@ -10,6 +10,8 @@
 
 @implementation HXAdviser
 
+MJCodingImplementation
+
 + (NSDictionary *)replacedKeyFromPropertyName {
     return @{@"uid": @"id",
         @"realName": @"real_name",

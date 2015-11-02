@@ -38,18 +38,15 @@ static NSString *NewOrderEvent = @"new_order";
 
 #pragma mark - Config Methods
 - (void)initConfig {
-    
-    [self socketConfig];
 }
 
 - (void)viewConfig {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
     _orderTitleLabel.text = @"暂无需求";
     _subTitleLabel.text = @"等待发单";
 }
 
-- (void)socketConfig {
+- (void)openSocket {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak __typeof__(self)weakSelf = self;
     [[HXSocketManager manager] openWithURL:[NSURL URLWithString:@"ws://115.29.45.120:8081"] opened:^(HXSocketManager *manager) {
         __strong __typeof__(self)strongSelf = weakSelf;

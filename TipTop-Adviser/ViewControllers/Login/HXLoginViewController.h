@@ -6,9 +6,21 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIViewController+HXClass.h"
+#import "HXUserSession.h"
+
+
+@class HXLoginViewController;
+@protocol HXLoginViewControllerDelegate <NSObject>
+
+@required
+- (void)loginViewControllerLoginSuccess:(HXLoginViewController *)loginViewController;
+
+@end
 
 @interface HXLoginViewController : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet          id  <HXLoginViewControllerDelegate>delegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *staffIDTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;

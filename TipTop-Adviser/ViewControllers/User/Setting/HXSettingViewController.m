@@ -11,6 +11,7 @@
 #import "HXApi.h"
 #import "HXUseExplanationViewController.h"
 #import "HXAboutViewController.h"
+#import "HXUserSession.h"
 
 @interface HXSettingViewController ()
 @end
@@ -42,6 +43,11 @@
     return HXStoryBoardNameSetting;
 }
 
+#pragma mark - Table View Delegate Methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [HXUserSession share].state ? 4 : 3;
+}
+
 #pragma mark - Table View Data Source Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -53,6 +59,9 @@
         HXAboutViewController *useExplanationViewController = [HXAboutViewController instance];
         useExplanationViewController.loadURL = [DoMain stringByAppendingString:@"/h5/page?key=agent_about"];
         [self.navigationController pushViewController:useExplanationViewController animated:YES];
+    } else if ((3 == indexPath.section) && (0 == indexPath.row)) {
+        [[HXUserSession share] logout];
+        [tableView reloadData];
     }
 }
 

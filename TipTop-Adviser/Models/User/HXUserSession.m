@@ -55,6 +55,10 @@ static HXUserSession *session = nil;
     [self archive];
 }
 
+- (void)logout {
+    [self updateAdviser:[HXAdviser new]];
+}
+
 #pragma mark - Private Methods
 - (void)archive {
     NSString *file = [NSHomeDirectory() stringByAppendingPathComponent:FilePath];

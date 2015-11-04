@@ -24,5 +24,4 @@ pod 'IQKeyboardManager'
 
 # ********************** 第三方SDK **********************
 # 百度地图SDK
-#pod 'BaiduMap-iOS-SDK'
-pod 'BaiduMapAPI'
+pod 'BaiduMapKit'

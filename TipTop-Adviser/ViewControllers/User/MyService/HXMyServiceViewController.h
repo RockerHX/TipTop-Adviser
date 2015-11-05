@@ -6,8 +6,8 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "UIViewController+HXClass.h"
+#import "HXWebViewController.h"
 
-@interface HXMyServiceViewController : UITableViewController
+@interface HXMyServiceViewController : HXWebViewController
 
 @end

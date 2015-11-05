@@ -7,13 +7,16 @@
 //
 
 #import "HXMyServiceViewController.h"
+#import "HXApi.h"
+#import "HXUserSession.h"
 
 @implementation HXMyServiceViewController
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    self.loadURL = [DoMain stringByAppendingFormat:@"/h5/agent/service?access_token=%@", [HXUserSession share].adviser.accessToken];
     
+    [super viewDidLoad];
 }
 
 #pragma mark - Setter And Getter
@@ -23,11 +26,6 @@
 
 - (HXStoryBoardName)storyBoardName {
     return HXStoryBoardNameMyService;
-}
-
-#pragma mark - Table View Data Source Methods
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

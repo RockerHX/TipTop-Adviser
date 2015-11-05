@@ -17,6 +17,7 @@
 #import "HXAppApiRequest.h"
 #import "MBProgressHUD.h"
 #import "HXReservationAddRemarkViewController.h"
+#import "HXRemarkDetailViewController.h"
 
 
 static NSString *SendOrderApi       = @"/order/confirm";
@@ -98,7 +99,7 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 
 - (void)sendOrder {
     [self startSendOrderReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
-                                                             @"id": _orderID}];
+                                                          @"id": _orderID}];
 }
 
 - (void)startSendOrderReuqestWithParameters:(NSDictionary *)parameters {
@@ -230,5 +231,12 @@ static NSString *DeletePrompt = @"删除";
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    HXRemarkDetailViewController *remarkDetailViewController = [HXRemarkDetailViewController instance];
+    remarkDetailViewController.loadURL = [DoMain stringByAppendingFormat:@"/h5/agent/order/remark?id=%@&access_token=%@", ((HXReservationDetailRemark *)_viewModel.remarks[indexPath.row - _viewModel.regularRow]).ID, [HXUserSession share].adviser.accessToken];
+    [self.navigationController pushViewController:remarkDetailViewController animated:YES];
+}
 
 @end

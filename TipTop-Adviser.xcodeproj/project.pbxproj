@@ -105,6 +105,7 @@
 		48D74F881BC4CA100000863D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F861BC4CA100000863D /* LaunchScreen.storyboard */; };
 		48EC4A1D1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EC4A1C1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m */; };
 		48EC4A211BDFD75700BC5192 /* HXOnlinePayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EC4A201BDFD75700BC5192 /* HXOnlinePayOrder.m */; };
+		48F77AF11BEBC1B900E3E5FE /* HXRemarkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F77AF01BEBC1B900E3E5FE /* HXRemarkDetailViewController.m */; };
 		76FA6FC886A711027758143B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B5E3197A35822D8DB4F522 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -294,6 +295,8 @@
 		48EC4A1C1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXOnlinePayOrderCell.m; sourceTree = "<group>"; };
 		48EC4A1F1BDFD75700BC5192 /* HXOnlinePayOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXOnlinePayOrder.h; sourceTree = "<group>"; };
 		48EC4A201BDFD75700BC5192 /* HXOnlinePayOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXOnlinePayOrder.m; sourceTree = "<group>"; };
+		48F77AEF1BEBC1B900E3E5FE /* HXRemarkDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXRemarkDetailViewController.h; sourceTree = "<group>"; };
+		48F77AF01BEBC1B900E3E5FE /* HXRemarkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXRemarkDetailViewController.m; sourceTree = "<group>"; };
 		A4953AC1E6027C51F893E2DE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -695,6 +698,8 @@
 				48CC518B1BDD128D00985753 /* HXReservationDetailViewController.m */,
 				48CC51A51BDD4CFA00985753 /* HXReservationAddRemarkViewController.h */,
 				48CC51A61BDD4CFA00985753 /* HXReservationAddRemarkViewController.m */,
+				48F77AEF1BEBC1B900E3E5FE /* HXRemarkDetailViewController.h */,
+				48F77AF01BEBC1B900E3E5FE /* HXRemarkDetailViewController.m */,
 			);
 			path = MyReservation;
 			sourceTree = "<group>";
@@ -1137,6 +1142,7 @@
 				483AE36E1BD3EEE3004C0B22 /* UIViewController+HXClass.m in Sources */,
 				484339891BD6A00B007B3F84 /* HXWorkCircuitOrder.m in Sources */,
 				48334DE61BC4D00D00FD43A6 /* HXAppConstants.m in Sources */,
+				48F77AF11BEBC1B900E3E5FE /* HXRemarkDetailViewController.m in Sources */,
 				48CC51871BDCFB7E00985753 /* HXNewOrder.m in Sources */,
 				48A48CC51BCD4C4A00AF6C36 /* HXIBImageView.m in Sources */,
 				48334DDF1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m in Sources */,

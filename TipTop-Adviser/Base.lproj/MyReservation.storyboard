@@ -513,7 +513,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXReservationDetailRemarkCell" rowHeight="84" id="1Yt-wN-K5s" customClass="HXReservationDetailRemarkCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HXReservationDetailRemarkCell" rowHeight="84" id="1Yt-wN-K5s" customClass="HXReservationDetailRemarkCell">
                                 <rect key="frame" x="0.0" y="344" width="320" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Yt-wN-K5s" id="Ezx-he-GOG">
@@ -601,6 +601,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FtG-I0-4uW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884" y="398"/>
+        </scene>
+        <!--Remark Detail View Controller-->
+        <scene sceneID="XE4-Fw-Vnc">
+            <objects>
+                <viewController storyboardIdentifier="HXRemarkDetailViewController" id="XFz-Pr-6i0" customClass="HXRemarkDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7d4-i1-cCX"/>
+                        <viewControllerLayoutGuide type="bottom" id="O8I-6X-ESH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Kq-wI-uQt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDR-cj-QjA">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rDR-cj-QjA" firstAttribute="top" secondItem="7d4-i1-cCX" secondAttribute="bottom" id="Sy6-Dk-tdR"/>
+                            <constraint firstItem="O8I-6X-ESH" firstAttribute="top" secondItem="rDR-cj-QjA" secondAttribute="bottom" id="avU-X5-L61"/>
+                            <constraint firstAttribute="trailing" secondItem="rDR-cj-QjA" secondAttribute="trailing" id="jMZ-tp-9SY"/>
+                            <constraint firstItem="rDR-cj-QjA" firstAttribute="leading" secondItem="3Kq-wI-uQt" secondAttribute="leading" id="thp-8u-acI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="rDR-cj-QjA" id="QkA-yn-bSo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMc-E5-u3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="1050"/>
         </scene>
         <!--添加备注-->
         <scene sceneID="8dN-lP-YHB">

@@ -27,7 +27,7 @@
 }
 
 - (void)viewConfig {
-    _header.layer.cornerRadius = _header.frame.size.height/2;
+    _avatarImageView.layer.cornerRadius = _avatarImageView.frame.size.height/2;
 }
 
 #pragma mark - Event Response
@@ -47,10 +47,10 @@
 - (void)displayWithOrder:(HXReservationOrder *)order {
     _order = order;
     
-    _dateLabel.text = [NSDate dateWithTimeIntervalSince1970:order.createTime].description;
+    _dateLabel.text = [[NSDate dateWithTimeIntervalSince1970:order.createTime] formattedDateWithFormat:@"yyyy-MM-dd hh:mm"];
     _orderNameLabel.text = order.cate;
     _nameLabel.text = order.clientName;
-    [_header sd_setImageWithURL:[NSURL URLWithString:order.clientAvatar]];
+    [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:order.clientAvatar]];
 }
 
 @end

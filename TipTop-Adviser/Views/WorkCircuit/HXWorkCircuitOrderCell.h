@@ -28,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *orderNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
-@property (weak, nonatomic) IBOutlet UIImageView *header;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *finishedIcon;
 
 - (IBAction)phoneButonPressed;

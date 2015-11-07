@@ -103,6 +103,8 @@
 		48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F811BC4CA100000863D /* TipTop_Adviser.xcdatamodeld */; };
 		48D74F851BC4CA100000863D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F841BC4CA100000863D /* Assets.xcassets */; };
 		48D74F881BC4CA100000863D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F861BC4CA100000863D /* LaunchScreen.storyboard */; };
+		48DFF4BE1BEDDBC300307A89 /* HXComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DFF4BD1BEDDBC300307A89 /* HXComment.m */; };
+		48DFF4C21BEDDD0800307A89 /* HXCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DFF4C11BEDDD0800307A89 /* HXCommentCell.m */; };
 		48EC4A1D1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EC4A1C1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m */; };
 		48EC4A211BDFD75700BC5192 /* HXOnlinePayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EC4A201BDFD75700BC5192 /* HXOnlinePayOrder.m */; };
 		48F77AF11BEBC1B900E3E5FE /* HXRemarkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F77AF01BEBC1B900E3E5FE /* HXRemarkDetailViewController.m */; };
@@ -291,6 +293,10 @@
 		48D74F841BC4CA100000863D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48D74F871BC4CA100000863D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48D74F891BC4CA100000863D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48DFF4BC1BEDDBC300307A89 /* HXComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXComment.h; sourceTree = "<group>"; };
+		48DFF4BD1BEDDBC300307A89 /* HXComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXComment.m; sourceTree = "<group>"; };
+		48DFF4C01BEDDD0800307A89 /* HXCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCommentCell.h; sourceTree = "<group>"; };
+		48DFF4C11BEDDD0800307A89 /* HXCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCommentCell.m; sourceTree = "<group>"; };
 		48EC4A1B1BDFD5D700BC5192 /* HXOnlinePayOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXOnlinePayOrderCell.h; sourceTree = "<group>"; };
 		48EC4A1C1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXOnlinePayOrderCell.m; sourceTree = "<group>"; };
 		48EC4A1F1BDFD75700BC5192 /* HXOnlinePayOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXOnlinePayOrder.h; sourceTree = "<group>"; };
@@ -401,6 +407,7 @@
 		48334DC51BC4D00D00FD43A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				48DFF4B81BEDDB9F00307A89 /* Comment */,
 				48CC51841BDCFB7000985753 /* HomePage */,
 				48CC518E1BDD13F700985753 /* MyReservation */,
 				48EC4A1E1BDFD75700BC5192 /* OnlinePay */,
@@ -512,6 +519,7 @@
 		48334DDD1BC4D00D00FD43A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48DFF4BF1BEDDCF600307A89 /* Comment */,
 				4884E0841BE12DF40078D2BA /* Login */,
 				48C57ACB1BDD5317002C8398 /* Common */,
 				48CC51781BDCE8F800985753 /* HomePage */,
@@ -957,6 +965,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		48DFF4B81BEDDB9F00307A89 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				48DFF4BC1BEDDBC300307A89 /* HXComment.h */,
+				48DFF4BD1BEDDBC300307A89 /* HXComment.m */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		48DFF4BF1BEDDCF600307A89 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				48DFF4C01BEDDD0800307A89 /* HXCommentCell.h */,
+				48DFF4C11BEDDD0800307A89 /* HXCommentCell.m */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		48EC4A1A1BDFD5D700BC5192 /* OnlinePay */ = {
 			isa = PBXGroup;
 			children = (
@@ -1127,6 +1153,7 @@
 				48334DE31BC4D00D00FD43A6 /* HXIBView.m in Sources */,
 				488712091BDFDD6A00A82D0E /* HXOnlinePayDetailInfoCell.m in Sources */,
 				48CC518C1BDD128D00985753 /* HXReservationDetailViewController.m in Sources */,
+				48DFF4BE1BEDDBC300307A89 /* HXComment.m in Sources */,
 				48CC51A41BDD370400985753 /* HXReservationDetail.m in Sources */,
 				4893C2E91BE6709300479EC3 /* HXBiddingService.m in Sources */,
 				4893C2E01BE66E9900479EC3 /* HXBiddingServiceCell.m in Sources */,
@@ -1169,6 +1196,7 @@
 				48CC519E1BDD2A3800985753 /* HXReservationDetailPromptCell.m in Sources */,
 				48A48CD51BCD666600AF6C36 /* HXChangePassWordViewController.m in Sources */,
 				489E9CD61BC511E900C6618E /* UINavigationController+StatusBarStyle.m in Sources */,
+				48DFF4C21BEDDD0800307A89 /* HXCommentCell.m in Sources */,
 				48334DE51BC4D00D00FD43A6 /* HXStoryBoardManager.m in Sources */,
 				4884E08A1BE12E2A0078D2BA /* HXSecurityCodeButton.m in Sources */,
 				48334DDE1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m in Sources */,

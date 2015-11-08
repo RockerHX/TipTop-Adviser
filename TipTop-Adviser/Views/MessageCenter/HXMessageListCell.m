@@ -39,7 +39,7 @@ static CGFloat Offset = 20.0f;
     frame.origin.x = frame.origin.x + Offset;
     frame.origin.y = frame.origin.y + Offset;
     frame.size.width = frame.size.width - Offset*2;
-    frame.size.height = frame.size.height - Offset*2;
+    frame.size.height = frame.size.height - Offset;
     [super setFrame:frame];
 }
 

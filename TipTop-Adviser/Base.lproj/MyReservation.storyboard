@@ -188,9 +188,9 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="avatarImageView" destination="1y4-J9-oau" id="8Jp-EZ-fok"/>
                                     <outlet property="dateLabel" destination="Abv-f7-vkZ" id="vXG-BG-Iek"/>
                                     <outlet property="delegate" destination="S0v-yu-w5y" id="lFK-Rp-Jz1"/>
-                                    <outlet property="header" destination="1y4-J9-oau" id="4LD-CI-hQP"/>
                                     <outlet property="nameLabel" destination="xz3-aE-SSp" id="gtz-wd-OxM"/>
                                     <outlet property="orderNameLabel" destination="wGw-sL-k6u" id="9UQ-1p-nfo"/>
                                 </connections>

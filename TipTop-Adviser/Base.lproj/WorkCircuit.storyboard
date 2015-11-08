@@ -194,10 +194,10 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="avatarImageView" destination="gPl-oa-Kg7" id="NEg-Ij-Drx"/>
                                     <outlet property="dateLabel" destination="7Zx-Ri-N19" id="U5K-Ij-lNm"/>
                                     <outlet property="delegate" destination="EFk-0l-Nnh" id="l49-He-U49"/>
                                     <outlet property="finishedIcon" destination="2Ym-9p-GWd" id="CMz-XJ-dCu"/>
-                                    <outlet property="header" destination="gPl-oa-Kg7" id="80N-bv-ebL"/>
                                     <outlet property="nameLabel" destination="jWL-Xn-sA1" id="S2V-BQ-nt5"/>
                                     <outlet property="orderNameLabel" destination="BhC-fy-sqZ" id="jYn-pf-npS"/>
                                     <outlet property="orderNumberLabel" destination="ob2-V9-5RA" id="nJd-i9-m18"/>

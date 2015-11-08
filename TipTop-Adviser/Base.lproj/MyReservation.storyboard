@@ -602,7 +602,7 @@
             </objects>
             <point key="canvasLocation" x="884" y="398"/>
         </scene>
-        <!--Remark Detail View Controller-->
+        <!--备注详情-->
         <scene sceneID="XE4-Fw-Vnc">
             <objects>
                 <viewController storyboardIdentifier="HXRemarkDetailViewController" id="XFz-Pr-6i0" customClass="HXRemarkDetailViewController" sceneMemberID="viewController">
@@ -629,6 +629,7 @@
                             <constraint firstItem="rDR-cj-QjA" firstAttribute="leading" secondItem="3Kq-wI-uQt" secondAttribute="leading" id="thp-8u-acI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="备注详情" id="Acc-Wj-l00"/>
                     <connections>
                         <outlet property="webView" destination="rDR-cj-QjA" id="QkA-yn-bSo"/>
                     </connections>

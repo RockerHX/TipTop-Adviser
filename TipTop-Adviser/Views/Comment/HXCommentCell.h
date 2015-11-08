@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "HXComment.h"
+#import "HXStarView.h"
 
 @interface HXCommentCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet     UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet     UILabel *mobileLabel;
+@property (weak, nonatomic) IBOutlet     UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet  HXStarView *starView;
+@property (weak, nonatomic) IBOutlet     UILabel *contentLabel;
 
 - (void)displayWithComment:(HXComment *)comment;
 

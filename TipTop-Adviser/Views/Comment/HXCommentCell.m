@@ -23,6 +23,7 @@
     _nameLabel.text = comment.clientName;
     _mobileLabel.text = comment.clientMobile;
     _dateLabel.text = [[NSDate dateWithTimeIntervalSince1970:comment.createDate] formattedDateWithFormat:@"yyyy-MM-dd hh:mm"];
+    _starView.value = comment.star;
     _contentLabel.text = comment.content;
 }
 

@@ -105,6 +105,7 @@
 		48D74F881BC4CA100000863D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F861BC4CA100000863D /* LaunchScreen.storyboard */; };
 		48DFF4BE1BEDDBC300307A89 /* HXComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DFF4BD1BEDDBC300307A89 /* HXComment.m */; };
 		48DFF4C21BEDDD0800307A89 /* HXCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DFF4C11BEDDD0800307A89 /* HXCommentCell.m */; };
+		48DFF4C61BEF709400307A89 /* HXStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DFF4C51BEF709400307A89 /* HXStarView.m */; };
 		48EC4A1D1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EC4A1C1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m */; };
 		48EC4A211BDFD75700BC5192 /* HXOnlinePayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EC4A201BDFD75700BC5192 /* HXOnlinePayOrder.m */; };
 		48F77AF11BEBC1B900E3E5FE /* HXRemarkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F77AF01BEBC1B900E3E5FE /* HXRemarkDetailViewController.m */; };
@@ -297,6 +298,8 @@
 		48DFF4BD1BEDDBC300307A89 /* HXComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXComment.m; sourceTree = "<group>"; };
 		48DFF4C01BEDDD0800307A89 /* HXCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCommentCell.h; sourceTree = "<group>"; };
 		48DFF4C11BEDDD0800307A89 /* HXCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCommentCell.m; sourceTree = "<group>"; };
+		48DFF4C41BEF709400307A89 /* HXStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXStarView.h; sourceTree = "<group>"; };
+		48DFF4C51BEF709400307A89 /* HXStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXStarView.m; sourceTree = "<group>"; };
 		48EC4A1B1BDFD5D700BC5192 /* HXOnlinePayOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXOnlinePayOrderCell.h; sourceTree = "<group>"; };
 		48EC4A1C1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXOnlinePayOrderCell.m; sourceTree = "<group>"; };
 		48EC4A1F1BDFD75700BC5192 /* HXOnlinePayOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXOnlinePayOrder.h; sourceTree = "<group>"; };
@@ -828,6 +831,7 @@
 		48C57ACB1BDD5317002C8398 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				48DFF4C31BEF709400307A89 /* HXStarView */,
 				48C57ACC1BDD5317002C8398 /* PlaceholderTextView */,
 			);
 			path = Common;
@@ -981,6 +985,15 @@
 				48DFF4C11BEDDD0800307A89 /* HXCommentCell.m */,
 			);
 			path = Comment;
+			sourceTree = "<group>";
+		};
+		48DFF4C31BEF709400307A89 /* HXStarView */ = {
+			isa = PBXGroup;
+			children = (
+				48DFF4C41BEF709400307A89 /* HXStarView.h */,
+				48DFF4C51BEF709400307A89 /* HXStarView.m */,
+			);
+			path = HXStarView;
 			sourceTree = "<group>";
 		};
 		48EC4A1A1BDFD5D700BC5192 /* OnlinePay */ = {
@@ -1208,6 +1221,7 @@
 				48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */,
 				48334DE41BC4D00D00FD43A6 /* HXIBnsepectableManager.m in Sources */,
 				4893C2DD1BE663F800479EC3 /* HXBiddingDetailViewController.m in Sources */,
+				48DFF4C61BEF709400307A89 /* HXStarView.m in Sources */,
 				489918E01BE7B562007FB300 /* HXAdviser.m in Sources */,
 				48CC519B1BDD2A2900985753 /* HXReservationDetailClientCell.m in Sources */,
 				48334DEA1BC4D00D00FD43A6 /* HXApiRequest.m in Sources */,

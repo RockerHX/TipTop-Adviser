@@ -1,32 +1,21 @@
 //
-//  HXMessageCenterViewController.m
+//  HXMessageDetailViewController.m
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/19.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXMessageCenterViewController.h"
-#import "HXMessageCell.h"
 #import "HXMessageListViewController.h"
-#import "HXMessageList.h"
+#import "HXMessageListCell.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 
 
-static NSString *MessageListApi = @"/notification/category";
+static NSString *MessageDetailListApi = @"/notification";
 
-@implementation HXMessageCenterViewController
+@implementation HXMessageListViewController
 
 #pragma mark - View Controller Life Cycle
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    self.navigationController.canPan = YES;
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    self.navigationController.canPan = NO;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,10 +31,6 @@ static NSString *MessageListApi = @"/notification/category";
 }
 
 #pragma mark - Setter And Getter
-- (NSString *)navigationControllerIdentifier {
-    return @"HXMessageCenterNavigationController";
-}
-
 - (HXStoryBoardName)storyBoardName {
     return HXStoryBoardNameMessageCenter;
 }
@@ -53,17 +38,18 @@ static NSString *MessageListApi = @"/notification/category";
 #pragma mark - Public Methods
 - (void)loadNewData {
     [self startOrderListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
-                                                         @"app": @"agent"}];
+                                                         @"app": @"agent",
+                                                         @"cid": _cid}];
 }
 
 #pragma mark - Private Methods
 - (void)startOrderListReuqestWithParameters:(NSDictionary *)parameters {
     __weak __typeof__(self)weakSelf = self;
-    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi commonApiURLWithApi:MessageListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi commonApiURLWithApi:MessageDetailListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
-            [strongSelf handleOrdersData:responseObject[@"data"]];
+            [strongSelf handleOrdersData:responseObject[@"data"][@"list"]];
             [strongSelf.tableView reloadData];
             [strongSelf endLoad];
         }
@@ -74,14 +60,14 @@ static NSString *MessageListApi = @"/notification/category";
 }
 
 - (void)handleOrdersData:(NSArray *)ordersData {
-    NSMutableArray *messages = [NSMutableArray arrayWithCapacity:ordersData.count];
+    NSMutableArray *messageLists = [NSMutableArray arrayWithCapacity:ordersData.count];
     for (NSDictionary *data in ordersData) {
-        HXMessage *message = [HXMessage objectWithKeyValues:data];
+        HXMessageList *list = [HXMessageList objectWithKeyValues:data];
         if (data) {
-            [messages addObject:message];
+            [messageLists addObject:list];
         }
     }
-    self.dataList = messages;
+    self.dataList = messageLists;
 }
 
 #pragma mark - Table View Data Source Methods
@@ -90,17 +76,16 @@ static NSString *MessageListApi = @"/notification/category";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HXMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXMessageCell class]) forIndexPath:indexPath];
-    [cell displayWithMessage:self.dataList[indexPath.row]];
+    HXMessageListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXMessageListCell class]) forIndexPath:indexPath];
+    [cell displayWithList:self.dataList[indexPath.row]];
     return cell;
 }
 
 #pragma mark - Table View Data Source Methods
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    HXMessageListViewController *listViewController = [HXMessageListViewController instance];
-    listViewController.cid = ((HXMessageList *)self.dataList[indexPath.row]).ID;
-    [self.navigationController pushViewController:listViewController animated:YES];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXMessageListCell class]) cacheByIndexPath:indexPath configuration:^(HXMessageListCell *cell) {
+        [cell displayWithList:self.dataList[indexPath.row]];
+    }];
 }
 
 @end

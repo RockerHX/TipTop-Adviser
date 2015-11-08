@@ -6,8 +6,10 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXWebViewController.h"
+#import "HXListViewController.h"
 
-@interface HXMessageDetailViewController : HXWebViewController
+@interface HXMessageListViewController : HXListViewController
+
+@property (nonatomic, copy) NSString *cid;
 
 @end

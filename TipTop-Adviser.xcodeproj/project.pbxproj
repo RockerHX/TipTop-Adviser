@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4810972D1BEFAFD800BA017B /* HXMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4810972C1BEFAFD800BA017B /* HXMessage.m */; };
 		481097311BEFB24400BA017B /* HXMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 481097301BEFB24400BA017B /* HXMessageCell.m */; };
+		481097341BEFBA0D00BA017B /* HXMessageList.m in Sources */ = {isa = PBXBuildFile; fileRef = 481097331BEFBA0D00BA017B /* HXMessageList.m */; };
+		481097371BEFBA6700BA017B /* HXMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 481097361BEFBA6700BA017B /* HXMessageListCell.m */; };
 		48334DDE1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DAB1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m */; };
 		48334DDF1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DAD1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m */; };
 		48334DE01BC4D00D00FD43A6 /* UIView+HXIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DAF1BC4D00D00FD43A6 /* UIView+HXIBnspectable.m */; };
@@ -43,7 +45,7 @@
 		483AE38A1BD40257004C0B22 /* HXMyCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE3891BD40257004C0B22 /* HXMyCommentViewController.m */; };
 		483AE38D1BD408D3004C0B22 /* MyAddress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483AE38B1BD408D3004C0B22 /* MyAddress.storyboard */; };
 		483AE3911BD4090A004C0B22 /* HXMyAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE3901BD4090A004C0B22 /* HXMyAddressViewController.m */; };
-		483AE3941BD40D62004C0B22 /* HXMessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE3931BD40D62004C0B22 /* HXMessageDetailViewController.m */; };
+		483AE3941BD40D62004C0B22 /* HXMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE3931BD40D62004C0B22 /* HXMessageListViewController.m */; };
 		483AE3971BD40DFF004C0B22 /* HXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AE3961BD40DFF004C0B22 /* HXWebViewController.m */; };
 		484339851BD697CC007B3F84 /* HXUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484339841BD697CC007B3F84 /* HXUserInformationViewController.m */; };
 		484339891BD6A00B007B3F84 /* HXWorkCircuitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 484339881BD6A00B007B3F84 /* HXWorkCircuitOrder.m */; };
@@ -121,6 +123,10 @@
 		4810972C1BEFAFD800BA017B /* HXMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMessage.m; sourceTree = "<group>"; };
 		4810972F1BEFB24400BA017B /* HXMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMessageCell.h; sourceTree = "<group>"; };
 		481097301BEFB24400BA017B /* HXMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMessageCell.m; sourceTree = "<group>"; };
+		481097321BEFBA0D00BA017B /* HXMessageList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMessageList.h; sourceTree = "<group>"; };
+		481097331BEFBA0D00BA017B /* HXMessageList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMessageList.m; sourceTree = "<group>"; };
+		481097351BEFBA6700BA017B /* HXMessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMessageListCell.h; sourceTree = "<group>"; };
+		481097361BEFBA6700BA017B /* HXMessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMessageListCell.m; sourceTree = "<group>"; };
 		48334DAA1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HXIBnspectable.h"; sourceTree = "<group>"; };
 		48334DAB1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HXIBnspectable.m"; sourceTree = "<group>"; };
 		48334DAC1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HXIBnsepectable.h"; sourceTree = "<group>"; };
@@ -184,8 +190,8 @@
 		483AE38C1BD408D3004C0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyAddress.storyboard; sourceTree = "<group>"; };
 		483AE38F1BD4090A004C0B22 /* HXMyAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMyAddressViewController.h; sourceTree = "<group>"; };
 		483AE3901BD4090A004C0B22 /* HXMyAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMyAddressViewController.m; sourceTree = "<group>"; };
-		483AE3921BD40D62004C0B22 /* HXMessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMessageDetailViewController.h; sourceTree = "<group>"; };
-		483AE3931BD40D62004C0B22 /* HXMessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMessageDetailViewController.m; sourceTree = "<group>"; };
+		483AE3921BD40D62004C0B22 /* HXMessageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMessageListViewController.h; sourceTree = "<group>"; };
+		483AE3931BD40D62004C0B22 /* HXMessageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMessageListViewController.m; sourceTree = "<group>"; };
 		483AE3951BD40DFF004C0B22 /* HXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewController.h; sourceTree = "<group>"; };
 		483AE3961BD40DFF004C0B22 /* HXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewController.m; sourceTree = "<group>"; };
 		484339831BD697CC007B3F84 /* HXUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXUserInformationViewController.h; sourceTree = "<group>"; };
@@ -341,6 +347,8 @@
 			children = (
 				4810972B1BEFAFD800BA017B /* HXMessage.h */,
 				4810972C1BEFAFD800BA017B /* HXMessage.m */,
+				481097321BEFBA0D00BA017B /* HXMessageList.h */,
+				481097331BEFBA0D00BA017B /* HXMessageList.m */,
 			);
 			path = MessageCenter;
 			sourceTree = "<group>";
@@ -350,6 +358,8 @@
 			children = (
 				4810972F1BEFB24400BA017B /* HXMessageCell.h */,
 				481097301BEFB24400BA017B /* HXMessageCell.m */,
+				481097351BEFBA6700BA017B /* HXMessageListCell.h */,
+				481097361BEFBA6700BA017B /* HXMessageListCell.m */,
 			);
 			path = MessageCenter;
 			sourceTree = "<group>";
@@ -666,8 +676,8 @@
 			children = (
 				483AE3811BD3FCD9004C0B22 /* HXMessageCenterViewController.h */,
 				483AE3821BD3FCD9004C0B22 /* HXMessageCenterViewController.m */,
-				483AE3921BD40D62004C0B22 /* HXMessageDetailViewController.h */,
-				483AE3931BD40D62004C0B22 /* HXMessageDetailViewController.m */,
+				483AE3921BD40D62004C0B22 /* HXMessageListViewController.h */,
+				483AE3931BD40D62004C0B22 /* HXMessageListViewController.m */,
 			);
 			path = MessageCenter;
 			sourceTree = "<group>";
@@ -1189,6 +1199,7 @@
 				48EC4A1D1BDFD5D700BC5192 /* HXOnlinePayOrderCell.m in Sources */,
 				4893C2DA1BE65CB800479EC3 /* HXBidding.m in Sources */,
 				48A5FEF91BD94B7300891727 /* HXSocketManager.m in Sources */,
+				481097371BEFBA6700BA017B /* HXMessageListCell.m in Sources */,
 				48334DE31BC4D00D00FD43A6 /* HXIBView.m in Sources */,
 				488712091BDFDD6A00A82D0E /* HXOnlinePayDetailInfoCell.m in Sources */,
 				48CC518C1BDD128D00985753 /* HXReservationDetailViewController.m in Sources */,
@@ -1223,7 +1234,7 @@
 				489918E31BE7B5F8007FB300 /* HXUserSession.m in Sources */,
 				48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */,
 				483AE3641BD3E64A004C0B22 /* HXOnlinePayListViewController.m in Sources */,
-				483AE3941BD40D62004C0B22 /* HXMessageDetailViewController.m in Sources */,
+				483AE3941BD40D62004C0B22 /* HXMessageListViewController.m in Sources */,
 				48CC51A71BDD4CFA00985753 /* HXReservationAddRemarkViewController.m in Sources */,
 				4893C2E61BE66F2200479EC3 /* HXBiddingServiceViewController.m in Sources */,
 				4893C2D61BE6536500479EC3 /* HXBiddingCell.m in Sources */,
@@ -1262,6 +1273,7 @@
 				484339A01BD6AC82007B3F84 /* HXWorkCircuitOrderCell.m in Sources */,
 				483AE3751BD3F399004C0B22 /* HXMyBiddingViewController.m in Sources */,
 				483AE38A1BD40257004C0B22 /* HXMyCommentViewController.m in Sources */,
+				481097341BEFBA0D00BA017B /* HXMessageList.m in Sources */,
 				48334DE71BC4D00D00FD43A6 /* HXVersion.m in Sources */,
 				488711FE1BDFDBFF00A82D0E /* HXOnlinePayDetailViewController.m in Sources */,
 				48CC51981BDD2A0B00985753 /* HXReservationDetailInfoCell.m in Sources */,

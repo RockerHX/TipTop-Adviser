@@ -9,6 +9,7 @@
 #import "HXMessageListViewController.h"
 #import "HXMessageListCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "HXMessageDetailViewController.h"
 
 
 static NSString *MessageDetailListApi = @"/notification";
@@ -86,6 +87,13 @@ static NSString *MessageDetailListApi = @"/notification";
     return [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXMessageListCell class]) cacheByIndexPath:indexPath configuration:^(HXMessageListCell *cell) {
         [cell displayWithList:self.dataList[indexPath.row]];
     }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    HXMessageDetailViewController *listViewController = [HXMessageDetailViewController instance];
+    listViewController.cid = ((HXMessageList *)self.dataList[indexPath.row]).ID;
+    [self.navigationController pushViewController:listViewController animated:YES];
 }
 
 @end

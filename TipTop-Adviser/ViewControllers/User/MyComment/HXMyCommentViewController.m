@@ -59,14 +59,14 @@ static NSString *CommentListApi = @"/review";
 }
 
 - (void)handleOrdersData:(NSArray *)ordersData {
-    NSMutableArray *orders = [NSMutableArray arrayWithCapacity:ordersData.count];
+    NSMutableArray *comments = [NSMutableArray arrayWithCapacity:ordersData.count];
     for (NSDictionary *data in ordersData) {
         HXComment *comment = [HXComment objectWithKeyValues:data];
         if (data) {
-            [orders addObject:comment];
+            [comments addObject:comment];
         }
     }
-    self.dataList = orders;
+    self.dataList = comments;
 }
 
 #pragma mark - Table View Data Source Methods

@@ -7,7 +7,11 @@
 //
 
 #import "HXMessageCenterViewController.h"
+#import "HXMessageCell.h"
 #import "HXMessageDetailViewController.h"
+
+
+static NSString *MessageListApi = @"/notification/category";
 
 @implementation HXMessageCenterViewController
 
@@ -27,6 +31,15 @@
     
 }
 
+#pragma mark - Config Methods
+- (void)initConfig {
+    [super initConfig];
+}
+
+- (void)viewConfig {
+    [super viewConfig];
+}
+
 #pragma mark - Setter And Getter
 - (NSString *)navigationControllerIdentifier {
     return @"HXMessageCenterNavigationController";
@@ -34,6 +47,51 @@
 
 - (HXStoryBoardName)storyBoardName {
     return HXStoryBoardNameMessageCenter;
+}
+
+#pragma mark - Public Methods
+- (void)loadNewData {
+    [self startOrderListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
+                                                         @"app": @"agent"}];
+}
+
+#pragma mark - Private Methods
+- (void)startOrderListReuqestWithParameters:(NSDictionary *)parameters {
+    __weak __typeof__(self)weakSelf = self;
+    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi commonApiURLWithApi:MessageListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            [strongSelf handleOrdersData:responseObject[@"data"]];
+            [strongSelf.tableView reloadData];
+            [strongSelf endLoad];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [strongSelf endLoad];
+    }];
+}
+
+- (void)handleOrdersData:(NSArray *)ordersData {
+    NSMutableArray *messages = [NSMutableArray arrayWithCapacity:ordersData.count];
+    for (NSDictionary *data in ordersData) {
+        HXMessage *message = [HXMessage objectWithKeyValues:data];
+        if (data) {
+            [messages addObject:message];
+        }
+    }
+    self.dataList = messages;
+}
+
+#pragma mark - Table View Data Source Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HXMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXMessageCell class]) forIndexPath:indexPath];
+    [cell displayWithMessage:self.dataList[indexPath.row]];
+    return cell;
 }
 
 #pragma mark - Table View Data Source Methods

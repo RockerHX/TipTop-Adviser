@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4810972D1BEFAFD800BA017B /* HXMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4810972C1BEFAFD800BA017B /* HXMessage.m */; };
+		481097311BEFB24400BA017B /* HXMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 481097301BEFB24400BA017B /* HXMessageCell.m */; };
 		48334DDE1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DAB1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m */; };
 		48334DDF1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DAD1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m */; };
 		48334DE01BC4D00D00FD43A6 /* UIView+HXIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 48334DAF1BC4D00D00FD43A6 /* UIView+HXIBnspectable.m */; };
@@ -115,6 +117,10 @@
 /* Begin PBXFileReference section */
 		3803C0C663CA56A618B7F012 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		44B5E3197A35822D8DB4F522 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4810972B1BEFAFD800BA017B /* HXMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMessage.h; sourceTree = "<group>"; };
+		4810972C1BEFAFD800BA017B /* HXMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMessage.m; sourceTree = "<group>"; };
+		4810972F1BEFB24400BA017B /* HXMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMessageCell.h; sourceTree = "<group>"; };
+		481097301BEFB24400BA017B /* HXMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMessageCell.m; sourceTree = "<group>"; };
 		48334DAA1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HXIBnspectable.h"; sourceTree = "<group>"; };
 		48334DAB1BC4D00D00FD43A6 /* UIButton+HXIBnspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HXIBnspectable.m"; sourceTree = "<group>"; };
 		48334DAC1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HXIBnsepectable.h"; sourceTree = "<group>"; };
@@ -330,6 +336,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4810972A1BEFAFCB00BA017B /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				4810972B1BEFAFD800BA017B /* HXMessage.h */,
+				4810972C1BEFAFD800BA017B /* HXMessage.m */,
+			);
+			path = MessageCenter;
+			sourceTree = "<group>";
+		};
+		4810972E1BEFB23300BA017B /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				4810972F1BEFB24400BA017B /* HXMessageCell.h */,
+				481097301BEFB24400BA017B /* HXMessageCell.m */,
+			);
+			path = MessageCenter;
+			sourceTree = "<group>";
+		};
 		48334DA71BC4D00D00FD43A6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +434,7 @@
 		48334DC51BC4D00D00FD43A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4810972A1BEFAFCB00BA017B /* MessageCenter */,
 				48DFF4B81BEDDB9F00307A89 /* Comment */,
 				48CC51841BDCFB7000985753 /* HomePage */,
 				48CC518E1BDD13F700985753 /* MyReservation */,
@@ -522,6 +547,7 @@
 		48334DDD1BC4D00D00FD43A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4810972E1BEFB23300BA017B /* MessageCenter */,
 				48DFF4BF1BEDDCF600307A89 /* Comment */,
 				4884E0841BE12DF40078D2BA /* Login */,
 				48C57ACB1BDD5317002C8398 /* Common */,
@@ -1179,6 +1205,7 @@
 				48CC51941BDD1EC500985753 /* HXReservationDetailViewModel.m in Sources */,
 				48CC51831BDCEBCE00985753 /* HXOrderAlertCell.m in Sources */,
 				48CC517C1BDCE92300985753 /* HXOrderAlertView.m in Sources */,
+				481097311BEFB24400BA017B /* HXMessageCell.m in Sources */,
 				483AE36E1BD3EEE3004C0B22 /* UIViewController+HXClass.m in Sources */,
 				484339891BD6A00B007B3F84 /* HXWorkCircuitOrder.m in Sources */,
 				48334DE61BC4D00D00FD43A6 /* HXAppConstants.m in Sources */,
@@ -1187,6 +1214,7 @@
 				48A48CC51BCD4C4A00AF6C36 /* HXIBImageView.m in Sources */,
 				48334DDF1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m in Sources */,
 				484339A31BD6C0EC007B3F84 /* HXWorkCircuitDetailViewController.m in Sources */,
+				4810972D1BEFAFD800BA017B /* HXMessage.m in Sources */,
 				489E9CCC1BC4F96900C6618E /* HXForgotPWViewController.m in Sources */,
 				4893C2CF1BE60B8500479EC3 /* HXUseExplanationViewController.m in Sources */,
 				48334DE21BC4D00D00FD43A6 /* HXIBLabel.m in Sources */,

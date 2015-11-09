@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet    UILabel *addressLabel;
 
 - (IBAction)menuButtonPressed;
+- (IBAction)enterButtonPressed;
 
 @end

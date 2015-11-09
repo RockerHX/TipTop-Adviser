@@ -11,12 +11,20 @@
 #import <BaiduMapAPI_Search/BMKGeocodeSearch.h>
 #import <REFrostedViewController/REFrostedViewController.h>
 #import "HXLocationManager.h"
+#import "HXAppApiRequest.h"
+#import "MBProgressHUD.h"
+#import "HXUserSession.h"
+
+
+static NSString *UpdateLocationApi = @"/profile/location";
 
 @interface HXMyAddressViewController () <BMKMapViewDelegate, BMKGeoCodeSearchDelegate>
 @end
 
 @implementation HXMyAddressViewController {
     NSTimer *_timer;
+    CLLocationCoordinate2D _location;
+    NSString *_address;
 }
 
 #pragma mark - View Controller Life Cycle
@@ -65,6 +73,15 @@
     [self.frostedViewController presentMenuViewController];
 }
 
+- (IBAction)enterButtonPressed {
+    if (_location.latitude && _location.longitude && _address) {
+        [self startUpdateAddressReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
+                                                                 @"lat": @(_location.latitude).stringValue,
+                                                                 @"lng": @(_location.longitude).stringValue,
+                                                             @"address": _address}];
+    }
+}
+
 #pragma mark - Setter And Getter
 - (NSString *)navigationControllerIdentifier {
     return @"HXMyAddressNavigationController";
@@ -79,6 +96,7 @@
     __weak __typeof__(self)weakSelf = self;
     [[HXLocationManager share] getLocationSuccess:^(BMKUserLocation *userLocation, NSString *latitude, NSString *longitude) {
         __strong __typeof__(self)strongSelf = weakSelf;
+        strongSelf->_location = userLocation.location.coordinate;
         [strongSelf->_mapView updateLocationData:userLocation];     // 根据坐标在地图上显示位置
         [strongSelf getStartAddressWithLocation:userLocation.location];
     } failure:^(NSString *latitude, NSString *longitude, NSError *error) {
@@ -93,9 +111,25 @@
     [search reverseGeoCode:option];
 }
 
+- (void)startUpdateAddressReuqestWithParameters:(NSDictionary *)parameters {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak __typeof__(self)weakSelf = self;
+    [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:UpdateLocationApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+        }
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    }];
+}
+
 #pragma mark - BMKGeoCodeSearchDelegate Methods
 - (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error {
-    _addressLabel.text = result.address;
+    _address = result.address;
+    _addressLabel.text = _address;
 }
 
 @end

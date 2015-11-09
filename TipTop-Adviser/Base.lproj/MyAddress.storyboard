@@ -75,7 +75,7 @@
                                             <constraint firstAttribute="height" constant="0.5" id="xni-QF-ZDu"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fuj-qI-0Hm">
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MA-LocationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fuj-qI-0Hm">
                                         <rect key="frame" x="20" y="15" width="30" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -83,7 +83,7 @@
                                             <constraint firstAttribute="width" constant="30" id="smF-qw-wCI"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家园南街11号-附25号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpB-lq-Uqo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定位中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpB-lq-Uqo">
                                         <rect key="frame" x="58" y="15" width="254" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -132,10 +132,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="PpB-lq-Uqo" id="n8I-aV-9w8"/>
+                        <outlet property="mapView" destination="tOO-qp-d3N" id="QFU-gC-4yX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suk-UJ-G2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="286" y="415"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MA-LocationIcon" width="10" height="13"/>
+    </resources>
 </document>

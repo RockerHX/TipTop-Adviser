@@ -7,8 +7,12 @@
 //
 
 #import "UIViewController+HXClass.h"
+#import <BaiduMapAPI_Map/BMKMapView.h>
 
 @interface HXMyAddressViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet BMKMapView *mapView;
+@property (weak, nonatomic) IBOutlet    UILabel *addressLabel;
 
 - (IBAction)menuButtonPressed;
 

@@ -61,12 +61,12 @@ static HXUserSession *session = nil;
 
 #pragma mark - Private Methods
 - (void)archive {
-    NSString *file = [NSHomeDirectory() stringByAppendingPathComponent:FilePath];
+    NSString *file = [NSTemporaryDirectory() stringByAppendingPathComponent:FilePath];
     [NSKeyedArchiver archiveRootObject:_adviser toFile:file];
 }
 
 - (void)unArchive {
-    NSString *file = [NSHomeDirectory() stringByAppendingPathComponent:FilePath];
+    NSString *file = [NSTemporaryDirectory() stringByAppendingPathComponent:FilePath];
     _adviser = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
 }
 

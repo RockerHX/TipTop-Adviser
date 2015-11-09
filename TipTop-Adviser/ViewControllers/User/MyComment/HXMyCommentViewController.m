@@ -40,11 +40,11 @@ static NSString *CommentListApi = @"/review";
 
 #pragma mark - Public Methods
 - (void)loadNewData {
-    [self startOrderListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken}];
+    [self startCommentListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken}];
 }
 
 #pragma mark - Private Methods
-- (void)startOrderListReuqestWithParameters:(NSDictionary *)parameters {
+- (void)startCommentListReuqestWithParameters:(NSDictionary *)parameters {
     __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:CommentListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;

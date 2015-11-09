@@ -52,12 +52,12 @@ static NSString *MessageListApi = @"/notification/category";
 
 #pragma mark - Public Methods
 - (void)loadNewData {
-    [self startOrderListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
-                                                         @"app": @"agent"}];
+    [self startMessageListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
+                                                           @"app": @"agent"}];
 }
 
 #pragma mark - Private Methods
-- (void)startOrderListReuqestWithParameters:(NSDictionary *)parameters {
+- (void)startMessageListReuqestWithParameters:(NSDictionary *)parameters {
     __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestGETMethodsWithAPI:[HXApi commonApiURLWithApi:MessageListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;

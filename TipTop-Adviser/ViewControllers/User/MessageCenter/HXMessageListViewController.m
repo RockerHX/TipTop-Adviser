@@ -38,13 +38,13 @@ static NSString *MessageDetailListApi = @"/notification";
 
 #pragma mark - Public Methods
 - (void)loadNewData {
-    [self startOrderListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
-                                                         @"app": @"agent",
-                                                         @"cid": _cid}];
+    [self startMessageListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
+                                                           @"app": @"agent",
+                                                           @"cid": _cid}];
 }
 
 #pragma mark - Private Methods
-- (void)startOrderListReuqestWithParameters:(NSDictionary *)parameters {
+- (void)startMessageListReuqestWithParameters:(NSDictionary *)parameters {
     __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestGETMethodsWithAPI:[HXApi commonApiURLWithApi:MessageDetailListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;

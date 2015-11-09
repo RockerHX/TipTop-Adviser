@@ -18,6 +18,9 @@
 @interface HXUserViewController : UITableViewController
 
 @property (nonatomic, weak) id <HXUserViewControllerDelegate>delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet     UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet     UILabel *mobileLabel;
 
 - (IBAction)userHeaderPressed;
 - (IBAction)settingButtonPressed;

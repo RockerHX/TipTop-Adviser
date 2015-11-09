@@ -17,6 +17,7 @@
 #import "HXMessageCenterViewController.h"
 #import "HXMyCommentViewController.h"
 #import "HXMyAddressViewController.h"
+#import "UIImageView+WebCache.h"
 
 typedef NS_ENUM(NSUInteger, HXMenuRow) {
     HXMenuRowMyReservation = 0,
@@ -36,9 +37,26 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
 @implementation HXUserViewController
 
 #pragma mark - View Controller Life Cycle
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self updateUserInfo];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initConfig];
+    [self viewConfig];
+}
+
+#pragma mark - Config Methods
+- (void)initConfig {
+    
+}
+
+- (void)viewConfig {
+    _avatarImageView.layer.cornerRadius = _avatarImageView.frame.size.height/2;
 }
 
 #pragma mark - Event Response
@@ -58,6 +76,14 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
 
 - (IBAction)editButtonPressed {
     
+}
+
+#pragma mark - Private Methods
+- (void)updateUserInfo {
+    HXAdviser *adviser = [HXUserSession share].adviser;
+    [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:adviser.avatar]];
+    _nameLabel.text = adviser.realName;
+    _mobileLabel.text = adviser.mobile;
 }
 
 #pragma mark - Table View Delegate Methods

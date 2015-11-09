@@ -63,7 +63,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UC-HeaderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-N4-cZx">
+                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UC-HeaderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-N4-cZx">
                                     <rect key="frame" x="120" y="40" width="80" height="80"/>
                                     <animations/>
                                     <gestureRecognizers/>
@@ -494,6 +494,11 @@
                             <outlet property="delegate" destination="a1o-34-Fah" id="y23-Jv-XhD"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="avatarImageView" destination="e1o-N4-cZx" id="COi-JY-ed8"/>
+                        <outlet property="mobileLabel" destination="TBP-yX-Q1M" id="X8o-XR-te6"/>
+                        <outlet property="nameLabel" destination="7xq-dM-80U" id="sqG-wx-e0g"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h1-Gc-pa7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ypV-dZ-OC7">

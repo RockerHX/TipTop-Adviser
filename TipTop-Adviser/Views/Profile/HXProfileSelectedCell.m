@@ -10,14 +10,18 @@
 
 @implementation HXProfileSelectedCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+#pragma mark - Event Response
+- (IBAction)buttonPressed:(UIButton *)sender {
+    __weak __typeof__(self)weakSelf = self;
+    [UIView animateWithDuration:0.3f animations:^{
+        __strong __typeof__(self)strongSelf = weakSelf;
+        strongSelf.bottomLine.center = CGPointMake(sender.center.x, strongSelf.bottomLine.center.y);
+    } completion:^(BOOL finished) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        if (strongSelf.delegate && [strongSelf.delegate respondsToSelector:@selector(selectedCellStateChange:)]) {
+            [strongSelf.delegate selectedCellStateChange:sender.tag];
+        }
+    }];
 }
 
 @end

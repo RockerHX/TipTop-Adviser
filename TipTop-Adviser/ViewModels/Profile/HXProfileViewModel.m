@@ -73,7 +73,16 @@ static NSInteger RegularRow = 4;
 - (void)requestWithType:(HXProfileSelectType)type completed:(void(^)(void))completed {
     _selectType = type;
     _completedBlock = completed;
-    [self startProfileReuqestWithParameters:@{@"access_token": _token}];
+    switch (type) {
+        case HXProfileSelectTypeIntroduce: {
+            [self startProfileReuqestWithParameters:@{@"access_token": _token}];
+            break;
+        }
+        case HXProfileSelectTypeCase: {
+            
+            break;
+        }
+    }
 }
 
 #pragma mark - Private Methods

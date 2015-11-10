@@ -11,6 +11,13 @@
 
 @implementation HXProfileIntroduceEditCell
 
+#pragma mark - Event Response
+- (IBAction)editButtonPressed {
+    if (_delegate && [_delegate respondsToSelector:@selector(introduceCellShouldEdit)]) {
+        [_delegate introduceCellShouldEdit];
+    }
+}
+
 #pragma mark - Public Methods
 - (void)displayWithViewModel:(HXProfileViewModel *)viewModel {
     _whiteBGView.hidden = !viewModel.hasIntroduce;

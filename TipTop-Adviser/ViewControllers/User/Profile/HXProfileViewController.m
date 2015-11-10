@@ -17,7 +17,7 @@
 #import "HXProfileIntroduceCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 
-@interface HXProfileViewController ()
+@interface HXProfileViewController () <HXProfileSelectedCellDelegate, HXProfileIntroduceEditCellDelegate>
 @end
 
 @implementation HXProfileViewController {
@@ -158,6 +158,21 @@
         }
     }
     return height;
+}
+
+#pragma mark - HXProfileSelectedCellDelegate Methods
+- (void)selectedCellStateChange:(HXProfileSelectType)type {
+    _selectType = type;
+    __weak __typeof__(self)weakSelf = self;
+    [_viewModel requestWithType:type completed:^{
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [strongSelf endLoad];
+    }];
+}
+
+#pragma mark - HXProfileIntroduceEditCellDelegate Methods
+- (void)introduceCellShouldEdit {
+    ;
 }
 
 @end

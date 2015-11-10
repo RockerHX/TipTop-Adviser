@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HXProfileViewModel.h"
+
+
+@protocol HXProfileSelectedCellDelegate <NSObject>
+
+@required
+- (void)selectedCellStateChange:(HXProfileSelectType)type;
+
+@end
 
 @interface HXProfileSelectedCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet     id  <HXProfileSelectedCellDelegate>delegate;
+@property (weak, nonatomic) IBOutlet UIView *bottomLine;
+
+- (IBAction)buttonPressed:(UIButton *)sender;
 
 @end

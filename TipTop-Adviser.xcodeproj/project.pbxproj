@@ -54,6 +54,7 @@
 		4843399F1BD6AC82007B3F84 /* HXMyReservationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4843399B1BD6AC82007B3F84 /* HXMyReservationCell.m */; };
 		484339A01BD6AC82007B3F84 /* HXWorkCircuitOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4843399E1BD6AC82007B3F84 /* HXWorkCircuitOrderCell.m */; };
 		484339A31BD6C0EC007B3F84 /* HXWorkCircuitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484339A21BD6C0EC007B3F84 /* HXWorkCircuitDetailViewController.m */; };
+		48579D2B1BF261E400AE55A6 /* HXProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 48579D2A1BF261E400AE55A6 /* HXProfile.m */; };
 		487A44811BCEC39500DD94E4 /* MyReservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487A447F1BCEC39500DD94E4 /* MyReservation.storyboard */; };
 		487A44851BCEC4B000DD94E4 /* HXMyReservationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487A44841BCEC4B000DD94E4 /* HXMyReservationListViewController.m */; };
 		487A448F1BD158AC00DD94E4 /* OnlinePay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487A448D1BD158AC00DD94E4 /* OnlinePay.storyboard */; };
@@ -216,6 +217,8 @@
 		4843399E1BD6AC82007B3F84 /* HXWorkCircuitOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWorkCircuitOrderCell.m; sourceTree = "<group>"; };
 		484339A11BD6C0EC007B3F84 /* HXWorkCircuitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWorkCircuitDetailViewController.h; sourceTree = "<group>"; };
 		484339A21BD6C0EC007B3F84 /* HXWorkCircuitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWorkCircuitDetailViewController.m; sourceTree = "<group>"; };
+		48579D291BF261E400AE55A6 /* HXProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXProfile.h; sourceTree = "<group>"; };
+		48579D2A1BF261E400AE55A6 /* HXProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXProfile.m; sourceTree = "<group>"; };
 		487A44801BCEC39500DD94E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyReservation.storyboard; sourceTree = "<group>"; };
 		487A44831BCEC4B000DD94E4 /* HXMyReservationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXMyReservationListViewController.h; sourceTree = "<group>"; };
 		487A44841BCEC4B000DD94E4 /* HXMyReservationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXMyReservationListViewController.m; sourceTree = "<group>"; };
@@ -857,6 +860,8 @@
 				489918E21BE7B5F8007FB300 /* HXUserSession.m */,
 				489918DE1BE7B562007FB300 /* HXAdviser.h */,
 				489918DF1BE7B562007FB300 /* HXAdviser.m */,
+				48579D291BF261E400AE55A6 /* HXProfile.h */,
+				48579D2A1BF261E400AE55A6 /* HXProfile.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1281,6 +1286,7 @@
 				48A48CC51BCD4C4A00AF6C36 /* HXIBImageView.m in Sources */,
 				48334DDF1BC4D00D00FD43A6 /* UILabel+HXIBnsepectable.m in Sources */,
 				484339A31BD6C0EC007B3F84 /* HXWorkCircuitDetailViewController.m in Sources */,
+				48579D2B1BF261E400AE55A6 /* HXProfile.m in Sources */,
 				4810972D1BEFAFD800BA017B /* HXMessage.m in Sources */,
 				489E9CCC1BC4F96900C6618E /* HXForgotPWViewController.m in Sources */,
 				4893C2CF1BE60B8500479EC3 /* HXUseExplanationViewController.m in Sources */,

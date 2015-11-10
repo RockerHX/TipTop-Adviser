@@ -12,6 +12,8 @@
 
 @interface HXProfileIntroduceCell : UITableViewCell
 
-- (void)displayWithDetailViewModel:(HXProfileViewModel *)viewModel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+- (void)displayWithViewModel:(HXProfileViewModel *)viewModel;
 
 @end

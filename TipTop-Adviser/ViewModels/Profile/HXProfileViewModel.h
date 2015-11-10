@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HXReservationDetail.h"
+#import "HXProfile.h"
 
 typedef NS_ENUM(NSUInteger, HXProfileCellRow) {
     HXProfileCellRowHeader,
     HXProfileCellRowSelected,
     HXProfileCellRowIntroducEdit,
     HXProfileCellRowIntroduceNull,
-    HXProfileCellRowIntroduce
+    HXProfileCellRowIntroduce,
+    HXProfileCellRowCaseEdit,
+    HXProfileCellRowCase
 };
 
 typedef NS_ENUM(NSUInteger, HXProfileSelectType) {
@@ -25,15 +27,17 @@ typedef NS_ENUM(NSUInteger, HXProfileSelectType) {
 
 @interface HXProfileViewModel : NSObject
 
-@property (nonatomic, assign, readonly)   CGFloat  headerHeight;
 @property (nonatomic, assign, readonly)   CGFloat  selectedHeight;
 @property (nonatomic, assign, readonly)   CGFloat  editHeight;
 @property (nonatomic, assign, readonly)   CGFloat  nullContentHeight;
 @property (nonatomic, assign, readonly) NSInteger  rows;
 
+@property (nonatomic, assign, readonly)                BOOL  hasIntroduce;
+@property (nonatomic, assign, readonly) HXProfileSelectType  selectType;
+
 @property (nonatomic, strong, readonly)   NSArray *rowTypes;
 
-@property (nonatomic, strong, readonly) HXReservationDetail *detail;
+@property (nonatomic, strong, readonly) HXProfile *profile;
 
 + (instancetype)instanceWithToken:(NSString *)token;
 - (instancetype)initWithToken:(NSString *)token;

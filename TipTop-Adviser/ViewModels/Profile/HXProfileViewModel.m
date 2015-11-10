@@ -38,41 +38,40 @@ static NSString *ProfileApi = @"/profile";
 }
 
 #pragma mark - Setter And Getter
-- (CGFloat)headerHeight {
-    return _detail ? 110.0 : 0.0f;
-}
-
 - (CGFloat)selectedHeight {
-    return _detail ? 44.0f : 0.0f;
+    return _profile ? 44.0f : 0.0f;
 }
 
 - (CGFloat)editHeight {
-    return _detail ? 60.0f : 0.0f;
+    return _profile ? 60.0f : 0.0f;
 }
 
 - (CGFloat)nullContentHeight {
-    return _detail ? 240.0f : 0.0f;
+    return _profile ? 240.0f : 0.0f;
 }
 
-static NSInteger RegularRow = 2;
+static NSInteger RegularRow = 4;
 - (NSInteger)rows {
-    return (_detail ? RegularRow : 0);
+    return (_profile ? RegularRow : 0);
 }
 
 - (NSArray *)rowTypes {
-//    if (remarks.count) {
-//        NSMutableArray *array = [NSMutableArray arrayWithArray:_rowTypes];
-//        [array addObject:@(HXDetailCellRowPrompt)];
-//        for (NSInteger index = 0; index < remarks.count; index ++) {
-//            [array addObject:@(HXDetailCellRowRemark)];
-//        }
-//        _rowTypes = [array copy];
-//    }
+    if (_rowTypes.count < 4) {
+        NSMutableArray *array = [NSMutableArray arrayWithArray:_rowTypes];
+        [array addObject:_selectType ? @(HXProfileCellRowCaseEdit) : @(HXProfileCellRowIntroducEdit)];
+        [array addObject:_profile.introduce ? @(HXProfileCellRowIntroduce) : @(HXProfileCellRowCase)];
+        _rowTypes = [array copy];
+    }
     return _rowTypes;
+}
+
+- (BOOL)hasIntroduce {
+    return _profile.introduce;
 }
 
 #pragma mark - Public Methods
 - (void)requestWithType:(HXProfileSelectType)type completed:(void(^)(void))completed {
+    _selectType = type;
     _completedBlock = completed;
     [self startProfileReuqestWithParameters:@{@"access_token": _token}];
 }
@@ -98,7 +97,7 @@ static NSInteger RegularRow = 2;
 
 - (void)handleProfileData:(NSDictionary *)data {
     if (data) {
-        _detail = [HXReservationDetail objectWithKeyValues:data];
+        _profile = [HXProfile objectWithKeyValues:data];
     }
     if (_completedBlock) {
         _completedBlock();

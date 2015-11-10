@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @class HXProfileViewModel;
+@class HXStarView;
 
 @interface HXProfileHeaderCell : UITableViewCell
 
-- (void)displayWithDetailViewModel:(HXProfileViewModel *)viewModel;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet     UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet  HXStarView *starView;
+@property (weak, nonatomic) IBOutlet     UILabel *mobileLabel;
+@property (weak, nonatomic) IBOutlet     UILabel *goodCountLabel;
+@property (weak, nonatomic) IBOutlet     UILabel *goodAtLabel;
+
+- (void)displayWithViewModel:(HXProfileViewModel *)viewModel;
 
 @end

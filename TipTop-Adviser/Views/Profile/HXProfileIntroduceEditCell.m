@@ -7,14 +7,13 @@
 //
 
 #import "HXProfileIntroduceEditCell.h"
+#import "HXProfileViewModel.h"
 
 @implementation HXProfileIntroduceEditCell
 
-- (void)awakeFromNib {
-    
+#pragma mark - Public Methods
+- (void)displayWithViewModel:(HXProfileViewModel *)viewModel {
+    _whiteBGView.hidden = !viewModel.hasIntroduce;
 }
 
-- (void)displayWithDetailViewModel:(HXProfileViewModel *)viewModel {
-    
-}
 @end

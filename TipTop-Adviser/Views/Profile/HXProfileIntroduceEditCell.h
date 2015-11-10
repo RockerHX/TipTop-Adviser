@@ -12,6 +12,8 @@
 
 @interface HXProfileIntroduceEditCell : UITableViewCell
 
-- (void)displayWithDetailViewModel:(HXProfileViewModel *)viewModel;
+@property (weak, nonatomic) IBOutlet UIView *whiteBGView;
+
+- (void)displayWithViewModel:(HXProfileViewModel *)viewModel;
 
 @end

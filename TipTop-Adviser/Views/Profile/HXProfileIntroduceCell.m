@@ -7,15 +7,31 @@
 //
 
 #import "HXProfileIntroduceCell.h"
+#import "HXProfileViewModel.h"
+#import "UIConstants.h"
 
 @implementation HXProfileIntroduceCell
 
+#pragma mark - Init Methods
 - (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self initConfig];
+    [self viewConfig];
+}
+
+#pragma mark - Config Methods
+- (void)initConfig {
+    _contentLabel.preferredMaxLayoutWidth = SCREEN_WIDTH - 40.0f;
+}
+
+- (void)viewConfig {
     
 }
 
-- (void)displayWithDetailViewModel:(HXProfileViewModel *)viewModel {
-    
+#pragma mark - Public Methods
+- (void)displayWithViewModel:(HXProfileViewModel *)viewModel {
+    _contentLabel.text = viewModel.profile.introduce;
 }
 
 @end

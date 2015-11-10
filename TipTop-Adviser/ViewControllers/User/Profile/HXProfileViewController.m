@@ -87,7 +87,7 @@
     switch (rowType) {
         case HXProfileCellRowHeader: {
             cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXProfileHeaderCell class]) forIndexPath:indexPath];
-            [(HXProfileHeaderCell *)cell displayWithDetailViewModel:_viewModel];
+            [(HXProfileHeaderCell *)cell displayWithViewModel:_viewModel];
             break;
         }
         case HXProfileCellRowSelected: {
@@ -96,7 +96,7 @@
         }
         case HXProfileCellRowIntroducEdit: {
             cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXProfileIntroduceEditCell class]) forIndexPath:indexPath];
-            [(HXProfileIntroduceEditCell *)cell displayWithDetailViewModel:_viewModel];
+            [(HXProfileIntroduceEditCell *)cell displayWithViewModel:_viewModel];
             break;
         }
         case HXProfileCellRowIntroduceNull: {
@@ -105,7 +105,13 @@
         }
         case HXProfileCellRowIntroduce: {
             cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXProfileIntroduceCell class]) forIndexPath:indexPath];
-            [(HXProfileIntroduceCell *)cell displayWithDetailViewModel:_viewModel];
+            [(HXProfileIntroduceCell *)cell displayWithViewModel:_viewModel];
+            break;
+        }
+        case HXProfileCellRowCaseEdit: {
+            break;
+        }
+        case HXProfileCellRowCase: {
             break;
         }
     }
@@ -119,7 +125,10 @@
     HXProfileCellRow rowType = [_viewModel.rowTypes[indexPath.row] integerValue];
     switch (rowType) {
         case HXProfileCellRowHeader: {
-            height = _viewModel.headerHeight;
+            height = [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXProfileHeaderCell class]) cacheByIndexPath:indexPath configuration:^(HXProfileHeaderCell *cell) {
+                __strong __typeof__(self)strongSelf = weakSelf;
+                [cell displayWithViewModel:strongSelf->_viewModel];
+            }];
             break;
         }
         case HXProfileCellRowSelected: {
@@ -135,10 +144,16 @@
             break;
         }
         case HXProfileCellRowIntroduce: {
-            [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXProfileIntroduceCell class]) configuration:^(HXProfileIntroduceCell *cell) {
+            height = [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXProfileIntroduceCell class]) cacheByIndexPath:indexPath configuration:^(HXProfileIntroduceCell *cell) {
                 __strong __typeof__(self)strongSelf = weakSelf;
-                [cell displayWithDetailViewModel:strongSelf->_viewModel];
+                [cell displayWithViewModel:strongSelf->_viewModel];
             }];
+            break;
+        }
+        case HXProfileCellRowCaseEdit: {
+            break;
+        }
+        case HXProfileCellRowCase: {
             break;
         }
     }

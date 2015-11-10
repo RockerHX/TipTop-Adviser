@@ -56,7 +56,6 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
 }
 
 - (void)viewConfig {
-    _avatarImageView.layer.cornerRadius = _avatarImageView.frame.size.height/2;
 }
 
 #pragma mark - Event Response

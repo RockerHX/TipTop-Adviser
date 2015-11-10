@@ -1,18 +1,18 @@
 //
-//  HXUserInformationViewController.m
+//  HXProfileViewController.m
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/20.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXUserInformationViewController.h"
+#import "HXProfileViewController.h"
 
-@interface HXUserInformationViewController ()
+@interface HXProfileViewController ()
 
 @end
 
-@implementation HXUserInformationViewController
+@implementation HXProfileViewController
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidAppear:(BOOL)animated {
@@ -32,7 +32,7 @@
 
 #pragma mark - Setter And Getter
 - (NSString *)navigationControllerIdentifier {
-    return @"HXUserInformationNavigationController";
+    return @"HXProfileNavigationController";
 }
 
 - (HXStoryBoardName)storyBoardName {

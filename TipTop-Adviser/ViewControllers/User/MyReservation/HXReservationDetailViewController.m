@@ -181,8 +181,8 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 #pragma mark - Table View Delegete Methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0.0f;
-    HXDetailCellRow row = [_viewModel.rowTypes[indexPath.row] integerValue];
     __weak __typeof__(self)weakSelf = self;
+    HXDetailCellRow row = [_viewModel.rowTypes[indexPath.row] integerValue];
     switch (row) {
         case HXDetailCellRowInfo: {
             height = _viewModel.infoHeight;

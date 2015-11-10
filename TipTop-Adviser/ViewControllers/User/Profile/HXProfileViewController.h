@@ -6,8 +6,8 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXListViewController.h"
+#import "UIViewController+HXClass.h"
 
-@interface HXProfileViewController : HXListViewController
+@interface HXProfileViewController : UITableViewController
 
 @end

@@ -16,106 +16,89 @@ typedef void(^BLOCK)(void);
 static NSString *ProfileApi = @"/profile";
 
 @implementation HXProfileViewModel {
+    NSString *_token;
     BLOCK _completedBlock;
     
     NSArray *_rowTypes;
-    NSArray *_remarks;
 }
 
 #pragma mark - Class Methods
-+ (instancetype)instanceWithOrderID:(NSString *)orderID {
-    return [[HXProfileViewModel alloc] initWithOrderID:orderID];
++ (instancetype)instanceWithToken:(NSString *)token {
+    return [[HXProfileViewModel alloc] initWithToken:token];
 }
 
 #pragma mark - Init Methods
-- (instancetype)initWithOrderID:(NSString *)orderID {
+- (instancetype)initWithToken:(NSString *)token {
     self = [super init];
     if (self) {
-        _orderID = [orderID copy];
+        _token = [token copy];
         [self setupRowTypes];
     }
     return self;
 }
 
 #pragma mark - Setter And Getter
-- (CGFloat)infoHeight {
-    return _detail ? 80.0f : 0.0f;
+- (CGFloat)headerHeight {
+    return _detail ? 110.0 : 0.0f;
 }
 
-- (CGFloat)promptHeight {
-    return _detail ? 36.0f : 0.0f;
+- (CGFloat)selectedHeight {
+    return _detail ? 44.0f : 0.0f;
+}
+
+- (CGFloat)editHeight {
+    return _detail ? 60.0f : 0.0f;
+}
+
+- (CGFloat)nullContentHeight {
+    return _detail ? 240.0f : 0.0f;
 }
 
 static NSInteger RegularRow = 2;
 - (NSInteger)rows {
-    return (_detail ? (RegularRow + (_remarks.count ? (_remarks.count + 1) : 0)) : 0);
-}
-
-- (NSInteger)regularRow {
-    return RegularRow + 1;
+    return (_detail ? RegularRow : 0);
 }
 
 - (NSArray *)rowTypes {
-    NSArray *remarks = _remarks;
-    if (remarks.count) {
-        NSMutableArray *array = [NSMutableArray arrayWithArray:_rowTypes];
-        [array addObject:@(HXDetailCellRowPrompt)];
-        for (NSInteger index = 0; index < remarks.count; index ++) {
-            [array addObject:@(HXDetailCellRowRemark)];
-        }
-        _rowTypes = [array copy];
-    }
+//    if (remarks.count) {
+//        NSMutableArray *array = [NSMutableArray arrayWithArray:_rowTypes];
+//        [array addObject:@(HXDetailCellRowPrompt)];
+//        for (NSInteger index = 0; index < remarks.count; index ++) {
+//            [array addObject:@(HXDetailCellRowRemark)];
+//        }
+//        _rowTypes = [array copy];
+//    }
     return _rowTypes;
 }
 
-- (NSArray *)remarks {
-    return _remarks;
-}
-
 #pragma mark - Public Methods
-- (void)request:(void (^)(void))completed {
+- (void)requestWithType:(HXProfileSelectType)type completed:(void(^)(void))completed {
     _completedBlock = completed;
-    [self startOrderDetailReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
-                                                            @"id": _orderID}];
-}
-
-- (void)removeRemark:(HXReservationDetailRemark *)remark {
-    NSMutableArray *remarks = [NSMutableArray arrayWithArray:_remarks];
-    for (HXReservationDetailRemark *item in remarks) {
-        if ([item isEqual:remark]) {
-            [remarks removeObject:item];
-            break;
-        }
-    }
-    _remarks = [remarks copy];
+    [self startProfileReuqestWithParameters:@{@"access_token": _token}];
 }
 
 #pragma mark - Private Methods
-
 - (void)setupRowTypes {
-    _rowTypes = @[@(HXDetailCellRowInfo),
-                  @(HXDetailCellRowClient)];
+    _rowTypes = @[@(HXProfileCellRowHeader),
+                  @(HXProfileCellRowSelected)];
 }
 
-- (void)startOrderDetailReuqestWithParameters:(NSDictionary *)parameters {
+- (void)startProfileReuqestWithParameters:(NSDictionary *)parameters {
     [self setupRowTypes];
     __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:ProfileApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
-            [strongSelf handleDetailData:responseObject[@"data"]];
+            [strongSelf handleProfileData:responseObject[@"data"]];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     }];
 }
 
-- (void)handleDetailData:(NSDictionary *)data {
+- (void)handleProfileData:(NSDictionary *)data {
     if (data) {
         _detail = [HXReservationDetail objectWithKeyValues:data];
-        
-        _remarks = _detail.remarks;
-        _orderDate = [[NSDate dateWithTimeIntervalSince1970:_detail.order.createTime] formattedDateWithFormat:@"yyyy-MM-dd hh:mm:ss"];
     }
     if (_completedBlock) {
         _completedBlock();

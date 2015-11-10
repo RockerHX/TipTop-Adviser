@@ -9,33 +9,35 @@
 #import <UIKit/UIKit.h>
 #import "HXReservationDetail.h"
 
-typedef NS_ENUM(NSUInteger, HXDetailCellRow) {
-    HXDetailCellRowInfo,
-    HXDetailCellRowClient,
-    HXDetailCellRowPrompt,
-    HXDetailCellRowRemark
+typedef NS_ENUM(NSUInteger, HXProfileCellRow) {
+    HXProfileCellRowHeader,
+    HXProfileCellRowSelected,
+    HXProfileCellRowIntroducEdit,
+    HXProfileCellRowIntroduceNull,
+    HXProfileCellRowIntroduce
+};
+
+typedef NS_ENUM(NSUInteger, HXProfileSelectType) {
+    HXProfileSelectTypeIntroduce,
+    HXProfileSelectTypeCase
 };
 
 
 @interface HXProfileViewModel : NSObject
 
-@property (nonatomic, assign, readonly)   CGFloat  infoHeight;
-@property (nonatomic, assign, readonly)   CGFloat  promptHeight;
+@property (nonatomic, assign, readonly)   CGFloat  headerHeight;
+@property (nonatomic, assign, readonly)   CGFloat  selectedHeight;
+@property (nonatomic, assign, readonly)   CGFloat  editHeight;
+@property (nonatomic, assign, readonly)   CGFloat  nullContentHeight;
 @property (nonatomic, assign, readonly) NSInteger  rows;
-@property (nonatomic, assign, readonly) NSInteger  regularRow;
-@property (nonatomic, copy, readonly)    NSString *orderID;
 
 @property (nonatomic, strong, readonly)   NSArray *rowTypes;
-@property (nonatomic, strong, readonly)   NSArray *remarks;
 
 @property (nonatomic, strong, readonly) HXReservationDetail *detail;
-@property (nonatomic, copy, readonly)              NSString *orderDate;
 
-+ (instancetype)instanceWithOrderID:(NSString *)orderID;
-- (instancetype)initWithOrderID:(NSString *)orderID;
++ (instancetype)instanceWithToken:(NSString *)token;
+- (instancetype)initWithToken:(NSString *)token;
 
-- (void)request:(void(^)(void))completed;
-
-- (void)removeRemark:(HXReservationDetailRemark *)remark;
+- (void)requestWithType:(HXProfileSelectType)type completed:(void(^)(void))completed;
 
 @end

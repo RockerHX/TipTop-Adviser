@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class HXProfileViewModel;
+
 @interface HXProfileIntroduceCell : UITableViewCell
+
+- (void)displayWithDetailViewModel:(HXProfileViewModel *)viewModel;
 
 @end

@@ -14,6 +14,7 @@
 #import "HXAppApiRequest.h"
 #import "MBProgressHUD.h"
 #import "HXUserSession.h"
+#import "UIAlertView+BlocksKit.h"
 
 
 static NSString *UpdateLocationApi = @"/profile/location";
@@ -118,6 +119,10 @@ static NSString *UpdateLocationApi = @"/profile/location";
         __strong __typeof__(self)strongSelf = weakSelf;
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            [UIAlertView bk_showAlertViewWithTitle:@"地址更新成功"
+                                           message:nil
+                                 cancelButtonTitle:@"确定"
+                                 otherButtonTitles:nil handler:nil];
         }
         [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

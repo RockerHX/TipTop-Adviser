@@ -13,7 +13,7 @@
 #import "HXProfileHeaderCell.h"
 #import "HXProfileSelectedCell.h"
 #import "HXProfileIntroduceEditCell.h"
-#import "HXProfileIntroduceNullCell.h"
+#import "HXProfileNoContentCell.h"
 #import "HXProfileIntroduceCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "HXEditIntroduceViewController.h"
@@ -108,8 +108,9 @@
             [(HXProfileIntroduceEditCell *)cell displayWithViewModel:_viewModel];
             break;
         }
-        case HXProfileCellRowIntroduceNull: {
-            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXProfileIntroduceNullCell class]) forIndexPath:indexPath];
+        case HXProfileCellRowNoContent: {
+            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXProfileNoContentCell class]) forIndexPath:indexPath];
+            [(HXProfileNoContentCell *)cell displayWithSelectType:_selectType];
             break;
         }
         case HXProfileCellRowIntroduce: {
@@ -148,7 +149,7 @@
             height = _viewModel.editHeight;
             break;
         }
-        case HXProfileCellRowIntroduceNull: {
+        case HXProfileCellRowNoContent: {
             height = _viewModel.nullContentHeight;
             break;
         }

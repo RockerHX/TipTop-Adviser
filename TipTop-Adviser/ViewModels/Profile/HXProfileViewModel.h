@@ -13,7 +13,7 @@ typedef NS_ENUM(NSUInteger, HXProfileCellRow) {
     HXProfileCellRowHeader,
     HXProfileCellRowSelected,
     HXProfileCellRowIntroducEdit,
-    HXProfileCellRowIntroduceNull,
+    HXProfileCellRowNoContent,
     HXProfileCellRowIntroduce,
     HXProfileCellRowCaseEdit,
     HXProfileCellRowCase

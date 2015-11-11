@@ -116,7 +116,7 @@
 		48DB1E7C1BF253B10007F505 /* HXProfileHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E7B1BF253B10007F505 /* HXProfileHeaderCell.m */; };
 		48DB1E7F1BF253CA0007F505 /* HXProfileSelectedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E7E1BF253CA0007F505 /* HXProfileSelectedCell.m */; };
 		48DB1E821BF2543C0007F505 /* HXProfileIntroduceEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E811BF2543C0007F505 /* HXProfileIntroduceEditCell.m */; };
-		48DB1E851BF254650007F505 /* HXProfileIntroduceNullCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E841BF254650007F505 /* HXProfileIntroduceNullCell.m */; };
+		48DB1E851BF254650007F505 /* HXProfileNoContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E841BF254650007F505 /* HXProfileNoContentCell.m */; };
 		48DB1E881BF254730007F505 /* HXProfileIntroduceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E871BF254730007F505 /* HXProfileIntroduceCell.m */; };
 		48DFF4BE1BEDDBC300307A89 /* HXComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DFF4BD1BEDDBC300307A89 /* HXComment.m */; };
 		48DFF4C21BEDDD0800307A89 /* HXCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DFF4C11BEDDD0800307A89 /* HXCommentCell.m */; };
@@ -335,8 +335,8 @@
 		48DB1E7E1BF253CA0007F505 /* HXProfileSelectedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXProfileSelectedCell.m; sourceTree = "<group>"; };
 		48DB1E801BF2543C0007F505 /* HXProfileIntroduceEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXProfileIntroduceEditCell.h; sourceTree = "<group>"; };
 		48DB1E811BF2543C0007F505 /* HXProfileIntroduceEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXProfileIntroduceEditCell.m; sourceTree = "<group>"; };
-		48DB1E831BF254650007F505 /* HXProfileIntroduceNullCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXProfileIntroduceNullCell.h; sourceTree = "<group>"; };
-		48DB1E841BF254650007F505 /* HXProfileIntroduceNullCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXProfileIntroduceNullCell.m; sourceTree = "<group>"; };
+		48DB1E831BF254650007F505 /* HXProfileNoContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXProfileNoContentCell.h; sourceTree = "<group>"; };
+		48DB1E841BF254650007F505 /* HXProfileNoContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXProfileNoContentCell.m; sourceTree = "<group>"; };
 		48DB1E861BF254730007F505 /* HXProfileIntroduceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXProfileIntroduceCell.h; sourceTree = "<group>"; };
 		48DB1E871BF254730007F505 /* HXProfileIntroduceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXProfileIntroduceCell.m; sourceTree = "<group>"; };
 		48DFF4BC1BEDDBC300307A89 /* HXComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXComment.h; sourceTree = "<group>"; };
@@ -1068,8 +1068,8 @@
 				48DB1E7E1BF253CA0007F505 /* HXProfileSelectedCell.m */,
 				48DB1E801BF2543C0007F505 /* HXProfileIntroduceEditCell.h */,
 				48DB1E811BF2543C0007F505 /* HXProfileIntroduceEditCell.m */,
-				48DB1E831BF254650007F505 /* HXProfileIntroduceNullCell.h */,
-				48DB1E841BF254650007F505 /* HXProfileIntroduceNullCell.m */,
+				48DB1E831BF254650007F505 /* HXProfileNoContentCell.h */,
+				48DB1E841BF254650007F505 /* HXProfileNoContentCell.m */,
 				48DB1E861BF254730007F505 /* HXProfileIntroduceCell.h */,
 				48DB1E871BF254730007F505 /* HXProfileIntroduceCell.m */,
 			);
@@ -1316,7 +1316,7 @@
 				481097401BF0E52900BA017B /* HXLocationManager.m in Sources */,
 				48C57ACF1BDD5317002C8398 /* BRPlaceholderTextView.m in Sources */,
 				489918DC1BE7AB25007FB300 /* HXTextView.m in Sources */,
-				48DB1E851BF254650007F505 /* HXProfileIntroduceNullCell.m in Sources */,
+				48DB1E851BF254650007F505 /* HXProfileNoContentCell.m in Sources */,
 				48334DEC1BC4D00D00FD43A6 /* HXLoginRequset.m in Sources */,
 				483AE3971BD40DFF004C0B22 /* HXWebViewController.m in Sources */,
 				48DB1E781BF252900007F505 /* HXProfileViewModel.m in Sources */,

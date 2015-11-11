@@ -874,7 +874,7 @@
                                     <outlet property="whiteBGView" destination="GJY-Tv-BvO" id="sPT-yM-eri"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXProfileIntroduceNullCell" rowHeight="240" id="5sC-ZT-nL2" customClass="HXProfileIntroduceNullCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXProfileNoContentCell" rowHeight="240" id="5sC-ZT-nL2" customClass="HXProfileNoContentCell">
                                 <rect key="frame" x="0.0" y="296" width="320" height="240"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5sC-ZT-nL2" id="KbI-NV-UhW">
@@ -913,6 +913,11 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="addButton" destination="cgM-yq-sU3" id="U4c-Js-9lk"/>
+                                    <outlet property="bottomPromptLabel" destination="x0i-dk-WGG" id="1EJ-Fd-8sG"/>
+                                    <outlet property="topPromptLabel" destination="ZZz-g4-fMg" id="F9z-Zy-wxW"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HXProfileIntroduceCell" id="FAh-tN-lZV" customClass="HXProfileIntroduceCell">
                                 <rect key="frame" x="0.0" y="536" width="320" height="44"/>

@@ -51,11 +51,10 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    
-    if ([[otherGestureRecognizer.view class] isSubclassOfClass:[UITableView class]]) {
+    if ([[otherGestureRecognizer.view class] isSubclassOfClass:[UITableView class]] ||
+        [[otherGestureRecognizer.view class] isSubclassOfClass:[UICollectionView class]]) {
         return NO;
     }
-
     if( [[otherGestureRecognizer.view class] isSubclassOfClass:[UITableViewCell class]] ||
        [NSStringFromClass([otherGestureRecognizer.view class]) isEqualToString:@"UITableViewCellScrollView"] ||
        [NSStringFromClass([otherGestureRecognizer.view class]) isEqualToString:@"UITableViewWrapperView"]) {

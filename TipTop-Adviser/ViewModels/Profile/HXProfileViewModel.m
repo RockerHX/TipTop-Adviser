@@ -51,7 +51,7 @@ static NSString *CaseListApi = @"/case";
 }
 
 - (CGFloat)cardHeight {
-    return  _profile ? 100.0f : 0.0f;
+    return  _profile ? 200.0f : 0.0f;
 }
 
 static NSInteger RegularRow = 4;

@@ -11,6 +11,22 @@
 
 @implementation HXCaseCardCollectionViewCell
 
+#pragma mark - Init Methods
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self initConfig];
+    [self viewConfig];
+}
+
+#pragma mark - Config Methods
+- (void)initConfig {
+}
+
+- (void)viewConfig {
+    _cardImageView.layer.cornerRadius = 10.0f;
+}
+
 #pragma mark - Public Methods
 - (void)displayWithCase:(HXCase *)caseIntance {
     [_cardImageView sd_setImageWithURL:[NSURL URLWithString:caseIntance.image]];

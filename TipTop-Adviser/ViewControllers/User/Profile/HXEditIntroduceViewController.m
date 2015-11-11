@@ -55,10 +55,10 @@ static NSString *UpdateIntroduceApi = @"/profile/about";
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
             [UIAlertView bk_showAlertViewWithTitle:@"保存成功"
                                            message:nil
-                                 cancelButtonTitle:@"保存"
+                                 cancelButtonTitle:@"确定"
                                  otherButtonTitles:nil handler:
              ^(UIAlertView *alertView, NSInteger buttonIndex) {
-                 [strongSelf.view endEditing:YES];
+                 [strongSelf.view endEditing:NO];
                  [strongSelf.navigationController popViewControllerAnimated:YES];
              }];
         }

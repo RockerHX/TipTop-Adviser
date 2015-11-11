@@ -1064,7 +1064,7 @@
         <!--添加案例-->
         <scene sceneID="rb3-BE-eMN">
             <objects>
-                <tableViewController id="sox-Td-zEr" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HXAddCaseViewController" id="sox-Td-zEr" customClass="HXAddCaseViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0rn-6A-Xyz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1222,6 +1222,9 @@
                                                         <constraint firstAttribute="width" constant="70" id="fPN-aw-mjL"/>
                                                     </constraints>
                                                     <state key="normal" image="UC-AddImageIcon"/>
+                                                    <connections>
+                                                        <action selector="caseImageButtonPressed" destination="sox-Td-zEr" eventType="touchUpInside" id="cvg-V6-7pw"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -1246,8 +1249,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="添加案例" id="bVV-lE-Pdp">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="Z1i-Yk-f13"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="Z1i-Yk-f13">
+                            <connections>
+                                <action selector="saveButtonPressed" destination="sox-Td-zEr" id="xzM-om-u75"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="caseImageButton" destination="QJr-Pf-PWC" id="5yx-e4-zi8"/>
+                        <outlet property="caseIntroduceTextView" destination="zN1-4A-0HQ" id="w4z-sc-Ac1"/>
+                        <outlet property="caseNameTextField" destination="3jm-Ul-ksh" id="sVF-Zc-pDb"/>
+                        <outlet property="contentIntroduceTextView" destination="vvz-XJ-nB2" id="fdF-tb-hAA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3G9-UT-lNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

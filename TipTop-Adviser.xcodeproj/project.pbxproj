@@ -88,6 +88,7 @@
 		48A48CCF1BCD5DEC00AF6C36 /* HXSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CCE1BCD5DEC00AF6C36 /* HXSettingViewController.m */; };
 		48A48CD51BCD666600AF6C36 /* HXChangePassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A48CD41BCD666600AF6C36 /* HXChangePassWordViewController.m */; };
 		48A55C741BF3883300863810 /* HXEditIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A55C731BF3883300863810 /* HXEditIntroduceViewController.m */; };
+		48A55C771BF38EAD00863810 /* HXAddCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A55C761BF38EAD00863810 /* HXAddCaseViewController.m */; };
 		48A5FEF91BD94B7300891727 /* HXSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A5FEF81BD94B7300891727 /* HXSocketManager.m */; };
 		48C57ACF1BDD5317002C8398 /* BRPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C57ACE1BDD5317002C8398 /* BRPlaceholderTextView.m */; };
 		48CC517C1BDCE92300985753 /* HXOrderAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC517B1BDCE92300985753 /* HXOrderAlertView.m */; };
@@ -283,6 +284,8 @@
 		48A48CD41BCD666600AF6C36 /* HXChangePassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXChangePassWordViewController.m; sourceTree = "<group>"; };
 		48A55C721BF3883300863810 /* HXEditIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXEditIntroduceViewController.h; sourceTree = "<group>"; };
 		48A55C731BF3883300863810 /* HXEditIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXEditIntroduceViewController.m; sourceTree = "<group>"; };
+		48A55C751BF38EAD00863810 /* HXAddCaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXAddCaseViewController.h; sourceTree = "<group>"; };
+		48A55C761BF38EAD00863810 /* HXAddCaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXAddCaseViewController.m; sourceTree = "<group>"; };
 		48A5FEF71BD94B7300891727 /* HXSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSocketManager.h; sourceTree = "<group>"; };
 		48A5FEF81BD94B7300891727 /* HXSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSocketManager.m; sourceTree = "<group>"; };
 		48C57ACD1BDD5317002C8398 /* BRPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPlaceholderTextView.h; sourceTree = "<group>"; };
@@ -1041,6 +1044,8 @@
 				48DB1E731BF2527E0007F505 /* HXProfileViewController.m */,
 				48A55C721BF3883300863810 /* HXEditIntroduceViewController.h */,
 				48A55C731BF3883300863810 /* HXEditIntroduceViewController.m */,
+				48A55C751BF38EAD00863810 /* HXAddCaseViewController.h */,
+				48A55C761BF38EAD00863810 /* HXAddCaseViewController.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1358,6 +1363,7 @@
 				48334DE11BC4D00D00FD43A6 /* HXIBButton.m in Sources */,
 				48A48CB71BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m in Sources */,
 				48DB1E7F1BF253CA0007F505 /* HXProfileSelectedCell.m in Sources */,
+				48A55C771BF38EAD00863810 /* HXAddCaseViewController.m in Sources */,
 				48334DEB1BC4D00D00FD43A6 /* HXAppApiRequest.m in Sources */,
 				488712081BDFDD6A00A82D0E /* HXOnlinePayDetailClientCell.m in Sources */,
 				48334DEF1BC4D00D00FD43A6 /* HXUserViewController.m in Sources */,

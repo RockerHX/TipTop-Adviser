@@ -12,13 +12,16 @@
 #import "MJRefresh.h"
 #import "HXProfileHeaderCell.h"
 #import "HXProfileSelectedCell.h"
-#import "HXProfileIntroduceEditCell.h"
+#import "HXProfileEditCell.h"
 #import "HXProfileNoContentCell.h"
 #import "HXProfileIntroduceCell.h"
+#import "HXCaseContentCell.h"
+#import "HXCaseCardCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "HXEditIntroduceViewController.h"
+#import "HXAddCaseViewController.h"
 
-@interface HXProfileViewController () <HXProfileSelectedCellDelegate, HXProfileIntroduceEditCellDelegate>
+@interface HXProfileViewController () <HXProfileSelectedCellDelegate, HXProfileEditCellDelegate>
 @end
 
 @implementation HXProfileViewController {
@@ -63,14 +66,6 @@
     return HXStoryBoardNameUser;
 }
 
-#pragma mark - Segue Methods
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"UpdateIntroduce"]) {
-        HXEditIntroduceViewController *editIntroduceViewController = (HXEditIntroduceViewController *)segue.destinationViewController;
-        editIntroduceViewController.introduce = _viewModel.profile.introduce;
-    }
-}
-
 #pragma mark - Private Methods
 - (void)loadData {
     __weak __typeof__(self)weakSelf = self;
@@ -103,9 +98,9 @@
             cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXProfileSelectedCell class]) forIndexPath:indexPath];
             break;
         }
-        case HXProfileCellRowIntroducEdit: {
-            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXProfileIntroduceEditCell class]) forIndexPath:indexPath];
-            [(HXProfileIntroduceEditCell *)cell displayWithViewModel:_viewModel];
+        case HXProfileCellRowEdit: {
+            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXProfileEditCell class]) forIndexPath:indexPath];
+            [(HXProfileEditCell *)cell displayWithViewModel:_viewModel];
             break;
         }
         case HXProfileCellRowNoContent: {
@@ -118,10 +113,14 @@
             [(HXProfileIntroduceCell *)cell displayWithViewModel:_viewModel];
             break;
         }
-        case HXProfileCellRowCaseEdit: {
+        case HXProfileCellRowCaseContent: {
+            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXCaseContentCell class]) forIndexPath:indexPath];
+            [(HXCaseContentCell *)cell displayWithViewModel:_viewModel];
             break;
         }
-        case HXProfileCellRowCase: {
+        case HXProfileCellRowCaseCard: {
+            cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HXCaseCardCell class]) forIndexPath:indexPath];
+            [(HXCaseCardCell *)cell displayWithViewModel:_viewModel];
             break;
         }
     }
@@ -145,7 +144,7 @@
             height = _viewModel.selectedHeight;
             break;
         }
-        case HXProfileCellRowIntroducEdit: {
+        case HXProfileCellRowEdit: {
             height = _viewModel.editHeight;
             break;
         }
@@ -160,10 +159,15 @@
             }];
             break;
         }
-        case HXProfileCellRowCaseEdit: {
+        case HXProfileCellRowCaseContent: {
+            height = [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXCaseContentCell class]) cacheByIndexPath:indexPath configuration:^(HXCaseContentCell *cell) {
+                __strong __typeof__(self)strongSelf = weakSelf;
+                [cell displayWithViewModel:strongSelf->_viewModel];
+            }];
             break;
         }
-        case HXProfileCellRowCase: {
+        case HXProfileCellRowCaseCard: {
+            height = _viewModel.cardHeight;
             break;
         }
     }
@@ -181,8 +185,31 @@
 }
 
 #pragma mark - HXProfileIntroduceEditCellDelegate Methods
-- (void)introduceCellShouldEdit {
-    ;
+- (void)cellShouldEdit:(HXProfileEditStyle)editStyle {
+    switch (editStyle) {
+        case HXProfileEditStyleAdd: {
+            HXAddCaseViewController *addCaseViewController = [HXAddCaseViewController instance];
+            [self.navigationController pushViewController:addCaseViewController animated:YES];
+            break;
+        }
+        case HXProfileEditStyleEdit: {
+            switch (_selectType) {
+                case HXProfileSelectTypeIntroduce: {
+                    HXEditIntroduceViewController *editIntroduceViewController = [HXEditIntroduceViewController instance];
+                    editIntroduceViewController.introduce = _viewModel.profile.introduce;
+                    [self.navigationController pushViewController:editIntroduceViewController animated:YES];
+                    break;
+                }
+                case HXProfileSelectTypeCase: {
+                    break;
+                }
+            }
+            break;
+        }
+        case HXProfileEditStyleDelete: {
+            break;
+        }
+    }
 }
 
 @end

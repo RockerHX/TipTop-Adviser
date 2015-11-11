@@ -8,15 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "HXProfile.h"
+#import "HXCase.h"
 
 typedef NS_ENUM(NSUInteger, HXProfileCellRow) {
     HXProfileCellRowHeader,
     HXProfileCellRowSelected,
-    HXProfileCellRowIntroducEdit,
+    HXProfileCellRowEdit,
     HXProfileCellRowNoContent,
     HXProfileCellRowIntroduce,
-    HXProfileCellRowCaseEdit,
-    HXProfileCellRowCase
+    HXProfileCellRowCaseContent,
+    HXProfileCellRowCaseCard
 };
 
 typedef NS_ENUM(NSUInteger, HXProfileSelectType) {
@@ -30,14 +31,18 @@ typedef NS_ENUM(NSUInteger, HXProfileSelectType) {
 @property (nonatomic, assign, readonly)   CGFloat  selectedHeight;
 @property (nonatomic, assign, readonly)   CGFloat  editHeight;
 @property (nonatomic, assign, readonly)   CGFloat  nullContentHeight;
+@property (nonatomic, assign, readonly)   CGFloat  cardHeight;
 @property (nonatomic, assign, readonly) NSInteger  rows;
 
 @property (nonatomic, assign, readonly)                BOOL  hasIntroduce;
 @property (nonatomic, assign, readonly) HXProfileSelectType  selectType;
+@property (nonatomic, assign, readonly)           NSInteger  selectIndex;
 
 @property (nonatomic, strong, readonly)   NSArray *rowTypes;
+@property (nonatomic, strong, readonly)   NSArray *cases;
 
 @property (nonatomic, strong, readonly) HXProfile *profile;
+@property (nonatomic, strong, readonly)    HXCase *selectedCase;
 
 + (instancetype)instanceWithToken:(NSString *)token;
 - (instancetype)initWithToken:(NSString *)token;

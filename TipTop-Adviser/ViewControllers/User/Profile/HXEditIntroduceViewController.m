@@ -37,6 +37,11 @@ static NSString *UpdateIntroduceApi = @"/profile/about";
     _textView.text = _introduce ?: _textView.text;
 }
 
+#pragma mark - Setter And Getter
+- (HXStoryBoardName)storyBoardName {
+    return HXStoryBoardNameUser;
+}
+
 #pragma mark - Event Response
 - (IBAction)saveButtonPressed {
     if (_textView.text.length) {

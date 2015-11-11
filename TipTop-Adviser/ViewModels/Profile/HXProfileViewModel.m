@@ -14,6 +14,7 @@
 typedef void(^BLOCK)(void);
 
 static NSString *ProfileApi = @"/profile";
+static NSString *CaseListApi = @"/case";
 
 @implementation HXProfileViewModel {
     NSString *_token;
@@ -32,7 +33,6 @@ static NSString *ProfileApi = @"/profile";
     self = [super init];
     if (self) {
         _token = [token copy];
-        [self setupRowTypes];
     }
     return self;
 }
@@ -50,23 +50,21 @@ static NSString *ProfileApi = @"/profile";
     return _profile ? 240.0f : 0.0f;
 }
 
-static NSInteger RegularRow = 4;
-- (NSInteger)rows {
-    return (_profile ? RegularRow : 0);
+- (CGFloat)cardHeight {
+    return  _profile ? 100.0f : 0.0f;
 }
 
-- (NSArray *)rowTypes {
-    if (_rowTypes.count < 4) {
-        NSMutableArray *array = [NSMutableArray arrayWithArray:_rowTypes];
-        [array addObject:_selectType ? @(HXProfileCellRowCaseEdit) : @(HXProfileCellRowIntroducEdit)];
-        [array addObject:_profile.introduce ? @(HXProfileCellRowIntroduce) : @(HXProfileCellRowCase)];
-        _rowTypes = [array copy];
-    }
-    return _rowTypes;
+static NSInteger RegularRow = 4;
+- (NSInteger)rows {
+    return (_profile ? (_selectType ? RegularRow+2 : RegularRow): 0);
 }
 
 - (BOOL)hasIntroduce {
     return _profile.introduce ? YES : NO;
+}
+
+- (HXCase *)selectedCase {
+    return _cases.count ? _cases[_selectIndex] : nil;
 }
 
 #pragma mark - Public Methods
@@ -79,7 +77,7 @@ static NSInteger RegularRow = 4;
             break;
         }
         case HXProfileSelectTypeCase: {
-            
+            [self startCasesReuqestWithParameters:@{@"access_token": _token}];
             break;
         }
     }
@@ -88,7 +86,31 @@ static NSInteger RegularRow = 4;
 #pragma mark - Private Methods
 - (void)setupRowTypes {
     _rowTypes = @[@(HXProfileCellRowHeader),
-                  @(HXProfileCellRowSelected)];
+                  @(HXProfileCellRowSelected),
+                  @(HXProfileCellRowEdit)];
+}
+
+- (void)reloadRowTypes {
+    [self setupRowTypes];
+    
+    NSMutableArray *array = [NSMutableArray arrayWithArray:_rowTypes];
+    switch (_selectType) {
+        case HXProfileSelectTypeIntroduce: {
+            [array addObject:(self.hasIntroduce ? @(HXProfileCellRowIntroduce) : @(HXProfileCellRowNoContent))];
+            break;
+        }
+        case HXProfileSelectTypeCase: {
+            if (_cases.count) {
+                [array addObject:@(HXProfileCellRowCaseContent)];
+                [array addObject:@(HXProfileCellRowCaseCard)];
+                [array addObject:@(HXProfileCellRowIntroduce)];
+            } else {
+                [array addObject:@(HXProfileCellRowNoContent)];
+            }
+            break;
+        }
+    }
+    _rowTypes = [array copy];
 }
 
 - (void)startProfileReuqestWithParameters:(NSDictionary *)parameters {
@@ -104,10 +126,39 @@ static NSInteger RegularRow = 4;
     }];
 }
 
+- (void)startCasesReuqestWithParameters:(NSDictionary *)parameters {
+    [self setupRowTypes];
+    __weak __typeof__(self)weakSelf = self;
+    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:CaseListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            [strongSelf handleCasesData:responseObject[@"data"][@"list"]];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }];
+}
+
 - (void)handleProfileData:(NSDictionary *)data {
     if (data) {
         _profile = [HXProfile objectWithKeyValues:data];
     }
+    [self reloadRowTypes];
+    if (_completedBlock) {
+        _completedBlock();
+    }
+}
+
+- (void)handleCasesData:(NSArray *)lists {
+    if (lists) {
+        _cases = nil;
+        NSMutableArray *cases = [NSMutableArray arrayWithCapacity:lists.count];
+        for (NSDictionary *data in lists) {
+            [cases addObject:[HXCase objectWithKeyValues:data]];
+        }
+        _cases = [cases copy];
+    }
+    [self reloadRowTypes];
     if (_completedBlock) {
         _completedBlock();
     }

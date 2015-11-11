@@ -41,6 +41,11 @@ static NSString *CreateCaseApi = @"/case/create";
     
 }
 
+#pragma mark - Setter And Getter
+- (HXStoryBoardName)storyBoardName {
+    return HXStoryBoardNameUser;
+}
+
 #pragma mark - Event Response
 - (IBAction)saveButtonPressed {
     if (_contentIntroduceTextView.text.length &&

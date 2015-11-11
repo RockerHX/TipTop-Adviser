@@ -1,16 +1,16 @@
 //
-//  HXProfileIntroduceCell.m
+//  HXCaseContentCell.m
 //  TipTop-Adviser
 //
-//  Created by ShiCang on 15/11/11.
+//  Created by ShiCang on 15/11/12.
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXProfileIntroduceCell.h"
+#import "HXCaseContentCell.h"
 #import "HXProfileViewModel.h"
 #import "UIConstants.h"
 
-@implementation HXProfileIntroduceCell
+@implementation HXCaseContentCell
 
 #pragma mark - Init Methods
 - (void)awakeFromNib {
@@ -22,7 +22,7 @@
 
 #pragma mark - Config Methods
 - (void)initConfig {
-    _contentLabel.preferredMaxLayoutWidth = SCREEN_WIDTH - 40.0f;
+    _contentLabel.preferredMaxLayoutWidth = SCREEN_WIDTH - 54.0f;
 }
 
 - (void)viewConfig {
@@ -31,7 +31,7 @@
 
 #pragma mark - Public Methods
 - (void)displayWithViewModel:(HXProfileViewModel *)viewModel {
-    _contentLabel.text = viewModel.selectType ? viewModel.selectedCase.caseIntroduce : viewModel.profile.introduce;
+    _contentLabel.text = viewModel.selectedCase.contentIntroduce;
 }
 
 @end

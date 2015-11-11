@@ -68,7 +68,7 @@
                                                     <state key="normal" image="C-StarIcon">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted" image="Star-Unlight"/>
+                                                    <state key="highlighted" image="C-UnStarIcon"/>
                                                     <connections>
                                                         <action selector="starButtonPressed:" destination="nuU-py-StA" eventType="touchUpInside" id="AUR-8B-51Q"/>
                                                     </connections>
@@ -79,7 +79,7 @@
                                                     <state key="normal" image="C-StarIcon">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted" image="Star-Unlight"/>
+                                                    <state key="highlighted" image="C-UnStarIcon"/>
                                                     <connections>
                                                         <action selector="starButtonPressed:" destination="nuU-py-StA" eventType="touchUpInside" id="mpe-xb-Mdc"/>
                                                     </connections>
@@ -90,7 +90,7 @@
                                                     <state key="normal" image="C-StarIcon">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted" image="Star-Unlight"/>
+                                                    <state key="highlighted" image="C-UnStarIcon"/>
                                                     <connections>
                                                         <action selector="starButtonPressed:" destination="nuU-py-StA" eventType="touchUpInside" id="rLC-BQ-Upv"/>
                                                     </connections>
@@ -101,7 +101,7 @@
                                                     <state key="normal" image="C-StarIcon">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted" image="Star-Unlight"/>
+                                                    <state key="highlighted" image="C-UnStarIcon"/>
                                                     <connections>
                                                         <action selector="starButtonPressed:" destination="nuU-py-StA" eventType="touchUpInside" id="Dia-PX-pNL"/>
                                                     </connections>
@@ -112,7 +112,7 @@
                                                     <state key="normal" image="C-StarIcon">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="highlighted" image="Star-Unlight"/>
+                                                    <state key="highlighted" image="C-UnStarIcon"/>
                                                     <connections>
                                                         <action selector="starButtonPressed:" destination="nuU-py-StA" eventType="touchUpInside" id="O8f-Um-ljS"/>
                                                     </connections>
@@ -221,7 +221,7 @@
     </scenes>
     <resources>
         <image name="C-StarIcon" width="16" height="16"/>
+        <image name="C-UnStarIcon" width="16" height="16"/>
         <image name="MR-HeaderIcon" width="21" height="21"/>
-        <image name="Star-Unlight" width="52" height="52"/>
     </resources>
 </document>

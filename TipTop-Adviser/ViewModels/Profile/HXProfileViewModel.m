@@ -66,7 +66,7 @@ static NSInteger RegularRow = 4;
 }
 
 - (BOOL)hasIntroduce {
-    return _profile.introduce;
+    return _profile.introduce ? YES : NO;
 }
 
 #pragma mark - Public Methods

@@ -16,6 +16,7 @@
 #import "HXProfileIntroduceNullCell.h"
 #import "HXProfileIntroduceCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "HXEditIntroduceViewController.h"
 
 @interface HXProfileViewController () <HXProfileSelectedCellDelegate, HXProfileIntroduceEditCellDelegate>
 @end
@@ -60,6 +61,14 @@
 
 - (HXStoryBoardName)storyBoardName {
     return HXStoryBoardNameUser;
+}
+
+#pragma mark - Segue Methods
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"UpdateIntroduce"]) {
+        HXEditIntroduceViewController *editIntroduceViewController = (HXEditIntroduceViewController *)segue.destinationViewController;
+        editIntroduceViewController.introduce = _viewModel.profile.introduce;
+    }
 }
 
 #pragma mark - Private Methods

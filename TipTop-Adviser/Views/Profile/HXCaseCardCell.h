@@ -10,8 +10,16 @@
 
 @class HXProfileViewModel;
 
+@protocol HXCaseCardCellDelegate <NSObject>
+
+@required
+- (void)cardCellScrollAtIndex:(NSInteger)index;
+
+@end
+
 @interface HXCaseCardCell : UITableViewCell <UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (weak, nonatomic) IBOutlet               id  <HXCaseCardCellDelegate>delegate;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 - (void)displayWithViewModel:(HXProfileViewModel *)viewModel;

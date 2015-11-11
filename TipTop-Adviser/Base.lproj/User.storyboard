@@ -1060,22 +1060,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="Fp3-2q-8xf">
-                                                <size key="itemSize" width="280" height="180"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="0.0" id="Fp3-2q-8xf">
+                                                <size key="itemSize" width="280" height="200"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HXCaseCardCollectionViewCell" id="4ss-RT-RA9" customClass="HXCaseCardCollectionViewCell">
-                                                    <rect key="frame" x="20" y="10" width="280" height="180"/>
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="180"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Viw-jQ-0Yk">
-                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="180"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
                                                                 <animations/>
                                                             </imageView>
                                                         </subviews>
@@ -1111,6 +1111,7 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="collectionView" destination="VWX-tn-Qul" id="Oeg-W2-GQi"/>
+                                    <outlet property="delegate" destination="yRO-He-EGQ" id="6ij-av-LOQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

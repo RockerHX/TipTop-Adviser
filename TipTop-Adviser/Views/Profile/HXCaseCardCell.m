@@ -9,6 +9,7 @@
 #import "HXCaseCardCell.h"
 #import "HXProfileViewModel.h"
 #import "HXCaseCardCollectionViewCell.h"
+#import "UIConstants.h"
 
 @implementation HXCaseCardCell {
     NSArray *_cases;
@@ -29,6 +30,20 @@
     HXCaseCardCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HXCaseCardCollectionViewCell class]) forIndexPath:indexPath];
     [cell displayWithCase:_cases[indexPath.row]];
     return cell;
+}
+
+#pragma mark - Collection View Delegate Methods
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(SCREEN_WIDTH - 40.0f, self.frame.size.height);
+}
+
+#pragma mark - Scroll View Delegate Methods
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger index = scrollView.contentOffset.x / SCREEN_WIDTH;
+    if (_delegate && [_delegate respondsToSelector:@selector(cardCellScrollAtIndex:)]) {
+        [_delegate cardCellScrollAtIndex:index];
+    }
 }
 
 @end

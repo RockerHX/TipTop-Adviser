@@ -21,7 +21,7 @@
 #import "HXEditIntroduceViewController.h"
 #import "HXAddCaseViewController.h"
 
-@interface HXProfileViewController () <HXProfileSelectedCellDelegate, HXProfileEditCellDelegate>
+@interface HXProfileViewController () <HXProfileSelectedCellDelegate, HXProfileEditCellDelegate, HXCaseCardCellDelegate>
 @end
 
 @implementation HXProfileViewController {
@@ -180,7 +180,7 @@
     __weak __typeof__(self)weakSelf = self;
     [_viewModel requestWithType:type completed:^{
         __strong __typeof__(self)strongSelf = weakSelf;
-        [strongSelf endLoad];
+        [strongSelf.tableView reloadData];
     }];
 }
 
@@ -210,6 +210,12 @@
             break;
         }
     }
+}
+
+#pragma mark - HXCaseCardCellDelegate Methods
+- (void)cardCellScrollAtIndex:(NSInteger)index {
+    _viewModel.selectIndex = index;
+    [self.tableView reloadData];
 }
 
 @end

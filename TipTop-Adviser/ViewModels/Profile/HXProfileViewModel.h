@@ -36,7 +36,7 @@ typedef NS_ENUM(NSUInteger, HXProfileSelectType) {
 
 @property (nonatomic, assign, readonly)                BOOL  hasIntroduce;
 @property (nonatomic, assign, readonly) HXProfileSelectType  selectType;
-@property (nonatomic, assign, readonly)           NSInteger  selectIndex;
+@property (nonatomic, assign)                     NSInteger  selectIndex;
 
 @property (nonatomic, strong, readonly)   NSArray *rowTypes;
 @property (nonatomic, strong, readonly)   NSArray *cases;

@@ -20,6 +20,11 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "HXEditIntroduceViewController.h"
 #import "HXAddCaseViewController.h"
+#import "HXAppApiRequest.h"
+#import "MBProgressHUD.h"
+
+
+static NSString *DeleteCaseApi = @"/case/delete";
 
 @interface HXProfileViewController () <HXProfileSelectedCellDelegate, HXProfileEditCellDelegate, HXCaseCardCellDelegate>
 @end
@@ -78,6 +83,22 @@
 - (void)endLoad {
     [self.tableView reloadData];
     [self.tableView.header endRefreshing];
+}
+
+- (void)startDeleteCaseRequsetWithParameters:(NSDictionary *)parameters {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak __typeof__(self)weakSelf = self;
+    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:DeleteCaseApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            [strongSelf selectedCellStateChange:HXProfileSelectTypeCase];
+        }
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    }];
 }
 
 #pragma mark - Table View Data Source Methods
@@ -185,14 +206,14 @@
 }
 
 #pragma mark - HXProfileIntroduceEditCellDelegate Methods
-- (void)cellShouldEdit:(HXProfileEditStyle)editStyle {
-    switch (editStyle) {
-        case HXProfileEditStyleAdd: {
+- (void)cellShouldEdit:(HXProfileEditAction)action {
+    switch (action) {
+        case HXProfileEditActionAdd: {
             HXAddCaseViewController *addCaseViewController = [HXAddCaseViewController instance];
             [self.navigationController pushViewController:addCaseViewController animated:YES];
             break;
         }
-        case HXProfileEditStyleEdit: {
+        case HXProfileEditActionEdit: {
             switch (_selectType) {
                 case HXProfileSelectTypeIntroduce: {
                     HXEditIntroduceViewController *editIntroduceViewController = [HXEditIntroduceViewController instance];
@@ -206,7 +227,10 @@
             }
             break;
         }
-        case HXProfileEditStyleDelete: {
+        case HXProfileEditActionDelete: {
+            NSDictionary *parameters = @{@"access_token": [HXUserSession share].adviser.accessToken,
+                                                   @"id": _viewModel.selectedCase.ID};
+            [self startDeleteCaseRequsetWithParameters:parameters];
             break;
         }
     }

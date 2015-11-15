@@ -14,19 +14,19 @@
 #pragma mark - Event Response
 - (IBAction)addButtonPressed {
     if (_delegate && [_delegate respondsToSelector:@selector(cellShouldEdit:)]) {
-        [_delegate cellShouldEdit:HXProfileEditStyleAdd];
+        [_delegate cellShouldEdit:HXProfileEditActionAdd];
     }
 }
 
 - (IBAction)editButtonPressed {
     if (_delegate && [_delegate respondsToSelector:@selector(cellShouldEdit:)]) {
-        [_delegate cellShouldEdit:HXProfileEditStyleEdit];
+        [_delegate cellShouldEdit:HXProfileEditActionEdit];
     }
 }
 
 - (IBAction)deleteButtonPressed {
     if (_delegate && [_delegate respondsToSelector:@selector(cellShouldEdit:)]) {
-        [_delegate cellShouldEdit:HXProfileEditStyleDelete];
+        [_delegate cellShouldEdit:HXProfileEditActionDelete];
     }
 }
 

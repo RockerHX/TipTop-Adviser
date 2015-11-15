@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, HXProfileEditStyle) {
-    HXProfileEditStyleAdd,
-    HXProfileEditStyleEdit,
-    HXProfileEditStyleDelete
+typedef NS_ENUM(NSUInteger, HXProfileEditAction) {
+    HXProfileEditActionAdd,
+    HXProfileEditActionEdit,
+    HXProfileEditActionDelete
 };
 
 @class HXProfileViewModel;
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, HXProfileEditStyle) {
 @protocol HXProfileEditCellDelegate <NSObject>
 
 @required
-- (void)cellShouldEdit:(HXProfileEditStyle)editStyle;
+- (void)cellShouldEdit:(HXProfileEditAction)editStyle;
 
 @end
 

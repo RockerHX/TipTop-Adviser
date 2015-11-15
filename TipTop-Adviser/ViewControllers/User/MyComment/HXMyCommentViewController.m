@@ -61,7 +61,7 @@ static NSString *CommentListApi = @"/review";
 - (void)handleOrdersData:(NSArray *)ordersData {
     NSMutableArray *comments = [NSMutableArray arrayWithCapacity:ordersData.count];
     for (NSDictionary *data in ordersData) {
-        HXComment *comment = [HXComment objectWithKeyValues:data];
+        HXComment *comment = [HXComment mj_objectWithKeyValues:data];
         if (data) {
             [comments addObject:comment];
         }

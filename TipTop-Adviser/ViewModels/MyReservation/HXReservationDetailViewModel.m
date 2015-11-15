@@ -112,7 +112,7 @@ static NSInteger RegularRow = 2;
 
 - (void)handleDetailData:(NSDictionary *)data {
     if (data) {
-        _detail = [HXReservationDetail objectWithKeyValues:data];
+        _detail = [HXReservationDetail mj_objectWithKeyValues:data];
         
         _remarks = _detail.remarks;
         _orderDate = [[NSDate dateWithTimeIntervalSince1970:_detail.order.createTime] formattedDateWithFormat:@"yyyy-MM-dd hh:mm:ss"];

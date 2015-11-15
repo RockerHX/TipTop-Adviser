@@ -78,7 +78,7 @@ static NSString *SendOrderApi   = @"/order/confirm";
 - (void)handleOrdersData:(NSArray *)ordersData {
     NSMutableArray *orders = [NSMutableArray arrayWithCapacity:ordersData.count];
     for (NSDictionary *data in ordersData) {
-        HXReservationOrder *order = [HXReservationOrder objectWithKeyValues:data];
+        HXReservationOrder *order = [HXReservationOrder mj_objectWithKeyValues:data];
         if (data) {
             [orders addObject:order];
         }

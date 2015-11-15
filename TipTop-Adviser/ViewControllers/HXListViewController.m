@@ -25,8 +25,8 @@
 
 #pragma mark - Config Methods
 - (void)initConfig {
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    [self.tableView.header beginRefreshing];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewConfig {
@@ -38,7 +38,7 @@
 }
 
 - (void)endLoad {
-    [self.tableView.header endRefreshing];
+    [self.tableView.mj_header endRefreshing];
 }
 
 @end

@@ -41,8 +41,8 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 #pragma mark - Config Methods
 - (void)initConfig {
     _viewModel = [HXReservationDetailViewModel instanceWithOrderID:_orderID];
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
-    [self.tableView.header beginRefreshing];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewConfig {
@@ -89,7 +89,7 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 
 - (void)endLoad {
     [self.tableView reloadData];
-    [self.tableView.header endRefreshing];
+    [self.tableView.mj_header endRefreshing];
     [self updateRemarkTapedVew];
 }
 

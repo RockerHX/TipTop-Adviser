@@ -76,7 +76,7 @@ static NSString *OrderListApi = @"/Order";
 - (void)handleOrdersData:(NSArray *)ordersData {
     NSMutableArray *orders = [NSMutableArray arrayWithCapacity:ordersData.count];
     for (NSDictionary *data in ordersData) {
-        HXWorkCircuitOrder *order = [HXWorkCircuitOrder objectWithKeyValues:data];
+        HXWorkCircuitOrder *order = [HXWorkCircuitOrder mj_objectWithKeyValues:data];
         if (data) {
             [orders addObject:order];
         }

@@ -63,7 +63,7 @@ static NSString *MessageDetailListApi = @"/notification";
 - (void)handleOrdersData:(NSArray *)ordersData {
     NSMutableArray *messageLists = [NSMutableArray arrayWithCapacity:ordersData.count];
     for (NSDictionary *data in ordersData) {
-        HXMessageList *list = [HXMessageList objectWithKeyValues:data];
+        HXMessageList *list = [HXMessageList mj_objectWithKeyValues:data];
         if (data) {
             [messageLists addObject:list];
         }

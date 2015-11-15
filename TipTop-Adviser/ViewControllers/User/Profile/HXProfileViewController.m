@@ -55,8 +55,8 @@ static NSString *DeleteCaseApi = @"/case/delete";
 #pragma mark - Config Methods
 - (void)initConfig {
     _viewModel = [HXProfileViewModel instanceWithToken:[HXUserSession share].adviser.accessToken];
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
-    [self.tableView.header beginRefreshing];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewConfig {
@@ -82,7 +82,7 @@ static NSString *DeleteCaseApi = @"/case/delete";
 
 - (void)endLoad {
     [self.tableView reloadData];
-    [self.tableView.header endRefreshing];
+    [self.tableView.mj_header endRefreshing];
 }
 
 - (void)startDeleteCaseRequsetWithParameters:(NSDictionary *)parameters {

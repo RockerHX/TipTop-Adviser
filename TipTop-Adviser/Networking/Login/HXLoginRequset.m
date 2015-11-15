@@ -20,7 +20,7 @@ static NSString *LoginApi = @"/session/login";
         HXApiResponse *response = [HXApiResponse responseWithStatusCode:operation.response.statusCode
                                                               errorCode:[responseObject[@"error_code"] integerValue]
                                                                 message:responseObject[@"tip"]];
-        HXAdviser *adviser = [HXAdviser objectWithKeyValues:responseObject[@"data"]];
+        HXAdviser *adviser = [HXAdviser mj_objectWithKeyValues:responseObject[@"data"]];
         if (success) {
             success(response, adviser);
         }

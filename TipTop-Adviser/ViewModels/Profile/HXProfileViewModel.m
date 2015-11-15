@@ -141,7 +141,7 @@ static NSInteger RegularRow = 4;
 
 - (void)handleProfileData:(NSDictionary *)data {
     if (data) {
-        _profile = [HXProfile objectWithKeyValues:data];
+        _profile = [HXProfile mj_objectWithKeyValues:data];
     }
     [self reloadRowTypes];
     if (_completedBlock) {
@@ -154,7 +154,7 @@ static NSInteger RegularRow = 4;
         _cases = nil;
         NSMutableArray *cases = [NSMutableArray arrayWithCapacity:lists.count];
         for (NSDictionary *data in lists) {
-            [cases addObject:[HXCase objectWithKeyValues:data]];
+            [cases addObject:[HXCase mj_objectWithKeyValues:data]];
         }
         _cases = [cases copy];
     }

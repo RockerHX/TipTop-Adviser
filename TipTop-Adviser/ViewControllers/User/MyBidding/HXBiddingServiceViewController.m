@@ -64,7 +64,7 @@ static NSString *CategoryApi    = @"/category";
 - (void)handleServicesData:(NSArray *)sevicesData {
     [_dataList removeAllObjects];
     for (NSDictionary *data in sevicesData) {
-        HXBiddingService *service = [HXBiddingService objectWithKeyValues:data];
+        HXBiddingService *service = [HXBiddingService mj_objectWithKeyValues:data];
         if (data) {
             [_dataList addObject:service];
         }

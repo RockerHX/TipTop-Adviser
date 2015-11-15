@@ -49,7 +49,7 @@ static NSString *BiddingListApi   = @"/biding";
 - (void)initConfig {
     _dataList = @[].mutableCopy;
     
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     [self startLoading];
     [self loadNewData];
 }
@@ -87,11 +87,11 @@ static NSString *BiddingListApi   = @"/biding";
 }
 
 - (void)startLoading {
-    [self.tableView.header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)endLoading {
-    [self.tableView.header endRefreshing];
+    [self.tableView.mj_header endRefreshing];
 }
 
 - (void)startBiddingListRequestWithype:(HXBiddingSelectedType)type {
@@ -128,7 +128,7 @@ static NSString *BiddingListApi   = @"/biding";
 - (void)handleBiddingsData:(NSArray *)biddingsData {
     [_dataList removeAllObjects];
     for (NSDictionary *data in biddingsData) {
-        HXBidding *bidding = [HXBidding objectWithKeyValues:data];
+        HXBidding *bidding = [HXBidding mj_objectWithKeyValues:data];
         if (data) {
             [_dataList addObject:bidding];
         }

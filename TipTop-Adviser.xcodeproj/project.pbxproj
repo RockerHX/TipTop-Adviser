@@ -112,7 +112,6 @@
 		48D74F771BC4CA100000863D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F761BC4CA100000863D /* main.m */; };
 		48D74F7A1BC4CA100000863D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F791BC4CA100000863D /* AppDelegate.mm */; };
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
-		48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48D74F811BC4CA100000863D /* TipTop_Adviser.xcdatamodeld */; };
 		48D74F851BC4CA100000863D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F841BC4CA100000863D /* Assets.xcassets */; };
 		48D74F881BC4CA100000863D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F861BC4CA100000863D /* LaunchScreen.storyboard */; };
 		48DB1E741BF2527E0007F505 /* HXProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E731BF2527E0007F505 /* HXProfileViewController.m */; };
@@ -333,7 +332,6 @@
 		48D74F781BC4CA100000863D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48D74F791BC4CA100000863D /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		48D74F7F1BC4CA100000863D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		48D74F821BC4CA100000863D /* TipTop_Adviser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TipTop_Adviser.xcdatamodel; sourceTree = "<group>"; };
 		48D74F841BC4CA100000863D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48D74F871BC4CA100000863D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48D74F891BC4CA100000863D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -624,9 +622,8 @@
 			children = (
 				48334DF11BC4D04C00FD43A6 /* UI */,
 				48D74F7E1BC4CA100000863D /* Main.storyboard */,
-				48D74F841BC4CA100000863D /* Assets.xcassets */,
 				48D74F861BC4CA100000863D /* LaunchScreen.storyboard */,
-				48D74F811BC4CA100000863D /* TipTop_Adviser.xcdatamodeld */,
+				48D74F841BC4CA100000863D /* Assets.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1334,7 +1331,6 @@
 				4843398C1BD6A2C5007B3F84 /* HXListViewController.m in Sources */,
 				4843399F1BD6AC82007B3F84 /* HXMyReservationCell.m in Sources */,
 				489918E31BE7B5F8007FB300 /* HXUserSession.m in Sources */,
-				48D74F831BC4CA100000863D /* TipTop_Adviser.xcdatamodeld in Sources */,
 				483AE3641BD3E64A004C0B22 /* HXOnlinePayListViewController.m in Sources */,
 				483AE3941BD40D62004C0B22 /* HXMessageListViewController.m in Sources */,
 				48CC51A71BDD4CFA00985753 /* HXReservationAddRemarkViewController.m in Sources */,
@@ -1656,19 +1652,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		48D74F811BC4CA100000863D /* TipTop_Adviser.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				48D74F821BC4CA100000863D /* TipTop_Adviser.xcdatamodel */,
-			);
-			currentVersion = 48D74F821BC4CA100000863D /* TipTop_Adviser.xcdatamodel */;
-			path = TipTop_Adviser.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 48D74F6A1BC4CA100000863D /* Project object */;
 }

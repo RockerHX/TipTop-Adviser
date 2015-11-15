@@ -85,7 +85,7 @@ static NSString *NewOrderEvent = @"new_order";
         NSString *event = receiveData[@"event"];
         NSString *extra = receiveData[@"extra"];
         if ([event isEqualToString:NewOrderEvent]) {
-            _newOrder = [HXNewOrder objectWithKeyValues:extra];
+            _newOrder = [HXNewOrder mj_objectWithKeyValues:extra];
             [self displayWithNewOrder:_newOrder];
         } else if ([event isEqualToString:@""]) {
             

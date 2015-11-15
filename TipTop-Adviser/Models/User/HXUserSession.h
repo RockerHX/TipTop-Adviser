@@ -21,6 +21,7 @@ typedef NS_ENUM(BOOL, HXUserSessionState) {
 + (nullable instancetype)share;
 
 - (void)updateAdviser:(nullable HXAdviser *)adviser;
+- (void)updateAdviserAvatar:(nullable NSString *)avatarURL;
 - (void)logout;
 
 @end

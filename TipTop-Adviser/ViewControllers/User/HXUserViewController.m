@@ -18,6 +18,7 @@
 #import "HXMyCommentViewController.h"
 #import "HXMyAddressViewController.h"
 #import "UIImageView+WebCache.h"
+#import "MBProgressHUD.h"
 
 typedef NS_ENUM(NSUInteger, HXMenuRow) {
     HXMenuRowMyReservation = 0,
@@ -30,8 +31,11 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
     HXMenuRowMyAddress     = 9
 };
 
-@interface HXUserViewController ()
 
+static NSString *UploadImageApi = @"/upload";
+static NSString *UpdateUserHeaderApi = @"/profile/avatar";
+
+@interface HXUserViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @end
 
 @implementation HXUserViewController
@@ -60,6 +64,10 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
 
 #pragma mark - Event Response
 - (IBAction)userHeaderPressed {
+    UIImagePickerController *imagePickerViewController = [[UIImagePickerController alloc] init];
+    imagePickerViewController.delegate = self;
+    imagePickerViewController.allowsEditing = YES;
+    [self presentViewController:imagePickerViewController animated:YES completion:nil];
 }
 
 - (IBAction)settingButtonPressed {
@@ -82,6 +90,49 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
     [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:adviser.avatar]];
     _nameLabel.text = adviser.realName;
     _mobileLabel.text = adviser.mobile;
+}
+
+- (void)startUploadImageReuqestWithImage:(UIImage *)image {
+    [self startUploadImageReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken}
+                                                            image: image];
+}
+
+- (void)startUploadImageReuqestWithParameters:(NSDictionary *)parameters image:(UIImage *)image {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak __typeof__(self)weakSelf = self;
+    
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
+    [[HXApiRequest manager] POST:[HXApi apiURLWithApi:UploadImageApi] parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:imageData name:@"file" fileName:@"temp.jpg" mimeType:@"image/jpg"];
+    } success:^(AFHTTPRequestOperation *operation,id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            NSString *headerFile = responseObject[@"data"][@"img"];
+            [strongSelf startUpdateUserHeaderRequestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
+                                                                           @"avatar": headerFile}
+                                                          imageURL:responseObject[@"data"][@"img_url"]];
+        }
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    }];
+}
+
+- (void)startUpdateUserHeaderRequestWithParameters:(NSDictionary *)parameters imageURL:(NSString *)imageURL {
+    __weak __typeof__(self)weakSelf = self;
+    [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:UpdateUserHeaderApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            [[HXUserSession share] updateAdviserAvatar:imageURL];
+            [strongSelf updateUserInfo];
+        }
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    }];
 }
 
 #pragma mark - Table View Delegate Methods
@@ -124,6 +175,17 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
         }
         [_delegate userCenterShouldHiddenAndShowViewController:navigationController];
     }
+}
+
+#pragma mark - UIImagePickerControllerDelegate Methods
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [self startUploadImageReuqestWithImage:image];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

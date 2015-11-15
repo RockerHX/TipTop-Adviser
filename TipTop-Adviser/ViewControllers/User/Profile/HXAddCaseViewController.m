@@ -69,8 +69,8 @@ static NSString *CreateCaseApi = @"/case/create";
 
 #pragma mark - Private Methods
 - (void)startUploadImageReuqest {
-    [self startUploadImageReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken}
-                                          image:[_caseImageButton imageForState:UIControlStateNormal]];
+    [self startUploadImageReuqestWithParameters:@{@"access_token":[HXUserSession share].adviser.accessToken}
+                                                            image:[_caseImageButton imageForState:UIControlStateNormal]];
 }
 
 - (void)startUploadImageReuqestWithParameters:(NSDictionary *)parameters image:(UIImage *)image {

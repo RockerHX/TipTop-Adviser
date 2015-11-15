@@ -55,6 +55,11 @@ static HXUserSession *session = nil;
     [self archive];
 }
 
+- (void)updateAdviserAvatar:(nullable NSString *)avatarURL {
+    _adviser.avatar = avatarURL;
+    [self archive];
+}
+
 - (void)logout {
     [self updateAdviser:[HXAdviser new]];
 }

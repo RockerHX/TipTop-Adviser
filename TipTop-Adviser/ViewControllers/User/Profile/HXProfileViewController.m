@@ -222,6 +222,9 @@ static NSString *DeleteCaseApi = @"/case/delete";
                     break;
                 }
                 case HXProfileSelectTypeCase: {
+                    HXAddCaseViewController *addCaseViewController = [HXAddCaseViewController instance];
+                    addCaseViewController.selectedCase = _viewModel.selectedCase;
+                    [self.navigationController pushViewController:addCaseViewController animated:YES];
                     break;
                 }
             }

@@ -129,13 +129,6 @@
 - (void)setText:(NSString *)text {
     [super setText:text];
     
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineHeightMultiple = 100.0f;
-    NSString *string = text;
-    NSDictionary *ats = @{NSFontAttributeName : self.font,
-                          NSParagraphStyleAttributeName : paragraphStyle};
-    self.attributedText = [[NSAttributedString alloc] initWithString:string attributes:ats];
-    
     [self updateLayout];
     [self layoutGUI];
 }

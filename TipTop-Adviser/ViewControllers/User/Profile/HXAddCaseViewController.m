@@ -12,10 +12,13 @@
 #import "MBProgressHUD.h"
 #import "HXAppApiRequest.h"
 #import "UIAlertView+BlocksKit.h"
+#import "HXCase.h"
+#import "UIButton+WebCache.h"
 
 
 static NSString *UploadImageApi = @"/upload";
 static NSString *CreateCaseApi = @"/case/create";
+static NSString *UpdateCaseApi = @"/case/update";
 
 @interface HXAddCaseViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @end
@@ -38,7 +41,9 @@ static NSString *CreateCaseApi = @"/case/create";
 }
 
 - (void)viewConfig {
-    
+    if (_selectedCase) {
+        [self refresh];
+    }
 }
 
 #pragma mark - Setter And Getter
@@ -48,15 +53,32 @@ static NSString *CreateCaseApi = @"/case/create";
 
 #pragma mark - Event Response
 - (IBAction)saveButtonPressed {
-    if (_contentIntroduceTextView.text.length &&
-        _caseNameTextField.text.length &&
-        _imageFile.length &&
-        _caseIntroduceTextView.text.length) {
-        [self startCreateCaseReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
-                                                      @"description": _contentIntroduceTextView.text,
-                                                            @"title": _caseNameTextField.text,
-                                                            @"image": _imageFile,
-                                                          @"content": _caseIntroduceTextView.text}];
+    if (_selectedCase) {
+        if (_contentIntroduceTextView.text.length &&
+            _caseNameTextField.text.length &&
+            _caseIntroduceTextView.text.length) {
+            NSMutableDictionary *parameters = @{@"access_token": [HXUserSession share].adviser.accessToken,
+                                                          @"id": _selectedCase.ID,
+                                                 @"description": _contentIntroduceTextView.text,
+                                                       @"title": _caseNameTextField.text,
+                                                     @"content": _caseIntroduceTextView.text}.mutableCopy;
+            if (_imageFile.length) {
+                [parameters setObject:_imageFile forKey:@"image"];
+            }
+            [self startCreateCaseReuqestWithApi:UpdateCaseApi parameters:[parameters copy]];
+        }
+    } else {
+        if (_contentIntroduceTextView.text.length &&
+            _caseNameTextField.text.length &&
+            _imageFile.length &&
+            _caseIntroduceTextView.text.length) {
+            [self startCreateCaseReuqestWithApi:CreateCaseApi
+                                     parameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
+                                                   @"description": _contentIntroduceTextView.text,
+                                                         @"title": _caseNameTextField.text,
+                                                         @"image": _imageFile,
+                                                       @"content": _caseIntroduceTextView.text}];
+        }
     }
 }
 
@@ -68,6 +90,13 @@ static NSString *CreateCaseApi = @"/case/create";
 }
 
 #pragma mark - Private Methods
+- (void)refresh {
+    _contentIntroduceTextView.text = _selectedCase.contentIntroduce;
+    _caseNameTextField.text = _selectedCase.title;
+    [_caseImageButton sd_setImageWithURL:[NSURL URLWithString:_selectedCase.image] forState:UIControlStateNormal];
+    _caseIntroduceTextView.text = _selectedCase.caseIntroduce;
+}
+
 - (void)startUploadImageReuqest {
     [self startUploadImageReuqestWithParameters:@{@"access_token":[HXUserSession share].adviser.accessToken}
                                                             image:[_caseImageButton imageForState:UIControlStateNormal]];
@@ -93,21 +122,15 @@ static NSString *CreateCaseApi = @"/case/create";
     }];
 }
 
-- (void)startCreateCaseReuqestWithParameters:(NSDictionary *)parameters {
+- (void)startCreateCaseReuqestWithApi:(NSString *)api parameters:(NSDictionary *)parameters {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak __typeof__(self)weakSelf = self;
-    [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:CreateCaseApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:api] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
-            [UIAlertView bk_showAlertViewWithTitle:@"创建成功"
-                                           message:nil
-                                 cancelButtonTitle:@"确定"
-                                 otherButtonTitles:nil handler:
-             ^(UIAlertView *alertView, NSInteger buttonIndex) {
-                 [strongSelf.view endEditing:NO];
-                 [strongSelf.navigationController popViewControllerAnimated:YES];
-             }];
+            [strongSelf.view endEditing:NO];
+            [strongSelf.navigationController popViewControllerAnimated:YES];
         }
         [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

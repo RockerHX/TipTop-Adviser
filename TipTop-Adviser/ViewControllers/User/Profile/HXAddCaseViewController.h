@@ -8,6 +8,7 @@
 
 #import "UIViewController+HXClass.h"
 
+@class HXCase;
 @class HXTextView;
 
 @interface HXAddCaseViewController : UITableViewController
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *caseNameTextField;
 @property (weak, nonatomic) IBOutlet    UIButton *caseImageButton;
 @property (weak, nonatomic) IBOutlet  HXTextView *caseIntroduceTextView;
+
+@property (nonnull, nonatomic, strong) HXCase *selectedCase;
 
 - (IBAction)saveButtonPressed;
 - (IBAction)caseImageButtonPressed;

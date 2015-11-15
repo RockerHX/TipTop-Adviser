@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -787,9 +788,9 @@
                                         <constraint firstAttribute="bottom" secondItem="WkA-aZ-mn0" secondAttribute="bottom" id="73G-cT-D1Y"/>
                                         <constraint firstItem="WkA-aZ-mn0" firstAttribute="leading" secondItem="lGB-dS-krP" secondAttribute="leading" id="9ut-WJ-NzL"/>
                                         <constraint firstItem="WkA-aZ-mn0" firstAttribute="top" secondItem="lGB-dS-krP" secondAttribute="top" id="BUO-Td-aFd"/>
+                                        <constraint firstItem="aBz-rh-QtQ" firstAttribute="centerX" secondItem="lGB-dS-krP" secondAttribute="leading" constant="80" id="NWg-5I-MCj"/>
                                         <constraint firstAttribute="bottom" secondItem="aBz-rh-QtQ" secondAttribute="bottom" id="Suo-Co-o2i"/>
                                         <constraint firstItem="fvx-h0-5AI" firstAttribute="top" secondItem="lGB-dS-krP" secondAttribute="top" id="Ufs-bP-y7d"/>
-                                        <constraint firstItem="aBz-rh-QtQ" firstAttribute="centerX" secondItem="WkA-aZ-mn0" secondAttribute="centerX" id="WFy-4S-GHq"/>
                                         <constraint firstAttribute="trailing" secondItem="fvx-h0-5AI" secondAttribute="trailing" id="eCc-sb-QF0"/>
                                         <constraint firstItem="fvx-h0-5AI" firstAttribute="width" secondItem="WkA-aZ-mn0" secondAttribute="width" id="ffh-0b-x19"/>
                                         <constraint firstItem="fvx-h0-5AI" firstAttribute="leading" secondItem="WkA-aZ-mn0" secondAttribute="trailing" id="lSp-Ex-cac"/>
@@ -802,7 +803,10 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="bottomLine" destination="aBz-rh-QtQ" id="X3w-Km-auU"/>
+                                    <outlet property="bottomLineCenterX" destination="NWg-5I-MCj" id="s6i-Ya-cNL"/>
+                                    <outlet property="caseButton" destination="fvx-h0-5AI" id="d1F-5c-Yc8"/>
                                     <outlet property="delegate" destination="yRO-He-EGQ" id="Wx4-wx-28q"/>
+                                    <outlet property="introduceButton" destination="WkA-aZ-mn0" id="O5h-DM-kyg"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXProfileEditCell" rowHeight="60" id="gdA-eO-Kkk" customClass="HXProfileEditCell">

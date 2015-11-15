@@ -19,8 +19,12 @@
 
 @interface HXProfileSelectedCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet     id  <HXProfileSelectedCellDelegate>delegate;
-@property (weak, nonatomic) IBOutlet UIView *bottomLine;
+@property (weak, nonatomic) IBOutlet       id  <HXProfileSelectedCellDelegate>delegate;
+@property (weak, nonatomic) IBOutlet UIButton *introduceButton;
+@property (weak, nonatomic) IBOutlet UIButton *caseButton;
+@property (weak, nonatomic) IBOutlet   UIView *bottomLine;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLineCenterX;
 
 - (IBAction)buttonPressed:(UIButton *)sender;
 

@@ -26,7 +26,7 @@
 
 static NSString *DeleteCaseApi = @"/case/delete";
 
-@interface HXProfileViewController () <HXProfileSelectedCellDelegate, HXProfileEditCellDelegate, HXCaseCardCellDelegate>
+@interface HXProfileViewController () <HXProfileSelectedCellDelegate, HXProfileEditCellDelegate, HXProfileNoContentCellDelegate, HXCaseCardCellDelegate>
 @end
 
 @implementation HXProfileViewController {
@@ -214,26 +214,31 @@ static NSString *DeleteCaseApi = @"/case/delete";
             break;
         }
         case HXProfileEditActionEdit: {
-            switch (_selectType) {
-                case HXProfileSelectTypeIntroduce: {
-                    HXEditIntroduceViewController *editIntroduceViewController = [HXEditIntroduceViewController instance];
-                    editIntroduceViewController.introduce = _viewModel.profile.introduce;
-                    [self.navigationController pushViewController:editIntroduceViewController animated:YES];
-                    break;
-                }
-                case HXProfileSelectTypeCase: {
-                    HXAddCaseViewController *addCaseViewController = [HXAddCaseViewController instance];
-                    addCaseViewController.selectedCase = _viewModel.selectedCase;
-                    [self.navigationController pushViewController:addCaseViewController animated:YES];
-                    break;
-                }
-            }
+            [self noContentCellShouldAddSomething];
             break;
         }
         case HXProfileEditActionDelete: {
             NSDictionary *parameters = @{@"access_token": [HXUserSession share].adviser.accessToken,
                                                    @"id": _viewModel.selectedCase.ID};
             [self startDeleteCaseRequsetWithParameters:parameters];
+            break;
+        }
+    }
+}
+
+#pragma mark - HXProfileNoContentCellDelegate Methods
+- (void)noContentCellShouldAddSomething {
+    switch (_selectType) {
+        case HXProfileSelectTypeIntroduce: {
+            HXEditIntroduceViewController *editIntroduceViewController = [HXEditIntroduceViewController instance];
+            editIntroduceViewController.introduce = _viewModel.profile.introduce;
+            [self.navigationController pushViewController:editIntroduceViewController animated:YES];
+            break;
+        }
+        case HXProfileSelectTypeCase: {
+            HXAddCaseViewController *addCaseViewController = [HXAddCaseViewController instance];
+            addCaseViewController.selectedCase = _viewModel.selectedCase;
+            [self.navigationController pushViewController:addCaseViewController animated:YES];
             break;
         }
     }

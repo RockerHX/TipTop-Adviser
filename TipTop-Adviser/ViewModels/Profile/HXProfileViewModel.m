@@ -56,7 +56,7 @@ static NSString *CaseListApi = @"/case";
 
 static NSInteger RegularRow = 4;
 - (NSInteger)rows {
-    return (_profile ? (_selectType ? RegularRow+2 : RegularRow): 0);
+    return (_profile ? ((_selectType && _cases.count) ? RegularRow+2 : RegularRow): 0);
 }
 
 - (BOOL)hasIntroduce {

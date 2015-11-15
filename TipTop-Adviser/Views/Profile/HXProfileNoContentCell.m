@@ -10,6 +10,13 @@
 
 @implementation HXProfileNoContentCell
 
+#pragma mark - Event Response
+- (IBAction)buttonPressed {
+    if (_delegate && [_delegate respondsToSelector:@selector(noContentCellShouldAddSomething)]) {
+        [_delegate noContentCellShouldAddSomething];
+    }
+}
+
 #pragma mark - Public Methods
 - (void)displayWithSelectType:(HXProfileSelectType)selectType {
     _topPromptLabel.text = selectType ? @"您还没有添加成功案例" : @"您还没有添加个人简介";

@@ -953,6 +953,9 @@
                                             <rect key="frame" x="131" y="111" width="58" height="58"/>
                                             <animations/>
                                             <state key="normal" image="UCP-EditIcon-B"/>
+                                            <connections>
+                                                <action selector="buttonPressed" destination="5sC-ZT-nL2" eventType="touchUpInside" id="7Kb-ho-PHL"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <animations/>
@@ -970,6 +973,7 @@
                                 <connections>
                                     <outlet property="addButton" destination="cgM-yq-sU3" id="U4c-Js-9lk"/>
                                     <outlet property="bottomPromptLabel" destination="x0i-dk-WGG" id="1EJ-Fd-8sG"/>
+                                    <outlet property="delegate" destination="yRO-He-EGQ" id="kdY-WZ-nEK"/>
                                     <outlet property="topPromptLabel" destination="ZZz-g4-fMg" id="F9z-Zy-wxW"/>
                                 </connections>
                             </tableViewCell>

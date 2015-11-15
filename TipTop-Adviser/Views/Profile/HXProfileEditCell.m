@@ -9,7 +9,9 @@
 #import "HXProfileEditCell.h"
 #import "HXProfileViewModel.h"
 
-@implementation HXProfileEditCell
+@implementation HXProfileEditCell {
+    NSString *_editIconImageName;
+}
 
 #pragma mark - Event Response
 - (IBAction)addButtonPressed {
@@ -19,8 +21,15 @@
 }
 
 - (IBAction)editButtonPressed {
-    if (_delegate && [_delegate respondsToSelector:@selector(cellShouldEdit:)]) {
-        [_delegate cellShouldEdit:HXProfileEditActionEdit];
+    BOOL isEdit = [_editIconImageName isEqualToString:@"UCP-EditIcon-S"];
+    if (isEdit) {
+        if (_delegate && [_delegate respondsToSelector:@selector(cellShouldEdit:)]) {
+            [_delegate cellShouldEdit:HXProfileEditActionEdit];
+        }
+    } else {
+        if (_delegate && [_delegate respondsToSelector:@selector(cellShouldEdit:)]) {
+            [_delegate cellShouldEdit:HXProfileEditActionAdd];
+        }
     }
 }
 
@@ -35,12 +44,16 @@
     _whiteBGView.hidden = !viewModel.hasIntroduce;
     
     BOOL isIntroduce = !viewModel.selectType;
+    _editIconImageName = (isIntroduce ? @"UCP-EditIcon-S" : @"UCP-AddIcon-S");
+    [_editButton setImage:[UIImage imageNamed:_editIconImageName] forState:UIControlStateNormal];
+    
+    if (!viewModel.cases.count) {
+        isIntroduce = YES;
+    }
     _addButton.hidden = isIntroduce;
     _addButtonBottomLine.hidden = isIntroduce;
     _deleteButton.hidden = isIntroduce;
     _deleteButtonBottomLine.hidden = isIntroduce;
-    
-//    [_editButton setImage:[UIImage imageNamed:(isIntroduce ? @"")] forState:UIControlStateNormal];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "HXWebViewController.h"
 #import "HXApi.h"
 #import "HXUseExplanationViewController.h"
+#import "HXFeedBackViewController.h"
 #import "HXAboutViewController.h"
 #import "HXUserSession.h"
 
@@ -55,6 +56,10 @@
         HXUseExplanationViewController *useExplanationViewController = [HXUseExplanationViewController instance];
         useExplanationViewController.loadURL = [DoMain stringByAppendingString:@"/h5/page?key=agent_help"];
         [self.navigationController pushViewController:useExplanationViewController animated:YES];
+    } else if ((1 == indexPath.section) && (2 == indexPath.row)) {
+        HXFeedBackViewController *feedBackViewController = [HXFeedBackViewController instance];
+        feedBackViewController.loadURL = [DoMain stringByAppendingString:@"/h5/feedback?app=agent"];
+        [self.navigationController pushViewController:feedBackViewController animated:YES];
     } else if ((2 == indexPath.section) && (1 == indexPath.row)) {
         HXAboutViewController *useExplanationViewController = [HXAboutViewController instance];
         useExplanationViewController.loadURL = [DoMain stringByAppendingString:@"/h5/page?key=agent_about"];

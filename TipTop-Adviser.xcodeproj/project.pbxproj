@@ -94,6 +94,7 @@
 		48A55C831BF3AF8500863810 /* HXCaseContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A55C821BF3AF8500863810 /* HXCaseContentCell.m */; };
 		48A55C871BF3B3BE00863810 /* HXCaseCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A55C861BF3B3BE00863810 /* HXCaseCardCollectionViewCell.m */; };
 		48A5FEF91BD94B7300891727 /* HXSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A5FEF81BD94B7300891727 /* HXSocketManager.m */; };
+		48BD52721BFA417A00613F19 /* HXFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BD52711BFA417A00613F19 /* HXFeedBackViewController.m */; };
 		48C57ACF1BDD5317002C8398 /* BRPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C57ACE1BDD5317002C8398 /* BRPlaceholderTextView.m */; };
 		48CC517C1BDCE92300985753 /* HXOrderAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC517B1BDCE92300985753 /* HXOrderAlertView.m */; };
 		48CC517E1BDCE93500985753 /* HXOrderAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CC517D1BDCE93500985753 /* HXOrderAlertView.xib */; };
@@ -299,6 +300,8 @@
 		48A55C861BF3B3BE00863810 /* HXCaseCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCaseCardCollectionViewCell.m; sourceTree = "<group>"; };
 		48A5FEF71BD94B7300891727 /* HXSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSocketManager.h; sourceTree = "<group>"; };
 		48A5FEF81BD94B7300891727 /* HXSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSocketManager.m; sourceTree = "<group>"; };
+		48BD52701BFA417A00613F19 /* HXFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXFeedBackViewController.h; sourceTree = "<group>"; };
+		48BD52711BFA417A00613F19 /* HXFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXFeedBackViewController.m; sourceTree = "<group>"; };
 		48C57ACD1BDD5317002C8398 /* BRPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPlaceholderTextView.h; sourceTree = "<group>"; };
 		48C57ACE1BDD5317002C8398 /* BRPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPlaceholderTextView.m; sourceTree = "<group>"; };
 		48CC517A1BDCE92300985753 /* HXOrderAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXOrderAlertView.h; sourceTree = "<group>"; };
@@ -901,6 +904,8 @@
 				48A48CD41BCD666600AF6C36 /* HXChangePassWordViewController.m */,
 				4893C2CD1BE60B8500479EC3 /* HXUseExplanationViewController.h */,
 				4893C2CE1BE60B8500479EC3 /* HXUseExplanationViewController.m */,
+				48BD52701BFA417A00613F19 /* HXFeedBackViewController.h */,
+				48BD52711BFA417A00613F19 /* HXFeedBackViewController.m */,
 				4893C2CA1BE60AB300479EC3 /* HXAboutViewController.h */,
 				4893C2CB1BE60AB300479EC3 /* HXAboutViewController.m */,
 			);
@@ -1325,6 +1330,7 @@
 				48579D2B1BF261E400AE55A6 /* HXProfile.m in Sources */,
 				4810972D1BEFAFD800BA017B /* HXMessage.m in Sources */,
 				489E9CCC1BC4F96900C6618E /* HXForgotPWViewController.m in Sources */,
+				48BD52721BFA417A00613F19 /* HXFeedBackViewController.m in Sources */,
 				4893C2CF1BE60B8500479EC3 /* HXUseExplanationViewController.m in Sources */,
 				48334DE21BC4D00D00FD43A6 /* HXIBLabel.m in Sources */,
 				4810973D1BEFC3CD00BA017B /* HXMessageDetailViewController.m in Sources */,

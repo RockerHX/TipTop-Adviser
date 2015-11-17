@@ -385,44 +385,8 @@
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ZnQ-us-zIQ">
-                                        <rect key="frame" x="0.0" y="452" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZnQ-us-zIQ" id="mmO-TM-Mjd">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UC-ServiceIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cts-H9-PCb">
-                                                    <rect key="frame" x="20" y="0.0" width="44" height="44"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="cts-H9-PCb" secondAttribute="height" multiplier="1:1" id="cbV-H3-sdu"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息中心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXX-bv-VsF">
-                                                    <rect key="frame" x="74" y="0.0" width="246" height="44"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstItem="iXX-bv-VsF" firstAttribute="leading" secondItem="cts-H9-PCb" secondAttribute="trailing" constant="10" id="WiB-bP-KeK"/>
-                                                <constraint firstAttribute="bottom" secondItem="cts-H9-PCb" secondAttribute="bottom" id="eam-Cx-NmR"/>
-                                                <constraint firstItem="iXX-bv-VsF" firstAttribute="top" secondItem="mmO-TM-Mjd" secondAttribute="top" id="fIr-j0-yfv"/>
-                                                <constraint firstAttribute="bottom" secondItem="iXX-bv-VsF" secondAttribute="bottom" id="kk9-9y-XgP"/>
-                                                <constraint firstItem="cts-H9-PCb" firstAttribute="top" secondItem="mmO-TM-Mjd" secondAttribute="top" id="m7b-0C-LRn"/>
-                                                <constraint firstItem="cts-H9-PCb" firstAttribute="leading" secondItem="mmO-TM-Mjd" secondAttribute="leading" constant="20" id="mDD-NB-X23"/>
-                                                <constraint firstAttribute="trailing" secondItem="iXX-bv-VsF" secondAttribute="trailing" id="va4-Vl-WxR"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="I2t-aL-xz6">
-                                        <rect key="frame" x="0.0" y="496" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="452" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I2t-aL-xz6" id="vbc-Yh-1Qt">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -452,6 +416,42 @@
                                                 <constraint firstItem="XxG-rr-F9O" firstAttribute="leading" secondItem="vbc-Yh-1Qt" secondAttribute="leading" constant="20" id="hgT-bv-Va4"/>
                                                 <constraint firstItem="Fho-Dd-c0Z" firstAttribute="leading" secondItem="XxG-rr-F9O" secondAttribute="trailing" constant="10" id="m6n-zl-HoJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fho-Dd-c0Z" secondAttribute="trailing" id="nnM-aX-zwX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ZnQ-us-zIQ">
+                                        <rect key="frame" x="0.0" y="496" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZnQ-us-zIQ" id="mmO-TM-Mjd">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UC-MessageIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cts-H9-PCb">
+                                                    <rect key="frame" x="20" y="0.0" width="44" height="44"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="cts-H9-PCb" secondAttribute="height" multiplier="1:1" id="cbV-H3-sdu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息中心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXX-bv-VsF">
+                                                    <rect key="frame" x="74" y="0.0" width="246" height="44"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="iXX-bv-VsF" firstAttribute="leading" secondItem="cts-H9-PCb" secondAttribute="trailing" constant="10" id="WiB-bP-KeK"/>
+                                                <constraint firstAttribute="bottom" secondItem="cts-H9-PCb" secondAttribute="bottom" id="eam-Cx-NmR"/>
+                                                <constraint firstItem="iXX-bv-VsF" firstAttribute="top" secondItem="mmO-TM-Mjd" secondAttribute="top" id="fIr-j0-yfv"/>
+                                                <constraint firstAttribute="bottom" secondItem="iXX-bv-VsF" secondAttribute="bottom" id="kk9-9y-XgP"/>
+                                                <constraint firstItem="cts-H9-PCb" firstAttribute="top" secondItem="mmO-TM-Mjd" secondAttribute="top" id="m7b-0C-LRn"/>
+                                                <constraint firstItem="cts-H9-PCb" firstAttribute="leading" secondItem="mmO-TM-Mjd" secondAttribute="leading" constant="20" id="mDD-NB-X23"/>
+                                                <constraint firstAttribute="trailing" secondItem="iXX-bv-VsF" secondAttribute="trailing" id="va4-Vl-WxR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -1467,6 +1467,7 @@
         <image name="UC-CommentIcon" width="23" height="23"/>
         <image name="UC-EditIcon" width="23" height="23"/>
         <image name="UC-HeaderIcon" width="80" height="80"/>
+        <image name="UC-MessageIcon" width="23" height="23"/>
         <image name="UC-PayIcon" width="23" height="23"/>
         <image name="UC-ReservationIcon" width="23" height="23"/>
         <image name="UC-ServiceIcon" width="23" height="23"/>

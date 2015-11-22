@@ -521,13 +521,13 @@
             <objects>
                 <tableViewController storyboardIdentifier="HXProfileViewController" id="yRO-He-EGQ" customClass="HXProfileViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hY8-rb-FDX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXProfileHeaderCell" rowHeight="100" id="HdX-WE-cHd" customClass="HXProfileHeaderCell">
-                                <rect key="frame" x="0.0" y="92" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HdX-WE-cHd" id="JqX-QF-xOl">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
@@ -737,7 +737,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXProfileSelectedCell" rowHeight="44" id="8ny-WE-orV" customClass="HXProfileSelectedCell">
-                                <rect key="frame" x="0.0" y="192" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="128" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ny-WE-orV" id="lGB-dS-krP">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -810,7 +810,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXProfileEditCell" rowHeight="60" id="gdA-eO-Kkk" customClass="HXProfileEditCell">
-                                <rect key="frame" x="0.0" y="236" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="172" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gdA-eO-Kkk" id="Cko-cD-Ewa">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
@@ -933,7 +933,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXProfileNoContentCell" rowHeight="240" id="5sC-ZT-nL2" customClass="HXProfileNoContentCell">
-                                <rect key="frame" x="0.0" y="296" width="320" height="240"/>
+                                <rect key="frame" x="0.0" y="232" width="320" height="240"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5sC-ZT-nL2" id="KbI-NV-UhW">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
@@ -982,7 +982,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HXProfileIntroduceCell" id="FAh-tN-lZV" customClass="HXProfileIntroduceCell">
-                                <rect key="frame" x="0.0" y="536" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="472" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FAh-tN-lZV" id="m2U-89-I88">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1010,7 +1010,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXCaseContentCell" rowHeight="100" id="x3O-xa-Xiy" customClass="HXCaseContentCell">
-                                <rect key="frame" x="0.0" y="580" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="516" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x3O-xa-Xiy" id="Ysi-m5-1y3">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
@@ -1058,7 +1058,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXCaseCardCell" rowHeight="200" id="tNI-QI-vOQ" customClass="HXCaseCardCell">
-                                <rect key="frame" x="0.0" y="680" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="616" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNI-QI-vOQ" id="SZM-Ut-nlb">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
@@ -1444,7 +1444,7 @@
         <scene sceneID="f26-22-Av2">
             <objects>
                 <navigationController storyboardIdentifier="HXProfileNavigationController" id="tAN-Yw-bSm" customClass="HXPanGestureNavgaitionController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UK6-Rf-ssU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UK6-Rf-ssU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>

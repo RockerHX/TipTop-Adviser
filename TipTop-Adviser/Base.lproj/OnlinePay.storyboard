@@ -203,7 +203,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MRD-InfoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-qW-OBW">
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OPD-OrderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-qW-OBW">
                                             <rect key="frame" x="15" y="15" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -405,6 +405,6 @@
         <image name="MR-TimeIcon" width="17" height="18"/>
         <image name="MR-UserIcon" width="17" height="18"/>
         <image name="MRD-ClientIcon" width="16" height="15"/>
-        <image name="MRD-InfoIcon" width="16" height="15"/>
+        <image name="OPD-OrderIcon" width="16" height="15"/>
     </resources>
 </document>

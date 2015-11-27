@@ -569,7 +569,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HXBiddingServiceCell" id="JtJ-Aa-QEH" customClass="HXBiddingServiceCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXBiddingServiceCell" id="JtJ-Aa-QEH" customClass="HXBiddingServiceCell">
                                         <rect key="frame" x="0.0" y="28" width="192" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JtJ-Aa-QEH" id="58l-Jf-IFm">
@@ -590,6 +590,7 @@
                                                         <constraint firstAttribute="width" constant="20" id="aBN-Wu-0UH"/>
                                                         <constraint firstAttribute="width" secondItem="U1C-fT-iPk" secondAttribute="height" multiplier="1:1" id="sQY-ba-CdR"/>
                                                     </constraints>
+                                                    <color key="tintColor" red="0.98823529409999999" green="0.5450980392" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayc-NY-f27">
                                                     <rect key="frame" x="0.0" y="43.5" width="192" height="0.5"/>
@@ -730,6 +731,9 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wa0-5t-Cwb" id="hTx-8t-fWL"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <animations/>

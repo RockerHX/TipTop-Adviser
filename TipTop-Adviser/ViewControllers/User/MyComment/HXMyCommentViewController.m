@@ -55,6 +55,8 @@ static NSString *CommentListApi = @"/review";
             [strongSelf endLoad];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [strongSelf endLoad];
     }];
 }
 

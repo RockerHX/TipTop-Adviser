@@ -71,6 +71,8 @@ static NSString *OrderListApi = @"/Order";
             [strongSelf endLoad];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [strongSelf endLoad];
     }];
 }
 

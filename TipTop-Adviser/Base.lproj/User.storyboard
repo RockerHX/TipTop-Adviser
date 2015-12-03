@@ -981,7 +981,7 @@
                                     <outlet property="topPromptLabel" destination="ZZz-g4-fMg" id="F9z-Zy-wxW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HXProfileIntroduceCell" id="FAh-tN-lZV" customClass="HXProfileIntroduceCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXProfileIntroduceCell" id="FAh-tN-lZV" customClass="HXProfileIntroduceCell">
                                 <rect key="frame" x="0.0" y="472" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FAh-tN-lZV" id="m2U-89-I88">

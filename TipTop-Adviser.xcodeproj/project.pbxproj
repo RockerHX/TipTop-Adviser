@@ -74,6 +74,7 @@
 		4893C2E31BE66EA500479EC3 /* HXBiddingSubServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2E21BE66EA500479EC3 /* HXBiddingSubServiceCell.m */; };
 		4893C2E61BE66F2200479EC3 /* HXBiddingServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2E51BE66F2200479EC3 /* HXBiddingServiceViewController.m */; };
 		4893C2E91BE6709300479EC3 /* HXBiddingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4893C2E81BE6709300479EC3 /* HXBiddingService.m */; };
+		4897ABE81C15E3810067EA6B /* HXGrabOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4897ABE71C15E3810067EA6B /* HXGrabOrder.m */; };
 		489918DC1BE7AB25007FB300 /* HXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 489918DB1BE7AB25007FB300 /* HXTextView.m */; };
 		489918E01BE7B562007FB300 /* HXAdviser.m in Sources */ = {isa = PBXBuildFile; fileRef = 489918DF1BE7B562007FB300 /* HXAdviser.m */; };
 		489918E31BE7B5F8007FB300 /* HXUserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 489918E21BE7B5F8007FB300 /* HXUserSession.m */; };
@@ -263,6 +264,8 @@
 		4893C2E51BE66F2200479EC3 /* HXBiddingServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBiddingServiceViewController.m; sourceTree = "<group>"; };
 		4893C2E71BE6709300479EC3 /* HXBiddingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBiddingService.h; sourceTree = "<group>"; };
 		4893C2E81BE6709300479EC3 /* HXBiddingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBiddingService.m; sourceTree = "<group>"; };
+		4897ABE61C15E3810067EA6B /* HXGrabOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXGrabOrder.h; sourceTree = "<group>"; };
+		4897ABE71C15E3810067EA6B /* HXGrabOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXGrabOrder.m; sourceTree = "<group>"; };
 		489918DA1BE7AB25007FB300 /* HXTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTextView.h; sourceTree = "<group>"; };
 		489918DB1BE7AB25007FB300 /* HXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTextView.m; sourceTree = "<group>"; };
 		489918DE1BE7B562007FB300 /* HXAdviser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXAdviser.h; sourceTree = "<group>"; };
@@ -971,6 +974,8 @@
 			children = (
 				48CC51851BDCFB7E00985753 /* HXNewOrder.h */,
 				48CC51861BDCFB7E00985753 /* HXNewOrder.m */,
+				4897ABE61C15E3810067EA6B /* HXGrabOrder.h */,
+				4897ABE71C15E3810067EA6B /* HXGrabOrder.m */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -1324,6 +1329,7 @@
 				48DFF4BE1BEDDBC300307A89 /* HXComment.m in Sources */,
 				48CC51A41BDD370400985753 /* HXReservationDetail.m in Sources */,
 				4893C2E91BE6709300479EC3 /* HXBiddingService.m in Sources */,
+				4897ABE81C15E3810067EA6B /* HXGrabOrder.m in Sources */,
 				4893C2E01BE66E9900479EC3 /* HXBiddingServiceCell.m in Sources */,
 				483AE3911BD4090A004C0B22 /* HXMyAddressViewController.m in Sources */,
 				483AE36B1BD3EDD9004C0B22 /* HXWorkCircuitListViewController.m in Sources */,

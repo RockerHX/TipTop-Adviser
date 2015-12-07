@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class HXNewOrder;
+@class HXGrabOrder;
 
 @interface HXOrderAlertCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
-- (void)displayWithNewOrder:(HXNewOrder *)newOrder row:(NSInteger)row;
+- (void)displayWithNewOrder:(HXGrabOrder *)newOrder row:(NSInteger)row;
 
 @end

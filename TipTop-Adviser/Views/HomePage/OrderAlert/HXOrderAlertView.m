@@ -10,15 +10,15 @@
 #import "HXOrderAlertCell.h"
 #import "AppDelegate.h"
 
-typedef void(^BLOCK)(HXNewOrder *order);
+typedef void(^BLOCK)(HXGrabOrder *order);
 
 @implementation HXOrderAlertView {
-    HXNewOrder *_newOrder;
+    HXGrabOrder *_newOrder;
     BLOCK _block;
 }
 
 #pragma mark - Class Methods
-+ (instancetype)showWithNewOrder:(HXNewOrder *)newOrder hanlde:(void(^)(HXNewOrder *newOrder))handle {
++ (instancetype)showWithNewOrder:(HXGrabOrder *)newOrder hanlde:(void(^)(HXGrabOrder *newOrder))handle {
     HXOrderAlertView *alertView = [[[NSBundle mainBundle] loadNibNamed:@"HXOrderAlertView" owner:self options:nil] firstObject];
     [alertView showWithNewOrder:newOrder hanlde:handle];
     return alertView;
@@ -55,7 +55,7 @@ typedef void(^BLOCK)(HXNewOrder *order);
 }
 
 #pragma mark - Public Methods
-- (void)showWithNewOrder:(HXNewOrder *)newOrder hanlde:(void(^)(HXNewOrder *newOrder))hanlde {
+- (void)showWithNewOrder:(HXGrabOrder *)newOrder hanlde:(void(^)(HXGrabOrder *newOrder))hanlde {
     _newOrder = newOrder;
     _block = hanlde;
     

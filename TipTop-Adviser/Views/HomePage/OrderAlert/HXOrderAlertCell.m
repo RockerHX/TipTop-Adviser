@@ -8,53 +8,54 @@
 
 #import "HXOrderAlertCell.h"
 #import "HXThemeManager.h"
-#import "HXNewOrder.h"
+#import "HXGrabOrder.h"
+#import "DateTools.h"
 
-typedef NS_ENUM(NSUInteger, HXNewOrderRow) {
-    HXNewOrderRowSeriveName,
-    HXNewOrderRowOrderNumber,
-    HXNewOrderRowOrderDate,
-    HXNewOrderRowClientName,
-    HXNewOrderRowClientPhone,
-    HXNewOrderRowServiceAddress
+typedef NS_ENUM(NSUInteger, HXGrabOrderRow) {
+    HXGrabOrderRowSeriveName,
+    HXGrabOrderRowOrderNumber,
+    HXGrabOrderRowOrderDate,
+    HXGrabOrderRowClientName,
+    HXGrabOrderRowClientPhone,
+    HXGrabOrderRowServiceAddress
 };
 
 @implementation HXOrderAlertCell
 
 #pragma mark - Public Methods
-- (void)displayWithNewOrder:(HXNewOrder *)newOrder row:(NSInteger)row {
+- (void)displayWithNewOrder:(HXGrabOrder *)newOrder row:(NSInteger)row {
     NSString *title = nil;
     NSString *content = nil;
     UIColor *textColor = [UIColor blackColor];
     
     switch (row) {
-        case HXNewOrderRowSeriveName: {
+        case HXGrabOrderRowSeriveName: {
             title = @"服务项目";
             content = newOrder.cate;
             textColor = [HXThemeManager share].themeColor;
             break;
         }
-        case HXNewOrderRowOrderNumber: {
+        case HXGrabOrderRowOrderNumber: {
             title = @"订  单  号";
-//            content = newOrder.;
+            content = @(newOrder.displayID).stringValue;
             break;
         }
-        case HXNewOrderRowOrderDate: {
+        case HXGrabOrderRowOrderDate: {
             title = @"订单时间";
-//            content = newOrder.;
+            content = [[NSDate dateWithTimeIntervalSince1970:newOrder.createDate] formattedDateWithFormat:@"yyyy-MM-dd hh:mm"];
             break;
         }
-        case HXNewOrderRowClientName: {
+        case HXGrabOrderRowClientName: {
             title = @"客户姓名";
-//            content = newOrder.;
+            content = newOrder.clientName;
             break;
         }
-        case HXNewOrderRowClientPhone: {
+        case HXGrabOrderRowClientPhone: {
             title = @"联系电话";
-//            content = newOrder.;
+            content = newOrder.clientMobile;
             break;
         }
-        case HXNewOrderRowServiceAddress: {
+        case HXGrabOrderRowServiceAddress: {
             title = @"服务地址";
             content = newOrder.address;
             break;

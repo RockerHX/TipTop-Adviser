@@ -10,9 +10,11 @@
 #import "HXSocketManager.h"
 #import "MBProgressHUD.h"
 #import "UIConstants.h"
+#import "HXNewOrder.h"
 #import "HXOrderAlertView.h"
 #import "UIAlertView+BlocksKit.h"
 #import "HXThemeManager.h"
+#import "HXUserSession.h"
 
 typedef NS_ENUM(NSUInteger, HXHomePageConnectState) {
     HXHomePageConnectStateOnline,
@@ -51,6 +53,7 @@ static NSString *NewOrderEvent = @"new_order";
     [[HXSocketManager manager] openWithURL:[NSURL URLWithString:@"ws://115.29.45.120:8081"] opened:^(HXSocketManager *manager) {
         __strong __typeof__(self)strongSelf = weakSelf;
         [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+        [strongSelf loginAction];
         [strongSelf displayWithConnectSatae:HXHomePageConnectStateOnline];
     } receiveData:^(HXSocketManager *manager, id data) {
         __strong __typeof__(self)strongSelf = weakSelf;
@@ -67,12 +70,19 @@ static NSString *NewOrderEvent = @"new_order";
 
 #pragma mark - Event Response
 - (void)grabButtonPressed {
-    [HXOrderAlertView showWithNewOrder:_newOrder hanlde:^(HXNewOrder *newOrder) {
-        NSLog(@"handle");
-    }];
+    NSDictionary *data = @{@"event": @"grab",
+                        @"order_id": _newOrder.ID};
+    [[HXSocketManager manager] sendData:data];
 }
 
 #pragma mark - Private Methods
+- (void)loginAction {
+    NSDictionary *data = @{@"event": @"login",
+                            @"type": @"agent",
+                    @"access_token": [HXUserSession share].adviser.accessToken};
+    [[HXSocketManager manager] sendData:data];
+}
+
 - (void)handleData:(NSString *)data {
     NSData *jsonData = [data dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *receiveData = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
@@ -87,8 +97,8 @@ static NSString *NewOrderEvent = @"new_order";
         if ([event isEqualToString:NewOrderEvent]) {
             _newOrder = [HXNewOrder mj_objectWithKeyValues:extra];
             [self displayWithNewOrder:_newOrder];
-        } else if ([event isEqualToString:@""]) {
-            
+        } else if ([event isEqualToString:@"grab"]) {
+            [self showOrderAlertWithOrder:[HXGrabOrder mj_objectWithKeyValues:extra]];
         }
     } else {
         NSString *message = receiveData[@"msg"];
@@ -157,6 +167,12 @@ static NSString *NewOrderEvent = @"new_order";
     _grabButton.enabled = NO;
     _grabButton.backgroundColor = UIColorWithRGBA(205.0f, 199.0f, 199.0f, 1.0f);
     _grabButton.layer.borderColor = _grabButton.backgroundColor.CGColor;
+}
+
+- (void)showOrderAlertWithOrder:(HXGrabOrder *)order {
+    [HXOrderAlertView showWithNewOrder:order hanlde:^(HXGrabOrder *newOrder) {
+        NSLog(@"handle");
+    }];
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HXNewOrder.h"
+#import "HXGrabOrder.h"
 
 @interface HXOrderAlertView : UIView <UITableViewDataSource, UITableViewDelegate>
 
@@ -17,9 +17,9 @@
 
 - (IBAction)hanleButtonPressed;
 
-+ (instancetype)showWithNewOrder:(HXNewOrder *)newOrder hanlde:(void(^)(HXNewOrder *newOrder))handle;
++ (instancetype)showWithNewOrder:(HXGrabOrder *)newOrder hanlde:(void(^)(HXGrabOrder *newOrder))handle;
 
-- (void)showWithNewOrder:(HXNewOrder *)newOrder hanlde:(void(^)(HXNewOrder *newOrder))handle;
+- (void)showWithNewOrder:(HXGrabOrder *)newOrder hanlde:(void(^)(HXGrabOrder *newOrder))handle;
 - (void)hidden;
 
 @end

@@ -119,4 +119,11 @@ static NSInteger RowNumber = 6;
     return cell;
 }
 
+#pragma marlk - Tabele View Delegate Methods
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView fd_heightForCellWithIdentifier:NSStringFromClass([HXOrderAlertCell class]) cacheByIndexPath:indexPath configuration:^(HXOrderAlertCell *cell) {
+        [cell displayWithNewOrder:_newOrder row:indexPath.row];
+    }];
+}
+
 @end

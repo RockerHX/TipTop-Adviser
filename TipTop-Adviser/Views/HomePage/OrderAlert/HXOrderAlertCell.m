@@ -10,6 +10,7 @@
 #import "HXThemeManager.h"
 #import "HXGrabOrder.h"
 #import "DateTools.h"
+#import "UIConstants.h"
 
 typedef NS_ENUM(NSUInteger, HXGrabOrderRow) {
     HXGrabOrderRowSeriveName,
@@ -21,6 +22,11 @@ typedef NS_ENUM(NSUInteger, HXGrabOrderRow) {
 };
 
 @implementation HXOrderAlertCell
+
+#pragma mark - Load Methods
+- (void)awakeFromNib {
+    _contentLabel.preferredMaxLayoutWidth = SCREEN_WIDTH - 80.0f - 137.0f;
+}
 
 #pragma mark - Public Methods
 - (void)displayWithNewOrder:(HXGrabOrder *)newOrder row:(NSInteger)row {
@@ -36,7 +42,7 @@ typedef NS_ENUM(NSUInteger, HXGrabOrderRow) {
             break;
         }
         case HXGrabOrderRowOrderNumber: {
-            title = @"订  单  号";
+            title = @"订 单 号";
             content = @(newOrder.displayID).stringValue;
             break;
         }

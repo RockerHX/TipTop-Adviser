@@ -70,9 +70,11 @@ static NSString *NewOrderEvent = @"new_order";
 
 #pragma mark - Event Response
 - (void)grabButtonPressed {
-    NSDictionary *data = @{@"event": @"grab",
-                        @"order_id": _newOrder.ID};
-    [[HXSocketManager manager] sendData:data];
+    if (_newOrder) {
+        NSDictionary *data = @{@"event": @"grab",
+                               @"order_id": _newOrder.ID};
+        [[HXSocketManager manager] sendData:data];
+    }
 }
 
 #pragma mark - Private Methods

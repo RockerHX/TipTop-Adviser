@@ -115,6 +115,8 @@
 		48D74F801BC4CA100000863D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F7E1BC4CA100000863D /* Main.storyboard */; };
 		48D74F851BC4CA100000863D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F841BC4CA100000863D /* Assets.xcassets */; };
 		48D74F881BC4CA100000863D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D74F861BC4CA100000863D /* LaunchScreen.storyboard */; };
+		48D92BE21C15C655004F889F /* HXGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D92BE01C15C655004F889F /* HXGuideView.m */; };
+		48D92BE31C15C655004F889F /* HXGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D92BE11C15C655004F889F /* HXGuideView.xib */; };
 		48DB1E741BF2527E0007F505 /* HXProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E731BF2527E0007F505 /* HXProfileViewController.m */; };
 		48DB1E781BF252900007F505 /* HXProfileViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E771BF252900007F505 /* HXProfileViewModel.m */; };
 		48DB1E7C1BF253B10007F505 /* HXProfileHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1E7B1BF253B10007F505 /* HXProfileHeaderCell.m */; };
@@ -338,6 +340,9 @@
 		48D74F841BC4CA100000863D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48D74F871BC4CA100000863D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48D74F891BC4CA100000863D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48D92BDF1C15C655004F889F /* HXGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXGuideView.h; sourceTree = "<group>"; };
+		48D92BE01C15C655004F889F /* HXGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXGuideView.m; sourceTree = "<group>"; };
+		48D92BE11C15C655004F889F /* HXGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXGuideView.xib; sourceTree = "<group>"; };
 		48DB1E721BF2527E0007F505 /* HXProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXProfileViewController.h; sourceTree = "<group>"; };
 		48DB1E731BF2527E0007F505 /* HXProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXProfileViewController.m; sourceTree = "<group>"; };
 		48DB1E761BF252900007F505 /* HXProfileViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXProfileViewModel.h; sourceTree = "<group>"; };
@@ -606,6 +611,7 @@
 		48334DDD1BC4D00D00FD43A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48D92BDE1C15C655004F889F /* Guide */,
 				48DB1E791BF2539E0007F505 /* Profile */,
 				4810972E1BEFB23300BA017B /* MessageCenter */,
 				48DFF4BF1BEDDCF600307A89 /* Comment */,
@@ -1062,6 +1068,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		48D92BDE1C15C655004F889F /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				48D92BDF1C15C655004F889F /* HXGuideView.h */,
+				48D92BE01C15C655004F889F /* HXGuideView.m */,
+				48D92BE11C15C655004F889F /* HXGuideView.xib */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
 		48DB1E711BF2527E0007F505 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1231,6 +1247,7 @@
 				48334DF91BC4D09D00FD43A6 /* Login.storyboard in Resources */,
 				48CC51801BDCEBBE00985753 /* HXOrderAlertCell.xib in Resources */,
 				483AE3671BD3ECF5004C0B22 /* WorkCircuit.storyboard in Resources */,
+				48D92BE31C15C655004F889F /* HXGuideView.xib in Resources */,
 				487A448F1BD158AC00DD94E4 /* OnlinePay.storyboard in Resources */,
 				483AE37F1BD3FC73004C0B22 /* MessageCenter.storyboard in Resources */,
 				48334DF81BC4D09D00FD43A6 /* Home.storyboard in Resources */,
@@ -1354,6 +1371,7 @@
 				483AE3831BD3FCD9004C0B22 /* HXMessageCenterViewController.m in Sources */,
 				48EC4A211BDFD75700BC5192 /* HXOnlinePayOrder.m in Sources */,
 				48CC519E1BDD2A3800985753 /* HXReservationDetailPromptCell.m in Sources */,
+				48D92BE21C15C655004F889F /* HXGuideView.m in Sources */,
 				48A48CD51BCD666600AF6C36 /* HXChangePassWordViewController.m in Sources */,
 				489E9CD61BC511E900C6618E /* UINavigationController+StatusBarStyle.m in Sources */,
 				48DFF4C21BEDDD0800307A89 /* HXCommentCell.m in Sources */,

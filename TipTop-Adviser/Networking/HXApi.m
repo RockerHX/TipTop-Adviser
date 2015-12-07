@@ -16,9 +16,10 @@ NSString *const ImageDoMain = @"http://";
 
 #pragma mark - Api Path
 NSString *const CommonApiPath   = @"/yl_dgg/commonApi";
-NSString *const V1ApiPath       = @"/yl_dgg/agentApi";
+NSString *const V1ApiPath       = @"/yl_dgg/clientApi";
 NSString *const V2ApiPath       = @"";
 NSString *const ImagePath       = @"";
+NSString *const WebViewPath     = @"/yl_dgg";
 
 
 @implementation HXApi
@@ -43,9 +44,12 @@ NSString *const ImagePath       = @"";
     return [[DoMain stringByAppendingString:path] stringByAppendingString:api];
 }
 
-
 + (NSString *)imageURLWithImageName:(NSString *)imageName {
     return [[ImageDoMain stringByAppendingString:ImagePath] stringByAppendingString:imageName];
+}
+
++ (NSString *)webViewURLWithURL:(NSString *)URL {
+    return [[DoMain stringByAppendingString:WebViewPath] stringByAppendingString:URL];
 }
 
 @end

@@ -235,7 +235,7 @@ static NSString *DeletePrompt = @"删除";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     HXRemarkDetailViewController *remarkDetailViewController = [HXRemarkDetailViewController instance];
-    remarkDetailViewController.loadURL = [DoMain stringByAppendingFormat:@"/h5/agent/order/remark?id=%@&access_token=%@", ((HXReservationDetailRemark *)_viewModel.remarks[indexPath.row - _viewModel.regularRow]).ID, [HXUserSession share].adviser.accessToken];
+    remarkDetailViewController.loadURL = [HXApi webViewURLWithURL:[NSString stringWithFormat:@"/h5/agent/order/remark?id=%@&access_token=%@", ((HXReservationDetailRemark *)_viewModel.remarks[indexPath.row - _viewModel.regularRow]).ID, [HXUserSession share].adviser.accessToken]];
     [self.navigationController pushViewController:remarkDetailViewController animated:YES];
 }
 

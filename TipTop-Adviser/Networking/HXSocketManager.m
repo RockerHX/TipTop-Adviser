@@ -62,7 +62,7 @@ typedef void(^FailedBlock)(HXSocketManager *manager, NSError *error);
     _timer = [NSTimer scheduledTimerWithTimeInterval:Interval target:self selector:@selector(sendPing) userInfo:nil repeats:YES];
 }
 
-- (void)invalidateTimer {
+- (void)invaliDateTimer {
     [_timer invalidate];
 }
 
@@ -88,7 +88,7 @@ typedef void(^FailedBlock)(HXSocketManager *manager, NSError *error);
     if (_retryCount <= _reConnectCount) {
         [self reConnect];
     } else {
-        [self invalidateTimer];
+        [self invaliDateTimer];
     }
     _retryCount++;
 }
@@ -117,7 +117,7 @@ typedef void(^FailedBlock)(HXSocketManager *manager, NSError *error);
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {    
-    [self invalidateTimer];
+    [self invaliDateTimer];
     if (_closedBlock) {
         _closedBlock(self, code);
     }

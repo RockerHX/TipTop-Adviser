@@ -28,6 +28,8 @@ static NSString *NewOrderEvent = @"new_order";
 
 @implementation HXHomeViewController {
     HXNewOrder *_newOrder;
+    CGFloat _angle;
+    NSTimer *_timer;
 }
 
 #pragma mark - View Controller Life Cycle
@@ -36,6 +38,10 @@ static NSString *NewOrderEvent = @"new_order";
     
     [self initConfig];
     [self viewConfig];
+}
+
+- (void)dealloc {
+    [self invaliDateTimer];
 }
 
 #pragma mark - Config Methods
@@ -148,6 +154,8 @@ static NSString *NewOrderEvent = @"new_order";
     _grabButton.enabled = YES;
     _grabButton.backgroundColor = self.view.backgroundColor;
     _grabButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    [self startTimer];
 }
 
 - (void)adviserOffline {
@@ -169,11 +177,44 @@ static NSString *NewOrderEvent = @"new_order";
     _grabButton.enabled = NO;
     _grabButton.backgroundColor = UIColorWithRGBA(205.0f, 199.0f, 199.0f, 1.0f);
     _grabButton.layer.borderColor = _grabButton.backgroundColor.CGColor;
+    
+    [self invaliDateTimer];
+}
+
+
+- (void)startTimer {
+    [_timer invalidate];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.01f target:self selector:@selector(startCylindricalAnmation) userInfo:nil repeats:YES];
+}
+
+- (void)invaliDateTimer {
+    [_timer invalidate];
+}
+
+- (void)startCylindricalAnmation {
+    _angle += 0.05;
+    if (_angle > 6.283) {
+        _angle = 0;
+    }
+    [UIView animateWithDuration:0.5f animations:^{
+        _cylindrical.transform = CGAffineTransformMakeRotation(_angle);
+    }];
+}
+
+- (void)stopCylindricalAnmation {
+    [self invaliDateTimer];
+    [UIView animateWithDuration:1.0f animations:^{
+        _cylindrical.transform = CGAffineTransformIdentity;
+    }];
 }
 
 - (void)showOrderAlertWithOrder:(HXGrabOrder *)order {
+    __weak __typeof__(self)weakSelf = self;
     [HXOrderAlertView showWithNewOrder:order hanlde:^(HXGrabOrder *newOrder) {
-        NSLog(@"handle");
+        __strong __typeof__(self)strongSelf = weakSelf;
+        strongSelf.orderTitleLabel.text = @"暂无需求";
+        strongSelf.subTitleLabel.text = @"等待发单";
+        strongSelf.promptLabel.text = @"收到 0 个需求";
     }];
 }
 

@@ -159,11 +159,11 @@ static NSString *UpdateUserHeaderApi = @"/profile/avatar";
                 break;
             }
             case HXMenuRowMyComment: {
-                viewController = [HXMessageCenterViewController instance];
+                viewController = [HXMyCommentViewController instance];
                 break;
             }
             case HXMenuRowMessageCenter: {
-                viewController = [HXMyCommentViewController instance];
+                viewController = [HXMessageCenterViewController instance];
                 break;
             }
             case HXMenuRowMyAddress: {

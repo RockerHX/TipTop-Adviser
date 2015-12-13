@@ -454,7 +454,7 @@
         <!--意见反馈-->
         <scene sceneID="gig-Fh-KjG">
             <objects>
-                <viewController storyboardIdentifier="HXFeedBackViewController" id="iPy-2J-AHk" customClass="HXFeedBackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HXFeedBackViewController" automaticallyAdjustsScrollViewInsets="NO" id="iPy-2J-AHk" customClass="HXFeedBackViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N6D-bb-wec"/>
                         <viewControllerLayoutGuide type="bottom" id="s2F-Bt-y08"/>
@@ -491,7 +491,7 @@
         <!--关于-->
         <scene sceneID="TLw-H7-P4m">
             <objects>
-                <viewController storyboardIdentifier="HXAboutViewController" id="Db7-gw-nSQ" customClass="HXAboutViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HXAboutViewController" automaticallyAdjustsScrollViewInsets="NO" id="Db7-gw-nSQ" customClass="HXAboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VN4-Fl-q1v"/>
                         <viewControllerLayoutGuide type="bottom" id="HR9-e6-Pdd"/>
@@ -528,7 +528,7 @@
         <!--使用说明-->
         <scene sceneID="Dpx-Ml-wfe">
             <objects>
-                <viewController storyboardIdentifier="HXUseExplanationViewController" id="Ztc-c5-hTc" customClass="HXUseExplanationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HXUseExplanationViewController" automaticallyAdjustsScrollViewInsets="NO" id="Ztc-c5-hTc" customClass="HXUseExplanationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1WY-db-Wcl"/>
                         <viewControllerLayoutGuide type="bottom" id="grf-hP-5tj"/>

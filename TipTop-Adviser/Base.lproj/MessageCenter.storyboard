@@ -164,7 +164,7 @@
         <!--消息详情-->
         <scene sceneID="GC3-tj-LLT">
             <objects>
-                <viewController storyboardIdentifier="HXMessageDetailViewController" id="y7y-LX-zh1" customClass="HXMessageDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HXMessageDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="y7y-LX-zh1" customClass="HXMessageDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7cb-lQ-kWb"/>
                         <viewControllerLayoutGuide type="bottom" id="owe-z8-Shm"/>

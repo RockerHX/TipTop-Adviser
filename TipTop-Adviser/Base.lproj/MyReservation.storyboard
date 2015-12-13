@@ -552,7 +552,7 @@
         <!--备注详情-->
         <scene sceneID="XE4-Fw-Vnc">
             <objects>
-                <viewController storyboardIdentifier="HXRemarkDetailViewController" id="XFz-Pr-6i0" customClass="HXRemarkDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HXRemarkDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="XFz-Pr-6i0" customClass="HXRemarkDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7d4-i1-cCX"/>
                         <viewControllerLayoutGuide type="bottom" id="O8I-6X-ESH"/>
@@ -564,6 +564,9 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDR-cj-QjA">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XFz-Pr-6i0" id="ysa-Fe-pbH"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

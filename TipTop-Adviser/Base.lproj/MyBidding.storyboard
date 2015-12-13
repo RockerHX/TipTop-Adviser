@@ -655,7 +655,7 @@
         <!--招标详情-->
         <scene sceneID="9zS-xz-Y5B">
             <objects>
-                <viewController storyboardIdentifier="HXBiddingDetailViewController" id="wa0-5t-Cwb" customClass="HXBiddingDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HXBiddingDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="wa0-5t-Cwb" customClass="HXBiddingDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EYJ-XD-Zer"/>
                         <viewControllerLayoutGuide type="bottom" id="ZkK-uk-qSb"/>

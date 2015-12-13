@@ -200,7 +200,7 @@
         <!--工作流程详情-->
         <scene sceneID="6PL-bL-0Pb">
             <objects>
-                <viewController storyboardIdentifier="HXWorkCircuitDetailViewController" id="bwF-Hh-Oxa" customClass="HXWorkCircuitDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HXWorkCircuitDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="bwF-Hh-Oxa" customClass="HXWorkCircuitDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y55-Iv-4d9"/>
                         <viewControllerLayoutGuide type="bottom" id="dMV-vd-DSE"/>

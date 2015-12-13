@@ -6,10 +6,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Pan Gesture Navgaition Controller-->
         <scene sceneID="2Bs-TY-cQN">
             <objects>
-                <navigationController storyboardIdentifier="HXHomeNavigationController" id="EuJ-HW-AUz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HXHomeNavigationController" id="EuJ-HW-AUz" customClass="HXPanGestureNavgaitionController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sRz-ll-IWM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

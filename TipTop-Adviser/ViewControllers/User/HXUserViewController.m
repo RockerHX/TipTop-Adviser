@@ -72,15 +72,13 @@ static NSString *UpdateUserHeaderApi = @"/profile/avatar";
 
 - (IBAction)settingButtonPressed {
     if (_delegate && [_delegate respondsToSelector:@selector(userCenterShouldHiddenAndShowViewController:)]) {
-        UINavigationController *settingNavigationController = [HXSettingViewController navigationControllerInstance];
-        [_delegate userCenterShouldHiddenAndShowViewController:settingNavigationController];
+        [_delegate userCenterShouldHiddenAndShowViewController:[HXSettingViewController instance]];
     }
 }
 
 - (IBAction)editButtonPressed {
     if (_delegate && [_delegate respondsToSelector:@selector(userCenterShouldHiddenAndShowViewController:)]) {
-        UINavigationController *profileViewController = [HXProfileViewController navigationControllerInstance];
-        [_delegate userCenterShouldHiddenAndShowViewController:profileViewController];
+        [_delegate userCenterShouldHiddenAndShowViewController:[HXProfileViewController instance]];
     }
 }
 
@@ -137,43 +135,43 @@ static NSString *UpdateUserHeaderApi = @"/profile/avatar";
 
 #pragma mark - Table View Delegate Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UINavigationController *navigationController = nil;
+    UIViewController *viewController = nil;
     if (_delegate && [_delegate respondsToSelector:@selector(userCenterShouldHiddenAndShowViewController:)]) {
         switch (indexPath.row) {
             case HXMenuRowMyReservation: {
-                navigationController = [HXMyReservationListViewController navigationControllerInstance];
+                viewController = [HXMyReservationListViewController instance];
                 break;
             }
             case HXMenuRowOnlinePay: {
-                navigationController = [HXOnlinePayListViewController navigationControllerInstance];
+                viewController = [HXOnlinePayListViewController instance];
                 break;
             }
             case HXMenuRowWorkCircuit: {
-                navigationController = [HXWorkCircuitListViewController navigationControllerInstance];
+                viewController = [HXWorkCircuitListViewController instance];
                 break;
             }
             case HXMenuRowMyBidding: {
-                navigationController = [HXMyBiddingViewController navigationControllerInstance];
+                viewController = [HXMyBiddingViewController instance];
                 break;
             }
             case HXMenuRowMyService: {
-                navigationController = [HXMyServiceViewController navigationControllerInstance];
+                viewController = [HXMyServiceViewController instance];
                 break;
             }
             case HXMenuRowMyComment: {
-                navigationController = [HXMessageCenterViewController navigationControllerInstance];
+                viewController = [HXMessageCenterViewController instance];
                 break;
             }
             case HXMenuRowMessageCenter: {
-                navigationController = [HXMyCommentViewController navigationControllerInstance];
+                viewController = [HXMyCommentViewController instance];
                 break;
             }
             case HXMenuRowMyAddress: {
-                navigationController = [HXMyAddressViewController navigationControllerInstance];
+                viewController = [HXMyAddressViewController instance];
                 break;
             }
         }
-        [_delegate userCenterShouldHiddenAndShowViewController:navigationController];
+        [_delegate userCenterShouldHiddenAndShowViewController:viewController];
     }
 }
 

@@ -52,8 +52,7 @@
 }
 
 - (void)setupAppStructure {
-    self.contentViewController = [HXStoryBoardManager viewControllerWithClass:[HXHomeViewController class]
-                                                               storyBoardName:HXStoryBoardNameHome];
+    self.contentViewController = [HXHomeViewController navigationControllerInstance];
     HXUserViewController *userViewController = [HXStoryBoardManager viewControllerWithClass:[HXUserViewController class]
                                                                              storyBoardName:HXStoryBoardNameUser];
     userViewController.delegate = self;
@@ -72,7 +71,7 @@
 }
 
 - (void)showHomePageViewController {
-    HXHomeViewController *homePageViewController = (HXHomeViewController *)self.contentViewController;
+    HXHomeViewController *homePageViewController = [((UINavigationController *)self.contentViewController).viewControllers firstObject];
     [homePageViewController openSocket];
 }
 
@@ -90,7 +89,9 @@
 
 #pragma mark - HXUserViewControllerDelegate Methods
 - (void)userCenterShouldHiddenAndShowViewController:(UIViewController *)viewController {
-    self.contentViewController = viewController;
+    UINavigationController *contentNavigationController = (UINavigationController *)self.contentViewController;
+    HXHomeViewController *homeViewController = [contentNavigationController.viewControllers firstObject];
+    [homeViewController.navigationController pushViewController:viewController animated:YES];
     [self hideMenuViewController];
 }
 

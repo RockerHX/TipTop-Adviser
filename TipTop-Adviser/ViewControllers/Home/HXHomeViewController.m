@@ -33,6 +33,16 @@ static NSString *NewOrderEvent = @"new_order";
 }
 
 #pragma mark - View Controller Life Cycle
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,6 +52,15 @@ static NSString *NewOrderEvent = @"new_order";
 
 - (void)dealloc {
     [self invaliDateTimer];
+}
+
+#pragma mark - Setter And Getter
+- (NSString *)navigationControllerIdentifier {
+    return @"HXHomeNavigationController";
+}
+
+- (HXStoryBoardName)storyBoardName {
+    return HXStoryBoardNameHome;
 }
 
 #pragma mark - Config Methods

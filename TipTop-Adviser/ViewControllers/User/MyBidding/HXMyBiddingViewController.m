@@ -28,16 +28,6 @@ static NSString *BiddingListApi   = @"/biding";
 }
 
 #pragma mark - View Controller Life Cycle
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    self.navigationController.canPan = YES;
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    self.navigationController.canPan = NO;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -55,7 +45,13 @@ static NSString *BiddingListApi   = @"/biding";
 }
 
 - (void)viewConfig {
-    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0.0f, 0.0f, 36.0f, 36.0f);
+    button.imageEdgeInsets = UIEdgeInsetsMake(0.0f, -16.0f, 0.0f, 0.0f);
+    button.tintColor = [UIColor whiteColor];
+    [button setImage:[UIImage imageNamed:@"C-BackIcon"] forState:UIControlStateNormal];
+    [button addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 #pragma mark - Setter And Getter

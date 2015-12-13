@@ -82,6 +82,7 @@ static NSString *NewOrderEvent = @"new_order";
         [strongSelf displayWithConnectSatae:HXHomePageConnectStateOnline];
     } receiveData:^(HXSocketManager *manager, id data) {
         __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
         [strongSelf handleData:data];
     } closed:^(HXSocketManager *manager, NSInteger code) {
         __strong __typeof__(self)strongSelf = weakSelf;
@@ -89,6 +90,7 @@ static NSString *NewOrderEvent = @"new_order";
         [manager reConnect];
     } failed:^(HXSocketManager *manager, NSError *error) {
         __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
         [strongSelf displayWithConnectSatae:HXHomePageConnectStateOffline];
     }];
 }

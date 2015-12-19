@@ -1,5 +1,5 @@
 //
-//  HXReservationDetailViewController.h
+//  HXReservationDetailContainerViewController.h
 //  TipTop-Adviser
 //
 //  Created by ShiCang on 15/10/25.
@@ -8,10 +8,11 @@
 
 #import "UIViewController+HXClass.h"
 
-@interface HXReservationDetailViewController : UIViewController
+@interface HXReservationDetailContainerViewController : UITableViewController
 
 @property (nonatomic, copy) NSString *orderID;
 
-- (IBAction)remarkButtonPressed;
+- (IBAction)phoneButonPressed;
+- (IBAction)sendButonPressed;
 
 @end

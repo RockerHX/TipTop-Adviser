@@ -15,6 +15,9 @@
 #import "UIAlertView+BlocksKit.h"
 #import "HXThemeManager.h"
 #import "HXUserSession.h"
+#import <BaiduMapAPI_Search/BMKGeocodeSearch.h>
+#import "HXLocationManager.h"
+#import "UIImageView+WebCache.h"
 
 typedef NS_ENUM(NSUInteger, HXHomePageConnectState) {
     HXHomePageConnectStateOnline,
@@ -23,7 +26,7 @@ typedef NS_ENUM(NSUInteger, HXHomePageConnectState) {
 
 static NSString *NewOrderEvent = @"new_order";
 
-@interface HXHomeViewController ()
+@interface HXHomeViewController () <BMKGeoCodeSearchDelegate>
 @end
 
 @implementation HXHomeViewController {
@@ -70,6 +73,8 @@ static NSString *NewOrderEvent = @"new_order";
 - (void)viewConfig {
     _orderTitleLabel.text = @"暂无需求";
     _subTitleLabel.text = @"等待发单";
+    
+    [self displayHomePage];
 }
 
 - (void)openSocket {
@@ -104,6 +109,11 @@ static NSString *NewOrderEvent = @"new_order";
 }
 
 #pragma mark - Private Methods
+- (void)displayHomePage {
+    [_adviserHeader sd_setImageWithURL:[NSURL URLWithString:[HXUserSession share].adviser.avatar]];
+    [self displayUserLocation];
+}
+
 - (void)loginAction {
     NSDictionary *data = @{@"event": @"login",
                             @"type": @"agent",
@@ -130,11 +140,7 @@ static NSString *NewOrderEvent = @"new_order";
         }
     } else {
         NSString *message = receiveData[@"msg"];
-        [UIAlertView bk_showAlertViewWithTitle:@"温馨提示"
-                                       message:message
-                             cancelButtonTitle:@"确定"
-                             otherButtonTitles:nil
-                                       handler:nil];
+        [self showAlertWithMessage:message];
     }
 }
 
@@ -236,6 +242,28 @@ static NSString *NewOrderEvent = @"new_order";
         strongSelf.subTitleLabel.text = @"等待发单";
         strongSelf.promptLabel.text = @"收到 0 个需求";
     }];
+}
+
+- (void)displayUserLocation {
+    __weak __typeof__(self)weakSelf = self;
+    [[HXLocationManager share] getLocationSuccess:^(BMKUserLocation *userLocation, NSString *latitude, NSString *longitude) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [strongSelf getStartAddressWithLocation:userLocation.location];
+    } failure:^(NSString *latitude, NSString *longitude, NSError *error) {
+    }];
+}
+
+- (void)getStartAddressWithLocation:(CLLocation *)location {
+    BMKReverseGeoCodeOption *option = [[BMKReverseGeoCodeOption alloc] init];
+    option.reverseGeoPoint = location.coordinate;
+    BMKGeoCodeSearch *search = [[BMKGeoCodeSearch alloc] init];
+    search.delegate = self;
+    [search reverseGeoCode:option];
+}
+
+#pragma mark - BMKGeoCodeSearchDelegate Methods
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error {
+    _locationLabel.text = result.address;
 }
 
 @end

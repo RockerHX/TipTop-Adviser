@@ -45,10 +45,10 @@
 
 #pragma mark - Private Methods
 - (void)startLogin {
-    if (!_staffIDTextField.text.length) {
-        
+    if (_staffIDTextField.text.length < 6) {
+        [self showAlertWithMessage:@"请输入正确工号！"];
     } else if (!_passwordTextField.text.length) {
-        
+        [self showAlertWithMessage:@"请输入密码！"];
     } else {
         [self startLoginRequest];
     }
@@ -72,6 +72,8 @@
             if (strongSelf.delegate && [strongSelf.delegate respondsToSelector:@selector(loginViewControllerLoginSuccess:)]) {
                 [strongSelf.delegate loginViewControllerLoginSuccess:strongSelf];
             }
+        } else {
+            [self showAlertWithMessage:response.message];
         }
     } failure:^(HXApiResponse *response) {
         __strong __typeof__(self)strongSelf = weakSelf;

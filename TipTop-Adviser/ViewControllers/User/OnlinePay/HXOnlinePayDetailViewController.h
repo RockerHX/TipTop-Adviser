@@ -10,7 +10,8 @@
 
 @interface HXOnlinePayDetailViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UIView *payInfoView;
+@property (weak, nonatomic) IBOutlet  UIView *payInfoView;
+@property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
 
 @property (nonatomic, copy) NSString *orderID;
 

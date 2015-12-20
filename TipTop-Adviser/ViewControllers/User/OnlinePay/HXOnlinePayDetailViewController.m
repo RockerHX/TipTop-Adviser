@@ -71,6 +71,12 @@
 - (void)endLoad {
     [self.tableView reloadData];
     [self.tableView.mj_header endRefreshing];
+    [self displayPayInfoView];
+}
+
+- (void)displayPayInfoView {
+    _moneyLabel.text = [NSString stringWithFormat:@"￥%@.00", @(_viewModel.detail.order.money).stringValue];
+    _payInfoView.hidden = NO;
 }
 
 #pragma mark - Table View Data Source Methods

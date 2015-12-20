@@ -162,10 +162,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="bp3-kN-73X">
-                            <rect key="frame" x="0.0" y="284" width="320" height="44"/>
+                        <view key="tableFooterView" hidden="YES" contentMode="scaleToFill" id="bp3-kN-73X">
+                            <rect key="frame" x="0.0" y="284" width="320" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5v-yC-D0B">
+                                    <rect key="frame" x="0.0" y="30" width="320" height="50"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kH-9l-JjW">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                                            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="djS-RS-bGc"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nl2-B3-Zoe">
+                                            <rect key="frame" x="93.5" y="15" width="133" height="20.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OPD-MoneyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="GUg-kV-gCa">
+                                                    <rect key="frame" x="0.0" y="2" width="16" height="16"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woN-tx-Qqv">
+                                                    <rect key="frame" x="22" y="2" width="42" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥1200.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIZ-MK-ZFS">
+                                                    <rect key="frame" x="64" y="0.0" width="69" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="VIZ-MK-ZFS" firstAttribute="top" secondItem="Nl2-B3-Zoe" secondAttribute="top" id="7G9-DS-bTc"/>
+                                                <constraint firstItem="VIZ-MK-ZFS" firstAttribute="leading" secondItem="woN-tx-Qqv" secondAttribute="trailing" id="FqT-8B-aOS"/>
+                                                <constraint firstItem="woN-tx-Qqv" firstAttribute="leading" secondItem="GUg-kV-gCa" secondAttribute="trailing" constant="6" id="RDf-tA-jfY"/>
+                                                <constraint firstAttribute="trailing" secondItem="VIZ-MK-ZFS" secondAttribute="trailing" id="ZgH-Yj-BmG"/>
+                                                <constraint firstAttribute="bottom" secondItem="VIZ-MK-ZFS" secondAttribute="bottom" id="aYh-pm-BRu"/>
+                                                <constraint firstItem="GUg-kV-gCa" firstAttribute="leading" secondItem="Nl2-B3-Zoe" secondAttribute="leading" id="qRS-L8-pNF"/>
+                                                <constraint firstItem="woN-tx-Qqv" firstAttribute="centerY" secondItem="Nl2-B3-Zoe" secondAttribute="centerY" id="vcF-KD-WNN"/>
+                                                <constraint firstItem="GUg-kV-gCa" firstAttribute="centerY" secondItem="Nl2-B3-Zoe" secondAttribute="centerY" id="x1U-5V-udo"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nz-7J-22l">
+                                            <rect key="frame" x="0.0" y="49.5" width="320" height="0.5"/>
+                                            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="iK7-Dm-EPk"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="Nl2-B3-Zoe" firstAttribute="centerX" secondItem="n5v-yC-D0B" secondAttribute="centerX" id="B9H-Wh-for"/>
+                                        <constraint firstAttribute="trailing" secondItem="4nz-7J-22l" secondAttribute="trailing" id="EpP-1n-dta"/>
+                                        <constraint firstAttribute="trailing" secondItem="9kH-9l-JjW" secondAttribute="trailing" id="OOS-D5-1QI"/>
+                                        <constraint firstAttribute="height" constant="50" id="Qos-7n-Svt"/>
+                                        <constraint firstItem="9kH-9l-JjW" firstAttribute="top" secondItem="n5v-yC-D0B" secondAttribute="top" id="WDK-bO-gMq"/>
+                                        <constraint firstAttribute="bottom" secondItem="4nz-7J-22l" secondAttribute="bottom" id="eK1-ks-yRn"/>
+                                        <constraint firstItem="9kH-9l-JjW" firstAttribute="leading" secondItem="n5v-yC-D0B" secondAttribute="leading" id="fKu-2B-aoB"/>
+                                        <constraint firstItem="4nz-7J-22l" firstAttribute="leading" secondItem="n5v-yC-D0B" secondAttribute="leading" id="g7c-7i-xVy"/>
+                                        <constraint firstItem="Nl2-B3-Zoe" firstAttribute="centerY" secondItem="n5v-yC-D0B" secondAttribute="centerY" id="uwi-LR-Olp"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="n5v-yC-D0B" secondAttribute="bottom" id="3UJ-Mw-aD0"/>
+                                <constraint firstAttribute="trailing" secondItem="n5v-yC-D0B" secondAttribute="trailing" id="DXh-Ws-hcm"/>
+                                <constraint firstItem="n5v-yC-D0B" firstAttribute="leading" secondItem="bp3-kN-73X" secondAttribute="leading" id="kSB-Uz-P8O"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXOnlinePayDetailInfoCell" rowHeight="116" id="CTn-u3-dz2" customClass="HXOnlinePayDetailInfoCell">
@@ -346,6 +415,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="支付详情" id="CyX-9p-BWb"/>
+                    <connections>
+                        <outlet property="moneyLabel" destination="VIZ-MK-ZFS" id="lxw-ul-XbK"/>
+                        <outlet property="payInfoView" destination="bp3-kN-73X" id="jZ4-rL-RdJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qqf-kS-cM9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -360,6 +433,7 @@
         <image name="MR-UserIcon" width="17" height="18"/>
         <image name="MRD-ClientIcon" width="16" height="15"/>
         <image name="OP-OrderIcon" width="17" height="18"/>
+        <image name="OPD-MoneyIcon" width="16" height="16"/>
         <image name="OPD-OrderIcon" width="16" height="15"/>
     </resources>
 </document>

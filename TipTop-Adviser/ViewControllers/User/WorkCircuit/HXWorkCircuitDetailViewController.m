@@ -7,6 +7,7 @@
 //
 
 #import "HXWorkCircuitDetailViewController.h"
+#import "WebViewJavascriptBridge.h"
 
 @interface HXWorkCircuitDetailViewController ()
 @end

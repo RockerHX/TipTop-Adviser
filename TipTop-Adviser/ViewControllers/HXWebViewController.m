@@ -25,7 +25,6 @@
 - (void)loadWebView {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_loadURL]]];
-    
 }
 
 - (void)hideHUD {

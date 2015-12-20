@@ -118,12 +118,12 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
     __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:DeleteRemarkApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
             [strongSelf->_viewModel removeRemark:remark];
             [strongSelf.tableView reloadData];
         }
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         __strong __typeof__(self)strongSelf = weakSelf;
         [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
@@ -222,9 +222,11 @@ static NSString *DeletePrompt = @"删除";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    HXRemarkDetailViewController *remarkDetailViewController = [HXRemarkDetailViewController instance];
-    remarkDetailViewController.loadURL = [HXApi webViewURLWithURL:[NSString stringWithFormat:@"/h5/agent/order/remark?id=%@&access_token=%@", ((HXReservationDetailRemark *)_viewModel.remarks[indexPath.row - _viewModel.regularRow]).ID, [HXUserSession share].adviser.accessToken]];
-    [self.navigationController pushViewController:remarkDetailViewController animated:YES];
+    if (indexPath.row > 2) {
+        HXRemarkDetailViewController *remarkDetailViewController = [HXRemarkDetailViewController instance];
+        remarkDetailViewController.loadURL = [HXApi webViewURLWithURL:[NSString stringWithFormat:@"/h5/agent/order/remark?id=%@&access_token=%@", ((HXReservationDetailRemark *)_viewModel.remarks[indexPath.row - _viewModel.regularRow]).ID, [HXUserSession share].adviser.accessToken]];
+        [self.navigationController pushViewController:remarkDetailViewController animated:YES];
+    }
 }
 
 @end

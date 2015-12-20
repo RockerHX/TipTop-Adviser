@@ -97,6 +97,8 @@
 		48A5FEF91BD94B7300891727 /* HXSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A5FEF81BD94B7300891727 /* HXSocketManager.m */; };
 		48BD52721BFA417A00613F19 /* HXFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BD52711BFA417A00613F19 /* HXFeedBackViewController.m */; };
 		48C57ACF1BDD5317002C8398 /* BRPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C57ACE1BDD5317002C8398 /* BRPlaceholderTextView.m */; };
+		48C7BC0D1C26A0E40032919D /* HXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C7BC0B1C26A0E40032919D /* HXDatePickerView.m */; };
+		48C7BC0E1C26A0E40032919D /* HXDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C7BC0C1C26A0E40032919D /* HXDatePickerView.xib */; };
 		48CC517C1BDCE92300985753 /* HXOrderAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC517B1BDCE92300985753 /* HXOrderAlertView.m */; };
 		48CC517E1BDCE93500985753 /* HXOrderAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CC517D1BDCE93500985753 /* HXOrderAlertView.xib */; };
 		48CC51801BDCEBBE00985753 /* HXOrderAlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CC517F1BDCEBBE00985753 /* HXOrderAlertCell.xib */; };
@@ -310,6 +312,9 @@
 		48BD52711BFA417A00613F19 /* HXFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXFeedBackViewController.m; sourceTree = "<group>"; };
 		48C57ACD1BDD5317002C8398 /* BRPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPlaceholderTextView.h; sourceTree = "<group>"; };
 		48C57ACE1BDD5317002C8398 /* BRPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPlaceholderTextView.m; sourceTree = "<group>"; };
+		48C7BC0A1C26A0E40032919D /* HXDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePickerView.h; sourceTree = "<group>"; };
+		48C7BC0B1C26A0E40032919D /* HXDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePickerView.m; sourceTree = "<group>"; };
+		48C7BC0C1C26A0E40032919D /* HXDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXDatePickerView.xib; sourceTree = "<group>"; };
 		48CC517A1BDCE92300985753 /* HXOrderAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXOrderAlertView.h; sourceTree = "<group>"; };
 		48CC517B1BDCE92300985753 /* HXOrderAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXOrderAlertView.m; sourceTree = "<group>"; };
 		48CC517D1BDCE93500985753 /* HXOrderAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXOrderAlertView.xib; sourceTree = "<group>"; };
@@ -938,6 +943,7 @@
 		48C57ACB1BDD5317002C8398 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				48C7BC091C26A0E40032919D /* HXDatePickerView */,
 				48DFF4C31BEF709400307A89 /* HXStarView */,
 				48C57ACC1BDD5317002C8398 /* PlaceholderTextView */,
 			);
@@ -951,6 +957,16 @@
 				48C57ACE1BDD5317002C8398 /* BRPlaceholderTextView.m */,
 			);
 			path = PlaceholderTextView;
+			sourceTree = "<group>";
+		};
+		48C7BC091C26A0E40032919D /* HXDatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				48C7BC0A1C26A0E40032919D /* HXDatePickerView.h */,
+				48C7BC0B1C26A0E40032919D /* HXDatePickerView.m */,
+				48C7BC0C1C26A0E40032919D /* HXDatePickerView.xib */,
+			);
+			path = HXDatePickerView;
 			sourceTree = "<group>";
 		};
 		48CC51781BDCE8F800985753 /* HomePage */ = {
@@ -1259,6 +1275,7 @@
 				483AE3671BD3ECF5004C0B22 /* WorkCircuit.storyboard in Resources */,
 				48D92BE31C15C655004F889F /* HXGuideView.xib in Resources */,
 				487A448F1BD158AC00DD94E4 /* OnlinePay.storyboard in Resources */,
+				48C7BC0E1C26A0E40032919D /* HXDatePickerView.xib in Resources */,
 				483AE37F1BD3FC73004C0B22 /* MessageCenter.storyboard in Resources */,
 				48334DF81BC4D09D00FD43A6 /* Home.storyboard in Resources */,
 				48334DFA1BC4D09D00FD43A6 /* User.storyboard in Resources */,
@@ -1409,6 +1426,7 @@
 				48334DEA1BC4D00D00FD43A6 /* HXApiRequest.m in Sources */,
 				48334DEE1BC4D00D00FD43A6 /* HXLoginViewController.m in Sources */,
 				48334DED1BC4D00D00FD43A6 /* HXHomeViewController.m in Sources */,
+				48C7BC0D1C26A0E40032919D /* HXDatePickerView.m in Sources */,
 				48CC51A11BDD2A4800985753 /* HXReservationDetailRemarkCell.m in Sources */,
 				48A48CCF1BCD5DEC00AF6C36 /* HXSettingViewController.m in Sources */,
 				4893C2CC1BE60AB300479EC3 /* HXAboutViewController.m in Sources */,

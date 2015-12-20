@@ -54,7 +54,7 @@
     // 关闭动画
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.2f animations:^{
-        weakSelf.alpha = ZERO_POINT;
+        weakSelf.alpha = 0.0f;
     } completion:^(BOOL finished) {
         [weakSelf removeFromSuperview];
     }];
@@ -65,19 +65,12 @@
     // 显示动画
     __weak typeof(self) weakSelf = self;
     [[UIApplication sharedApplication].keyWindow addSubview:self];
-    _bottomConstraint.constant = _bottomConstraint.constant / 8;
+    _bottomConstraint.constant = 0.0f;
     [_containerView needsUpdateConstraints];
-    [UIView animateWithDuration:0.15f delay:ZERO_POINT options:UIViewAnimationOptionCurveEaseIn animations:^{
-        weakSelf.alpha = 0.2f;
+    [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
+        weakSelf.alpha = 1.0f;
         [weakSelf.containerView layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        _bottomConstraint.constant = ZERO_POINT;
-        [_containerView needsUpdateConstraints];
-        [UIView animateWithDuration:0.15f delay:ZERO_POINT options:UIViewAnimationOptionCurveEaseOut animations:^{
-            weakSelf.alpha = 1.0f;
-            [weakSelf.containerView layoutIfNeeded];
-        } completion:nil];
-    }];
+    } completion:nil];
 }
 
 @end

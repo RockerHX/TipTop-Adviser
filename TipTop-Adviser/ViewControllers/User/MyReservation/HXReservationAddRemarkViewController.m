@@ -9,20 +9,20 @@
 #import "HXReservationAddRemarkViewController.h"
 #import "HXAppApiRequest.h"
 #import "MBProgressHUD.h"
+#import "HXReservationAddRemarkContainerViewController.h"
 #import "UIAlertView+BlocksKit.h"
-#import "BRPlaceholderTextView.h"
-#import "DateTools.h"
-#import "HXDatePickerView.h"
 
 
 static NSString *OrderRemarkCreateApi = @"/order/remarkCreate";
+static NSString *UploadImageApi = @"/upload";
 
-static NSString *TextViewPrompt = @"请输入备注事件";
-
-@interface HXReservationAddRemarkViewController () <HXDatePickerViewDelegate>
+@interface HXReservationAddRemarkViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @end
 
-@implementation HXReservationAddRemarkViewController
+@implementation HXReservationAddRemarkViewController {
+    HXReservationAddRemarkContainerViewController *_containerViewController;
+    NSString *_imageFile;
+}
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
@@ -38,13 +38,24 @@ static NSString *TextViewPrompt = @"请输入备注事件";
 }
 
 - (void)viewConfig {
-    _dateLabel.text = [[NSDate date] formattedDateWithFormat:@"yyyy-MM-dd hh:mm"];
-    _textView.placeholder = TextViewPrompt;
+}
+
+#pragma mark - 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    _containerViewController = segue.destinationViewController;
+    _containerViewController.orderID = _orderID;
 }
 
 #pragma mark - Event Response
 - (IBAction)saveButtonPressed {
     [self createRemark];
+}
+
+- (IBAction)addImageButtonPressed {
+    UIImagePickerController *imagePickerViewController = [[UIImagePickerController alloc] init];
+    imagePickerViewController.delegate = self;
+    imagePickerViewController.allowsEditing = YES;
+    [self presentViewController:imagePickerViewController animated:YES completion:nil];
 }
 
 #pragma mark - Setter And Getter
@@ -54,18 +65,17 @@ static NSString *TextViewPrompt = @"请输入备注事件";
 
 #pragma mark - Private Methods
 - (void)createRemark {
+    _dateLabel = _containerViewController.dateLabel;
+    _textView = (UITextView *)_containerViewController.textView;
     if (_textView.text.length) {
         [_textView resignFirstResponder];
         [self startCreateRemarkReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
                                                                  @"id": _orderID,
                                                         @"remark_time": _dateLabel.text,
-                                                            @"content": (_textView.text ?: @"")}];
+                                                            @"content": (_textView.text ?: @""),
+                                                             @"images": _imageFile}];
     } else {
-        [UIAlertView bk_showAlertViewWithTitle:@"温馨提示"
-                                       message:@"请输入备注内容"
-                             cancelButtonTitle:@"确定"
-                             otherButtonTitles:nil
-                                       handler:nil];
+        [self showAlertWithMessage:@"请输入备注内容"];
     }
 }
 
@@ -74,6 +84,7 @@ static NSString *TextViewPrompt = @"请输入备注事件";
     __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:OrderRemarkCreateApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
             [UIAlertView bk_showAlertViewWithTitle:@"备注成功！"
@@ -85,26 +96,47 @@ static NSString *TextViewPrompt = @"请输入备注事件";
                  [strongSelf.navigationController popViewControllerAnimated:YES];
              }];
         }
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         __strong __typeof__(self)strongSelf = weakSelf;
         [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
     }];
 }
 
-#pragma mark - Table View Delegete Methods
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (0 == indexPath.row) {
-        [self.view endEditing:YES];
-        HXDatePickerView *datePicker = [[HXDatePickerView alloc] initWithDelegate:self mode:UIDatePickerModeDateAndTime];
-        [datePicker show];
-    }
+- (void)startUploadImageReuqest {
+    [self startUploadImageReuqestWithParameters:@{@"access_token":[HXUserSession share].adviser.accessToken}
+                                          image:_imageView.image];
 }
 
-#pragma mark - HXDatePickerViewDelegate Methods
-- (void)datePickerSelectedFinish:(NSDate *)date mode:(UIDatePickerMode)mode {
-    _dateLabel.text = [date formattedDateWithFormat:@"yyyy-MM-dd hh:mm"];
+- (void)startUploadImageReuqestWithParameters:(NSDictionary *)parameters image:(UIImage *)image {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak __typeof__(self)weakSelf = self;
+    
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
+    [[HXApiRequest manager] POST:[HXApi apiURLWithApi:UploadImageApi] parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:imageData name:@"file" fileName:@"temp.jpg" mimeType:@"image/jpg"];
+    } success:^(AFHTTPRequestOperation *operation,id responseObject) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            strongSelf->_imageFile = responseObject[@"data"][@"img"];
+        }
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error) {
+        __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+    }];
+}
+
+#pragma mark - UIImagePickerControllerDelegate Methods
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    _imageView.image = image;
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [self startUploadImageReuqest];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

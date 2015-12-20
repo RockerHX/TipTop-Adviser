@@ -8,15 +8,18 @@
 
 #import "UIViewController+HXClass.h"
 
-@class BRPlaceholderTextView;
+@interface HXReservationAddRemarkViewController : UIViewController
 
-@interface HXReservationAddRemarkViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet     UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet  UITextView *textView;
+@property (weak, nonatomic) IBOutlet      UIView *addImageContainerView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
-@property (weak, nonatomic) IBOutlet               UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet BRPlaceholderTextView *textView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
 
 @property (nonatomic, copy) NSString *orderID;
 
 - (IBAction)saveButtonPressed;
+- (IBAction)addImageButtonPressed;
 
 @end

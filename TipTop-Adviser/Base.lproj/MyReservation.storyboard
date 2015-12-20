@@ -609,13 +609,104 @@
             <point key="canvasLocation" x="884" y="1050"/>
         </scene>
         <!--添加备注-->
-        <scene sceneID="8dN-lP-YHB">
+        <scene sceneID="Li9-5o-gfO">
             <objects>
-                <tableViewController storyboardIdentifier="HXReservationAddRemarkViewController" id="y9h-5B-F4C" customClass="HXReservationAddRemarkViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cXI-cz-cIg">
+                <viewController storyboardIdentifier="HXReservationAddRemarkViewController" automaticallyAdjustsScrollViewInsets="NO" id="lRo-5d-9CC" customClass="HXReservationAddRemarkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wCj-2a-COe"/>
+                        <viewControllerLayoutGuide type="bottom" id="zTI-v6-r5D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wP8-UU-nMI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJj-16-hcf">
+                                <rect key="frame" x="0.0" y="20" width="320" height="498"/>
+                                <connections>
+                                    <segue destination="y9h-5B-F4C" kind="embed" id="vqI-dJ-vJX"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oiu-Ka-VNw">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SG3-mU-kth">
+                                        <rect key="frame" x="20" y="13" width="24" height="24"/>
+                                        <state key="normal" image="MRR-AddImageIcon"/>
+                                        <connections>
+                                            <action selector="addImageButtonPressed" destination="lRo-5d-9CC" eventType="touchUpInside" id="22l-hn-ZRY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AHM-QU-Irs"/>
+                                    <constraint firstItem="SG3-mU-kth" firstAttribute="centerY" secondItem="oiu-Ka-VNw" secondAttribute="centerY" id="bKa-Tz-jLh"/>
+                                    <constraint firstItem="SG3-mU-kth" firstAttribute="leading" secondItem="oiu-Ka-VNw" secondAttribute="leading" constant="20" id="dpV-4g-Da7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoZ-oU-Nhx">
+                                <rect key="frame" x="0.0" y="438" width="320" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6v8-wo-i59" customClass="HXIBImageView">
+                                        <rect key="frame" x="20" y="10" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Ix1-5o-tXJ"/>
+                                            <constraint firstAttribute="width" secondItem="6v8-wo-i59" secondAttribute="height" multiplier="1:1" id="xOS-Ay-2YE"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6v8-wo-i59" firstAttribute="leading" secondItem="PoZ-oU-Nhx" secondAttribute="leading" constant="20" id="Lfa-YA-Xmj"/>
+                                    <constraint firstItem="6v8-wo-i59" firstAttribute="centerY" secondItem="PoZ-oU-Nhx" secondAttribute="centerY" id="cym-Zd-OXl"/>
+                                    <constraint firstAttribute="height" constant="80" id="viF-D9-BcU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oiu-Ka-VNw" firstAttribute="top" secondItem="cJj-16-hcf" secondAttribute="bottom" id="6hX-tb-rTJ"/>
+                            <constraint firstItem="zTI-v6-r5D" firstAttribute="top" secondItem="oiu-Ka-VNw" secondAttribute="bottom" id="G3Y-k7-nOv"/>
+                            <constraint firstItem="oiu-Ka-VNw" firstAttribute="leading" secondItem="wP8-UU-nMI" secondAttribute="leading" id="KFB-Rh-6zX"/>
+                            <constraint firstAttribute="trailing" secondItem="cJj-16-hcf" secondAttribute="trailing" id="UOR-uw-Pf2"/>
+                            <constraint firstAttribute="trailing" secondItem="PoZ-oU-Nhx" secondAttribute="trailing" id="giI-Mk-cvj"/>
+                            <constraint firstItem="oiu-Ka-VNw" firstAttribute="top" secondItem="PoZ-oU-Nhx" secondAttribute="bottom" id="iPU-EJ-NPl"/>
+                            <constraint firstAttribute="trailing" secondItem="oiu-Ka-VNw" secondAttribute="trailing" id="lw6-gF-YKz"/>
+                            <constraint firstItem="PoZ-oU-Nhx" firstAttribute="leading" secondItem="wP8-UU-nMI" secondAttribute="leading" id="tjz-SD-JBG"/>
+                            <constraint firstItem="cJj-16-hcf" firstAttribute="top" secondItem="wCj-2a-COe" secondAttribute="bottom" id="vg2-at-G4j"/>
+                            <constraint firstItem="cJj-16-hcf" firstAttribute="leading" secondItem="wP8-UU-nMI" secondAttribute="leading" id="y3S-Eh-7w8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加备注" id="D8O-s9-R6P">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="PLd-6g-Qky">
+                            <connections>
+                                <action selector="saveButtonPressed" destination="lRo-5d-9CC" id="uYO-Io-Jf1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addImageContainerView" destination="PoZ-oU-Nhx" id="oQf-sZ-UbD"/>
+                        <outlet property="bottomViewBottomConstraint" destination="G3Y-k7-nOv" id="ffp-Fx-EAO"/>
+                        <outlet property="imageView" destination="6v8-wo-i59" id="I9d-rK-1fL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4SE-4v-TQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1739" y="398"/>
+        </scene>
+        <!--Reservation Add Remark Container View Controller-->
+        <scene sceneID="8dN-lP-YHB">
+            <objects>
+                <tableViewController storyboardIdentifier="HXReservationAddRemarkContainerViewController" id="y9h-5B-F4C" customClass="HXReservationAddRemarkContainerViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cXI-cz-cIg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Bo2-U0-ZLq">
                             <rect key="frame" x="0.0" y="250" width="320" height="0.5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -700,13 +791,6 @@
                             <outlet property="delegate" destination="y9h-5B-F4C" id="gcu-80-BSg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="添加备注" id="D8O-s9-R6P">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="PLd-6g-Qky">
-                            <connections>
-                                <action selector="saveButtonPressed" destination="y9h-5B-F4C" id="TVz-L7-iyl"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="mrG-7f-R8S" id="HtQ-z2-hq7"/>
                         <outlet property="textView" destination="ncl-hc-8AO" id="Bkl-pJ-tDe"/>
@@ -714,7 +798,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXq-6w-eLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742" y="398"/>
+            <point key="canvasLocation" x="2174" y="398"/>
         </scene>
     </scenes>
     <resources>
@@ -727,5 +811,6 @@
         <image name="MRD-InfoIcon" width="16" height="15"/>
         <image name="MRD-RemarkAddIcon" width="10" height="13"/>
         <image name="MRD-RemarkIcon" width="16" height="15"/>
+        <image name="MRR-AddImageIcon" width="24" height="24"/>
     </resources>
 </document>

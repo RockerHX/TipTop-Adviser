@@ -99,6 +99,7 @@
 		48C57ACF1BDD5317002C8398 /* BRPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C57ACE1BDD5317002C8398 /* BRPlaceholderTextView.m */; };
 		48C7BC0D1C26A0E40032919D /* HXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C7BC0B1C26A0E40032919D /* HXDatePickerView.m */; };
 		48C7BC0E1C26A0E40032919D /* HXDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C7BC0C1C26A0E40032919D /* HXDatePickerView.xib */; };
+		48C7BC111C26A4A30032919D /* HXReservationAddRemarkContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C7BC101C26A4A30032919D /* HXReservationAddRemarkContainerViewController.m */; };
 		48CC517C1BDCE92300985753 /* HXOrderAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CC517B1BDCE92300985753 /* HXOrderAlertView.m */; };
 		48CC517E1BDCE93500985753 /* HXOrderAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CC517D1BDCE93500985753 /* HXOrderAlertView.xib */; };
 		48CC51801BDCEBBE00985753 /* HXOrderAlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CC517F1BDCEBBE00985753 /* HXOrderAlertCell.xib */; };
@@ -315,6 +316,8 @@
 		48C7BC0A1C26A0E40032919D /* HXDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePickerView.h; sourceTree = "<group>"; };
 		48C7BC0B1C26A0E40032919D /* HXDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePickerView.m; sourceTree = "<group>"; };
 		48C7BC0C1C26A0E40032919D /* HXDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXDatePickerView.xib; sourceTree = "<group>"; };
+		48C7BC0F1C26A4A30032919D /* HXReservationAddRemarkContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXReservationAddRemarkContainerViewController.h; sourceTree = "<group>"; };
+		48C7BC101C26A4A30032919D /* HXReservationAddRemarkContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXReservationAddRemarkContainerViewController.m; sourceTree = "<group>"; };
 		48CC517A1BDCE92300985753 /* HXOrderAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXOrderAlertView.h; sourceTree = "<group>"; };
 		48CC517B1BDCE92300985753 /* HXOrderAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXOrderAlertView.m; sourceTree = "<group>"; };
 		48CC517D1BDCE93500985753 /* HXOrderAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXOrderAlertView.xib; sourceTree = "<group>"; };
@@ -815,6 +818,8 @@
 				48D788E61C25AD5700A45A70 /* HXReservationDetailContainerViewController.m */,
 				48CC51A51BDD4CFA00985753 /* HXReservationAddRemarkViewController.h */,
 				48CC51A61BDD4CFA00985753 /* HXReservationAddRemarkViewController.m */,
+				48C7BC0F1C26A4A30032919D /* HXReservationAddRemarkContainerViewController.h */,
+				48C7BC101C26A4A30032919D /* HXReservationAddRemarkContainerViewController.m */,
 				48F77AEF1BEBC1B900E3E5FE /* HXRemarkDetailViewController.h */,
 				48F77AF01BEBC1B900E3E5FE /* HXRemarkDetailViewController.m */,
 			);
@@ -1442,6 +1447,7 @@
 				489E9CD21BC5116A00C6618E /* HXThemeManager.m in Sources */,
 				48A48CB21BC96D6E00AF6C36 /* HXMainViewController.m in Sources */,
 				48DB1E7C1BF253B10007F505 /* HXProfileHeaderCell.m in Sources */,
+				48C7BC111C26A4A30032919D /* HXReservationAddRemarkContainerViewController.m in Sources */,
 				48334DE11BC4D00D00FD43A6 /* HXIBButton.m in Sources */,
 				48A48CB71BCA79EE00AF6C36 /* HXPanGestureNavgaitionController.m in Sources */,
 				48DB1E7F1BF253CA0007F505 /* HXProfileSelectedCell.m in Sources */,

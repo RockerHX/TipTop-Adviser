@@ -77,7 +77,7 @@
                                                 <action selector="phoneButonPressed" destination="6LP-1N-VsP" eventType="touchUpInside" id="XRR-Ja-Soz"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MR-TimeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3gB-wa-Jxn">
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OP-OrderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3gB-wa-Jxn">
                                             <rect key="frame" x="20" y="48" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="ITc-G6-e4w"/>
@@ -309,6 +309,7 @@
                                         <constraint firstItem="cHZ-6A-IQi" firstAttribute="leading" secondItem="leO-aR-X4y" secondAttribute="trailing" constant="2" id="AWE-bQ-od5"/>
                                         <constraint firstItem="cHZ-6A-IQi" firstAttribute="centerY" secondItem="leO-aR-X4y" secondAttribute="centerY" id="E7i-WR-7mW"/>
                                         <constraint firstItem="leO-aR-X4y" firstAttribute="leading" secondItem="vPm-es-bTW" secondAttribute="leading" constant="15" id="Irw-AG-5mt"/>
+                                        <constraint firstItem="3Yw-z6-tmg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PYU-tj-ApB" secondAttribute="bottom" constant="17" id="Vw9-Qs-JiC"/>
                                         <constraint firstItem="p4w-R1-s40" firstAttribute="width" secondItem="p4w-R1-s40" secondAttribute="height" multiplier="1:1" id="Wo8-EX-zlQ"/>
                                         <constraint firstItem="eFd-Pp-HY9" firstAttribute="leading" secondItem="p4w-R1-s40" secondAttribute="trailing" constant="8" id="ZLF-E7-w1t"/>
                                         <constraint firstItem="c3k-kP-ZsH" firstAttribute="top" secondItem="PYU-tj-ApB" secondAttribute="top" id="bQd-Eb-r5c"/>
@@ -353,6 +354,7 @@
         <image name="MR-TimeIcon" width="17" height="18"/>
         <image name="MR-UserIcon" width="17" height="18"/>
         <image name="MRD-ClientIcon" width="16" height="15"/>
+        <image name="OP-OrderIcon" width="17" height="18"/>
         <image name="OPD-OrderIcon" width="16" height="15"/>
     </resources>
 </document>

@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet BMKMapView *mapView;
 @property (weak, nonatomic) IBOutlet    UILabel *addressLabel;
 
-- (IBAction)menuButtonPressed;
 - (IBAction)enterButtonPressed;
 
 @end

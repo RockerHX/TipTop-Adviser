@@ -9,7 +9,6 @@
 #import "HXMyAddressViewController.h"
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Search/BMKGeocodeSearch.h>
-#import <REFrostedViewController/REFrostedViewController.h>
 #import "HXLocationManager.h"
 #import "HXAppApiRequest.h"
 #import "MBProgressHUD.h"
@@ -71,10 +70,6 @@ static NSString *UpdateLocationApi = @"/profile/location";
 }
 
 #pragma mark - Event Response
-- (IBAction)menuButtonPressed {
-    [self.frostedViewController presentMenuViewController];
-}
-
 - (IBAction)enterButtonPressed {
     if (_location.latitude && _location.longitude && _address) {
         [self startUpdateAddressReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,

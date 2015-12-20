@@ -41,11 +41,19 @@
 
 #pragma mark - Public Methods
 - (void)showAlertWithMessage:(NSString *)message {
+    [self showAlertWithMessage:message handler:nil];
+}
+
+- (void)showAlertWithMessage:(NSString *)message handler:(void (^)(UIAlertView *alertView, NSInteger buttonIndex))block {
+    [self showAlertWithMessage:message otherTitle:nil handler:block];
+}
+
+- (void)showAlertWithMessage:(NSString *)message otherTitle:(NSString *)title handler:(void (^)(UIAlertView *alertView, NSInteger buttonIndex))block {
     [UIAlertView bk_showAlertViewWithTitle:@"温馨提示"
                                    message:message
                          cancelButtonTitle:@"确定"
-                         otherButtonTitles:nil
-                                   handler:nil];
+                         otherButtonTitles:(title ? @[title] : nil)
+                                   handler:block];
 }
 
 @end

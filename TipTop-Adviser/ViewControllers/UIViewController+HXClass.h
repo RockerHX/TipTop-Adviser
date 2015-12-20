@@ -18,5 +18,7 @@
 + (instancetype)instance;
 
 - (void)showAlertWithMessage:(NSString *)message;
+- (void)showAlertWithMessage:(NSString *)message handler:(void (^)(UIAlertView *alertView, NSInteger buttonIndex))block;
+- (void)showAlertWithMessage:(NSString *)message otherTitle:(NSString *)title handler:(void (^)(UIAlertView *alertView, NSInteger buttonIndex))block;
 
 @end

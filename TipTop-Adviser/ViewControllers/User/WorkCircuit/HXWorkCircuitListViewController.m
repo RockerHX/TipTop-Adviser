@@ -91,7 +91,7 @@ static NSString *OrderListApi = @"/Order";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HXWorkCircuitOrder *order = self.dataList[indexPath.row];
     HXWorkCircuitDetailViewController *detailViewController = [HXWorkCircuitDetailViewController instance];
-    detailViewController.loadURL = [NSString stringWithFormat:@"http://www.tbagame.com:8080/yl_dgg/h5/agent/order/view?id=%@&access_token=b487a6db8f621069fc6785b7b303f7de", order.ID];
+    detailViewController.loadURL = [NSString stringWithFormat:@"http://www.tbagame.com:8080/yl_dgg/h5/agent/order/view?id=%@&access_token=%@", order.ID, [HXUserSession share].adviser.accessToken];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

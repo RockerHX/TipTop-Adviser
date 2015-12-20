@@ -6,8 +6,12 @@
 //  Copyright © 2015年 Outsourcing. All rights reserved.
 //
 
-#import "HXWebViewController.h"
+#import "UIViewController+HXClass.h"
 
-@interface HXWorkCircuitDetailViewController : HXWebViewController
+@interface HXWorkCircuitDetailViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
+@property (nonatomic, strong) NSString *loadURL;
 
 @end

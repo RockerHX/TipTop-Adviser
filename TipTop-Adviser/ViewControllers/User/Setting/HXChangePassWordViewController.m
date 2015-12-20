@@ -32,12 +32,16 @@ static NSString *OrderListApi = @"/profile/password";
     NSString *passWord = _passWordTextFiled.text;
     NSString *confirmPassWord = _confirmPassWordTextFiled.text;
     
-    if (oldPassWord.length && passWord.length && confirmPassWord.length) {
-        if ([passWord isEqualToString:confirmPassWord]) {
-            [self startChangePassWordRequest:@{@"access_token": [HXUserSession share].adviser.accessToken,
-                                               @"old_password": oldPassWord,
-                                                   @"password": confirmPassWord}];
-        }
+    if (!oldPassWord.length) {
+        [self showAlertWithMessage:@"请输入密码！"];
+    } else if (!passWord.length) {
+        [self showAlertWithMessage:@"请输入新密码！"];
+    } else if (![passWord isEqualToString:confirmPassWord]) {
+        [self showAlertWithMessage:@"亲，您输入的两次密码不相同噢！"];
+    } else {
+        [self startChangePassWordRequest:@{@"access_token": [HXUserSession share].adviser.accessToken,
+                                           @"old_password": oldPassWord,
+                                               @"password": confirmPassWord}];
     }
 }
 

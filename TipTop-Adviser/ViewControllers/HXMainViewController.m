@@ -12,6 +12,8 @@
 #import "HXUserViewController.h"
 #import "HXLoginViewController.h"
 #import "HXGuideView.h"
+#import "HXAppConstants.h"
+#import "HXSocketManager.h"
 
 @interface HXMainViewController () <HXLoginViewControllerDelegate, HXUserViewControllerDelegate>
 @end
@@ -52,6 +54,7 @@
 
 #pragma mark - Config Methods
 - (void)initConfig {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLogout) name:kUserLogoutNotification object:nil];
     [self setupAppStructure];
 }
 
@@ -77,6 +80,11 @@
 - (void)showHomePageViewController {
     HXHomeViewController *homePageViewController = [((UINavigationController *)self.contentViewController).viewControllers firstObject];
     [homePageViewController openSocket];
+}
+
+- (void)userLogout {
+    [[HXSocketManager manager] close];
+    [self showLoginViewController];
 }
 
 #pragma mark - HXLoginViewControllerDelegate Methods

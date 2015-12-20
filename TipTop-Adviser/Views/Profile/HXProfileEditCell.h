@@ -29,9 +29,9 @@ typedef NS_ENUM(NSUInteger, HXProfileEditAction) {
 @property (weak, nonatomic) IBOutlet   UIView *whiteBGView;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet   UIView *deleteButtonBottomLine;
-@property (weak, nonatomic) IBOutlet UIButton *addButton;
-@property (weak, nonatomic) IBOutlet   UIView *addButtonBottomLine;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet   UIView *editButtonBottomLine;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 - (IBAction)addButtonPressed;
 - (IBAction)editButtonPressed;

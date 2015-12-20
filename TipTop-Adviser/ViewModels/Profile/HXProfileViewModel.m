@@ -69,6 +69,7 @@ static NSInteger RegularRow = 4;
 
 #pragma mark - Public Methods
 - (void)requestWithType:(HXProfileSelectType)type completed:(void(^)(void))completed {
+    _selectIndex = 0;
     _selectType = type;
     _completedBlock = completed;
     switch (type) {

@@ -39,7 +39,7 @@
     _starView.value = profile.star;
     _mobileLabel.text = profile.mobile;
     _goodCountLabel.text = @(profile.good).stringValue;
-    _goodAtLabel.text = profile.goodAt;
+    _goodAtLabel.text = [NSString stringWithFormat:@"擅长领域：%@", profile.goodAt];
 }
 
 @end

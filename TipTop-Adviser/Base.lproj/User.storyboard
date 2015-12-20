@@ -785,9 +785,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="tgd-i9-3KZ"/>
                                             </constraints>
-                                            <state key="normal" image="UCP-AddIcon-S"/>
+                                            <state key="normal" image="UCP-EditIcon-S"/>
                                             <connections>
-                                                <action selector="addButtonPressed" destination="gdA-eO-Kkk" eventType="touchUpInside" id="yl3-HW-Nut"/>
+                                                <action selector="editButtonPressed" destination="gdA-eO-Kkk" eventType="touchUpInside" id="Tq2-2H-U0r"/>
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcm-fx-09q">
@@ -804,9 +804,9 @@
                                                 <constraint firstAttribute="width" secondItem="Lgq-jP-gG9" secondAttribute="height" multiplier="1:1" id="06Y-3h-5NY"/>
                                                 <constraint firstAttribute="width" constant="40" id="gzE-Cv-egT"/>
                                             </constraints>
-                                            <state key="normal" image="UCP-EditIcon-S"/>
+                                            <state key="normal" image="UCP-AddIcon-S"/>
                                             <connections>
-                                                <action selector="editButtonPressed" destination="gdA-eO-Kkk" eventType="touchUpInside" id="wMb-Lh-tHV"/>
+                                                <action selector="addButtonPressed" destination="gdA-eO-Kkk" eventType="touchUpInside" id="kDw-tn-yfc"/>
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DwZ-H5-vIi">
@@ -841,12 +841,12 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="addButton" destination="hwG-T2-puS" id="1hJ-aH-Ctd"/>
-                                    <outlet property="addButtonBottomLine" destination="fcm-fx-09q" id="pB7-Zx-OaQ"/>
+                                    <outlet property="addButton" destination="Lgq-jP-gG9" id="9UP-dq-Sn1"/>
                                     <outlet property="delegate" destination="yRO-He-EGQ" id="nve-ca-rmc"/>
                                     <outlet property="deleteButton" destination="26W-mc-2mo" id="HUH-0N-wPI"/>
                                     <outlet property="deleteButtonBottomLine" destination="ZMC-cO-9mD" id="wO9-yI-78x"/>
-                                    <outlet property="editButton" destination="Lgq-jP-gG9" id="03k-6J-l4n"/>
+                                    <outlet property="editButton" destination="hwG-T2-puS" id="Zg1-X9-nOe"/>
+                                    <outlet property="editButtonBottomLine" destination="fcm-fx-09q" id="O9x-aj-SdM"/>
                                     <outlet property="whiteBGView" destination="GJY-Tv-BvO" id="sPT-yM-eri"/>
                                 </connections>
                             </tableViewCell>

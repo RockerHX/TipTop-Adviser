@@ -60,10 +60,11 @@ PODS:
   - SDWebImage/Core (3.7.3)
   - SocketRocket (0.4.2)
   - UITableView+FDTemplateLayoutCell (1.3)
+  - WebViewJavascriptBridge (4.1.4)
 
 DEPENDENCIES:
   - AFNetworkActivityLogger
-  - AFNetworking
+  - AFNetworking (= 2.6.3)
   - Aspects
   - BaiduMapKit
   - BlocksKit
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - SDWebImage
   - SocketRocket
   - UITableView+FDTemplateLayoutCell
+  - WebViewJavascriptBridge
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
@@ -98,5 +100,6 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
   UITableView+FDTemplateLayoutCell: d5be6056b5060313f5955a2590ecd33142ad713d
+  WebViewJavascriptBridge: f10ac16f2cd3adf2b941bd79477c55a8f6e01044
 
 COCOAPODS: 0.39.0

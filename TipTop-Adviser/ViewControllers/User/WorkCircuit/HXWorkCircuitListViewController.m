@@ -45,7 +45,7 @@ static NSString *OrderListApi = @"/Order";
 #pragma mark - Public Methods
 - (void)loadNewData {
     [self startOrderListReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
-                                                        @"type": @"appointment"}];
+                                                        @"type": @"process"}];
 }
 
 #pragma mark - Private Methods

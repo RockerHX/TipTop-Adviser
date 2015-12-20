@@ -7,11 +7,24 @@
 //
 
 #import "HXFeedBackViewController.h"
+#import "HXApi.h"
 
 @interface HXFeedBackViewController ()
 @end
 
 @implementation HXFeedBackViewController
+
+#pragma mark - View Controller Life Cycle
+- (void)viewDidLoad {
+    self.loadURL = [HXApi webViewURLWithURL:@"/h5/feedback?app=client"];
+    
+    [super viewDidLoad];
+}
+
+#pragma mark - Setter And Getter
+- (NSString *)navigationControllerIdentifier {
+    return @"HXFeedBackNavigationController";
+}
 
 #pragma mark - Setter And Getter
 - (HXStoryBoardName)storyBoardName {

@@ -64,25 +64,24 @@
                                             <constraint firstAttribute="width" constant="30" id="smF-qw-wCI"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定位中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpB-lq-Uqo">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="定位中" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="hL9-Cd-0ND">
                                         <rect key="frame" x="58" y="15" width="254" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8Pc-7Q-7c1"/>
                                     <constraint firstAttribute="trailing" secondItem="vfe-qn-70v" secondAttribute="trailing" id="8ge-Kl-fsg"/>
                                     <constraint firstItem="KfS-p1-vvh" firstAttribute="top" secondItem="CYG-Ay-Ead" secondAttribute="top" id="8yY-aM-A7v"/>
+                                    <constraint firstItem="hL9-Cd-0ND" firstAttribute="centerY" secondItem="fuj-qI-0Hm" secondAttribute="centerY" id="D5L-yp-ONT"/>
                                     <constraint firstAttribute="bottom" secondItem="vfe-qn-70v" secondAttribute="bottom" id="VTV-Tb-GKx"/>
-                                    <constraint firstAttribute="trailing" secondItem="PpB-lq-Uqo" secondAttribute="trailing" constant="8" id="Xau-kL-Dex"/>
-                                    <constraint firstItem="PpB-lq-Uqo" firstAttribute="height" secondItem="fuj-qI-0Hm" secondAttribute="height" id="YGp-kS-j2S"/>
-                                    <constraint firstItem="PpB-lq-Uqo" firstAttribute="leading" secondItem="fuj-qI-0Hm" secondAttribute="trailing" constant="8" id="bTB-LN-lwO"/>
+                                    <constraint firstItem="hL9-Cd-0ND" firstAttribute="height" secondItem="fuj-qI-0Hm" secondAttribute="height" id="d9x-XX-lEq"/>
                                     <constraint firstItem="fuj-qI-0Hm" firstAttribute="centerY" secondItem="CYG-Ay-Ead" secondAttribute="centerY" id="dk6-Pd-Ndm"/>
                                     <constraint firstAttribute="trailing" secondItem="KfS-p1-vvh" secondAttribute="trailing" id="eU9-KB-1XU"/>
-                                    <constraint firstItem="PpB-lq-Uqo" firstAttribute="centerY" secondItem="fuj-qI-0Hm" secondAttribute="centerY" id="mxf-UQ-J6P"/>
+                                    <constraint firstItem="hL9-Cd-0ND" firstAttribute="leading" secondItem="fuj-qI-0Hm" secondAttribute="trailing" constant="8" id="hGu-sf-6PF"/>
+                                    <constraint firstAttribute="trailing" secondItem="hL9-Cd-0ND" secondAttribute="trailing" constant="8" id="lHP-st-piQ"/>
                                     <constraint firstItem="vfe-qn-70v" firstAttribute="leading" secondItem="CYG-Ay-Ead" secondAttribute="leading" id="sRU-se-NWC"/>
                                     <constraint firstItem="KfS-p1-vvh" firstAttribute="leading" secondItem="CYG-Ay-Ead" secondAttribute="leading" id="xVF-XZ-5k8"/>
                                     <constraint firstItem="fuj-qI-0Hm" firstAttribute="leading" secondItem="CYG-Ay-Ead" secondAttribute="leading" constant="20" id="xb4-CC-Pdb"/>
@@ -105,7 +104,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="我的地址" id="3fg-6C-cSL"/>
                     <connections>
-                        <outlet property="addressLabel" destination="PpB-lq-Uqo" id="n8I-aV-9w8"/>
+                        <outlet property="addressTextField" destination="hL9-Cd-0ND" id="ZJG-t6-rex"/>
                         <outlet property="mapView" destination="tOO-qp-d3N" id="QFU-gC-4yX"/>
                     </connections>
                 </viewController>

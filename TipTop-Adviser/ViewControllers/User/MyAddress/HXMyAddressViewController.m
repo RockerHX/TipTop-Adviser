@@ -24,7 +24,6 @@ static NSString *UpdateLocationApi = @"/profile/location";
 @implementation HXMyAddressViewController {
     NSTimer *_timer;
     CLLocationCoordinate2D _location;
-    NSString *_address;
 }
 
 #pragma mark - View Controller Life Cycle
@@ -71,11 +70,13 @@ static NSString *UpdateLocationApi = @"/profile/location";
 
 #pragma mark - Event Response
 - (IBAction)enterButtonPressed {
-    if (_location.latitude && _location.longitude && _address) {
+    if (!_addressTextField.text.length) {
+        [self showAlertWithMessage:@"请输入具体地址"];
+    } else if (_location.latitude && _location.longitude) {
         [self startUpdateAddressReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
                                                                  @"lat": @(_location.latitude).stringValue,
                                                                  @"lng": @(_location.longitude).stringValue,
-                                                             @"address": _address}];
+                                                             @"address": _addressTextField.text}];
     }
 }
 
@@ -129,8 +130,7 @@ static NSString *UpdateLocationApi = @"/profile/location";
 
 #pragma mark - BMKGeoCodeSearchDelegate Methods
 - (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error {
-    _address = result.address;
-    _addressLabel.text = _address;
+    _addressTextField.text = result.address;
 }
 
 @end

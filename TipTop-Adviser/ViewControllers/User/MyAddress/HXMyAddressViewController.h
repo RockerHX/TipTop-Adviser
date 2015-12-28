@@ -11,8 +11,8 @@
 
 @interface HXMyAddressViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet BMKMapView *mapView;
-@property (weak, nonatomic) IBOutlet    UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet  BMKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 
 - (IBAction)enterButtonPressed;
 

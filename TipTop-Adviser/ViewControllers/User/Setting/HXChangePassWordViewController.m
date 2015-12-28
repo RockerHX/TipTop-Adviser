@@ -11,6 +11,7 @@
 #import "HXAppApiRequest.h"
 #import "UIAlertView+BlocksKit.h"
 #import "HXUserSession.h"
+#import "HXAppConstants.h"
 
 
 static NSString *OrderListApi = @"/profile/password";
@@ -51,6 +52,7 @@ static NSString *OrderListApi = @"/profile/password";
     __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:OrderListApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         __strong __typeof__(self)strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.navigationController.view animated:YES];
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         NSString *message = responseObject[@"tip"];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
@@ -60,8 +62,12 @@ static NSString *OrderListApi = @"/profile/password";
                                        message:message
                              cancelButtonTitle:@"确定"
                              otherButtonTitles:nil
-                                       handler:nil];
-        [MBProgressHUD hideHUDForView:strongSelf.navigationController.view animated:YES];
+                                       handler:
+         ^(UIAlertView *alertView, NSInteger buttonIndex) {
+             [[HXUserSession share] logout];
+             [strongSelf.navigationController popToRootViewControllerAnimated:YES];
+             [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogoutNotification object:nil];
+         }];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         __strong __typeof__(self)strongSelf = weakSelf;
         [MBProgressHUD hideHUDForView:strongSelf.navigationController.view animated:YES];

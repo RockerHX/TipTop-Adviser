@@ -110,7 +110,7 @@ static NSString *NewOrderEvent = @"new_order";
 
 #pragma mark - Private Methods
 - (void)displayHomePage {
-    [_adviserHeader sd_setImageWithURL:[NSURL URLWithString:[HXUserSession share].adviser.avatar]];
+    [_adviserHeader sd_setImageWithURL:[NSURL URLWithString:[HXUserSession share].adviser.avatar] placeholderImage:[UIImage imageNamed:@"HP-AvatarDefaultIcon"]];
     [self displayUserLocation];
 }
 

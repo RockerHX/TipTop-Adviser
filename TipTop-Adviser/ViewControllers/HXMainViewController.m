@@ -39,17 +39,14 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    __weak __typeof__(self)weakSelf = self;
-    [HXGuideView showGuide:^{
-        __strong __typeof__(self)strongSelf = weakSelf;
-        if ([HXUserSession share].state == HXUserSessionStateLogout) {
-            [strongSelf showLoginViewController];
-        } else {
-            if (!_logined) {
-                [strongSelf showHomePageViewController];
-            }
+    if ([HXUserSession share].state == HXUserSessionStateLogout) {
+        [self showLoginViewController];
+    } else {
+        if (!_logined) {
+            [self showHomePageViewController];
         }
-    }];
+    }
+
 }
 
 #pragma mark - Config Methods

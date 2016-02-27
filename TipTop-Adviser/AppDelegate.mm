@@ -35,13 +35,4 @@
     return YES;
 }
 
-#pragma mark - Application Delegate Methods
-- (void)applicationWillResignActive:(UIApplication *)application {
-    [BMKMapView willBackGround];    //当应用即将后台时调用，停止一切调用opengl相关的操作
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    [BMKMapView didForeGround];     //当应用恢复前台状态时调用，回复地图的渲染和opengl相关的操作
-}
-
 @end

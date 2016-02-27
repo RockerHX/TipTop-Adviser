@@ -32,8 +32,10 @@
 - (void)loadWebView {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_loadURL]]];
+    
     __weak __typeof__(self)weakSelf = self;
-    _bridge = [WebViewJavascriptBridge bridgeForWebView:_webView webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
+    _bridge = [WebViewJavascriptBridge bridgeForWebView:_webView];
+    [_bridge registerHandler:NSStringFromClass([self class]) handler:^(id data, WVJBResponseCallback responseCallback) {
         __strong __typeof__(self)strongSelf = weakSelf;
         [strongSelf handleJSData:data];
     }];

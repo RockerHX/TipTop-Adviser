@@ -22,11 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initConfigure];
     [self loadWebView];
 }
 
 #pragma mark - Private Methods
-- (void)initConfig {
+- (void)initConfigure {
+    ;
 }
 
 - (void)loadWebView {
@@ -35,6 +37,7 @@
     
     __weak __typeof__(self)weakSelf = self;
     _bridge = [WebViewJavascriptBridge bridgeForWebView:_webView];
+    [_bridge setWebViewDelegate:self];
     [_bridge registerHandler:NSStringFromClass([self class]) handler:^(id data, WVJBResponseCallback responseCallback) {
         __strong __typeof__(self)strongSelf = weakSelf;
         [strongSelf handleJSData:data];

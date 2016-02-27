@@ -61,23 +61,20 @@
 #pragma mark - Request Methods
 - (void)startLoginRequest {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    __weak __typeof__(self)weakSelf = self;
     NSDictionary *parameters = @{@"staff_id": _staffIDTextField.text,
                                  @"password": _passwordTextField.text};
     [HXAdviser loginWithParameters:parameters success:^(HXApiResponse *response, HXAdviser *adviser) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (response.errorCode == HXAppApiRequestErrorCodeNoError) {
             [[HXUserSession share] updateAdviser:adviser];
-            if (strongSelf.delegate && [strongSelf.delegate respondsToSelector:@selector(loginViewControllerLoginSuccess:)]) {
-                [strongSelf.delegate loginViewControllerLoginSuccess:strongSelf];
+            if (_delegate && [_delegate respondsToSelector:@selector(loginViewControllerLoginSuccess:)]) {
+                [_delegate loginViewControllerLoginSuccess:self];
             }
         } else {
             [self showAlertWithMessage:response.message];
         }
     } failure:^(HXApiResponse *response) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 

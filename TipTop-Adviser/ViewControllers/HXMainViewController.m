@@ -18,9 +18,7 @@
 @interface HXMainViewController () <HXLoginViewControllerDelegate, HXUserViewControllerDelegate>
 @end
 
-@implementation HXMainViewController {
-    __block BOOL _logined;
-}
+@implementation HXMainViewController
 
 #pragma mark - Init Methods
 - (void)awakeFromNib {
@@ -39,11 +37,17 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if ([HXUserSession share].state == HXUserSessionStateLogout) {
-        [self showLoginViewController];
-    } else {
-        if (!_logined) {
+    switch ([HXUserSession share].state) {
+        case HXUserSessionStateLogout: {
+            [self showLoginViewController];
+            break;
+        }
+        case HXUserSessionStateLogin: {
             [self showHomePageViewController];
+            break;
+        }
+        default: {
+            break;
         }
     }
 
@@ -70,7 +74,6 @@
 - (void)showLoginViewController {
     HXLoginViewController *loginViewController = [HXLoginViewController instance];
     loginViewController.delegate = self;
-    loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:loginViewController animated:NO completion:nil];
 }
 
@@ -86,9 +89,8 @@
 
 #pragma mark - HXLoginViewControllerDelegate Methods
 - (void)loginViewControllerLoginSuccess:(HXLoginViewController *)loginViewController {
-    _logined = YES;
     __weak __typeof__(self)weakSelf = self;
-    [self dismissViewControllerAnimated:YES completion:^{
+    [loginViewController dismissViewControllerAnimated:YES completion:^{
         __strong __typeof__(self)strongSelf = weakSelf;
         [strongSelf showHomePageViewController];
     }];

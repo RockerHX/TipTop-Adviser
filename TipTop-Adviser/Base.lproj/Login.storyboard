@@ -9,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="1HK-eV-dC1">
             <objects>
-                <viewController storyboardIdentifier="HXLoginViewController" id="xYY-96-KqN" customClass="HXLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HXLoginViewController" modalTransitionStyle="flipHorizontal" id="xYY-96-KqN" customClass="HXLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pFm-Mq-m1G"/>
                         <viewControllerLayoutGuide type="bottom" id="aC8-Li-CJk"/>

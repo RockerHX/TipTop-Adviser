@@ -62,14 +62,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "DateTools/DateTools/DateTools.bundle"
   install_resource "IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "WebViewJavascriptBridge/WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"
   install_resource "DateTools/DateTools/DateTools.bundle"
   install_resource "IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "WebViewJavascriptBridge/WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

@@ -60,7 +60,7 @@ PODS:
   - SDWebImage/Core (3.7.5)
   - SocketRocket (0.4.2)
   - UITableView+FDTemplateLayoutCell (1.4)
-  - WebViewJavascriptBridge (5.0.5)
+  - WebViewJavascriptBridge (4.1.5)
 
 DEPENDENCIES:
   - AFNetworkActivityLogger
@@ -80,7 +80,7 @@ DEPENDENCIES:
   - SDWebImage
   - SocketRocket
   - UITableView+FDTemplateLayoutCell
-  - WebViewJavascriptBridge
+  - WebViewJavascriptBridge (= 4.1.5)
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
@@ -100,6 +100,6 @@ SPEC CHECKSUMS:
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
-  WebViewJavascriptBridge: a4d502315f1b8d9a51cd6a9174147ed567ec3bc5
+  WebViewJavascriptBridge: e7b6669bebfc4f151daa0fdec3c8c24c8dc3a24e
 
 COCOAPODS: 0.39.0

@@ -73,7 +73,7 @@ static NSString *UploadImageApi = @"/upload";
                                                                  @"id": _orderID,
                                                         @"remark_time": _dateLabel.text,
                                                             @"content": (_textView.text ?: @""),
-                                                             @"images": _imageFile}];
+                                                             @"images": (_imageFile ?: @"")}];
     } else {
         [self showAlertWithMessage:@"请输入备注内容"];
     }

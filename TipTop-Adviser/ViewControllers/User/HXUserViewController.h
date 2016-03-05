@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet     UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet     UILabel *mobileLabel;
+@property (weak, nonatomic) IBOutlet      UIView *messageIcon;
 
 - (IBAction)userHeaderPressed;
 - (IBAction)settingButtonPressed;

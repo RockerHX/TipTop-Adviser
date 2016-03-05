@@ -19,6 +19,7 @@
 #import "HXMyAddressViewController.h"
 #import "UIImageView+WebCache.h"
 #import "MBProgressHUD.h"
+#import "HXUserSession.h"
 
 typedef NS_ENUM(NSUInteger, HXMenuRow) {
     HXMenuRowMyReservation = 0,
@@ -32,6 +33,7 @@ typedef NS_ENUM(NSUInteger, HXMenuRow) {
 };
 
 
+static NSString *MessageNotificationApi = @"/badge";
 static NSString *UploadImageApi = @"/upload";
 static NSString *UpdateUserHeaderApi = @"/profile/avatar";
 
@@ -88,6 +90,25 @@ static NSString *UpdateUserHeaderApi = @"/profile/avatar";
     [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:adviser.avatar]];
     _nameLabel.text = adviser.realName;
     _mobileLabel.text = adviser.mobile;
+    
+    [self checkMessageNotification];
+}
+
+- (void)checkMessageNotification {
+    [self startMessageNotificationReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
+                                                                  @"type": @"client"}];
+}
+
+- (void)startMessageNotificationReuqestWithParameters:(NSDictionary *)parameters {
+    [HXAppApiRequest requestGETMethodsWithAPI:[HXApi apiURLWithApi:MessageNotificationApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSInteger errorCode = [responseObject[@"error_code"] integerValue];
+        if (HXAppApiRequestErrorCodeNoError == errorCode) {
+            BOOL hasMessage = [responseObject[@"data"][@"notification"] boolValue];
+            _messageIcon.hidden = !hasMessage;
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        ;
+    }];
 }
 
 - (void)startUploadImageReuqestWithImage:(UIImage *)image {

@@ -380,34 +380,48 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ZnQ-us-zIQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="LOo-qz-0CI">
                                         <rect key="frame" x="0.0" y="496" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZnQ-us-zIQ" id="mmO-TM-Mjd">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LOo-qz-0CI" id="v9t-X3-Os3">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UC-MessageIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cts-H9-PCb">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UC-MessageIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ahP-3U-tX4">
                                                     <rect key="frame" x="20" y="0.0" width="44" height="44"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="cts-H9-PCb" secondAttribute="height" multiplier="1:1" id="cbV-H3-sdu"/>
+                                                        <constraint firstAttribute="width" secondItem="ahP-3U-tX4" secondAttribute="height" multiplier="1:1" id="OJy-3t-uMV"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息中心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXX-bv-VsF">
-                                                    <rect key="frame" x="74" y="0.0" width="246" height="44"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息中心" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQH-v2-Jmw">
+                                                    <rect key="frame" x="74" y="0.0" width="64" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nz0-sT-vpK" customClass="HXIBView">
+                                                    <rect key="frame" x="138" y="9" width="6" height="6"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Nz0-sT-vpK" secondAttribute="height" multiplier="1:1" id="TP3-jf-5YT"/>
+                                                        <constraint firstAttribute="width" constant="6" id="vca-UA-YJT"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="iXX-bv-VsF" firstAttribute="leading" secondItem="cts-H9-PCb" secondAttribute="trailing" constant="10" id="WiB-bP-KeK"/>
-                                                <constraint firstAttribute="bottom" secondItem="cts-H9-PCb" secondAttribute="bottom" id="eam-Cx-NmR"/>
-                                                <constraint firstItem="iXX-bv-VsF" firstAttribute="top" secondItem="mmO-TM-Mjd" secondAttribute="top" id="fIr-j0-yfv"/>
-                                                <constraint firstAttribute="bottom" secondItem="iXX-bv-VsF" secondAttribute="bottom" id="kk9-9y-XgP"/>
-                                                <constraint firstItem="cts-H9-PCb" firstAttribute="top" secondItem="mmO-TM-Mjd" secondAttribute="top" id="m7b-0C-LRn"/>
-                                                <constraint firstItem="cts-H9-PCb" firstAttribute="leading" secondItem="mmO-TM-Mjd" secondAttribute="leading" constant="20" id="mDD-NB-X23"/>
-                                                <constraint firstAttribute="trailing" secondItem="iXX-bv-VsF" secondAttribute="trailing" id="va4-Vl-WxR"/>
+                                                <constraint firstItem="CQH-v2-Jmw" firstAttribute="top" secondItem="v9t-X3-Os3" secondAttribute="top" id="045-Wj-WSj"/>
+                                                <constraint firstItem="Nz0-sT-vpK" firstAttribute="leading" secondItem="CQH-v2-Jmw" secondAttribute="trailing" id="2tC-Ed-zeq"/>
+                                                <constraint firstItem="Nz0-sT-vpK" firstAttribute="centerY" secondItem="CQH-v2-Jmw" secondAttribute="centerY" constant="-10" id="BCe-Zn-HOI"/>
+                                                <constraint firstAttribute="bottom" secondItem="ahP-3U-tX4" secondAttribute="bottom" id="GBO-rH-ppu"/>
+                                                <constraint firstAttribute="bottom" secondItem="CQH-v2-Jmw" secondAttribute="bottom" id="T8C-wW-wPr"/>
+                                                <constraint firstItem="ahP-3U-tX4" firstAttribute="leading" secondItem="v9t-X3-Os3" secondAttribute="leading" constant="20" id="bLa-rK-fvM"/>
+                                                <constraint firstItem="ahP-3U-tX4" firstAttribute="top" secondItem="v9t-X3-Os3" secondAttribute="top" id="k55-wW-sH8"/>
+                                                <constraint firstItem="CQH-v2-Jmw" firstAttribute="leading" secondItem="ahP-3U-tX4" secondAttribute="trailing" constant="10" id="uIJ-Jt-DLE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -454,6 +468,7 @@
                     </tableView>
                     <connections>
                         <outlet property="avatarImageView" destination="e1o-N4-cZx" id="COi-JY-ed8"/>
+                        <outlet property="messageIcon" destination="Nz0-sT-vpK" id="EEK-4r-v6o"/>
                         <outlet property="mobileLabel" destination="TBP-yX-Q1M" id="X8o-XR-te6"/>
                         <outlet property="nameLabel" destination="7xq-dM-80U" id="sqG-wx-e0g"/>
                     </connections>

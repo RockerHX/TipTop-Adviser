@@ -627,7 +627,6 @@
 			children = (
 				48D92BDE1C15C655004F889F /* Guide */,
 				48DB1E791BF2539E0007F505 /* Profile */,
-				4810972E1BEFB23300BA017B /* MessageCenter */,
 				48DFF4BF1BEDDCF600307A89 /* Comment */,
 				4884E0841BE12DF40078D2BA /* Login */,
 				48C57ACB1BDD5317002C8398 /* Common */,
@@ -636,6 +635,7 @@
 				4893C2D31BE6535200479EC3 /* MyBidding */,
 				48EC4A1A1BDFD5D700BC5192 /* OnlinePay */,
 				4843399C1BD6AC82007B3F84 /* WorkCircuit */,
+				4810972E1BEFB23300BA017B /* MessageCenter */,
 			);
 			path = Views;
 			sourceTree = "<group>";

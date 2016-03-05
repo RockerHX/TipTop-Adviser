@@ -18,6 +18,7 @@
 #import <BaiduMapAPI_Search/BMKGeocodeSearch.h>
 #import "HXLocationManager.h"
 #import "UIImageView+WebCache.h"
+#import "REFrostedViewController.h"
 
 typedef NS_ENUM(NSUInteger, HXHomePageConnectState) {
     HXHomePageConnectStateOnline,
@@ -68,6 +69,7 @@ static NSString *NewOrderEvent = @"new_order";
 
 #pragma mark - Config Methods
 - (void)initConfig {
+    [_adviserHeader addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.frostedViewController action:@selector(presentMenuViewController)]];
 }
 
 - (void)viewConfig {

@@ -15,6 +15,7 @@ NSString *const WeiXinKEY                                  = @"";
 NSString *const kUserNeedLoginNotification                 = @"kUserNeedLoginNotification";
 NSString *const kUserLoginSuccessNotification              = @"kUserLoginSuccessNotification";
 NSString *const kUserLogoutNotification                    = @"kUserLogoutNotification";
+
 NSString *const kWeiXinPaySuccessNotification              = @"kWeiXinPaySuccessNotification";
 NSString *const kWeiXinPayFailureNotification              = @"kWeiXinPayFailureNotification";
 

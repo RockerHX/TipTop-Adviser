@@ -56,6 +56,7 @@ static NSString *NewOrderEvent = @"new_order";
 
 - (void)dealloc {
     [self invaliDateTimer];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 #pragma mark - Setter And Getter
@@ -70,6 +71,8 @@ static NSString *NewOrderEvent = @"new_order";
 #pragma mark - Config Methods
 - (void)initConfig {
     [_adviserHeader addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.frostedViewController action:@selector(presentMenuViewController)]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openSocket) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 - (void)viewConfig {
@@ -80,25 +83,22 @@ static NSString *NewOrderEvent = @"new_order";
 }
 
 - (void)openSocket {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    __weak __typeof__(self)weakSelf = self;
-    [[HXSocketManager manager] openWithURL:[NSURL URLWithString:@"ws://115.29.45.120:8081"] opened:^(HXSocketManager *manager) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
-        [strongSelf loginAction];
-        [strongSelf displayWithConnectSatae:HXHomePageConnectStateOnline];
-    } receiveData:^(HXSocketManager *manager, id data) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
-        [strongSelf handleData:data];
-    } closed:^(HXSocketManager *manager, NSInteger code) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
-    } failed:^(HXSocketManager *manager, NSError *error) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
-        [strongSelf displayWithConnectSatae:HXHomePageConnectStateOffline];
-    }];
+    HXSocketManager *manager = [HXSocketManager manager];
+    if (manager.socket.readyState != SR_OPEN) {
+        [self showHUD];
+        [manager openWithURL:[NSURL URLWithString:@"ws://115.29.45.120:8081"] opened:^(HXSocketManager *manager) {
+            [self hiddenHUD];
+            [self loginAction];
+            [self displayWithConnectSatae:HXHomePageConnectStateOnline];
+        } receiveData:^(HXSocketManager *manager, id data) {
+            [self hiddenHUD];
+            [self handleData:data];
+        } closed:^(HXSocketManager *manager, NSInteger code) {
+            [self hiddenHUD];
+        } failed:^(HXSocketManager *manager, NSError *error) {
+            [self displayWithConnectSatae:HXHomePageConnectStateOffline];
+        }];
+    }
 }
 
 #pragma mark - Event Response
@@ -111,6 +111,14 @@ static NSString *NewOrderEvent = @"new_order";
 }
 
 #pragma mark - Private Methods
+- (void)showHUD {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void)hiddenHUD {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
 - (void)displayHomePage {
     [_adviserHeader sd_setImageWithURL:[NSURL URLWithString:[HXUserSession share].adviser.avatar] placeholderImage:[UIImage imageNamed:@"HP-AvatarDefaultIcon"]];
     [self displayUserLocation];
@@ -214,6 +222,8 @@ static NSString *NewOrderEvent = @"new_order";
     _grabButton.layer.borderColor = _grabButton.backgroundColor.CGColor;
     
     [self invaliDateTimer];
+    
+    [self openSocket];
 }
 
 
@@ -246,18 +256,18 @@ static NSString *NewOrderEvent = @"new_order";
 - (void)showOrderAlertWithOrder:(HXGrabOrder *)order {
     __weak __typeof__(self)weakSelf = self;
     [HXOrderAlertView showWithNewOrder:order hanlde:^(HXGrabOrder *newOrder) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        strongSelf.orderTitleLabel.text = @"暂无需求";
-        strongSelf.subTitleLabel.text = @"等待发单";
-        strongSelf.promptLabel.text = @"收到 0 个需求";
+        __strong __typeof__(self)self = weakSelf;
+        self.orderTitleLabel.text = @"暂无需求";
+        self.subTitleLabel.text = @"等待发单";
+        self.promptLabel.text = @"收到 0 个需求";
     }];
 }
 
 - (void)displayUserLocation {
     __weak __typeof__(self)weakSelf = self;
     [[HXLocationManager share] getLocationSuccess:^(BMKUserLocation *userLocation, NSString *latitude, NSString *longitude) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        [strongSelf getStartAddressWithLocation:userLocation.location];
+        __strong __typeof__(self)self = weakSelf;
+        [self getStartAddressWithLocation:userLocation.location];
     } failure:^(NSString *latitude, NSString *longitude, NSError *error) {
     }];
 }

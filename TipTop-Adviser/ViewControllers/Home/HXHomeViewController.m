@@ -105,7 +105,7 @@ static NSString *NewOrderEvent = @"new_order";
 - (void)grabButtonPressed {
     if (_newOrder) {
         NSDictionary *data = @{@"event": @"grab",
-                               @"order_id": _newOrder.ID};
+                            @"order_id": _newOrder.ID};
         [[HXSocketManager manager] sendData:data];
     }
 }
@@ -143,6 +143,7 @@ static NSString *NewOrderEvent = @"new_order";
     } else {
         NSString *message = receiveData[@"msg"];
         [self showAlertWithMessage:message];
+        [self resetUI];
     }
 }
 
@@ -150,6 +151,12 @@ static NSString *NewOrderEvent = @"new_order";
     _orderTitleLabel.text = newOrder.cate;
     _subTitleLabel.text = newOrder.subCate;
     _promptLabel.text = @"收到 1 个需求";
+}
+
+- (void)resetUI {
+    _orderTitleLabel.text = @"暂无订单";
+    _subTitleLabel.text = @"等待发单";
+    _promptLabel.text = @"收到 0 个需求";
 }
 
 - (void)displayWithConnectSatae:(HXHomePageConnectState)state {

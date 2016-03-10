@@ -263,11 +263,10 @@ static NSString *NewOrderEvent = @"new_order";
 
 - (void)showOrderAlertWithOrder:(HXGrabOrder *)order {
     [HXOrderAlertView showWithNewOrder:order hanlde:^(HXGrabOrder *newOrder) {
-        [self resetUI];
-        
         HXReservationDetailViewController *detailViewController = [HXReservationDetailViewController instance];
-        detailViewController.orderID = @(newOrder.displayID).stringValue;
+        detailViewController.orderID = _newOrder.ID;
         [self.navigationController pushViewController:detailViewController animated:YES];
+        [self resetUI];
     }];
 }
 

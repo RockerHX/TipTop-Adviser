@@ -41,7 +41,9 @@
 
 #pragma mark - Public Methods
 - (void)showAlertWithMessage:(NSString *)message {
-    [self showAlertWithMessage:message handler:nil];
+    if (message.length) {
+        [self showAlertWithMessage:message handler:nil];
+    }
 }
 
 - (void)showAlertWithMessage:(NSString *)message handler:(void (^)(UIAlertView *alertView, NSInteger buttonIndex))block {

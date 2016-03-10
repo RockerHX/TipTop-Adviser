@@ -95,7 +95,9 @@ static NSString *NewOrderEvent = @"new_order";
             [self handleData:data];
         } closed:^(HXSocketManager *manager, NSInteger code) {
             [self hiddenHUD];
+            [self displayWithConnectSatae:HXHomePageConnectStateOffline];
         } failed:^(HXSocketManager *manager, NSError *error) {
+            [self hiddenHUD];
             [self displayWithConnectSatae:HXHomePageConnectStateOffline];
         }];
     }
@@ -138,8 +140,8 @@ static NSString *NewOrderEvent = @"new_order";
 }
 
 - (void)hanleEventWithReceiveData:(NSDictionary *)receiveData {
-    NSInteger errorCode = [receiveData[@"error"] integerValue];
-    if (!errorCode) {
+    BOOL error = [receiveData[@"error"] boolValue];
+    if (!error) {
         NSString *event = receiveData[@"event"];
         NSString *extra = receiveData[@"extra"];
         if ([event isEqualToString:NewOrderEvent]) {
@@ -254,12 +256,9 @@ static NSString *NewOrderEvent = @"new_order";
 }
 
 - (void)showOrderAlertWithOrder:(HXGrabOrder *)order {
-    __weak __typeof__(self)weakSelf = self;
     [HXOrderAlertView showWithNewOrder:order hanlde:^(HXGrabOrder *newOrder) {
-        __strong __typeof__(self)self = weakSelf;
-        self.orderTitleLabel.text = @"暂无需求";
-        self.subTitleLabel.text = @"等待发单";
-        self.promptLabel.text = @"收到 0 个需求";
+        
+        [self resetUI];
     }];
 }
 

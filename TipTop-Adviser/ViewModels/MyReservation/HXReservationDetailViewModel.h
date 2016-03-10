@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, HXDetailCellRow) {
 + (instancetype)instanceWithOrderID:(NSString *)orderID;
 - (instancetype)initWithOrderID:(NSString *)orderID;
 
-- (void)request:(void(^)(void))completed;
+- (void)request:(void(^)(NSString *message))completed;
 
 - (void)removeRemark:(HXReservationDetailRemark *)remark;
 

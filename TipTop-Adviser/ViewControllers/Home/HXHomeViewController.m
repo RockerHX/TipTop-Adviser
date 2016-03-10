@@ -19,6 +19,7 @@
 #import "HXLocationManager.h"
 #import "UIImageView+WebCache.h"
 #import "REFrostedViewController.h"
+#import "HXReservationDetailViewController.h"
 
 typedef NS_ENUM(NSUInteger, HXHomePageConnectState) {
     HXHomePageConnectStateOnline,
@@ -83,23 +84,25 @@ static NSString *NewOrderEvent = @"new_order";
 }
 
 - (void)openSocket {
-    HXSocketManager *manager = [HXSocketManager manager];
-    if (manager.socket.readyState != SR_OPEN) {
-        [self showHUD];
-        [manager openWithURL:[NSURL URLWithString:@"ws://115.29.45.120:8081"] opened:^(HXSocketManager *manager) {
-            [self hiddenHUD];
-            [self loginAction];
-            [self displayWithConnectSatae:HXHomePageConnectStateOnline];
-        } receiveData:^(HXSocketManager *manager, id data) {
-            [self hiddenHUD];
-            [self handleData:data];
-        } closed:^(HXSocketManager *manager, NSInteger code) {
-            [self hiddenHUD];
-            [self displayWithConnectSatae:HXHomePageConnectStateOffline];
-        } failed:^(HXSocketManager *manager, NSError *error) {
-            [self hiddenHUD];
-            [self displayWithConnectSatae:HXHomePageConnectStateOffline];
-        }];
+    if ([HXUserSession share].state) {
+        HXSocketManager *manager = [HXSocketManager manager];
+        if (manager.socket.readyState != SR_OPEN) {
+            [self showHUD];
+            [manager openWithURL:[NSURL URLWithString:@"ws://115.29.45.120:8081"] opened:^(HXSocketManager *manager) {
+                [self hiddenHUD];
+                [self loginAction];
+                [self displayWithConnectSatae:HXHomePageConnectStateOnline];
+            } receiveData:^(HXSocketManager *manager, id data) {
+                [self hiddenHUD];
+                [self handleData:data];
+            } closed:^(HXSocketManager *manager, NSInteger code) {
+                [self hiddenHUD];
+                [self displayWithConnectSatae:HXHomePageConnectStateOffline];
+            } failed:^(HXSocketManager *manager, NSError *error) {
+                [self hiddenHUD];
+                [self displayWithConnectSatae:HXHomePageConnectStateOffline];
+            }];
+        }
     }
 }
 
@@ -109,6 +112,8 @@ static NSString *NewOrderEvent = @"new_order";
         NSDictionary *data = @{@"event": @"grab",
                             @"order_id": _newOrder.ID};
         [[HXSocketManager manager] sendData:data];
+    } else {
+        [self showAlertWithMessage:@"暂无订单！"];
     }
 }
 
@@ -164,6 +169,7 @@ static NSString *NewOrderEvent = @"new_order";
 }
 
 - (void)resetUI {
+    _newOrder = nil;
     _orderTitleLabel.text = @"暂无订单";
     _subTitleLabel.text = @"等待发单";
     _promptLabel.text = @"收到 0 个需求";
@@ -257,8 +263,11 @@ static NSString *NewOrderEvent = @"new_order";
 
 - (void)showOrderAlertWithOrder:(HXGrabOrder *)order {
     [HXOrderAlertView showWithNewOrder:order hanlde:^(HXGrabOrder *newOrder) {
-        
         [self resetUI];
+        
+        HXReservationDetailViewController *detailViewController = [HXReservationDetailViewController instance];
+        detailViewController.orderID = @(newOrder.displayID).stringValue;
+        [self.navigationController pushViewController:detailViewController animated:YES];
     }];
 }
 

@@ -11,7 +11,7 @@
 #import "DateTools.h"
 #import "HXUserSession.h"
 
-typedef void(^BLOCK)(void);
+typedef void(^BLOCK)(NSString *message);
 
 static NSString *OrderDetailApi = @"/order/view";
 
@@ -73,7 +73,7 @@ static NSInteger RegularRow = 2;
 }
 
 #pragma mark - Public Methods
-- (void)request:(void (^)(void))completed {
+- (void)request:(void (^)(NSString *message))completed {
     _completedBlock = completed;
     [self startOrderDetailReuqestWithParameters:@{@"access_token": [HXUserSession share].adviser.accessToken,
                                                             @"id": _orderID}];
@@ -105,8 +105,15 @@ static NSInteger RegularRow = 2;
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
             [strongSelf handleDetailData:responseObject[@"data"]];
+        } else {
+            if (_completedBlock) {
+                _completedBlock(responseObject[@"tip"]);
+            }
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (_completedBlock) {
+            _completedBlock(@"网络出错！");
+        }
     }];
 }
 
@@ -118,7 +125,7 @@ static NSInteger RegularRow = 2;
         _orderDate = [[NSDate dateWithTimeIntervalSince1970:_detail.order.createTime] formattedDateWithFormat:@"yyyy-MM-dd hh:mm:ss"];
     }
     if (_completedBlock) {
-        _completedBlock();
+        _completedBlock(nil);
     }
 }
 

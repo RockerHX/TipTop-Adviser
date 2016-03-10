@@ -74,9 +74,10 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 #pragma mark - Private Methods
 - (void)loadData {
     __weak __typeof__(self)weakSelf = self;
-    [_viewModel request:^{
+    [_viewModel request:^(NSString *message) {
         __strong __typeof__(self)strongSelf = weakSelf;
         [strongSelf endLoad];
+        [strongSelf showAlertWithMessage:message];
     }];
 }
 

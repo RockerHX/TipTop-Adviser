@@ -28,7 +28,7 @@
 
 #pragma mark - Private Methods
 - (void)initConfigure {
-    self.loadURL = [HXApi webViewURLWithURL:@"/h5/feedback?app=client"];
+    self.loadURL = [HXApi webViewURLWithURL:@"/h5/feedback?app=agent"];
 }
 
 - (void)loadWebView {

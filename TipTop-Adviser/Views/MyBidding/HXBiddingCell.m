@@ -15,7 +15,7 @@
 - (void)displayWithBidding:(HXBidding *)bidding {
     _biddingDateLabel.text = [[NSDate dateWithTimeIntervalSince1970:bidding.createDate] formattedDateWithFormat:@"yyyy-MM-dd hh:mm"];
     _deliverDateLabel.text = [[NSDate dateWithTimeIntervalSince1970:bidding.deliverDate] formattedDateWithFormat:@"yyyy-MM-dd hh:mm"];
-    _nameLabel.text = [bidding.cate stringByAppendingFormat:@"(%@)", bidding.subCate];
+    _nameLabel.text = [bidding.cate stringByAppendingFormat:@"（%@）", bidding.subCate];
 }
 
 @end

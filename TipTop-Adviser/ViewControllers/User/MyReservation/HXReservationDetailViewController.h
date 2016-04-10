@@ -8,6 +8,7 @@
 
 #import "UIViewController+HXClass.h"
 
+
 @interface HXReservationDetailViewController : UIViewController
 
 @property (nonatomic, copy) NSString *orderID;

@@ -16,6 +16,7 @@
 static NSString *OrderRemarkCreateApi = @"/order/remarkCreate";
 static NSString *UploadImageApi = @"/upload";
 
+
 @interface HXReservationAddRemarkViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @end
 
@@ -81,10 +82,8 @@ static NSString *UploadImageApi = @"/upload";
 
 - (void)startCreateRemarkReuqestWithParameters:(NSDictionary *)parameters {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    __weak __typeof__(self)weakSelf = self;
     [HXAppApiRequest requestPOSTMethodsWithAPI:[HXApi apiURLWithApi:OrderRemarkCreateApi] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSInteger errorCode = [responseObject[@"error_code"] integerValue];
         if (HXAppApiRequestErrorCodeNoError == errorCode) {
             [UIAlertView bk_showAlertViewWithTitle:@"备注成功！"
@@ -93,12 +92,14 @@ static NSString *UploadImageApi = @"/upload";
                                  otherButtonTitles:nil
                                            handler:
              ^(UIAlertView *alertView, NSInteger buttonIndex) {
-                 [strongSelf.navigationController popViewControllerAnimated:YES];
+                 if (_delegate && [_delegate respondsToSelector:@selector(addRevervationViewAddSuccess:)]) {
+                     [_delegate addRevervationViewAddSuccess:self];
+                 }
+                 [self.navigationController popViewControllerAnimated:YES];
              }];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        __strong __typeof__(self)strongSelf = weakSelf;
-        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 

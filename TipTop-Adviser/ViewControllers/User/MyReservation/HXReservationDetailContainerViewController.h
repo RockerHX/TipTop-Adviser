@@ -8,11 +8,14 @@
 
 #import "UIViewController+HXClass.h"
 
+
 @interface HXReservationDetailContainerViewController : UITableViewController
 
 @property (nonatomic, copy) NSString *orderID;
 
 - (IBAction)phoneButonPressed;
 - (IBAction)sendButonPressed;
+
+- (void)loadData;
 
 @end

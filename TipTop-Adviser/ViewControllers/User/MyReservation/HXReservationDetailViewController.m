@@ -14,10 +14,21 @@
 static NSString *SendOrderApi       = @"/order/confirm";
 static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 
-@interface HXReservationDetailViewController ()
+
+@interface HXReservationDetailViewController () <
+HXReservationAddRemarkContainerViewControllerDelegate
+>
 @end
 
-@implementation HXReservationDetailViewController
+@implementation HXReservationDetailViewController {
+    HXReservationDetailContainerViewController *_cantainerViewController;
+}
+
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    _cantainerViewController = segue.destinationViewController;
+    _cantainerViewController.orderID = _orderID;
+}
 
 #pragma mark - View Controller Life Cycle
 - (void)viewDidLoad {
@@ -25,12 +36,6 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
     
     [self initConfig];
     [self viewConfig];
-}
-
-#pragma mark - Segue Methods
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    HXReservationDetailContainerViewController *reservationDetailContainerViewController = segue.destinationViewController;
-    reservationDetailContainerViewController.orderID = _orderID;
 }
 
 #pragma mark - Config Methods
@@ -50,8 +55,14 @@ static NSString *DeleteRemarkApi    = @"/order/remarkDelete";
 #pragma mark - Event Response
 - (IBAction)remarkButtonPressed {
     HXReservationAddRemarkViewController *addRemarkViewController = [HXReservationAddRemarkViewController instance];
+    addRemarkViewController.delegate = self;
     addRemarkViewController.orderID = _orderID;
     [self.navigationController pushViewController:addRemarkViewController animated:YES];
+}
+
+#pragma mark - HXReservationAddRemarkContainerViewControllerDelegate Methods
+- (void)addRevervationViewAddSuccess:(HXReservationAddRemarkViewController *)viewContaoller {
+    [_cantainerViewController loadData];
 }
 
 @end

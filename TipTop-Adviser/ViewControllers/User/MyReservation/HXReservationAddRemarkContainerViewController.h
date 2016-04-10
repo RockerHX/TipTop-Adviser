@@ -8,7 +8,9 @@
 
 #import "UIViewController+HXClass.h"
 
+
 @class BRPlaceholderTextView;
+
 
 @interface HXReservationAddRemarkContainerViewController : UITableViewController
 

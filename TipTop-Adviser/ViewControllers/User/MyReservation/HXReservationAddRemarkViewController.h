@@ -8,7 +8,21 @@
 
 #import "UIViewController+HXClass.h"
 
+
+@class HXReservationAddRemarkViewController;
+
+
+@protocol HXReservationAddRemarkContainerViewControllerDelegate <NSObject>
+
+@required
+- (void)addRevervationViewAddSuccess:(HXReservationAddRemarkViewController *)viewContaoller;
+
+@end
+
+
 @interface HXReservationAddRemarkViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet          id  <HXReservationAddRemarkContainerViewControllerDelegate>delegate;
 
 @property (weak, nonatomic) IBOutlet     UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet  UITextView *textView;
